@@ -7,8 +7,8 @@
 </head>
 
 <body>
-<jsp:include page="../../fragments/userHeader.jsp"/>
-
+<jsp:include page="../../fragments/mainHeader.jsp"/>
+<%--//todo добавить личный кабинет , отображение информации--%>
 
 </body>
 </html>

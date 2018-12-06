@@ -16,4 +16,14 @@
         <url-pattern>/controller</url-pattern>
     </servlet-mapping>
 
+    <filter>
+        <filter-name>languageFilter</filter-name>
+        <filter-class>filter.LanguageFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>languageFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
 </web-app>
