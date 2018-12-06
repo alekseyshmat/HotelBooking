@@ -2,6 +2,8 @@
     overflow: hidden;
     background-color: #191970;
     font-family: Arial, serif;
+    border-radius: 10px;
+    margin-top: 5px;
 }
 
 .navigationBar a {
@@ -38,7 +40,7 @@
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     z-index: 1;
 }
 .home{
@@ -48,11 +50,11 @@
     text-align: center;
 }
 
-.administration{
-    float: right;
-    font-size: 16px;
-    color: white;
-    text-align: center;
+.optionalButton{
+     float: right;
+     font-size: 16px;
+     color: white;
+     text-align: center;
 }
 
 .dropDownContent a {

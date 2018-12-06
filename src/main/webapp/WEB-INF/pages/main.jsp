@@ -11,9 +11,8 @@
 <header>
     <jsp:include page="../fragments/mainHeader.jsp"/>
 </header>
-<div class="back">
     <div class="makeOrder">
-        <form>
+        <form action="controller?command=login" method="post">  <%--TODO: add action--%>
             <div class="row">
                 <div class="label">
                     <label>{checkInDate}</label>
@@ -73,6 +72,5 @@
 
         </form>
     </div>
-</div>
 </body>
 </html>

@@ -21,7 +21,7 @@
 <body>
 <div class="navigationBar">
     <div class="home">
-        <a href="../pages/main.jsp">{home}</a>
+        <a href="#">{home}</a> <%--TODO add link--%>
     </div>
     <div class="dropDown">
         <button class="dropButton">${sessionScope.name}
@@ -41,11 +41,20 @@
             <a href="#">English</a>
         </div>
     </div>
-    <%--<c:if test="${sessionScope.role =='ADMIN'}">--%>
-    <div class="administration">
-        <a href="${pageContext.servletContext.contextPath}/controller?command=showOrders">{administration}</a>
-    </div>
-    <%--</c:if>--%>
+    <c:choose>
+        <c:when test="${sessionScope.role == 'ADMIN'}">
+            <div class="optionalButton">
+                <a href="${pageContext.servletContext.contextPath}/controller?command=showOrders">{administration}</a>
+            </div>
+        </c:when>
+        <c:when test="${sessionScope.role == 'USER'}">
+            <div class="optionalButton">
+                <a href="${pageContext.servletContext.contextPath}/controller?command=login">{makeOrder}</a> <%--TODO change--%>
+            </div>
+        </c:when>
+    </c:choose>
+
+
 </div>
 </body>
 </html>
