@@ -1,11 +1,15 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: leha2
-  Date: 01.12.2018
-  Time: 19:42
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+<fmt:setLocale value="${sessionScope.language}"/>
+<fmt:setBundle basename="naming" var="naming"/>
+
+<fmt:message bundle="${naming}" key="table.label.id" var="id"/>
+<fmt:message bundle="${naming}" key="table.label.roomNumber" var="roomNumber"/>
+<fmt:message bundle="${naming}" key="table.label.startDate" var="startDate"/>
+<fmt:message bundle="${naming}" key="table.label.endDate" var="endDate"/>
+<fmt:message bundle="${naming}" key="table.label.cost" var="cost"/>
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -22,11 +26,11 @@
         <div class="card">
             <table>
                 <tr>
-                    <th>{id}</th>
-                    <th>{roomNumber}</th>
-                    <th>{startDate}</th>
-                    <th>{endDate}</th>
-                    <th>{cost}</th>
+                    <th>${id}</th>
+                    <th>${roomNumber}</th>
+                    <th>${startDate}</th>
+                    <th>${endDate}</th>
+                    <th>${cost}</th>
                 </tr>
                 <%--<c:forEach items="${userList}" var="user">--%>
                 <tr>

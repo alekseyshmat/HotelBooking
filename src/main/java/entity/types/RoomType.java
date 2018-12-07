@@ -6,6 +6,6 @@ public enum RoomType {
     DELUXE,
     DUPLEX,
     FAMILYROOM,
-    STANDART,
+    STANDARD,
     PRESIDENT
 }

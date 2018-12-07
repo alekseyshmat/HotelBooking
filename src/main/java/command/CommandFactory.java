@@ -24,6 +24,8 @@ public class CommandFactory {
                 return new RoomPricesCommand();
             case "showBalance":
                 return new BalanceCommand();
+            case "changeLanguage":
+                return new ChangeLanguageCommand();
             case "signOut":
                 return new SignOutCommand();
             default:

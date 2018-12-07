@@ -4,6 +4,8 @@ import command.Command;
 import command.CommandFactory;
 import command.CommandResult;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -27,7 +29,18 @@ public class Controller extends HttpServlet {
         String parametr = req.getParameter("command");
         Command command = factory.create(parametr);
         CommandResult commandResult = command.execute(req, resp);
-        req.getRequestDispatcher(commandResult.getPage()).forward(req,resp );
+
+        String page = commandResult.getPage();
+       /* if (commandResult.isRedirect()) {
+            sendRedirect(resp, page);
+        } else {*/
+            ServletContext servletContext = getServletContext();
+            RequestDispatcher requestDispatcher = servletContext.getRequestDispatcher(page);
+            requestDispatcher.forward(req, resp);
+//        }
     }
 
+    private void sendRedirect(HttpServletResponse response, String page) throws IOException {
+        response.sendRedirect(page);
+    }
 }

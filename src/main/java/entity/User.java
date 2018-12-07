@@ -17,16 +17,18 @@ public class User implements Serializable {
     private String login;
     private String password;
     private BigDecimal balance;
-    private boolean admin;
-
     private Role role;
 
-    public User(String firstName, Role role) {
+    public User(String firstName, String lastName, Date birthday, String email, String login, String password, BigDecimal balance, Role role) {
         this.firstName = firstName;
+        this.lastName = lastName;
+        this.birthday = birthday;
+        this.email = email;
+        this.login = login;
+        this.password = password;
+        this.balance = balance;
         this.role = role;
     }
-
-
 
     public int getId() {
         return id;
@@ -92,14 +94,6 @@ public class User implements Serializable {
         this.balance = balance;
     }
 
-    public boolean isAdmin() {
-        return admin;
-    }
-
-    public void setAdmin(boolean admin) {
-        this.admin = admin;
-    }
-
     public Role getRole() {
         return role;
     }
@@ -114,21 +108,21 @@ public class User implements Serializable {
             return false;
         }
 
-        User person = (User) obj;
-        return id == person.id &&
-                Objects.equals(firstName, person.firstName) &&
-                Objects.equals(lastName, person.lastName) &&
-                Objects.equals(birthday, person.birthday) &&
-                Objects.equals(email, person.email) &&
-                Objects.equals(login, person.login) &&
-                Objects.equals(password, person.password) &&
-                Objects.equals(balance, person.balance) &&
-                Objects.equals(admin, person.admin);
+        User user = (User) obj;
+        return id == user.id &&
+                Objects.equals(firstName, user.firstName) &&
+                Objects.equals(lastName, user.lastName) &&
+                Objects.equals(birthday, user.birthday) &&
+                Objects.equals(email, user.email) &&
+                Objects.equals(login, user.login) &&
+                Objects.equals(password, user.password) &&
+                Objects.equals(balance, user.balance) &&
+                Objects.equals(role, user.role);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(firstName, lastName, birthday, email, login, password, balance, admin);
+        return Objects.hash(firstName, lastName, birthday, email, login, password, balance, role);
     }
 
     @Override
@@ -142,6 +136,6 @@ public class User implements Serializable {
                 ", login='" + login +
                 ", password=" + password +
                 ", balance=" + balance +
-                ", isAdmin=" + admin;
+                ", role=" + role;
     }
 }

@@ -1,4 +1,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+<fmt:setLocale value="${sessionScope.language}"/>
+<fmt:setBundle basename="naming" var="naming"/>
+
+<fmt:message bundle="${naming}" key="table.label.id" var="id"/>
+<fmt:message bundle="${naming}" key="table.label.firstName" var="firstName"/>
+<fmt:message bundle="${naming}" key="table.label.lastName" var="lastName"/>
+<fmt:message bundle="${naming}" key="table.label.checkInDate" var="checkInDate"/>
+<fmt:message bundle="${naming}" key="table.label.checkOutDate" var="checkOutDate"/>
+<fmt:message bundle="${naming}" key="table.label.placeNumber" var="placeNumber"/>
+<fmt:message bundle="${naming}" key="table.label.orderStatus" var="orderStatus"/>
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -15,12 +28,12 @@
         <div class="card">
             <table>
                 <tr>
-                    <th>{id}</th>
-                    <th>{lastName} {firstName}</th>
-                    <th>{checkInDate}</th>
-                    <th>{checkOutDate}</th>
-                    <th>{placeNumber}</th>
-                    <th>{orderStatus}</th>
+                    <th>${id}</th>
+                    <th>${lastName} ${firstName}</th>
+                    <th>${checkInDate}</th>
+                    <th>${checkOutDate}</th>
+                    <th>${placeNumber}</th>
+                    <th>${orderStatus}</th>
                 </tr>
                 <%--<c:forEach items="${userList}" var="user">--%>
                 <tr>
@@ -61,7 +74,5 @@
         </div>
     </div>
 </div>
-
-
 </body>
 </html>

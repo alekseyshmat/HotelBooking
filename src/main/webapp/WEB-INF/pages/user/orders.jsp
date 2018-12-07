@@ -1,11 +1,18 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: leha2
-  Date: 01.12.2018
-  Time: 19:44
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+<fmt:setLocale value="${sessionScope.language}"/>
+<fmt:setBundle basename="naming" var="naming"/>
+
+<fmt:message bundle="${naming}" key="table.label.id" var="id"/>
+<fmt:message bundle="${naming}" key="mainHeader.label.makeOrder" var="makeOrder"/>
+<fmt:message bundle="${naming}" key="table.label.checkInDate" var="checkInDate"/>
+<fmt:message bundle="${naming}" key="table.label.checkOutDate" var="checkOutDate"/>
+<fmt:message bundle="${naming}" key="user.label.login.typeRoom" var="typeRoom"/>
+<fmt:message bundle="${naming}" key="table.label.placeNumber" var="placeNumber"/>
+<fmt:message bundle="${naming}" key="table.label.orderStatus" var="orderStatus"/>
+
+
 <html>
 <head>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/dataStyle.css">
@@ -21,11 +28,11 @@
         <div class="card">
             <table>
                 <tr>
-                    <th>{id}</th>
-                    <th>{checkInDate}</th>
-                    <th>{checkOutDate}</th>
-                    <th>{placeNumber}</th>
-                    <th>{orderStatus}</th>
+                    <th>${id}</th>
+                    <th>${checkInDate}</th>
+                    <th>${checkOutDate}</th>
+                    <th>${placeNumber}</th>
+                    <th>${orderStatus}</th>
                 </tr>
                 <%--<c:forEach items="${userList}" var="user">--%>
                 <tr>

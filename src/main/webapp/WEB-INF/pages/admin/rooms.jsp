@@ -1,9 +1,22 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+<fmt:setLocale value="${sessionScope.language}"/>
+<fmt:setBundle basename="naming" var="naming"/>
+
+<fmt:message bundle="${naming}" key="table.label.id" var="id"/>
+<fmt:message bundle="${naming}" key="table.label.rooms" var="rooms"/>
+<fmt:message bundle="${naming}" key="table.label.roomNumber" var="roomNumber"/>
+<fmt:message bundle="${naming}" key="table.label.type" var="type"/>
+<fmt:message bundle="${naming}" key="table.label.placeNumber" var="placeNumber"/>
+<fmt:message bundle="${naming}" key="table.label.cost" var="cost"/>
+<fmt:message bundle="${naming}" key="table.label.isBusy" var="isBusy"/>
+
 <html>
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/dataStyle.css">
-    <title>{Rooms}</title>
+    <title>${rooms}</title>
 </head>
 <body>
 <jsp:include page="../../fragments/mainHeader.jsp"/>
@@ -15,12 +28,12 @@
         <div class="card">
             <table>
                 <tr>
-                    <th>{id}</th>
-                    <th>{roomNumber}</th>
-                    <th>{type}</th>
-                    <th>{placeNumber}</th>
-                    <th>{cost}</th>
-                    <th>{isBust}</th>
+                    <th>${id}</th>
+                    <th>${roomNumber}</th>
+                    <th>${type}</th>
+                    <th>${placeNumber}</th>
+                    <th>${cost}</th>
+                    <th>${isBusy}</th>
                 </tr>
                 <%--<c:forEach items="${userList}" var="user">--%>
                 <tr>

@@ -1,11 +1,25 @@
+<%@ page contentType="text/html; charset=UTF-8" isELIgnored="false" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+<fmt:setLocale value="${sessionScope.language}"/>
+<fmt:setBundle basename="naming" var="naming"/>
+
+<fmt:message bundle="${naming}" key="table.label.firstName" var="firstName"/>
+<fmt:message bundle="${naming}" key="table.label.lastName" var="lastName"/>
+<fmt:message bundle="${naming}" key="table.label.birthday" var="birthday"/>
+<fmt:message bundle="${naming}" key="table.label.email" var="email"/>
+<fmt:message bundle="${naming}" key="user.label.login.save" var="save"/>
+<fmt:message bundle="${naming}" key="user.label.login.placeholder" var="username"/>
+<fmt:message bundle="${naming}" key="mainHeader.label.profile" var="profile"/>
+
 <html>
 
 <head>
     <meta charset="UTF-8">
-    <title>profile</title>
+    <title>${profile}</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/profileStyle.css">
+    <jsp:useBean id="user" scope="request" type="entity.User"/>
 </head>
 
 <body>
@@ -22,55 +36,56 @@
         </c:choose>
     </div>
     <div class="rightColumn">
+
         <form action="#" method="post">
 
             <div class="row">
                 <div class="label">
-                    <label>{lastName}:</label>
+                    <label for="lastName">${lastName}:</label>
                 </div>
                 <div class="value">
-                    <input type="text" id="firstName" name="firstName" value="{user.firstName}">
+                    <input type="text" id="lastName" name="lastName" value="${user.lastName}">
                 </div>
             </div>
 
             <div class="row">
                 <div class="label">
-                    <label>{firstName}:</label>
+                    <label for="firstName">${firstName}:</label>
                 </div>
                 <div class="value">
-                    <input type="text" id="lastName" name="lastName" value="{user.lastName}">
+                    <input type="text" id="firstName" name="firstName" value="${user.firstName}">
                 </div>
             </div>
 
             <div class="row">
                 <div class="label">
-                    <label>{birthday}:</label>
+                    <label for="birthday">${birthday}:</label>
                 </div>
                 <div class="value">
-                    <input type="text" id="birthday" name="birthday" value="{user.birthday}">
+                    <input type="text" id="birthday" name="birthday" value="${user.birthday}">
                 </div>
             </div>
 
             <div class="row">
                 <div class="label">
-                    <label>{email}:</label>
+                    <label for="email">${email}:</label>
                 </div>
                 <div class="value">
-                    <input type="text" id="email" name="email" value="{user.email}" readonly>
+                    <input type="text" id="email" name="email" value="${user.email}" readonly>
                 </div>
             </div>
 
             <div class="row">
                 <div class="label">
-                    <label>{username}:</label>
+                    <label for="username">${username}:</label>
                 </div>
                 <div class="value">
-                    <input type="text" id="username" name="username" value="{user.username}" readonly>
+                    <input type="text" id="username" name="username" value="${user.login}" readonly>
                 </div>
             </div>
 
             <div class="submitButton">
-                <input class="submitBtn" type="submit" value="{save}">
+                <input class="submitBtn" type="submit" value="${save}">
             </div>
 
         </form>
