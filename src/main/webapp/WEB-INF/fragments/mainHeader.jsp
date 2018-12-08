@@ -45,7 +45,7 @@
     <c:choose>
         <c:when test="${sessionScope.role == 'ADMIN'}">
             <div class="optionalButton">
-                <a href="${pageContext.servletContext.contextPath}/controller?command=showOrders">${administrate}</a>
+                <a href="${pageContext.servletContext.contextPath}/controller?command=showAllOrders">${administrate}</a>
             </div>
         </c:when>
         <c:when test="${sessionScope.role == 'USER'}">

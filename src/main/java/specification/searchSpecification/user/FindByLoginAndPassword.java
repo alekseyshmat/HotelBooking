@@ -1,12 +1,11 @@
-package specification.searchSpecification;
+package specification.searchSpecification.user;
 
-import entity.User;
 import specification.Specification;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class FindByLoginAndPassword implements Specification<User> {
+public class FindByLoginAndPassword implements Specification {
 
     private String login;
     private String password;

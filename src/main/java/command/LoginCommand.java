@@ -11,8 +11,8 @@ import java.util.Optional;
 
 public class LoginCommand implements Command {
 
-    private static final String MAIN_PAGE = "/WEB-INF/pages/main.jsp";
-    private static final String ADMIN_PAGE = "/WEB-INF/pages/admin/orders.jsp";
+    private static final String MAIN_PAGE = "/WEB-INF/pages/makeOrder.jsp";
+    private static final String ADMIN_PAGE = "/WEB-INF/pages/admin/roomPrices.jsp";
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) {
@@ -36,7 +36,7 @@ public class LoginCommand implements Command {
         session.setAttribute("name", name);
         session.setAttribute("role", role);
         return Role.ADMIN.equals(role) ?
-                new CommandResult(ADMIN_PAGE, false) :
-                new CommandResult(MAIN_PAGE, false);
+                 CommandResult.redirect(ADMIN_PAGE) :
+                 CommandResult.redirect(MAIN_PAGE);
     }
 }

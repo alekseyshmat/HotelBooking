@@ -19,7 +19,8 @@ public class User implements Serializable {
     private BigDecimal balance;
     private Role role;
 
-    public User(String firstName, String lastName, Date birthday, String email, String login, String password, BigDecimal balance, Role role) {
+    public User(int id, String firstName, String lastName, Date birthday, String email, String login, String password, BigDecimal balance, Role role) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthday = birthday;

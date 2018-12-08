@@ -1,7 +1,7 @@
 package entity.types;
 
 public enum RoomType {
-    APARTAMENT,
+    APARTMENT,
     BUSINESS,
     DELUXE,
     DUPLEX,

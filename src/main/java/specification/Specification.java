@@ -2,7 +2,7 @@ package specification;
 
 import java.util.List;
 
-public interface Specification<T> {
+public interface Specification {
 
     String toSql();
 

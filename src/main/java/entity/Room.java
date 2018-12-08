@@ -15,6 +15,15 @@ public class Room {
     private BigDecimal cost;
     private boolean busy;
 
+    public Room(int id, String roomNumber, RoomType roomType, PlaceType placeType, BigDecimal cost, boolean busy) {
+        this.id = id;
+        this.roomNumber = roomNumber;
+        this.roomType = roomType;
+        this.placeType = placeType;
+        this.cost = cost;
+        this.busy = busy;
+    }
+
     public int getId() {
         return id;
     }

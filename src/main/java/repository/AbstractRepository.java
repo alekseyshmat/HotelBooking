@@ -1,8 +1,6 @@
 package repository;
 
 import builder.Builder;
-import builder.BuilderFactory;
-import specification.Specification;
 import util.PrepareStatement;
 
 import java.sql.Connection;
@@ -13,9 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public abstract class AbstractRepository<T> implements Repository {
-
-    private static final String GET_ALL_QUERY = "SELECT * FROM ";
+public abstract class AbstractRepository<T> implements Repository<T> {
 
     private Connection connection;
 
@@ -37,7 +33,6 @@ public abstract class AbstractRepository<T> implements Repository {
             }
 
         } catch (SQLException e) {
-//            throw new RepositoryException(e);
             throw new IllegalArgumentException();
         }
         return objects;
@@ -52,6 +47,15 @@ public abstract class AbstractRepository<T> implements Repository {
                 Optional.empty();
     }
 
+    public void executeUpdate(String sql, List<Object> params){
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            PrepareStatement.prepare(preparedStatement, params);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new IllegalArgumentException();
+        }
+    }
     protected abstract String getTableName();
 
 

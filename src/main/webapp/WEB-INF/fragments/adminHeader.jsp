@@ -22,7 +22,7 @@
 <body>
 
 <div class="buttons">
-    <a href="controller?command=showOrders">${orders}</a>
+    <a href="controller?command=showAllOrders">${orders}</a>
 </div>
 <div class="buttons">
     <a href="controller?command=showRooms">${rooms}</a>

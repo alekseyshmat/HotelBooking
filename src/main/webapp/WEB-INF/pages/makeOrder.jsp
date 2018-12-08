@@ -10,6 +10,7 @@
 <fmt:message bundle="${naming}" key="table.label.checkOutDate" var="checkOutDate"/>
 <fmt:message bundle="${naming}" key="user.label.login.typeRoom" var="typeRoom"/>
 <fmt:message bundle="${naming}" key="table.label.placeNumber" var="placeNumber"/>
+<fmt:message bundle="${naming}" key="table.label.paymentType" var="paymentType"/>
 
 <html>
 
@@ -23,22 +24,22 @@
     <jsp:include page="../fragments/mainHeader.jsp"/>
 </header>
     <div class="makeOrder">
-        <form action="controller?command=login" method="post">  <%--TODO: add action--%>
+        <form action="${pageContext.servletContext.contextPath}/controller?command=makeOrder" method="post">
             <div class="row">
                 <div class="label">
-                    <label>${checkInDate}</label>
+                    <label for="checkInDate">${checkInDate}</label>
                 </div>
                 <div class="inputParameter">
-                    <input type="date" name="checkInDate">
+                    <input id="checkInDate" type="date" name="checkInDate">
                 </div>
             </div>
 
             <div class="row">
                 <div class="label">
-                    <label>${checkOutDate}</label>
+                    <label for="checkOutDate">${checkOutDate}</label>
                 </div>
                 <div class="inputParameter">
-                    <input type="date" name="checkOutDate">
+                    <input id="checkOutDate" type="date" name="checkOutDate">
                 </div>
             </div>
 
@@ -76,7 +77,18 @@
                 </div>
             </div>
 
-
+            <div class="row">
+                <div class="label">
+                    <label for="paymentType">${paymentType}</label>
+                </div>
+                <div class="inputParameter">
+                    <select id="paymentType" name="paymentType">
+                        <option disabled>${paymentType}</option>
+                        <option value="creditCard">Credit card</option>
+                        <option value="cash">cash</option>
+                    </select>
+                </div>
+            </div>
             <div class="submitButton">
                 <input class="submitBtn" type="submit" value="${makeOrder}">
             </div>

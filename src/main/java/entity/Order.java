@@ -1,9 +1,6 @@
 package entity;
 
-import entity.types.PaymentStatus;
-import entity.types.PaymentType;
-import entity.types.PlaceType;
-import entity.types.OrderStatus;
+import entity.types.*;
 
 import java.util.Date;
 import java.util.Objects;
@@ -14,11 +11,38 @@ public class Order {
     private int idClient;
     private Date checkInDate;
     private Date checkOutDate;
-    private PlaceType placeType;
+    private RoomType type;
+    private PlaceType placeNumber;
     private PaymentType paymentType;
     private Date invoiceDate;
     private PaymentStatus paymentStatus;
     private OrderStatus orderStatus;
+
+    public Order(int id, int idClient, Date checkInDate, Date checkOutDate, PlaceType placeNumber,
+                 PaymentType paymentType, Date invoiceDate, PaymentStatus paymentStatus, OrderStatus orderStatus) {
+        this.id = id;
+        this.idClient = idClient;
+        this.checkInDate = checkInDate;
+        this.checkOutDate = checkOutDate;
+        this.placeNumber = placeNumber;
+        this.paymentType = paymentType;
+        this.invoiceDate = invoiceDate;
+        this.paymentStatus = paymentStatus;
+        this.orderStatus = orderStatus;
+    }
+
+    public Order(int id, int idClient, Date checkInDate, Date checkOutDate, RoomType type, PlaceType placeNumber,
+                 PaymentType paymentType, PaymentStatus paymentStatus, OrderStatus orderStatus) {
+        this.id = id;
+        this.idClient = idClient;
+        this.checkInDate = checkInDate;
+        this.checkOutDate = checkOutDate;
+        this.type = type;
+        this.placeNumber = placeNumber;
+        this.paymentType = paymentType;
+        this.paymentStatus = paymentStatus;
+        this.orderStatus = orderStatus;
+    }
 
     public int getId() {
         return id;
@@ -52,12 +76,12 @@ public class Order {
         this.checkOutDate = checkOutDate;
     }
 
-    public PlaceType getPlaceType() {
-        return placeType;
+    public PlaceType getPlaceNumber() {
+        return placeNumber;
     }
 
-    public void setPlaceType(PlaceType placeType) {
-        this.placeType = placeType;
+    public void setPlaceNumber(PlaceType placeNumber) {
+        this.placeNumber = placeNumber;
     }
 
     public PaymentType getPaymentType() {
@@ -92,6 +116,22 @@ public class Order {
         this.orderStatus = orderStatus;
     }
 
+    public RoomType getType() {
+        return type;
+    }
+
+    public void setType(RoomType type) {
+        this.type = type;
+    }
+
+    public Date getInvoiceDate() {
+        return invoiceDate;
+    }
+
+    public void setInvoiceDate(Date invoiceDate) {
+        this.invoiceDate = invoiceDate;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (obj == this) {
@@ -107,7 +147,7 @@ public class Order {
                 idClient == order.idClient &&
                 Objects.equals(checkInDate, order.checkInDate) &&
                 Objects.equals(checkOutDate, order.checkOutDate) &&
-                Objects.equals(placeType, order.placeType) &&
+                Objects.equals(placeNumber, order.placeNumber) &&
                 Objects.equals(paymentType, order.paymentType) &&
                 Objects.equals(invoiceDate, order.invoiceDate) &&
                 Objects.equals(paymentStatus, order.paymentStatus) &&
@@ -116,7 +156,7 @@ public class Order {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, idClient, checkInDate, checkOutDate, placeType,
+        return Objects.hash(id, idClient, checkInDate, checkOutDate, placeNumber,
                 paymentType, invoiceDate, paymentStatus, orderStatus);
     }
 
@@ -127,7 +167,7 @@ public class Order {
                 ", id client=" + idClient +
                 ", check in date=" + checkInDate +
                 ", check out date=" + checkOutDate +
-                ", place type=" + placeType +
+                ", place type=" + placeNumber +
                 ", payment type=" + paymentType +
                 ", invoice date=" + invoiceDate +
                 ", payment status=" + paymentStatus +

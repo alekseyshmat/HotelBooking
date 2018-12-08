@@ -10,6 +10,7 @@ import java.util.Date;
 
 public class UserBuilder implements Builder<User> {
 
+    private static final String ID = "id";
     private static final String FIRST_NAME = "first_name";
     private static final String LAST_NAME = "last_name";
     private static final String BIRTHDAY = "birthday";
@@ -22,6 +23,7 @@ public class UserBuilder implements Builder<User> {
 
     @Override
     public User build(ResultSet resultSet) throws SQLException {
+        int id = resultSet.getInt(ID);
         String firstName = resultSet.getString(FIRST_NAME);
         String lastName = resultSet.getString(LAST_NAME);
         Date birthday = resultSet.getDate(BIRTHDAY);
@@ -31,6 +33,6 @@ public class UserBuilder implements Builder<User> {
         BigDecimal balance = resultSet.getBigDecimal(BALANCE);
         Role role = Role.valueOf(resultSet.getString(ROLE).toUpperCase());
 
-        return new User(firstName, lastName, birthday, email, login, password, balance, role);
+        return new User(id, firstName, lastName, birthday, email, login, password, balance, role);
     }
 }

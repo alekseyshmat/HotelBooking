@@ -19,6 +19,6 @@ public class ChangeLanguageCommand implements Command {
         String path = request.getRequestURI();
         System.out.println(path);
         System.out.println(page);
-        return new CommandResult("/controller?command=showOrders" , true);
+        return new CommandResult("/controller?command=login" , true);
     }
 }

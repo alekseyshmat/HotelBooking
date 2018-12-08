@@ -2,9 +2,12 @@ package command.admin;
 
 import command.Command;
 import command.CommandResult;
+import entity.Room;
+import service.RoomService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 public class RoomCommand implements Command {
 
@@ -12,6 +15,10 @@ public class RoomCommand implements Command {
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) {
+        RoomService roomService = new RoomService();
+        List<Room> roomList = roomService.findAllRooms();
+        request.setAttribute("roomList", roomList);
+
         return CommandResult.forward(ROOMS_PAGE);
     }
 }

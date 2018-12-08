@@ -9,4 +9,6 @@ public interface Repository<T> {
 
 
     Optional<T> query(Specification specification);
+
+    List<T> queryAll(Specification specification);
 }

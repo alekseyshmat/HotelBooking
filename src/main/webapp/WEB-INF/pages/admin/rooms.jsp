@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <fmt:setLocale value="${sessionScope.language}"/>
 <fmt:setBundle basename="naming" var="naming"/>
@@ -35,41 +36,42 @@
                     <th>${cost}</th>
                     <th>${isBusy}</th>
                 </tr>
-                <%--<c:forEach items="${userList}" var="user">--%>
+                <jsp:useBean id="roomList" scope="request" type="java.util.List"/>
+                <c:forEach items="${roomList}" var="room">
                 <tr>
                     <td>
                         <div class="data">
-                            {room.id}
+                            ${room.id}
                         </div>
                     </td>
                     <td>
                         <div class="data">
-                            {room.roomNumber}
+                            ${room.roomNumber}
                         </div>
                     </td>
                     <td>
                         <div class="data">
-                            {room.type}
+                            ${room.roomType}
                         </div>
                     </td>
                     <td>
                         <div class="data">
-                            {room.placeNumber}
+                            ${room.placeType}
                         </div>
                     </td>
                     <td>
                         <div class="data">
-                            {room.cost}
+                            ${room.cost}
                         </div>
                     </td>
                     <td>
                         <div class="data">
-                            {room.isBusy}
+                            ${room.busy}
                         </div>
                     </td>
 
                 </tr>
-                <%--</c:forEach>--%>
+                </c:forEach>
             </table>
         </div>
     </div>

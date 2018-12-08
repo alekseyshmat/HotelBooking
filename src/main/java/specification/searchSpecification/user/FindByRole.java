@@ -1,4 +1,4 @@
-package specification.searchSpecification;
+package specification.searchSpecification.user;
 
 import entity.types.Role;
 import specification.Specification;
