@@ -11,6 +11,7 @@ import specification.searchSpecification.order.FindByIdAndStatus;
 import specification.searchSpecification.order.FindByStatus;
 import specification.searchSpecification.order.MakeOrder;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -22,7 +23,7 @@ public class OrderService {
         return orderRepository.queryAll(new FindByStatus(orderStatus));
     }
 
-    public void makeOrder(int idClient, Date checkInDate, Date checkOutDate,
+    public void makeOrder(int idClient, LocalDate checkInDate, LocalDate checkOutDate,
                           RoomType roomType, PlaceType placeType, PaymentType paymentType) {
         RepositoryCreator repositoryCreator = new RepositoryCreator();
         OrderRepository orderRepository = repositoryCreator.getOrderRepository();
