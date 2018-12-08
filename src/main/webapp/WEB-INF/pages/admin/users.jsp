@@ -34,42 +34,38 @@
         <div class="card">
             <table>
                 <tr>
-                    <th>${id}</th>
                     <th>${lastName}</th>
                     <th>${firstName}</th>
                     <th>${birthday}</th>
                     <th>${email}</th>
                 </tr>
-                <%--<c:forEach items="${userList}" var="user">--%>
+                <jsp:useBean id="userList" scope="request" type="java.util.List"/>
+
+                <c:forEach items="${userList}" var="user">
                     <tr>
                         <td>
                             <div class="data">
-                                    {user.id}
+                                    ${user.lastName}
                             </div>
                         </td>
                         <td>
                             <div class="data">
-                                    {user.firstName}
+                                    ${user.firstName}
                             </div>
                         </td>
                         <td>
                             <div class="data">
-                                    {user.lastName}
+                                    ${user.birthday}
                             </div>
                         </td>
                         <td>
                             <div class="data">
-                                    {user.userName}
-                            </div>
-                        </td>
-                        <td>
-                            <div class="data">
-                                    {user.email}
+                                    ${user.email}
                             </div>
                         </td>
 
                     </tr>
-                <%--</c:forEach>--%>
+                </c:forEach>
             </table>
         </div>
     </div>

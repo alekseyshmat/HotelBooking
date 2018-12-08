@@ -3,6 +3,7 @@ package specification.searchSpecification;
 import entity.User;
 import specification.Specification;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class FindByLoginAndPassword implements Specification<User> {
@@ -17,13 +18,11 @@ public class FindByLoginAndPassword implements Specification<User> {
 
     @Override
     public String toSql() {
-        return "username = ? AND password = ?";
+        return "where username = ? AND password = ?";
     }
 
     @Override
     public List<Object> getParametres() {
-        return null;
+        return Arrays.asList(login, password);
     }
-
-
 }

@@ -1,11 +1,15 @@
 package service;
 
 import entity.User;
+import entity.types.Role;
 import repository.AbstractRepository;
 import repository.RepositoryCreator;
 import repository.UserRepository;
+import specification.searchSpecification.FindById;
 import specification.searchSpecification.FindByLoginAndPassword;
+import specification.searchSpecification.FindByRole;
 
+import java.util.List;
 import java.util.Optional;
 
 public class UserService {
@@ -13,19 +17,18 @@ public class UserService {
     public Optional<User> login(String login, String password) {
         RepositoryCreator repositoryCreator = new RepositoryCreator();
         UserRepository userRepository = repositoryCreator.getUserRepository();
-
-        return userRepository.findUserByLoginAndPassword(new FindByLoginAndPassword(login, password));
+        return userRepository.query(new FindByLoginAndPassword(login, password));
     }
 
     public Optional<User> findById(int id) {
-
-        try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
-            UserRepository userDao = repositoryCreator.getUserRepository();
-            return userDao.findById(id);
-        } catch (Exception e) {
-            throw new IllegalArgumentException();
-        }
+        RepositoryCreator repositoryCreator = new RepositoryCreator();
+        UserRepository userRepository = repositoryCreator.getUserRepository();
+        return userRepository.query(new FindById(id));
     }
 
-
+    public List<User> findByRole(Role role) {
+        RepositoryCreator repositoryCreator = new RepositoryCreator();
+        UserRepository userRepository = repositoryCreator.getUserRepository();
+        return userRepository.queryAll(new FindByRole(role));
+    }
 }

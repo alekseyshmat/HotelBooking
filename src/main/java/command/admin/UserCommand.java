@@ -2,9 +2,15 @@ package command.admin;
 
 import command.Command;
 import command.CommandResult;
+import entity.User;
+import entity.types.Role;
+import service.UserService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.util.List;
+import java.util.Optional;
 
 public class UserCommand implements Command {
 
@@ -12,6 +18,10 @@ public class UserCommand implements Command {
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) {
+        UserService userService = new UserService();
+        List<User> userList = userService.findByRole(Role.USER);
+        request.setAttribute("userList",userList );
+
         return CommandResult.forward(USERS_PAGE);
     }
 }

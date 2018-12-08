@@ -2,6 +2,7 @@ package repository;
 
 import builder.Builder;
 import builder.BuilderFactory;
+import specification.Specification;
 import util.PrepareStatement;
 
 import java.sql.Connection;
@@ -12,10 +13,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public abstract class AbstractRepository<T> implements Repository{
+public abstract class AbstractRepository<T> implements Repository {
 
     private static final String GET_ALL_QUERY = "SELECT * FROM ";
-    private String WHERE_ID_CONDITION = " WHERE id = ?";
 
     private Connection connection;
 
@@ -23,9 +23,9 @@ public abstract class AbstractRepository<T> implements Repository{
         this.connection = connection;
     }
 
-    public List<T> executeQuery(String sql, Builder<T> builder,  String... params)  {
+    public List<T> executeQuery(String sql, Builder<T> builder, List<Object> params) {
         List<T> objects = new ArrayList<>();
-        try  {
+        try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
             PrepareStatement.prepare(preparedStatement, params);
@@ -44,8 +44,7 @@ public abstract class AbstractRepository<T> implements Repository{
     }
 
 
-    public Optional<T> executeQueryForSingleResult(String query, Builder<T> builder, String... params)  {
-
+    public Optional<T> executeQueryForSingleResult(String query, Builder<T> builder, List<Object> params) {
         List<T> items = executeQuery(query, builder, params);
 
         return items.size() == 1 ?
@@ -55,10 +54,5 @@ public abstract class AbstractRepository<T> implements Repository{
 
     protected abstract String getTableName();
 
-    public Optional<T> findById(int id) {
-        Builder builder = BuilderFactory.create(getTableName());
-        String query = GET_ALL_QUERY + getTableName() + WHERE_ID_CONDITION;
-        String stringId = String.valueOf(id);
-        return executeQueryForSingleResult(query, builder, stringId);
-    }
+
 }

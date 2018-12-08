@@ -22,7 +22,6 @@ public class ProfileCommand implements Command {
         Optional<User> user = userService.findById(id);
         user.ifPresent(aUser -> request.setAttribute("user", aUser));
 
-
         return new CommandResult(PROFILE, false);
     }
 }
