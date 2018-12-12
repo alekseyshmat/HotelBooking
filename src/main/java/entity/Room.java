@@ -24,6 +24,10 @@ public class Room {
         this.busy = busy;
     }
 
+    public Room(String roomNumber, RoomType roomType) {
+
+    }
+
     public int getId() {
         return id;
     }

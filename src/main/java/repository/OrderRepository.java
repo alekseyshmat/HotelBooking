@@ -7,6 +7,7 @@ import specification.Specification;
 
 import java.sql.Connection;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 public class OrderRepository extends AbstractRepository<Order> {
@@ -20,9 +21,15 @@ public class OrderRepository extends AbstractRepository<Order> {
     }
 
     @Override
-    protected String getTableName() {
-        return TABLE_NAME;
+    protected Map<String, Object> getFields(Order item) {
+        return null;
     }
+
+    @Override
+    protected String getTableName() {
+        return null;
+    }
+
 
     @Override
     public Optional<Order> query(Specification specification) {
@@ -41,9 +48,14 @@ public class OrderRepository extends AbstractRepository<Order> {
     }
 
     @Override
+    public void save(Order item) {
+
+    }
+
+    //    @Override
     public void queryAdd(Specification specification) {
         String query = INSERT_QUERY + specification.toSql();
         List<Object> params = specification.getParametres();
-        executeUpdate(query, params);
+//        executeUpdate(query, params);
     }
 }

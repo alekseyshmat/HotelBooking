@@ -23,15 +23,15 @@
 </head>
 
 <body>
-<jsp:include page="../fragments/mainHeader.jsp"/>
+<jsp:include page="../fragments/header/mainHeader.jsp"/>
 <div class="container">
     <div class="leftColumn">
         <c:choose>
             <c:when test="${sessionScope.role == 'ADMIN'}">
-                <jsp:include page="../fragments/adminHeader.jsp"/>
+                <jsp:include page="../fragments/header/adminHeader.jsp"/>
             </c:when>
             <c:when test="${sessionScope.role == 'USER'}">
-                <jsp:include page="../fragments/userHeader.jsp"/>
+                <jsp:include page="../fragments/header/userHeader.jsp"/>
             </c:when>
         </c:choose>
     </div>

@@ -12,7 +12,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/modalStyle.css">
-    <script src="${pageContext.request.contextPath}/js/modal.js"></script>
+    <script src="${pageContext.request.contextPath}/js/processOrder.js"></script>
 </head>
 <body>
 <div id="processOrder" class="modal">
@@ -37,10 +37,14 @@
                     <option>${type}</option>
                 </select>
                 <button class="prcButton" type="submit">Process</button>
-                <button class="cancelButton" type="submit">Cancel</button>
             </div>
         </div>
     </form>
+    <div>
+        <button class="cancelButton" type="submit"
+                onclick="document.getElementById('processOrder').style.display='none'">Cancel
+        </button>
+    </div>
 </div>
 </body>
 </html>

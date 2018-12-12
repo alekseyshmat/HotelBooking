@@ -62,4 +62,14 @@ public class ConnectionPool {
             lock.unlock();
         }
     }
+
+    public void returnConnection(Connection connection){
+        try {
+            lock.lock();
+            connections.push(connection);
+            semaphore.release();
+        } finally {
+            lock.unlock();
+        }
+    }
 }

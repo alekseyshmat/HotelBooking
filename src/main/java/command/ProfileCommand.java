@@ -1,6 +1,7 @@
 package command;
 
 import entity.User;
+import exception.ServiceException;
 import service.UserService;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,7 +15,7 @@ public class ProfileCommand implements Command {
     private static final String PROFILE = "/WEB-INF/pages/profile.jsp";
 
     @Override
-    public CommandResult execute(HttpServletRequest request, HttpServletResponse response) {
+    public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
         HttpSession session = request.getSession();
         int id = (int) session.getAttribute("id");
 

@@ -6,8 +6,7 @@
 <fmt:setBundle basename="naming" var="naming"/>
 
 <fmt:message bundle="${naming}" key="table.label.id" var="id"/>
-<fmt:message bundle="${naming}" key="table.label.firstName" var="firstName"/>
-<fmt:message bundle="${naming}" key="table.label.lastName" var="lastName"/>
+<fmt:message bundle="${naming}" key="table.label.name" var="name"/>
 <fmt:message bundle="${naming}" key="table.label.checkInDate" var="checkInDate"/>
 <fmt:message bundle="${naming}" key="table.label.checkOutDate" var="checkOutDate"/>
 <fmt:message bundle="${naming}" key="table.label.placeNumber" var="placeNumber"/>
@@ -21,17 +20,17 @@
     <title>All orders</title>
 </head>
 <body>
-<jsp:include page="../../fragments/mainHeader.jsp"/>
+<jsp:include page="../../fragments/header/mainHeader.jsp"/>
 <div class="container">
     <div class="leftColumn">
-        <jsp:include page="../../fragments/adminHeader.jsp"/>
+        <jsp:include page="../../fragments/header/adminHeader.jsp"/>
     </div>
     <div class="rightColumn">
         <div class="card">
             <table>
                 <tr>
                     <th>${id}</th>
-                    <th>${lastName} ${firstName}</th>
+                    <th>${name}</th>
                     <th>${checkInDate}</th>
                     <th>${checkOutDate}</th>
                     <th>${placeNumber}</th>
@@ -43,12 +42,12 @@
                     <tr>
                         <td>
                             <div class="data">
-                                add <%--${user.id}--%>
+                               <%--#${order.id}--%>
                             </div>
                         </td>
                         <td>
                             <div class="data">
-                                add<%--${user.firstName} ${user.lastName}--%>
+                             <%--${order.lastName} ${order.firstName}--%>
                             </div>
                         </td>
                         <td>
@@ -83,6 +82,6 @@
         </div>
     </div>
 </div>
-<jsp:include page="../../fragments/modalProcessOrder.jsp"/>
+<jsp:include page="../../fragments/processOrder.jsp"/>
 </body>
 </html>

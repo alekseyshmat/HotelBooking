@@ -3,6 +3,7 @@ package controller;
 import command.Command;
 import command.CommandFactory;
 import command.CommandResult;
+import exception.ServiceException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -28,7 +29,12 @@ public class Controller extends HttpServlet {
         CommandFactory factory = new CommandFactory();
         String parametr = req.getParameter("command");
         Command command = factory.create(parametr);
-        CommandResult commandResult = command.execute(req, resp);
+        CommandResult commandResult = null;
+        try {
+            commandResult = command.execute(req, resp);
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
 
         String page = commandResult.getPage();
        /* if (commandResult.isRedirect()) {

@@ -16,7 +16,7 @@ public class RoomCommand implements Command {
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) {
         RoomService roomService = new RoomService();
-        List<Room> roomList = roomService.findAllRooms();
+        List<Room> roomList = roomService.findAll();
         request.setAttribute("roomList", roomList);
 
         return CommandResult.forward(ROOMS_PAGE);

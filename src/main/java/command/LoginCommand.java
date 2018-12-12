@@ -1,7 +1,9 @@
 package command;
 
+import command.admin.AdminOrderCommand;
 import entity.User;
 import entity.types.Role;
+import exception.ServiceException;
 import service.UserService;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,7 +17,7 @@ public class LoginCommand implements Command {
     private static final String ADMIN_PAGE = "/WEB-INF/pages/admin/roomPrices.jsp";
 
     @Override
-    public CommandResult execute(HttpServletRequest request, HttpServletResponse response) {
+    public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
         UserService service = new UserService();
         String login = request.getParameter("username");
         String password = request.getParameter("password");
@@ -36,7 +38,7 @@ public class LoginCommand implements Command {
         session.setAttribute("name", name);
         session.setAttribute("role", role);
         return Role.ADMIN.equals(role) ?
-                 CommandResult.redirect(ADMIN_PAGE) :
-                 CommandResult.redirect(MAIN_PAGE);
+                new AdminOrderCommand().execute(request, response) :
+                CommandResult.redirect(MAIN_PAGE);
     }
 }

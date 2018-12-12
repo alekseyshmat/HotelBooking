@@ -21,10 +21,10 @@
     <title>${rooms}</title>
 </head>
 <body>
-<jsp:include page="../../fragments/mainHeader.jsp"/>
+<jsp:include page="../../fragments/header/mainHeader.jsp"/>
 <div class="container">
     <div class="leftColumn">
-        <jsp:include page="../../fragments/adminHeader.jsp"/>
+        <jsp:include page="../../fragments/header/adminHeader.jsp"/>
     </div>
     <div class="rightColumn">
         <div class="card">
@@ -45,7 +45,7 @@
                                     ${room.id}
                             </div>
                         </td>
-                        <td width="70">
+                        <td width="70" id="roomNumber">
                             <div class="data">
                                     ${room.roomNumber}
                             </div>
@@ -61,7 +61,8 @@
                             </div>
                         </td>
                         <td width="50">
-                            <button class="editButton">Edit
+                            <button class="editButton"
+                                    onclick="document.getElementById('editRoom').style.display='block'">Edit
                             </button>
                         </td>
                         <td width="50">
@@ -80,6 +81,7 @@
         </button>
     </div>
 </div>
-<jsp:include page="../../fragments/room/modalAddedRoom.jsp"/>
+<jsp:include page="../../fragments/room/addRoom.jsp"/>
+<jsp:include page="../../fragments/room/editRoom.jsp"/>
 </body>
 </html>

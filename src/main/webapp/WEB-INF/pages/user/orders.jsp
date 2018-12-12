@@ -22,10 +22,10 @@
     <title>My orders</title>
 </head>
 <body>
-<jsp:include page="../../fragments/mainHeader.jsp"/>
+<jsp:include page="../../fragments/header/mainHeader.jsp"/>
 <div class="container">
     <div class="leftColumn">
-        <jsp:include page="../../fragments/userHeader.jsp"/>
+        <jsp:include page="../../fragments/header/userHeader.jsp"/>
     </div>
     <div class="rightColumn">
         <div class="card">

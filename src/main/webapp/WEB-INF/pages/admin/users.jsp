@@ -24,11 +24,11 @@
     <title>${users}</title>
 </head>
 <body>
-<jsp:include page="../../fragments/mainHeader.jsp"/>
+<jsp:include page="../../fragments/header/mainHeader.jsp"/>
 
 <div class="container">
     <div class="leftColumn">
-        <jsp:include page="../../fragments/adminHeader.jsp"/>
+        <jsp:include page="../../fragments/header/adminHeader.jsp"/>
     </div>
     <div class="rightColumn">
         <div class="card">

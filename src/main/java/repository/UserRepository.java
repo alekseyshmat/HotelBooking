@@ -3,10 +3,12 @@ package repository;
 import builder.Builder;
 import builder.UserBuilder;
 import entity.User;
+import exception.RepositoryException;
 import specification.Specification;
 
 import java.sql.Connection;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 public class UserRepository extends AbstractRepository<User> {
@@ -19,12 +21,17 @@ public class UserRepository extends AbstractRepository<User> {
     }
 
     @Override
-    protected String getTableName() {
-        return TABLE_NAME;
+    protected Map<String, Object> getFields(User item) {
+        return null;
     }
 
     @Override
-    public Optional<User> query(Specification specification) {
+    protected String getTableName() {
+        return null;
+    }
+
+    @Override
+    public Optional<User> query(Specification specification) throws RepositoryException {
         String query = SELECT_QUERY + specification.toSql();
         Builder<User> builder = new UserBuilder();
         List<Object> params = specification.getParametres();
@@ -40,6 +47,11 @@ public class UserRepository extends AbstractRepository<User> {
     }
 
     @Override
+    public void save(User item) {
+
+    }
+
+    //    @Override
     public void queryAdd(Specification specification) {
 
     }

@@ -2,6 +2,8 @@ package service;
 
 import entity.User;
 import entity.types.Role;
+import exception.RepositoryException;
+import exception.ServiceException;
 import repository.RepositoryCreator;
 import repository.UserRepository;
 import specification.searchSpecification.FindById;
@@ -13,17 +15,24 @@ import java.util.Optional;
 
 public class UserService {
 
-    public Optional<User> login(String login, String password) {
-        RepositoryCreator repositoryCreator = new RepositoryCreator();
-        UserRepository userRepository = repositoryCreator.getUserRepository();
-        return userRepository.query(new FindByLoginAndPassword(login, password));
+    public Optional<User> login(String login, String password) throws ServiceException {
+        try (RepositoryCreator repositoryCreator = new RepositoryCreator();) {
+            UserRepository userRepository = repositoryCreator.getUserRepository();
+            return userRepository.query(new FindByLoginAndPassword(login, password));
+        } catch (RepositoryException ex) {
+            throw new ServiceException(ex.getMessage(), ex);
+        }
     }
 
-    public Optional<User> findById(int id) {
-        RepositoryCreator repositoryCreator = new RepositoryCreator();
-        UserRepository userRepository = repositoryCreator.getUserRepository();
-        return userRepository.query(new FindById(id));
+    public Optional<User> findById(int id) throws ServiceException {
+        try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
+            UserRepository userRepository = repositoryCreator.getUserRepository();
+            return userRepository.query(new FindById(id));
+        } catch (RepositoryException ex) {
+            throw new ServiceException(ex.getMessage(), ex);
+        }
     }
+
 
     public List<User> findByRole(Role role) {
         RepositoryCreator repositoryCreator = new RepositoryCreator();

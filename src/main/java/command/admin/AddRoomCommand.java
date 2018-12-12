@@ -26,7 +26,7 @@ public class AddRoomCommand implements Command {
         RoomService roomService = new RoomService();
         roomService.addRoom(roomNumber, roomType);
 
-        List<Room> roomList = roomService.findAllRooms();
+        List<Room> roomList = roomService.findAll();
         request.setAttribute("roomList", roomList);
 
         return CommandResult.redirect(MAIN_PAGE);

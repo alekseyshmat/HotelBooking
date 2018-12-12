@@ -12,7 +12,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/modalStyle.css">
-    <script src="${pageContext.request.contextPath}/js/modal.js"></script>
+    <script src="${pageContext.request.contextPath}/js/addRoom.js"></script>
 </head>
 <body>
 <div id="addRoom" class="modal">
@@ -32,7 +32,7 @@
                 <option value="President">President</option>
             </select>
             <div>
-                <input class="prcButton" type="submit" >${add}/>
+                <input class="prcButton" type="submit" value="${add}"/>
                 <button class="cancelButton" onclick="document.getElementById('addRoom').style.display='none'">Cancel</button> <%--TODO: add --%>
             </div>
         </div>

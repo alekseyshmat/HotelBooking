@@ -26,8 +26,11 @@ public class RepositoryCreator implements AutoCloseable {
         return new OrderRepository(connection);
     }
     @Override
-    public void close() throws Exception {
-        //слздает конекшн пул
-        //получаем соед
+    public void close(){
+        connectionPool.returnConnection(connection);
+    }
+
+    public RoomPriceRepository getRoomPriceRepository() {
+        return new RoomPriceRepository(connection);
     }
 }

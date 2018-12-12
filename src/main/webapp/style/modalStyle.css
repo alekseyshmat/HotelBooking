@@ -38,15 +38,21 @@ select{
     border-radius: 4px;
 }
 
+.prcButton, .edtButton {
+     color: white;
+     padding: 14px 20px;
+     margin: 3px 25%;
+     border: none;
+     cursor: pointer;
+     border-radius: 4px;
+     width: 50%;
+}
 .prcButton {
     background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 3px 25%;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
-    width: 50%;
+}
+
+.edtButton {
+    background-color: #FFFF00;
 }
 
 

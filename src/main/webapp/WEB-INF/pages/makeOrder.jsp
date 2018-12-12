@@ -21,7 +21,7 @@
 
 <body>
 <header>
-    <jsp:include page="../fragments/mainHeader.jsp"/>
+    <jsp:include page="../fragments/header/mainHeader.jsp"/>
 </header>
     <div class="makeOrder">
         <form action="${pageContext.servletContext.contextPath}/controller?command=makeOrder" method="post">

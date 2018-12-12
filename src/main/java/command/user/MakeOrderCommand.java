@@ -1,9 +1,7 @@
 package command.user;
 
-import com.mysql.cj.Session;
 import command.Command;
 import command.CommandResult;
-import entity.Room;
 import entity.types.PaymentType;
 import entity.types.PlaceType;
 import entity.types.RoomType;
@@ -12,12 +10,8 @@ import service.OrderService;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 
 public class MakeOrderCommand implements Command {
 
