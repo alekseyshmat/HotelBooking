@@ -72,11 +72,9 @@
                             </div>
                         </td>
                         <td>
-                            <div>
-                                <button class="processButton"
-                                        onclick="document.getElementById('id01').style.display='block'">Process
-                                </button>
-                            </div>
+                            <button class="processButton"
+                                    onclick="document.getElementById('processOrder').style.display='block'">Process
+                            </button>
                         </td>
 
                     </tr>

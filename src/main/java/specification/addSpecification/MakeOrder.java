@@ -1,4 +1,4 @@
-package specification.searchSpecification.order;
+package specification.addSpecification;
 
 import entity.types.PaymentType;
 import entity.types.PlaceType;

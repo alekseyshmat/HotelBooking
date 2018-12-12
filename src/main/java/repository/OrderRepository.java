@@ -40,6 +40,7 @@ public class OrderRepository extends AbstractRepository<Order> {
         return executeQuery(query, builder, params);
     }
 
+    @Override
     public void queryAdd(Specification specification) {
         String query = INSERT_QUERY + specification.toSql();
         List<Object> params = specification.getParametres();

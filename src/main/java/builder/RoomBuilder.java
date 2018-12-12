@@ -22,10 +22,10 @@ public class RoomBuilder implements Builder<Room> {
         int id = resultSet.getInt(ID);
         String roomNumber = resultSet.getString(ROOM_NUMBER);
         RoomType roomType = RoomType.valueOf(resultSet.getString(TYPE).toUpperCase());
-        PlaceType placeType = PlaceType.valueOf(resultSet.getString(PLACE_NUMBER).toUpperCase());
-        BigDecimal cost = resultSet.getBigDecimal(COST);
+//        PlaceType placeType = PlaceType.valueOf(resultSet.getString(PLACE_NUMBER).toUpperCase());
+//        BigDecimal cost = resultSet.getBigDecimal(COST);
         boolean busy = resultSet.getBoolean(BUSY);
 
-        return new Room(id, roomNumber, roomType, placeType, cost, busy);
+        return new Room(id, roomNumber, roomType, busy);
     }
 }

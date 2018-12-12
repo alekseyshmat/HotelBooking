@@ -1,9 +1,6 @@
 package command;
 
-import command.admin.AdminOrderCommand;
-import command.admin.RoomCommand;
-import command.admin.RoomPricesCommand;
-import command.admin.UserCommand;
+import command.admin.*;
 import command.user.BalanceCommand;
 import command.user.MakeOrderCommand;
 import command.user.OrderCommand;
@@ -32,6 +29,8 @@ public class CommandFactory {
                 return new MakeOrderCommand();
             case "changeLanguage":
                 return new ChangeLanguageCommand();
+            case"addRoom":
+                return new AddRoomCommand();
             case "signOut":
                 return new SignOutCommand();
             default:

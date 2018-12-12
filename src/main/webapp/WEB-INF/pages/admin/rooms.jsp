@@ -33,50 +33,53 @@
                     <th>${id}</th>
                     <th>${roomNumber}</th>
                     <th>${type}</th>
-                    <th>${placeNumber}</th>
-                    <th>${cost}</th>
                     <th>${isBusy}</th>
+                    <th></th>
+                    <th></th>
                 </tr>
                 <jsp:useBean id="roomList" scope="request" type="java.util.List"/>
                 <c:forEach items="${roomList}" var="room">
-                <tr>
-                    <td>
-                        <div class="data">
-                            ${room.id}
-                        </div>
-                    </td>
-                    <td>
-                        <div class="data">
-                            ${room.roomNumber}
-                        </div>
-                    </td>
-                    <td>
-                        <div class="data">
-                            ${room.roomType}
-                        </div>
-                    </td>
-                    <td>
-                        <div class="data">
-                            ${room.placeType}
-                        </div>
-                    </td>
-                    <td>
-                        <div class="data">
-                            ${room.cost}
-                        </div>
-                    </td>
-                    <td>
-                        <div class="data">
-                            ${room.busy}
-                        </div>
-                    </td>
-
-                </tr>
+                    <tr>
+                        <td>
+                            <div class="data">
+                                    ${room.id}
+                            </div>
+                        </td>
+                        <td width="70">
+                            <div class="data">
+                                    ${room.roomNumber}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="data">
+                                    ${room.roomType}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="data">
+                                    ${room.busy}
+                            </div>
+                        </td>
+                        <td width="50">
+                            <button class="editButton">Edit
+                            </button>
+                        </td>
+                        <td width="50">
+                            <button class="deleteButton">Delete
+                            </button>
+                        </td>
+                    </tr>
                 </c:forEach>
             </table>
+
         </div>
     </div>
+    <div class="addPanel">
+        <button class="addButton"
+                onclick="document.getElementById('addRoom').style.display='block'">Add
+        </button>
+    </div>
 </div>
-
+<jsp:include page="../../fragments/room/modalAddedRoom.jsp"/>
 </body>
 </html>

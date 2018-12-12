@@ -39,5 +39,10 @@ public class UserRepository extends AbstractRepository<User> {
         return executeQuery(query, builder, params);
     }
 
+    @Override
+    public void queryAdd(Specification specification) {
+
+    }
+
 
 }

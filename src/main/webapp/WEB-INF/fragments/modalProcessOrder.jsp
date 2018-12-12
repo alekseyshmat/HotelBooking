@@ -1,11 +1,21 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<fmt:setLocale value="${sessionScope.language}"/>
+<fmt:setBundle basename="naming" var="naming"/>
+<fmt:message bundle="${naming}" key="table.label.rooms" var="rooms"/>
+<fmt:message bundle="${naming}" key="table.label.roomNumber" var="roomNumber"/>
+<fmt:message bundle="${naming}" key="table.label.type" var="type"/>
+<fmt:message bundle="${naming}" key="table.label.add" var="add"/>
+
 <html>
 <head>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/modalStyle.css">
     <script src="${pageContext.request.contextPath}/js/modal.js"></script>
 </head>
 <body>
-<div id="id01" class="modal">
+<div id="processOrder" class="modal">
     <form class="modal-content animate" action="#">
         <div class="modalContainer">
             <label for="name"><b>Username</b></label>
@@ -23,8 +33,8 @@
             <label for="chooseTypeRoom"><b>{chooseTypeRoom}</b></label>
             <div>
                 <select class="chooseTypeModal" id="chooseTypeRoom" name="typeRoom">
-                    <option disabled>${typeRoom}</option>
-                    <option>${typeRoom}</option>
+                    <option disabled>${type}</option>
+                    <option>${type}</option>
                 </select>
                 <button class="prcButton" type="submit">Process</button>
                 <button class="cancelButton" type="submit">Cancel</button>

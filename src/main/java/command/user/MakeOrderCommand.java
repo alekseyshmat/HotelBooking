@@ -31,7 +31,6 @@ public class MakeOrderCommand implements Command {
     private static final String PAYMENT_TYPE = "paymentType";
     private static final String DATE_PATTERN = "yyyy-MM-dd";
 
-
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession();
