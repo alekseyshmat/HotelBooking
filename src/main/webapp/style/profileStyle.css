@@ -1,3 +1,7 @@
+body{
+    background-image: url(../img/hotel.jpg);
+    background-size: cover;
+}
 * {
     box-sizing: border-box;
 }

@@ -17,6 +17,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/dataStyle.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/style/tableStyle.css">
     <title>All orders</title>
 </head>
 <body>
@@ -35,6 +36,7 @@
                     <th>${checkOutDate}</th>
                     <th>${placeNumber}</th>
                     <th>${orderStatus}</th>
+                    <th></th>
                 </tr>
                 <jsp:useBean id="orderList" scope="request" type="java.util.List"/>
                 <c:forEach items="${orderList}" var="order">
@@ -69,6 +71,13 @@
                                     ${order.orderStatus}
                             </div>
                         </td>
+                        <td>
+                            <div>
+                                <button class="processButton"
+                                        onclick="document.getElementById('id01').style.display='block'">Process
+                                </button>
+                            </div>
+                        </td>
 
                     </tr>
                 </c:forEach>
@@ -76,5 +85,6 @@
         </div>
     </div>
 </div>
+<jsp:include page="../../fragments/modalProcessOrder.jsp"/>
 </body>
 </html>

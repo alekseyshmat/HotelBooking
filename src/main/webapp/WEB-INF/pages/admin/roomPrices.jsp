@@ -14,6 +14,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/dataStyle.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/style/tableStyle.css">
     <title>Room prices</title>
 </head>
 <body>

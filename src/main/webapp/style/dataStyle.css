@@ -1,19 +1,22 @@
+body{
+    background-image: url(../img/hotel.jpg);
+    background-size: cover;
+}
+
 * {
     box-sizing: border-box;
 }
 
+
 .container {
     margin-top: 20px;
-    background-color: white;
     padding: 20px;
-    opacity: 0.9;
 }
 
 .leftColumn {
     float: left;
     width: 25%;
     padding: 20px;
-    /*background-color: #f2f2f2;*/
 }
 
 .rightColumn {
@@ -21,62 +24,12 @@
     margin-top: 5%;
     float: left;
     width: 70%;
-    background-color: #C0C0C0;
+    background-color:rgba(220, 220, 220, 0.5);
     padding: 20px;
 
-}
-
-table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-th, td {
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #f2f2f2
-}
-
-th {
-    background-color: #000080;
-    color: white;
 }
 
 .data {
     margin-top: 6px;
     float: left;
 }
-
-.balanceBar{
-    padding: 5% 10%;
-    margin: 0 0 0 0;
-}
-.balanceStatus{
-    float: left;
-    margin-left: -12%;
-    width: 25%;
-}
-
-.balanceButton{
-    overflow: hidden;
-    float: left;
-    width: 50%;
-}
-.addBalance{
-    overflow: hidden;
-    background-color: #000080;
-    opacity: 0.7;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 18px;
-    color: white;
-}
-
-.addBalance:hover{
-    opacity: 1;
-}
-

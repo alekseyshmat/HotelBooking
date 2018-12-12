@@ -18,6 +18,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/dataStyle.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/style/tableStyle.css">
     <title>My orders</title>
 </head>
 <body>

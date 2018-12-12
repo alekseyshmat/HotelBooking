@@ -1,0 +1,32 @@
+.balanceBar{
+    padding: 5% 10%;
+    margin: 0 0 0 0;
+}
+.balanceStatus{
+    float: left;
+    margin-left: -12%;
+    width: 25%;
+}
+
+.balanceButton{
+    overflow: hidden;
+    float: left;
+    width: 50%;
+}
+
+.addBalance{
+    overflow: hidden;
+    background-color: #000080;
+    opacity: 0.7;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    color: white;
+    padding: 8px 25px;
+    margin: 0 0 0 0;
+}
+
+.addBalance:hover{
+    opacity: 1;
+}
