@@ -21,12 +21,12 @@ public class UserRepository extends AbstractRepository<User> {
     }
 
     @Override
-    protected Map<String, Object> getFields(User item) {
+    public Map<String, Object> getFields(User item) {
         return null;
     }
 
     @Override
-    protected String getTableName() {
+    public String getTableName() {
         return null;
     }
 

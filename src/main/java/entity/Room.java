@@ -25,7 +25,8 @@ public class Room {
     }
 
     public Room(String roomNumber, RoomType roomType) {
-
+        this.roomNumber = roomNumber;
+        this.roomType = roomType;
     }
 
     public int getId() {

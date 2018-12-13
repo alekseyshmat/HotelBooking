@@ -1,7 +1,6 @@
 package repository;
 
 import builder.Builder;
-import builder.RoomBuilder;
 import builder.RoomPriceBuilder;
 import entity.RoomPrice;
 import specification.Specification;
@@ -22,12 +21,12 @@ public class RoomPriceRepository extends AbstractRepository<RoomPrice> {
     }
 
     @Override
-    protected Map<String, Object> getFields(RoomPrice item) {
+    public Map<String, Object> getFields(RoomPrice item) {
         return null;
     }
 
     @Override
-    protected String getTableName() {
+    public String getTableName() {
         return null;
     }
 

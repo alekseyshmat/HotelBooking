@@ -27,18 +27,18 @@ public class RoomRepository extends AbstractRepository<Room> {
     }
 
     @Override
-    protected Map<String, Object> getFields(Room item) {
+    public Map<String, Object> getFields(Room item) {
         Map<String, Object> values = new HashMap<>();
         values.put(ROOM_NUMBER, item.getRoomNumber());
         values.put(ROOM_TYPE, item.getRoomType());
-        values.put(PLACE_NUMBER, item.getPlaceType());
-        values.put(BUSY, item.isBusy());
+//        values.put(PLACE_NUMBER, item.getPlaceType());
+//        values.put(BUSY, item.isBusy());
 
         return values;
     }
 
     @Override
-    protected String getTableName() {
+    public String getTableName() {
         return TABLE_NAME;
     }
 
@@ -64,11 +64,7 @@ public class RoomRepository extends AbstractRepository<Room> {
 //        executeUpdate(query, params);
     }
 
-    //    @Override
-    public void save(Room item) {
-        String query = INSERT_QUERY + getTableName() + VALUES;
-        save(getFields(item), query);
-    }
+
 
 
 }

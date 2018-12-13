@@ -15,6 +15,8 @@ import java.util.Optional;
 public abstract class AbstractRepository<T> implements Repository<T> {
 
     private Connection connection;
+    private String INSERT_QUERY = "INSERT INTO ";
+    private String VALUES = " VALUES";
 
     public AbstractRepository(Connection connection) {
         this.connection = connection;
@@ -24,7 +26,7 @@ public abstract class AbstractRepository<T> implements Repository<T> {
         List<T> objects = new ArrayList<>();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            PrepareStatement.prepare(preparedStatement, params);
+            prepare(preparedStatement, params);
             ResultSet resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {
@@ -46,38 +48,44 @@ public abstract class AbstractRepository<T> implements Repository<T> {
                 Optional.empty();
     }
 
-    //    public void executeUpdate(String sql, List<Object> params){
-    public void save(Map<String, Object> values, String sql) {
+    public void save(T item) {
         try {
+            String sql = prepareSql(item);
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
-
-            prepare(preparedStatement, values);
-
-
+            prepare(preparedStatement, item);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             throw new IllegalArgumentException();
         }
     }
 
-    protected void prepare(PreparedStatement preparedStatement, List<Object> params) throws SQLException {
+    private void prepare(PreparedStatement preparedStatement, List<Object> params) throws SQLException {
         int length = params.size();
         for (int i = 0; i < length; i++) {
             preparedStatement.setString(i + 1, String.valueOf(params.get(i)));
         }
     }
 
-    private void prepare(PreparedStatement preparedStatement, Map<String, Object> params) throws SQLException {
-        int length = params.size();
-        for (int i = 0; i < length; i++) {
-            Object value = params.get("");
-            preparedStatement.setString(i + 1, String.valueOf(value));
+    private String prepareSql(T item) {
+        StringBuilder columns = new StringBuilder("(");
+        StringBuilder values = new StringBuilder("(");
+
+        for (Map.Entry<String, Object> entry : getFields(item).entrySet()) {
+            String column = entry.getKey();
+            columns.append(" `").append(column).append("`,");
+            values.append(" ?,");
         }
+        values.deleteCharAt(values.lastIndexOf(","));
+        columns.deleteCharAt(columns.lastIndexOf(","));
+        values.append(")");
+        columns.append(")");
+        return INSERT_QUERY + getTableName() + columns + VALUES + values;
     }
 
-    protected abstract Map<String, Object> getFields(T item);
-
-    protected abstract String getTableName();
-
-
+    private void prepare(PreparedStatement preparedStatement, T item) throws SQLException {
+        int i = 1;
+        for (Map.Entry<String, Object> entry : getFields(item).entrySet()) {
+            preparedStatement.setString(i++, String.valueOf(entry.getValue()));
+        }
+    }
 }

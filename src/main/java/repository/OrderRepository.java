@@ -21,12 +21,12 @@ public class OrderRepository extends AbstractRepository<Order> {
     }
 
     @Override
-    protected Map<String, Object> getFields(Order item) {
+    public Map<String, Object> getFields(Order item) {
         return null;
     }
 
     @Override
-    protected String getTableName() {
+    public String getTableName() {
         return null;
     }
 

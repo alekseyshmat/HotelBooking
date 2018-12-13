@@ -6,9 +6,7 @@ import repository.RepositoryCreator;
 import repository.RoomRepository;
 import specification.searchSpecification.room.FindAll;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class RoomService {
 
@@ -25,7 +23,6 @@ public class RoomService {
         RoomRepository roomRepository = repositoryCreator.getRoomRepository();
         Room room = new Room(roomNumber, roomType);
         roomRepository.save(room);
-//        roomRepository.queryAdd(new AddRoom(roomNumber, roomType));
     }//todo add try
 
 }
