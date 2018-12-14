@@ -2,6 +2,7 @@ package repository;
 
 import builder.RoomBuilder;
 import entity.Room;
+import exception.RepositoryException;
 import specification.Specification;
 
 import java.sql.Connection;
@@ -43,14 +44,14 @@ public class RoomRepository extends AbstractRepository<Room> {
 
 
     @Override
-    public Optional<Room> query(Specification specification) {
+    public Optional<Room> query(Specification specification) throws RepositoryException {
         String query = SELECT_QUERY + specification.toSql();
         List<Object> params = specification.getParametres();
         return executeQueryForSingleResult(query, new RoomBuilder(), params);
     }
 
     @Override
-    public List<Room> queryAll(Specification specification) {
+    public List<Room> queryAll(Specification specification) throws RepositoryException {
         String query = SELECT_QUERY + specification.toSql();
         List<Object> params = specification.getParametres();
         return executeQuery(query, new RoomBuilder(), params);

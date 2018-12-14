@@ -4,6 +4,7 @@ import command.Command;
 import command.CommandResult;
 import entity.User;
 import entity.types.Role;
+import exception.ServiceException;
 import service.UserService;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,7 +16,7 @@ public class UserCommand implements Command {
     private static final String USERS_PAGE = "/WEB-INF/pages/admin/users.jsp";
 
     @Override
-    public CommandResult execute(HttpServletRequest request, HttpServletResponse response) {
+    public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
         UserService userService = new UserService();
         List<User> userList = userService.findByRole(Role.USER);
         request.setAttribute("userList", userList);

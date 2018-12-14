@@ -4,6 +4,7 @@ import command.Command;
 import command.CommandResult;
 import entity.Order;
 import entity.types.OrderStatus;
+import exception.ServiceException;
 import service.OrderService;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,7 +16,7 @@ public class AdminOrderCommand implements Command {
     private static final String ADMIN_ORDERS = "/WEB-INF/pages/admin/allOrders.jsp";
 
     @Override
-    public CommandResult execute(HttpServletRequest request, HttpServletResponse response) {
+    public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
         OrderService orderService = new OrderService();
 
         List<Order> orderList = orderService.findByStatus(OrderStatus.INPROCESS);

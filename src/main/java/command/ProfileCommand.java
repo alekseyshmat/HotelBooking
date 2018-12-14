@@ -11,7 +11,6 @@ import java.util.Optional;
 
 public class ProfileCommand implements Command {
 
-
     private static final String PROFILE = "/WEB-INF/pages/profile.jsp";
 
     @Override

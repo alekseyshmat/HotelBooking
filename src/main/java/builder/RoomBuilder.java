@@ -19,7 +19,7 @@ public class RoomBuilder implements Builder<Room> {
 
     @Override
     public Room build(ResultSet resultSet) throws SQLException {
-        int id = resultSet.getInt(ID);
+        Integer id = resultSet.getInt(ID);
         String roomNumber = resultSet.getString(ROOM_NUMBER);
         RoomType roomType = RoomType.valueOf(resultSet.getString(TYPE).toUpperCase());
 //        PlaceType placeType = PlaceType.valueOf(resultSet.getString(PLACE_NUMBER).toUpperCase());

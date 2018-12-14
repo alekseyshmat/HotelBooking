@@ -23,7 +23,7 @@ public class UserBuilder implements Builder<User> {
 
     @Override
     public User build(ResultSet resultSet) throws SQLException {
-        int id = resultSet.getInt(ID);
+        Integer id = resultSet.getInt(ID);
         String firstName = resultSet.getString(FIRST_NAME);
         String lastName = resultSet.getString(LAST_NAME);
         Date birthday = resultSet.getDate(BIRTHDAY);

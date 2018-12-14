@@ -6,16 +6,16 @@ import entity.types.RoomType;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-public class Room {
+public class Room implements Entity {
 
-    private int id;
+    private Integer id;
     private String roomNumber;
     private RoomType roomType;
     private PlaceType placeType;
     private BigDecimal cost;
     private boolean busy;
 
-    public Room(int id, String roomNumber, RoomType roomType, boolean busy) {
+    public Room(Integer id, String roomNumber, RoomType roomType, boolean busy) {
         this.id = id;
         this.roomNumber = roomNumber;
         this.roomType = roomType;
@@ -24,12 +24,13 @@ public class Room {
         this.busy = busy;
     }
 
-    public Room(String roomNumber, RoomType roomType) {
+    public Room(Integer id, String roomNumber, RoomType roomType) {
+        this.id = id;
         this.roomNumber = roomNumber;
         this.roomType = roomType;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

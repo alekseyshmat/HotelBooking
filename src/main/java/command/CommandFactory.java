@@ -35,6 +35,8 @@ public class CommandFactory {
                 return new AddRoomPriceCommand();
             case "signOut":
                 return new SignOutCommand();
+            case "editProfile":
+                return new EditProfileCommand();
             default:
                 throw new UnsupportedOperationException();
         }

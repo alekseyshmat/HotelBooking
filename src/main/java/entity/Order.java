@@ -6,9 +6,9 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.Objects;
 
-public class Order {
+public class Order implements Entity{
 
-    private int id;
+    private Integer id;
     private int idClient;
     private Date checkInDate;
     private Date checkOutDate;
@@ -23,7 +23,7 @@ public class Order {
     private BigDecimal cost;
     private String roomNumber;
 
-    public Order(int id, int idClient, Date checkInDate, Date checkOutDate, PlaceType placeNumber,
+    public Order(Integer id, int idClient, Date checkInDate, Date checkOutDate, PlaceType placeNumber,
                  PaymentType paymentType, Date invoiceDate, PaymentStatus paymentStatus, OrderStatus orderStatus) {
         this.id = id;
         this.idClient = idClient;
@@ -36,7 +36,7 @@ public class Order {
         this.orderStatus = orderStatus;
     }
 
-    public Order(int id, int idClient, Date checkInDate, Date checkOutDate, Date invoiceDate, RoomType type, PlaceType placeNumber,
+    public Order(Integer id, int idClient, Date checkInDate, Date checkOutDate, Date invoiceDate, RoomType type, PlaceType placeNumber,
                  PaymentType paymentType, PaymentStatus paymentStatus,
                  OrderStatus orderStatus, String firstName, String lastName, BigDecimal cost) {
         this.id = id;
@@ -55,7 +55,7 @@ public class Order {
 
     }
 
-    public Order(int id, int idClient, Date checkInDate, Date checkOutDate, RoomType type, PlaceType placeNumber,
+    public Order(Integer id, int idClient, Date checkInDate, Date checkOutDate, RoomType type, PlaceType placeNumber,
                  PaymentType paymentType, PaymentStatus paymentStatus, OrderStatus orderStatus,
                  BigDecimal cost, String roomNumber) {
         this.id = id;
@@ -71,11 +71,11 @@ public class Order {
         this.roomNumber = roomNumber;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

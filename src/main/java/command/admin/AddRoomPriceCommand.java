@@ -4,6 +4,8 @@ import command.Command;
 import command.CommandResult;
 import entity.Room;
 import entity.RoomPrice;
+import exception.RepositoryException;
+import exception.ServiceException;
 import service.RoomPriceService;
 import service.RoomService;
 
@@ -25,7 +27,7 @@ public class AddRoomPriceCommand implements Command {
     private static final String DATE_PATTERN = "yyyy-MM-dd";
 
     @Override
-    public CommandResult execute(HttpServletRequest request, HttpServletResponse response) {
+    public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
         String stringRoomId = request.getParameter(ROOM_ID);
         String stringStartDate = request.getParameter(START_DATE);
         String stringEndDate = request.getParameter(END_DATE);
@@ -40,7 +42,8 @@ public class AddRoomPriceCommand implements Command {
         BigDecimal cost = BigDecimal.valueOf(Long.parseLong(stringCost));
 
         RoomPriceService roomPriceService = new RoomPriceService();
-        roomPriceService.addPrice(roomId, startDate, endDate, cost);
+        roomPriceService.addPrice(null, roomId, startDate, endDate, cost);
+
 
         List<RoomPrice> roomPriceList = roomPriceService.findAll();
         request.setAttribute(PRICE_LIST, roomPriceList);

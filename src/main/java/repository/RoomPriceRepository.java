@@ -3,6 +3,7 @@ package repository;
 import builder.Builder;
 import builder.RoomPriceBuilder;
 import entity.RoomPrice;
+import exception.RepositoryException;
 import specification.Specification;
 
 import java.sql.Connection;
@@ -45,7 +46,7 @@ public class RoomPriceRepository extends AbstractRepository<RoomPrice> {
     }
 
     @Override
-    public List<RoomPrice> queryAll(Specification specification) {
+    public List<RoomPrice> queryAll(Specification specification) throws RepositoryException {
         String query = SELECT_QUERY + specification.toSql();
         List<Object> params = specification.getParametres();
         Builder<RoomPrice> builder = new RoomPriceBuilder();

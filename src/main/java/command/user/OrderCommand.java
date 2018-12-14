@@ -6,6 +6,7 @@ import entity.Order;
 import entity.User;
 import entity.types.OrderStatus;
 import entity.types.Role;
+import exception.ServiceException;
 import service.OrderService;
 
 import javax.servlet.http.HttpServletRequest;
@@ -19,7 +20,7 @@ public class OrderCommand implements Command {
     private static final String ID = "id";
 
     @Override
-    public CommandResult execute(HttpServletRequest request, HttpServletResponse response) {
+    public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
         HttpSession session = request.getSession();
         int id = (int) session.getAttribute(ID);
 

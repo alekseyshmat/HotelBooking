@@ -24,7 +24,7 @@ public class UserOrderBuilder implements Builder<Order> {
 
     @Override
     public Order build(ResultSet resultSet) throws SQLException {
-        int id = resultSet.getInt(ID);
+        Integer id = resultSet.getInt(ID);
         int idClient = resultSet.getInt(ID_CLIENT);
         Date checkInDate = resultSet.getDate(CHECK_IN_DATE);
         Date checkOutDate = resultSet.getDate(CHECK_OUT_DATE);

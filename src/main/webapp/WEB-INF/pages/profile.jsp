@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=UTF-8" isELIgnored="false" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" isELIgnored="false" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
@@ -37,7 +37,7 @@
     </div>
     <div class="rightColumn">
 
-        <form action="#" method="post">
+        <form action="controller?command=editProfile" method="post">
 
             <div class="row">
                 <div class="label">
@@ -62,7 +62,7 @@
                     <label for="birthday">${birthday}:</label>
                 </div>
                 <div class="value">
-                    <input type="text" id="birthday" name="birthday" value="${user.birthday}">
+                    <input type="text" id="birthday" name="birthday" value="${user.birthday}" readonly>
                 </div>
             </div>
 
@@ -91,7 +91,5 @@
         </form>
     </div>
 </div>
-<%--//todo добавить личный кабинет , отображение информации--%>
-
 </body>
 </html>

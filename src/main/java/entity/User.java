@@ -7,9 +7,9 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.Objects;
 
-public class User implements Serializable {
+public class User implements Serializable, Entity {
 
-    private int id;
+    private Integer id;
     private String firstName;
     private String lastName;
     private Date birthday;
@@ -19,7 +19,7 @@ public class User implements Serializable {
     private BigDecimal balance;
     private Role role;
 
-    public User(int id, String firstName, String lastName, Date birthday, String email, String login, String password, BigDecimal balance, Role role) {
+    public User(Integer id, String firstName, String lastName, Date birthday, String email, String login, String password, BigDecimal balance, Role role) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -31,11 +31,24 @@ public class User implements Serializable {
         this.role = role;
     }
 
-    public int getId() {
+    public User(Integer id, String firstName, String lastName, BigDecimal balance) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.balance = balance;
+    }
+
+    public User(Integer id, String firstName, String lastName) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

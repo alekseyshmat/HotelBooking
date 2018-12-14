@@ -19,7 +19,7 @@ public class RoomPriceBuilder implements Builder<RoomPrice> {
 
     @Override
     public RoomPrice build(ResultSet resultSet) throws SQLException {
-        int id = resultSet.getInt(ID);
+        Integer id = resultSet.getInt(ID);
         int idRoom = resultSet.getInt(ID_ROOM);
         String roomNumber = resultSet.getString(ROOM_NUMBER);
 

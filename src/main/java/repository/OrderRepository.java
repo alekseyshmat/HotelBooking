@@ -4,6 +4,7 @@ import builder.Builder;
 import builder.OrderBuilder;
 import builder.UserOrderBuilder;
 import entity.Order;
+import exception.RepositoryException;
 import specification.Specification;
 
 import java.sql.Connection;
@@ -33,7 +34,7 @@ public class OrderRepository extends AbstractRepository<Order> {
 
 
     @Override
-    public Optional<Order> query(Specification specification) {
+    public Optional<Order> query(Specification specification) throws RepositoryException {
         String query = SELECT_QUERY + specification.toSql();
         Builder<Order> builder = new OrderBuilder();
         List<Object> params = specification.getParametres();
@@ -41,14 +42,14 @@ public class OrderRepository extends AbstractRepository<Order> {
     }
 
     @Override
-    public List<Order> queryAll(Specification specification) {
+    public List<Order> queryAll(Specification specification) throws RepositoryException {
         String query = SELECT_QUERY + specification.toSql();
         Builder<Order> builder = new OrderBuilder();
         List<Object> params = specification.getParametres();
         return executeQuery(query, builder, params);
     }
 
-    public List<Order> queryAllUser(Specification specification) {
+    public List<Order> queryAllUser(Specification specification) throws RepositoryException {
         String query = SELECT_QUERY + specification.toSql();
         Builder<Order> builder = new UserOrderBuilder();
         List<Object> params = specification.getParametres();

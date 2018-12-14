@@ -15,6 +15,9 @@ public class LoginCommand implements Command {
 
     private static final String MAIN_PAGE = "/WEB-INF/pages/makeOrder.jsp";
     private static final String ADMIN_PAGE = "/WEB-INF/pages/admin/roomPrices.jsp";
+    private static final String ID = "id";
+    private static final String NAME = "name";
+    private static final String ROLE = "role";
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
@@ -35,11 +38,11 @@ public class LoginCommand implements Command {
 
         int id = user1.getId();
 
-        session.setAttribute("id", id);
-        session.setAttribute("name", name);
-        session.setAttribute("role", role);
+        session.setAttribute(ID, id);
+        session.setAttribute(NAME, name);
+        session.setAttribute(ROLE, role);
         return Role.ADMIN.equals(role) ?
-                        new AdminOrderCommand().execute(request, response):
+                new AdminOrderCommand().execute(request, response) :
 //                CommandResult.redirect(ADMIN_PAGE) :
                 CommandResult.redirect(MAIN_PAGE);
 

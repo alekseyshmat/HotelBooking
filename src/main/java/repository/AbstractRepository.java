@@ -1,7 +1,9 @@
 package repository;
 
 import builder.Builder;
-import util.PrepareStatement;
+import entity.Entity;
+import exception.RepositoryException;
+import repository.helper.QueryHelper;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,38 +11,35 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
-public abstract class AbstractRepository<T> implements Repository<T> {
+public abstract class AbstractRepository<T extends Entity> implements Repository<T> {
 
     private Connection connection;
-    private String INSERT_QUERY = "INSERT INTO ";
-    private String VALUES = " VALUES";
 
     public AbstractRepository(Connection connection) {
         this.connection = connection;
     }
 
-    public List<T> executeQuery(String sql, Builder<T> builder, List<Object> params) {
+    public List<T> executeQuery(String sql, Builder<T> builder, List<Object> params) throws RepositoryException {
         List<T> objects = new ArrayList<>();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            prepare(preparedStatement, params);
+            QueryHelper.prepare(preparedStatement, params);
             ResultSet resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {
                 T item = builder.build(resultSet);
                 objects.add(item);
             }
-        } catch (SQLException e) {
-            throw new IllegalArgumentException();
+        } catch (SQLException ex) {
+            throw new RepositoryException(ex.getMessage(), ex);
         }
         return objects;
     }
 
 
-    public Optional<T> executeQueryForSingleResult(String query, Builder<T> builder, List<Object> params) {
+    public Optional<T> executeQueryForSingleResult(String query, Builder<T> builder, List<Object> params) throws RepositoryException {
         List<T> items = executeQuery(query, builder, params);
 
         return items.size() == 1 ?
@@ -48,46 +47,20 @@ public abstract class AbstractRepository<T> implements Repository<T> {
                 Optional.empty();
     }
 
-    public void save(T item) {
+    public void save(T item) throws RepositoryException {
         try {
-            String sql = prepareSql(item);
+            String sql;
+            if (item.getId() != null) {
+                sql = QueryHelper.makeUpdateQuery(getFields(item), getTableName());
+            } else {
+                sql = QueryHelper.makeInsertQuery(getFields(item), getTableName());
+            }
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            prepare(preparedStatement, item);
+            QueryHelper.prepare(preparedStatement, getFields(item));
+
             preparedStatement.executeUpdate();
-        } catch (SQLException e) {
-            throw new IllegalArgumentException();
-        }
-    }
-
-    private void prepare(PreparedStatement preparedStatement, List<Object> params) throws SQLException {
-        int length = params.size();
-        for (int i = 0; i < length; i++) {
-            preparedStatement.setString(i + 1, String.valueOf(params.get(i)));
-        }
-    }
-
-    private String prepareSql(T item) {
-        StringBuilder columns = new StringBuilder("(");
-        StringBuilder values = new StringBuilder("(");
-
-        for (Map.Entry<String, Object> entry : getFields(item).entrySet()) {
-            String column = entry.getKey();
-            columns.append(" `").append(column).append("`,");
-            values.append(" ?,");
-        }
-
-        values.deleteCharAt(values.lastIndexOf(","));
-        columns.deleteCharAt(columns.lastIndexOf(","));
-        values.append(")");
-        columns.append(")");
-
-        return INSERT_QUERY + getTableName() + columns + VALUES + values;
-    }
-
-    private void prepare(PreparedStatement preparedStatement, T item) throws SQLException {
-        int i = 1;
-        for (Map.Entry<String, Object> entry : getFields(item).entrySet()) {
-            preparedStatement.setString(i++, String.valueOf(entry.getValue()));
+        } catch (SQLException ex) {
+            throw new RepositoryException(ex.getMessage(), ex);
         }
     }
 }

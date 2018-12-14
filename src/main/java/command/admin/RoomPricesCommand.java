@@ -4,6 +4,8 @@ import command.Command;
 import command.CommandResult;
 import entity.Room;
 import entity.RoomPrice;
+import exception.RepositoryException;
+import exception.ServiceException;
 import service.RoomPriceService;
 import service.RoomService;
 
@@ -17,9 +19,9 @@ public class RoomPricesCommand implements Command {
     private static final String PRICE_LIST = "roomPriceList";
 
     @Override
-    public CommandResult execute(HttpServletRequest request, HttpServletResponse response) {
+    public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
         RoomPriceService roomPriceService = new RoomPriceService();
-        List<RoomPrice> roomPriceList = roomPriceService.findAll();
+        List<RoomPrice> roomPriceList= roomPriceService.findAll();
 
         RoomService roomService = new RoomService();
         List<Room> roomList = roomService.findAll();
