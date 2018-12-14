@@ -2,7 +2,7 @@ package service;
 
 import entity.Room;
 import entity.types.RoomType;
-import repository.RepositoryCreator;
+import repository.creator.RepositoryCreator;
 import repository.RoomRepository;
 import specification.searchSpecification.room.FindAll;
 

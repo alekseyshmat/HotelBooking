@@ -42,12 +42,12 @@
                     <tr>
                         <td>
                             <div class="data">
-                               <%--#${order.id}--%>
+                               #${order.id}
                             </div>
                         </td>
                         <td>
                             <div class="data">
-                             <%--${order.lastName} ${order.firstName}--%>
+                             ${order.lastName} ${order.firstName}
                             </div>
                         </td>
                         <td>

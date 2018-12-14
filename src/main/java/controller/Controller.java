@@ -37,7 +37,7 @@ public class Controller extends HttpServlet {
         }
 
         String page = commandResult.getPage();
-       /* if (commandResult.isRedirect()) {
+      /*  if (commandResult.isRedirect()) {
             sendRedirect(resp, page);
         } else {*/
             ServletContext servletContext = getServletContext();

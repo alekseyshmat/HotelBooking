@@ -7,7 +7,7 @@
 
 <fmt:message bundle="${naming}" key="table.label.id" var="id"/>
 <fmt:message bundle="${naming}" key="table.label.rooms" var="rooms"/>
-<fmt:message bundle="${naming}" key="table.label.roomNumber" var="roomNumber"/>
+<fmt:message bundle="${naming}" key="table.label.roomNumber" var="roomId"/>
 <fmt:message bundle="${naming}" key="table.label.type" var="type"/>
 <fmt:message bundle="${naming}" key="table.label.placeNumber" var="placeNumber"/>
 <fmt:message bundle="${naming}" key="table.label.cost" var="cost"/>
@@ -31,7 +31,7 @@
             <table>
                 <tr>
                     <th>${id}</th>
-                    <th>${roomNumber}</th>
+                    <th>${roomId}</th>
                     <th>${type}</th>
                     <th>${isBusy}</th>
                     <th></th>
@@ -45,7 +45,7 @@
                                     ${room.id}
                             </div>
                         </td>
-                        <td width="70" id="roomNumber">
+                        <td width="70" idRoom="${room.id}">
                             <div class="data">
                                     ${room.roomNumber}
                             </div>

@@ -75,10 +75,12 @@ public abstract class AbstractRepository<T> implements Repository<T> {
             columns.append(" `").append(column).append("`,");
             values.append(" ?,");
         }
+
         values.deleteCharAt(values.lastIndexOf(","));
         columns.deleteCharAt(columns.lastIndexOf(","));
         values.append(")");
         columns.append(")");
+
         return INSERT_QUERY + getTableName() + columns + VALUES + values;
     }
 

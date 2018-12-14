@@ -6,7 +6,7 @@
 <fmt:setBundle basename="naming" var="naming"/>
 
 <fmt:message bundle="${naming}" key="table.label.id" var="id"/>
-<fmt:message bundle="${naming}" key="table.label.roomNumber" var="roomNumber"/>
+<fmt:message bundle="${naming}" key="table.label.roomNumber" var="roomId"/>
 <fmt:message bundle="${naming}" key="table.label.startDate" var="startDate"/>
 <fmt:message bundle="${naming}" key="table.label.endDate" var="endDate"/>
 <fmt:message bundle="${naming}" key="table.label.cost" var="cost"/>
@@ -29,7 +29,7 @@
             <table>
                 <tr>
                     <th>${id}</th>
-                    <th>${roomNumber}</th>
+                    <th>${roomId}</th>
                     <th>${startDate}</th>
                     <th>${endDate}</th>
                     <th>${cost}</th>

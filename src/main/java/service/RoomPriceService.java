@@ -1,7 +1,7 @@
 package service;
 
 import entity.RoomPrice;
-import repository.RepositoryCreator;
+import repository.creator.RepositoryCreator;
 import repository.RoomPriceRepository;
 import specification.searchSpecification.room.FindAllPrice;
 
@@ -17,9 +17,10 @@ public class RoomPriceService {
         return roomPriceRepository.queryAll(new FindAllPrice());
     }
 
-    public void addPrice(String roomNumber, LocalDate startDate, LocalDate endDate, BigDecimal cost) {
+    public void addPrice(int roomId, LocalDate startDate, LocalDate endDate, BigDecimal cost) {
         RepositoryCreator repositoryCreator = new RepositoryCreator();
         RoomPriceRepository roomPriceRepository = repositoryCreator.getRoomPriceRepository();
-//        roomPriceRepository.queryAdd(new AddRoomPrice(roomNumber, startDate, endDate, cost));
+        RoomPrice roomPrice = new RoomPrice(roomId,startDate ,endDate ,cost);
+        roomPriceRepository.save(roomPrice);
     }
 }

@@ -6,6 +6,7 @@ import java.math.BigDecimal;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 
 public class RoomPriceBuilder implements Builder<RoomPrice> {
 
@@ -21,9 +22,13 @@ public class RoomPriceBuilder implements Builder<RoomPrice> {
         int id = resultSet.getInt(ID);
         int idRoom = resultSet.getInt(ID_ROOM);
         String roomNumber = resultSet.getString(ROOM_NUMBER);
-        Date startDate = resultSet.getDate(START_DATE);
-        Date endDate = resultSet.getDate(END_DATE);
+
+        Date start = resultSet.getDate(START_DATE);
+        Date end = resultSet.getDate(END_DATE);
         BigDecimal cost = resultSet.getBigDecimal(COST);
+
+        LocalDate startDate = start.toLocalDate();
+        LocalDate endDate = end.toLocalDate();
 
         return new RoomPrice(id, idRoom, roomNumber, startDate, endDate, cost);
     }

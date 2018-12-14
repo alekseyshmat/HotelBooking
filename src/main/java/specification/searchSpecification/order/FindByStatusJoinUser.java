@@ -6,17 +6,17 @@ import specification.Specification;
 import java.util.Collections;
 import java.util.List;
 
-public class FindByStatus implements Specification {
+public class FindByStatusJoinUser implements Specification {
 
     private OrderStatus orderStatus;
 
-    public FindByStatus(OrderStatus orderStatus) {
+    public FindByStatusJoinUser(OrderStatus orderStatus) {
         this.orderStatus = orderStatus;
     }
 
     @Override
     public String toSql() {
-        return "where order_status = ?";
+        return "INNER JOIN user u ON u.id = `order`.id_client where order_status = ?";
     }
 
     @Override

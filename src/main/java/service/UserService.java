@@ -4,7 +4,7 @@ import entity.User;
 import entity.types.Role;
 import exception.RepositoryException;
 import exception.ServiceException;
-import repository.RepositoryCreator;
+import repository.creator.RepositoryCreator;
 import repository.UserRepository;
 import specification.searchSpecification.FindById;
 import specification.searchSpecification.user.FindByLoginAndPassword;

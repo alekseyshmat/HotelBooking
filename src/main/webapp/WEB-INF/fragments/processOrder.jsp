@@ -5,9 +5,9 @@
 <fmt:setLocale value="${sessionScope.language}"/>
 <fmt:setBundle basename="naming" var="naming"/>
 <fmt:message bundle="${naming}" key="table.label.rooms" var="rooms"/>
-<fmt:message bundle="${naming}" key="table.label.roomNumber" var="roomNumber"/>
+<fmt:message bundle="${naming}" key="table.label.roomNumber" var="roomId"/>
 <fmt:message bundle="${naming}" key="table.label.type" var="type"/>
-<fmt:message bundle="${naming}" key="table.label.add" var="add"/>
+<fmt:message bundle="${naming}" key="button.label.add" var="add"/>
 
 <html>
 <head>

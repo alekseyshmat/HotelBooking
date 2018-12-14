@@ -27,6 +27,7 @@ public class LoginCommand implements Command {
         User user1 = null;
         if (user.isPresent()) {
             user1 = user.get();
+
         }
         Role role = user1.getRole();
         String name = user1.getFirstName();
@@ -38,7 +39,9 @@ public class LoginCommand implements Command {
         session.setAttribute("name", name);
         session.setAttribute("role", role);
         return Role.ADMIN.equals(role) ?
-                new AdminOrderCommand().execute(request, response) :
+                        new AdminOrderCommand().execute(request, response):
+//                CommandResult.redirect(ADMIN_PAGE) :
                 CommandResult.redirect(MAIN_PAGE);
+
     }
 }

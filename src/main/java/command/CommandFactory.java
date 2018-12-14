@@ -31,6 +31,8 @@ public class CommandFactory {
                 return new ChangeLanguageCommand();
             case"addRoom":
                 return new AddRoomCommand();
+            case"addRoomPrice":
+                return new AddRoomPriceCommand();
             case "signOut":
                 return new SignOutCommand();
             default:

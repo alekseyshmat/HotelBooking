@@ -1,6 +1,7 @@
-package repository;
+package repository.creator;
 
 import dataBase.ConnectionPool;
+import repository.*;
 
 import java.sql.Connection;
 
@@ -22,15 +23,22 @@ public class RepositoryCreator implements AutoCloseable {
         return new RoomRepository(connection);
     }
 
-    public OrderRepository getOrderRepository(){
+    public OrderRepository getOrderRepository() {
         return new OrderRepository(connection);
-    }
-    @Override
-    public void close(){
-        connectionPool.returnConnection(connection);
     }
 
     public RoomPriceRepository getRoomPriceRepository() {
         return new RoomPriceRepository(connection);
     }
+
+    public TransactionRepository getTransctionRepository() {
+        return new TransactionRepository(connection);
+    }
+
+    @Override
+    public void close() {
+        connectionPool.returnConnection(connection);
+    }
+
+
 }

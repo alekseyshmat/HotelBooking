@@ -20,7 +20,7 @@ th {
     color: white;
 }
 
-.processButton, .editButton, .deleteButton {
+.processButton, .editButton, .deleteButton, .paymentButton {
     padding: 8px 25px;
     margin: 0 0 0 0;
     opacity: 0.7;
@@ -41,7 +41,11 @@ th {
     background-color: #f44336;
 }
 
-.processButton:hover, .editButton:hover, .deleteButton:hover {
+.paymentButton{
+    background-color: #40E0D0; /*ADD8E6*/
+}
+
+.processButton:hover, .editButton:hover, .deleteButton:hover, .paymentButton:hover {
     opacity: 0.8;
 }
 

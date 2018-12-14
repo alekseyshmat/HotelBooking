@@ -5,9 +5,9 @@
 <fmt:setLocale value="${sessionScope.language}"/>
 <fmt:setBundle basename="naming" var="naming"/>
 <fmt:message bundle="${naming}" key="table.label.rooms" var="rooms"/>
-<fmt:message bundle="${naming}" key="table.label.roomNumber" var="roomNumber"/>
+<fmt:message bundle="${naming}" key="table.label.roomNumber" var="roomId"/>
 <fmt:message bundle="${naming}" key="table.label.type" var="type"/>
-<fmt:message bundle="${naming}" key="table.label.add" var="add"/>
+<fmt:message bundle="${naming}" key="button.label.add" var="add"/>
 
 <html>
 <head>
@@ -18,7 +18,7 @@
 <div id="addRoom" class="modal">
     <form class="modal-content animate" action="${pageContext.servletContext.contextPath}/controller?command=addRoom" method="post">
         <div class="modalContainer">
-            <label for="name"><b>${roomNumber}</b></label>
+            <label for="name"><b>${roomId}</b></label>
             <input type="text" id="name" name="roomNumber" required>
             <label for="typeRoom"><b>${type}</b></label>
             <select id="typeRoom" name="typeRoom">

@@ -6,6 +6,7 @@ import entity.RoomPrice;
 import specification.Specification;
 
 import java.sql.Connection;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -13,8 +14,11 @@ import java.util.Optional;
 public class RoomPriceRepository extends AbstractRepository<RoomPrice> {
 
     private static final String SELECT_QUERY = "SELECT * FROM room_price ";
-    private static final String INSERT_QUERY = "INSERT INTO `room_price` " +
-            "(`id_room`, `start_date`, `end_date`, `cost`)";
+    private static final String TABLE_NAME = "room_price";
+    private static final String ID_ROOM = "id_room";
+    private static final String START_DATE = "start_date";
+    private static final String END_DATE = "end_date";
+    private static final String COST = "cost";
 
     public RoomPriceRepository(Connection connection) {
         super(connection);
@@ -22,12 +26,17 @@ public class RoomPriceRepository extends AbstractRepository<RoomPrice> {
 
     @Override
     public Map<String, Object> getFields(RoomPrice item) {
-        return null;
+        Map<String, Object> values = new HashMap<>();
+        values.put(ID_ROOM, item.getIdRoom());
+        values.put(START_DATE, item.getStartDate());
+        values.put(END_DATE, item.getEndDate());
+        values.put(COST, item.getCost());
+        return values;
     }
 
     @Override
     public String getTableName() {
-        return null;
+        return TABLE_NAME;
     }
 
     @Override
@@ -43,15 +52,4 @@ public class RoomPriceRepository extends AbstractRepository<RoomPrice> {
         return executeQuery(query, builder, params);
     }
 
-    @Override
-    public void save(RoomPrice item) {
-
-    }
-
-    //    @Override
-    public void queryAdd(Specification specification) {
-        String query = INSERT_QUERY + specification.toSql();
-        List<Object> params = specification.getParametres();
-//        executeUpdate(query, params);
-    }
 }

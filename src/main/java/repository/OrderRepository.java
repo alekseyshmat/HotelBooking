@@ -2,6 +2,7 @@ package repository;
 
 import builder.Builder;
 import builder.OrderBuilder;
+import builder.UserOrderBuilder;
 import entity.Order;
 import specification.Specification;
 
@@ -47,15 +48,12 @@ public class OrderRepository extends AbstractRepository<Order> {
         return executeQuery(query, builder, params);
     }
 
-    @Override
-    public void save(Order item) {
-
-    }
-
-    //    @Override
-    public void queryAdd(Specification specification) {
-        String query = INSERT_QUERY + specification.toSql();
+    public List<Order> queryAllUser(Specification specification) {
+        String query = SELECT_QUERY + specification.toSql();
+        Builder<Order> builder = new UserOrderBuilder();
         List<Object> params = specification.getParametres();
-//        executeUpdate(query, params);
+        return executeQuery(query, builder, params);
     }
+
+
 }

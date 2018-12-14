@@ -19,8 +19,7 @@ public class RoomRepository extends AbstractRepository<Room> {
     private static final String BUSY = "is_busy";
 
     private static final String SELECT_QUERY = "SELECT * FROM room ";
-    private static final String INSERT_QUERY = "INSERT INTO";
-    private static final String VALUES = "VALUES (?, ?)";
+
 
     public RoomRepository(Connection connection) {
         super(connection);
@@ -56,15 +55,5 @@ public class RoomRepository extends AbstractRepository<Room> {
         List<Object> params = specification.getParametres();
         return executeQuery(query, new RoomBuilder(), params);
     }
-
-    //    @Override
-    public void queryAdd(Specification specification) {
-        String query = INSERT_QUERY + specification.toSql();
-        List<Object> params = specification.getParametres();
-//        executeUpdate(query, params);
-    }
-
-
-
 
 }

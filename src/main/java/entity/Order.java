@@ -2,6 +2,7 @@ package entity;
 
 import entity.types.*;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.Objects;
 
@@ -17,6 +18,10 @@ public class Order {
     private Date invoiceDate;
     private PaymentStatus paymentStatus;
     private OrderStatus orderStatus;
+    private String firstName;
+    private String lastName;
+    private BigDecimal cost;
+    private String roomNumber;
 
     public Order(int id, int idClient, Date checkInDate, Date checkOutDate, PlaceType placeNumber,
                  PaymentType paymentType, Date invoiceDate, PaymentStatus paymentStatus, OrderStatus orderStatus) {
@@ -32,7 +37,7 @@ public class Order {
     }
 
     public Order(int id, int idClient, Date checkInDate, Date checkOutDate, RoomType type, PlaceType placeNumber,
-                 PaymentType paymentType, PaymentStatus paymentStatus, OrderStatus orderStatus) {
+                 PaymentType paymentType, PaymentStatus paymentStatus, OrderStatus orderStatus, String firstName, String lastName) {
         this.id = id;
         this.idClient = idClient;
         this.checkInDate = checkInDate;
@@ -42,6 +47,25 @@ public class Order {
         this.paymentType = paymentType;
         this.paymentStatus = paymentStatus;
         this.orderStatus = orderStatus;
+        this.firstName = firstName;
+        this.lastName = lastName;
+
+    }
+
+    public Order(int id, int idClient, Date checkInDate, Date checkOutDate, RoomType type, PlaceType placeNumber,
+                 PaymentType paymentType, PaymentStatus paymentStatus, OrderStatus orderStatus,
+                 BigDecimal cost, String roomNumber) {
+        this.id = id;
+        this.idClient = idClient;
+        this.checkInDate = checkInDate;
+        this.checkOutDate = checkOutDate;
+        this.type = type;
+        this.placeNumber = placeNumber;
+        this.paymentType = paymentType;
+        this.paymentStatus = paymentStatus;
+        this.orderStatus = orderStatus;
+        this.cost = cost;
+        this.roomNumber = roomNumber;
     }
 
     public int getId() {
@@ -130,6 +154,34 @@ public class Order {
 
     public void setInvoiceDate(Date invoiceDate) {
         this.invoiceDate = invoiceDate;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public BigDecimal getCost() {
+        return cost;
+    }
+
+    public void setCost(BigDecimal cost) {
+        this.cost = cost;
+    }
+
+    public String getRoomNumber() {
+        return roomNumber;
     }
 
     @Override

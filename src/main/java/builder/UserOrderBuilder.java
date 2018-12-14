@@ -3,12 +3,12 @@ package builder;
 import entity.Order;
 import entity.types.*;
 
-import javax.servlet.http.HttpSession;
+import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
 
-public class OrderBuilder implements Builder<Order> {
+public class UserOrderBuilder implements Builder<Order> {
 
     private static final String ID = "id";
     private static final String ID_CLIENT = "id_client";
@@ -19,12 +19,11 @@ public class OrderBuilder implements Builder<Order> {
     private static final String PAYMENT_TYPE = "payment_type";
     private static final String PAYMENT_STATUS = "payment_status";
     private static final String ORDER_STATUS = "order_status";
-    private static final String FIRST_NAME = "first_name";
-    private static final String LAST_NAME = "last_name";
+    private static final String COST = "cost";
+    private static final String ROOM_NUMBER = "room_number";
 
     @Override
     public Order build(ResultSet resultSet) throws SQLException {
-
         int id = resultSet.getInt(ID);
         int idClient = resultSet.getInt(ID_CLIENT);
         Date checkInDate = resultSet.getDate(CHECK_IN_DATE);
@@ -34,11 +33,10 @@ public class OrderBuilder implements Builder<Order> {
         PaymentType paymentType = PaymentType.valueOf(resultSet.getString(PAYMENT_TYPE).toUpperCase());
         PaymentStatus paymentStatus = PaymentStatus.valueOf(resultSet.getString(PAYMENT_STATUS).toUpperCase());
         OrderStatus orderStatus = OrderStatus.valueOf(resultSet.getString(ORDER_STATUS).toUpperCase());
-
-        String firstName = resultSet.getString(FIRST_NAME);
-        String lastName = resultSet.getString(LAST_NAME);
+        BigDecimal cost = resultSet.getBigDecimal(COST);
+        String roomNumber = resultSet.getString(ROOM_NUMBER);
 
         return new Order(id, idClient, checkInDate, checkOutDate, roomType, placeType, paymentType,
-                paymentStatus, orderStatus, firstName, lastName);
+                paymentStatus, orderStatus, cost, roomNumber);
     }
 }

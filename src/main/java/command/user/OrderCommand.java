@@ -24,8 +24,11 @@ public class OrderCommand implements Command {
         int id = (int) session.getAttribute(ID);
 
         OrderService orderService = new OrderService();
-        List<Order> orderList = orderService.findByIdAndStatus(id, OrderStatus.INPROCESS);
+        List<Order> orderList = orderService.findByIdAndStatusWithJoin(id, OrderStatus.INPROCESS);
+        List<Order> activeOrderList = orderService.findByIdAndStatusWithJoin(id, OrderStatus.SEEN);
+
         request.setAttribute("userOrderList", orderList);
+        request.setAttribute("activeOrderList", activeOrderList);
         return CommandResult.forward(USER_ORDERS);
     }
 }

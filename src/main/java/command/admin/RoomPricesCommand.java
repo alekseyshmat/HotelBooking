@@ -23,9 +23,9 @@ public class RoomPricesCommand implements Command {
 
         RoomService roomService = new RoomService();
         List<Room> roomList = roomService.findAll();
-
         request.setAttribute("roomList", roomList);
         request.setAttribute(PRICE_LIST, roomPriceList);
+
         return CommandResult.forward(ROOM_PRICES_PAGE);
     }
 }
