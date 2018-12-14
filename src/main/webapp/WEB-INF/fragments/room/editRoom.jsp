@@ -24,9 +24,10 @@
 
         input.value = roomIds;
     </script>
-    <form class="modal-content animate" action="${pageContext.servletContext.contextPath}/controller?command=updateRoom"
-          method="post">
-        <div class="modalContainer">
+
+    <div class="modal-content animate">
+        <form action="${pageContext.servletContext.contextPath}/controller?command=updateRoom"
+              method="post">
             <label for="valueId"><b>${roomId}</b></label>
             <input type="text" id="valueId" value="">
 
@@ -43,11 +44,12 @@
             </select>
             <div>
                 <input class="prcButton" type="submit" value="${edit}"/>
-                <button class="cancelButton" onclick="document.getElementById('editRoom').style.display='none'">Cancel
-                </button>
-                <%--TODO: add --%>
             </div>
-        </div>
-    </form>
+        </form>
+        <button class="cancelButton" onclick="document.getElementById('editRoom').style.display='none'">Cancel
+        </button>
+    </div>
+</div>
+
 </div>
 </body>

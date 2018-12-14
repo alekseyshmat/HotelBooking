@@ -16,8 +16,9 @@
 </head>
 <body>
 <div id="addRoom" class="modal">
-    <form class="modal-content animate" action="${pageContext.servletContext.contextPath}/controller?command=addRoom" method="post">
-        <div class="modalContainer">
+
+    <div class="modal-content animate">
+        <form action="${pageContext.servletContext.contextPath}/controller?command=addRoom" method="post">
             <label for="name"><b>${roomId}</b></label>
             <input type="text" id="name" name="roomNumber" required>
             <label for="typeRoom"><b>${type}</b></label>
@@ -33,10 +34,14 @@
             </select>
             <div>
                 <input class="prcButton" type="submit" value="${add}"/>
-                <button class="cancelButton" onclick="document.getElementById('addRoom').style.display='none'">Cancel</button> <%--TODO: add --%>
             </div>
+        </form>
+        <div>
+            <button class="cancelButton" onclick="document.getElementById('addRoom').style.display='none'">Cancel
+            </button>
         </div>
-    </form>
+    </div>
+
 </div>
 </body>
 </html>

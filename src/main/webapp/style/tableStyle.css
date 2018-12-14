@@ -12,15 +12,16 @@ tr:nth-child(even) {
     background-color: #f2f2f2
 }
 
-tr{
+tr {
     background-color: #A9A9A9
 }
+
 th {
     background-color: #000080;
     color: white;
 }
 
-.processButton, .editButton, .deleteButton, .paymentButton {
+.processButton, .editButton, .deleteButton, .paymentButton, .completeButton, .showDetailsButton {
     padding: 8px 25px;
     margin: 0 0 0 0;
     opacity: 0.7;
@@ -29,31 +30,41 @@ th {
     cursor: pointer;
 }
 
-.processButton{
+.processButton {
     background-color: #32CD32;
 }
 
-.editButton{
+.editButton {
     background-color: #FFFF00;
 }
 
-.deleteButton{
+.deleteButton {
     background-color: #f44336;
 }
 
-.paymentButton{
+.paymentButton {
     background-color: #40E0D0; /*ADD8E6*/
 }
 
-.processButton:hover, .editButton:hover, .deleteButton:hover, .paymentButton:hover {
+.completeButton {
+    background-color: #00FF00; /*ADD8E6*/
+}
+
+.showDetailsButton {
+    background-color: #008B8B; /*ADD8E6*/
+}
+
+
+.processButton:hover, .editButton:hover, .deleteButton:hover, .paymentButton:hover,
+.completeButton:hover, .showDetailsButton:hover {
     opacity: 0.8;
 }
 
-.addPanel{
+.addPanel {
     padding: 15% 45%;
 }
 
-.addButton{
+.addButton {
     overflow: hidden;
     background-color: #000080;
     opacity: 0.7;
@@ -66,7 +77,7 @@ th {
     margin: 3px 25%;
 }
 
-.addButton:hover{
+.addButton:hover {
     opacity: 1;
 }
 

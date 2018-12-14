@@ -29,6 +29,13 @@ body{
 
 }
 
+#completed{
+    position:center;
+    margin: 5% 15%;
+    width: 43%;
+}
+
+
 .data {
     margin-top: 6px;
     float: left;

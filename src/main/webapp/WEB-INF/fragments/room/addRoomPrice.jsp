@@ -20,9 +20,10 @@
 </head>
 <body>
 <div id="addRoomPrice" class="modal">
-    <form class="modal-content animate" action="${pageContext.servletContext.contextPath}/controller?command=addRoomPrice"
-          method="post">
-        <div class="modalContainer">
+
+    <div class="modal-content animate">
+        <form action="${pageContext.servletContext.contextPath}/controller?command=addRoomPrice"
+              method="post">
             <label for="roomId"><b>${roomId}</b></label>
             <select id="roomId" name="roomId">
                 <jsp:useBean id="roomList" scope="request" type="java.util.List"/>
@@ -40,11 +41,16 @@
 
             <div>
                 <input class="prcButton" type="submit" value="${add}"/>
-                <button class="cancelButton" onclick="document.getElementById('addRoomPrice').style.display='none'">${cancel}
-                </button>
+
             </div>
+        </form>
+        <div>
+            <button class="cancelButton"
+                    onclick="document.getElementById('addRoomPrice').style.display='none'">${cancel}
+            </button>
         </div>
-    </form>
+    </div>
+
 </div>
 </body>
 </html>

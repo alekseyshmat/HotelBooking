@@ -36,12 +36,14 @@ public class Order {
         this.orderStatus = orderStatus;
     }
 
-    public Order(int id, int idClient, Date checkInDate, Date checkOutDate, RoomType type, PlaceType placeNumber,
-                 PaymentType paymentType, PaymentStatus paymentStatus, OrderStatus orderStatus, String firstName, String lastName) {
+    public Order(int id, int idClient, Date checkInDate, Date checkOutDate, Date invoiceDate, RoomType type, PlaceType placeNumber,
+                 PaymentType paymentType, PaymentStatus paymentStatus,
+                 OrderStatus orderStatus, String firstName, String lastName, BigDecimal cost) {
         this.id = id;
         this.idClient = idClient;
         this.checkInDate = checkInDate;
         this.checkOutDate = checkOutDate;
+        this.invoiceDate =invoiceDate;
         this.type = type;
         this.placeNumber = placeNumber;
         this.paymentType = paymentType;
@@ -49,6 +51,7 @@ public class Order {
         this.orderStatus = orderStatus;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.cost = cost;
 
     }
 

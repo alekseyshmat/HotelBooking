@@ -17,8 +17,15 @@ public class AdminOrderCommand implements Command {
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) {
         OrderService orderService = new OrderService();
+
         List<Order> orderList = orderService.findByStatus(OrderStatus.INPROCESS);
         request.setAttribute("orderList", orderList);
+
+        List<Order> activeOrderList = orderService.findByStatus(OrderStatus.SEEN);
+        request.setAttribute("activeOrderList", activeOrderList);
+
+        List<Order> completedOrderList = orderService.findByStatus(OrderStatus.COMPLETED);
+        request.setAttribute("completedOrderList", completedOrderList);
 
         return CommandResult.forward(ADMIN_ORDERS);
     }

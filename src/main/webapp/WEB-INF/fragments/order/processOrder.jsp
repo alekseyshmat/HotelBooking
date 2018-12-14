@@ -16,8 +16,9 @@
 </head>
 <body>
 <div id="processOrder" class="modal">
-    <form class="modal-content animate" action="#">
-        <div class="modalContainer">
+
+    <div class="modal-content animate">
+        <form action="#" method="post">
             <label for="name"><b>Username</b></label>
             <input type="text" id="name" name="uname" value="{Name} {Surname}"
                    readonly>
@@ -38,13 +39,14 @@
                 </select>
                 <button class="prcButton" type="submit">Process</button>
             </div>
+        </form>
+        <div>
+            <button class="cancelButton" type="submit"
+                    onclick="document.getElementById('processOrder').style.display='none'">Cancel
+            </button>
         </div>
-    </form>
-    <div>
-        <button class="cancelButton" type="submit"
-                onclick="document.getElementById('processOrder').style.display='none'">Cancel
-        </button>
     </div>
+
 </div>
 </body>
 </html>
