@@ -27,6 +27,8 @@ public class CommandFactory {
                 return new BalanceCommand();
             case "makeOrder":
                 return new MakeOrderCommand();
+            case "processOrder":
+                return new ProcessOrderCommand();
             case "changeLanguage":
                 return new ChangeLanguageCommand();
             case"addRoom":

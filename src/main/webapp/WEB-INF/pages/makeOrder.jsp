@@ -8,7 +8,7 @@
 <fmt:message bundle="${naming}" key="mainHeader.label.makeOrder" var="makeOrder"/>
 <fmt:message bundle="${naming}" key="table.label.checkInDate" var="checkInDate"/>
 <fmt:message bundle="${naming}" key="table.label.checkOutDate" var="checkOutDate"/>
-<fmt:message bundle="${naming}" key="user.label.login.typeRoom" var="typeRoom"/>
+<fmt:message bundle="${naming}" key="table.label.typeRoom" var="typeRoom"/>
 <fmt:message bundle="${naming}" key="table.label.placeNumber" var="placeNumber"/>
 <fmt:message bundle="${naming}" key="table.label.paymentType" var="paymentType"/>
 

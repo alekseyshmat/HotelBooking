@@ -5,7 +5,11 @@
 <fmt:setLocale value="${sessionScope.language}"/>
 <fmt:setBundle basename="naming" var="naming"/>
 <fmt:message bundle="${naming}" key="table.label.rooms" var="rooms"/>
+<fmt:message bundle="${naming}" key="table.label.room" var="room"/>
 <fmt:message bundle="${naming}" key="table.label.roomNumber" var="roomId"/>
+<fmt:message bundle="${naming}" key="table.label.checkInDate" var="checkInDate"/>
+<fmt:message bundle="${naming}" key="table.label.checkOutDate" var="checkOutDate"/>
+<fmt:message bundle="${naming}" key="table.label.typeRoom" var="typeRoom"/>
 <fmt:message bundle="${naming}" key="table.label.type" var="type"/>
 <fmt:message bundle="${naming}" key="button.label.add" var="add"/>
 
@@ -18,24 +22,29 @@
 <div id="processOrder" class="modal">
 
     <div class="modal-content animate">
-        <form action="#" method="post">
+        <form action="${pageContext.request.contextPath}/controller?command=processOrder" method="post">
             <label for="name"><b>Username</b></label>
             <input type="text" id="name" name="uname" value="{Name} {Surname}"
                    readonly>
-            <label><b>{CheckInDate}</b></label>
+            <label><b>${checkInDate}</b></label>
+
             <input type="text" name="checkInDate" value="{checkInDate}"
                    readonly>
-            <label><b>{CheckOutDate}</b></label>
+            <label><b>${checkOutDate}</b></label>
+
             <input type="text" name="{checkOutDate}" readonly>
-            <label><b>{Type}</b></label>
+
+            <label><b>${type}</b></label>
             <input type="text" name="type" value="{type}" readonly>
+
             <label for="typeRoom"><b>TypeRoom</b></label>
             <input id="typeRoom" type="text" name="type" value="{type}" readonly>
-            <label for="chooseTypeRoom"><b>{chooseTypeRoom}</b></label>
+
+            <label for="chooseRoom"><b>{chooseTypeRoom}</b></label>
             <div>
-                <select class="chooseTypeModal" id="chooseTypeRoom" name="typeRoom">
-                    <option disabled>${type}</option>
-                    <option>${type}</option>
+                <select class="chooseRoom" id="chooseRoom" name="room">
+                    <option disabled>${room}</option>
+                    <option>${room}</option>
                 </select>
                 <button class="prcButton" type="submit">Process</button>
             </div>

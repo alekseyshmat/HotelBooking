@@ -6,10 +6,11 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.Objects;
 
-public class Order implements Entity{
+public class Order implements Entity {
 
     private Integer id;
     private int idClient;
+    private int idRoom;
     private Date checkInDate;
     private Date checkOutDate;
     private RoomType type;
@@ -43,7 +44,7 @@ public class Order implements Entity{
         this.idClient = idClient;
         this.checkInDate = checkInDate;
         this.checkOutDate = checkOutDate;
-        this.invoiceDate =invoiceDate;
+        this.invoiceDate = invoiceDate;
         this.type = type;
         this.placeNumber = placeNumber;
         this.paymentType = paymentType;
@@ -71,6 +72,13 @@ public class Order implements Entity{
         this.roomNumber = roomNumber;
     }
 
+    public Order(Integer id, int idRoom, BigDecimal cost, OrderStatus orderStatus) {
+        this.id = id;
+        this.idRoom = idRoom;
+        this.cost = cost;
+        this.orderStatus = orderStatus;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -85,6 +93,14 @@ public class Order implements Entity{
 
     public void setIdClient(int idClient) {
         this.idClient = idClient;
+    }
+
+    public int getIdRoom() {
+        return idRoom;
+    }
+
+    public void setIdRoom(int idRoom) {
+        this.idRoom = idRoom;
     }
 
     public Date getCheckInDate() {

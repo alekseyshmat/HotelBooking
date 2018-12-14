@@ -19,6 +19,7 @@
 <fmt:message bundle="${naming}" key="button.label.showDetails" var="showDetails"/>
 <fmt:message bundle="${naming}" key="table.label.paymentStatus" var="paymentStatus"/>
 <fmt:message bundle="${naming}" key="table.label.sum" var="sum"/>
+<fmt:message bundle="${naming}" key="table.label.typeRoom" var="typeRoom"/>
 
 <html>
 <head>
@@ -50,6 +51,7 @@
                     <th>${checkInDate}</th>
                     <th>${checkOutDate}</th>
                     <th>${placeNumber}</th>
+                    <th>${typeRoom}</th>
                     <th></th>
                 </tr>
                 <jsp:useBean id="orderList" scope="request" type="java.util.List"/>
@@ -78,6 +80,11 @@
                         <td>
                             <div class="data">
                                     ${order.placeNumber}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="data">
+                                    ${order.type}
                             </div>
                         </td>
                         <td>

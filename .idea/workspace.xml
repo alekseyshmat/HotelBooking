@@ -7,44 +7,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed67534d-1a8a-4535-8b45-654f7512ef26" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/command/EditProfileCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/Entity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/repository/helper/QueryHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/command/admin/ProcessOrderCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/command/admin/SearchRoomByCriteria.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/builder/OrderBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/builder/OrderBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/builder/RoomBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/builder/RoomBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/builder/RoomPriceBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/builder/RoomPriceBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/builder/TransactionBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/builder/TransactionBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/builder/UserBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/builder/UserBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/builder/UserOrderBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/builder/UserOrderBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/command/CommandFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/command/CommandFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/LoginCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/command/LoginCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/ProfileCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/command/ProfileCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/SignOutCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/command/SignOutCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/admin/AddRoomCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/command/admin/AddRoomCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/admin/AddRoomPriceCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/command/admin/AddRoomPriceCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/admin/AdminOrderCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/command/admin/AdminOrderCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/admin/RoomCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/command/admin/RoomCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/admin/RoomPricesCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/command/admin/RoomPricesCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/admin/UserCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/command/admin/UserCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/user/OrderCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/command/user/OrderCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entity/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/AbstractRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/AbstractRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/OrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/RoomPriceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/RoomPriceRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/RoomRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/RoomRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/RoomPriceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/RoomPriceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/RoomService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/RoomService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/specification/addSpecification/AddRoom.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/specification/addSpecification/MakeOrder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/specification/addSpecification/room/AddRoomPrice.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/profile.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/naming_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/naming_en.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/naming_ru.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/naming_ru.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/fragments/order/processOrder.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/fragments/order/processOrder.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/allOrders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/allOrders.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/makeOrder.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/makeOrder.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/orders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/orders.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -94,13 +69,13 @@
           <entry key="class" value="35" />
           <entry key="css" value="94" />
           <entry key="gitignore" value="1" />
-          <entry key="java" value="921" />
+          <entry key="java" value="930" />
           <entry key="jpg" value="2" />
           <entry key="js" value="14" />
-          <entry key="jsp" value="354" />
+          <entry key="jsp" value="358" />
           <entry key="jspf" value="1" />
           <entry key="png" value="1" />
-          <entry key="properties" value="36" />
+          <entry key="properties" value="37" />
           <entry key="rnc" value="1" />
           <entry key="sql" value="2" />
           <entry key="tld" value="1" />
@@ -115,11 +90,11 @@
           <entry key="CSS" value="94" />
           <entry key="Database Element" value="1" />
           <entry key="Image" value="3" />
-          <entry key="JAVA" value="921" />
-          <entry key="JSP" value="355" />
+          <entry key="JAVA" value="930" />
+          <entry key="JSP" value="359" />
           <entry key="JavaScript" value="14" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Properties" value="36" />
+          <entry key="Properties" value="37" />
           <entry key="RNG Compact" value="1" />
           <entry key="Scratch" value="2" />
           <entry key="XML" value="15" />
@@ -130,23 +105,23 @@
           <entry key="css" value="458" />
           <entry key="dummy" value="91" />
           <entry key="gitignore" value="16" />
-          <entry key="java" value="17360" />
+          <entry key="java" value="18021" />
           <entry key="js" value="35" />
-          <entry key="jsp" value="5615" />
+          <entry key="jsp" value="5679" />
           <entry key="jspf" value="177" />
-          <entry key="properties" value="1017" />
-          <entry key="txt" value="363" />
+          <entry key="properties" value="1025" />
+          <entry key="txt" value="395" />
           <entry key="xml" value="46" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="458" />
-          <entry key="JAVA" value="17360" />
-          <entry key="JSP" value="5792" />
+          <entry key="JAVA" value="18021" />
+          <entry key="JSP" value="5856" />
           <entry key="JavaScript" value="35" />
-          <entry key="PLAIN_TEXT" value="470" />
-          <entry key="Properties" value="1017" />
+          <entry key="PLAIN_TEXT" value="502" />
+          <entry key="Properties" value="1025" />
           <entry key="XML" value="46" />
         </counts>
       </usages-collector>
@@ -177,33 +152,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/fragments/order/processOrder.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="816">
+              <caret line="48" column="33" selection-start-line="48" selection-start-column="33" selection-end-line="48" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/repository/UserRepository.java">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="23" column="84" selection-start-line="23" selection-start-column="70" selection-end-line="23" selection-end-column="84" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/repository/OrderRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1105">
+              <caret line="80" column="5" selection-start-line="80" selection-start-column="5" selection-end-line="80" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/builder/OrderBuilder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="25" column="46" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="25" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/command/admin/SearchRoomByCriteria.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="37" selection-start-line="37" selection-end-line="37" />
-              <folding>
-                <element signature="e#792#793#0" expanded="true" />
-                <element signature="e#819#820#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/command/SignOutCommand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="10" selection-start-line="10" selection-end-line="10" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/command/EditProfileCommand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" column="44" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -211,11 +200,51 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/builder/OrderBuilder.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/allOrders.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="39" column="7" selection-start-line="39" selection-start-column="7" selection-end-line="39" selection-end-column="7" />
+            <state relative-caret-position="-216">
+              <caret line="61" column="44" lean-forward="true" selection-start-line="61" selection-start-column="44" selection-end-line="61" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/command/admin/ProcessOrderCommand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="260">
+              <caret line="23" column="58" selection-start-line="23" selection-start-column="58" selection-end-line="23" selection-end-column="58" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/service/OrderService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="59" column="21" selection-start-line="59" selection-start-column="21" selection-end-line="59" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/naming_en.properties">
+          <provider editor-type-id="ResourceBundle" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/makeOrder.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="75" lean-forward="true" selection-start-line="8" selection-end-line="10" selection-end-column="75" />
             </state>
           </provider>
         </entry>
@@ -241,6 +270,7 @@
       <find>yyyy-MM-dd</find>
       <find>idRoom</find>
       <find>sum</find>
+      <find>room</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -249,36 +279,28 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/service/TransactionService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/command/user/BalanceCommand.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/balance.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/orders.jsp" />
-        <option value="$PROJECT_DIR$/src/main/resources/naming_en.properties" />
         <option value="$PROJECT_DIR$/src/main/webapp/style/tableStyle.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/style/dataStyle.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/showDetails.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/allOrders.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/style/modalStyle.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/fragments/room/addRoom.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/fragments/order/processOrder.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/fragments/room/editRoom.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/fragments/room/addRoomPrice.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/fragments/order/showDetails.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/repository/RoomRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/repository/OrderRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/repository/RoomPriceRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/command/admin/UserCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/command/admin/AdminOrderCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/command/admin/RoomCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/command/admin/RoomPricesCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/command/user/OrderCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/service/OrderService.java" />
         <option value="$PROJECT_DIR$/src/main/java/command/EditProfileInformation.java" />
         <option value="$PROJECT_DIR$/src/main/java/entity/Entity.java" />
         <option value="$PROJECT_DIR$/src/main/java/entity/Transaction.java" />
         <option value="$PROJECT_DIR$/src/main/java/entity/RoomPrice.java" />
         <option value="$PROJECT_DIR$/src/main/java/entity/Room.java" />
-        <option value="$PROJECT_DIR$/src/main/java/entity/Order.java" />
         <option value="$PROJECT_DIR$/src/main/java/builder/RoomBuilder.java" />
         <option value="$PROJECT_DIR$/src/main/java/builder/RoomPriceBuilder.java" />
         <option value="$PROJECT_DIR$/src/main/java/builder/TransactionBuilder.java" />
@@ -287,7 +309,6 @@
         <option value="$PROJECT_DIR$/src/main/java/service/RoomService.java" />
         <option value="$PROJECT_DIR$/src/main/java/command/admin/AddRoomCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/command/ProfileCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/command/CommandFactory.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/profile.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/repository/AbstractRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/RoomPriceService.java" />
@@ -300,6 +321,15 @@
         <option value="$PROJECT_DIR$/src/main/java/repository/helper/QueryHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/command/EditProfileCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/builder/OrderBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/command/admin/SearchRoomByCriteria.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/naming_en.properties" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/allOrders.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/service/OrderService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/entity/Order.java" />
+        <option value="$PROJECT_DIR$/src/main/java/repository/OrderRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/command/admin/ProcessOrderCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/command/CommandFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/fragments/order/processOrder.jsp" />
       </list>
     </option>
   </component>
@@ -417,6 +447,15 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="command" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hotelBooking" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hotelBooking" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="entity" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -500,16 +539,6 @@
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="fragments" type="462c0819:PsiDirectoryNode" />
-              <item name="header" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hotelBooking" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hotelBooking" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="fragments" type="462c0819:PsiDirectoryNode" />
               <item name="order" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -563,7 +592,7 @@
     <property name="SearchEverywhereHistoryKey" value="CHECK_&#9;PSI&#9;JAVA://builder.OrderBuilder#CHECK_IN_DATE&#10;showAllOrders&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544824042213" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544825808414" />
     <property name="database.console.LAST_STATE" value="true" />
     <property name="last_opened_file_path" value="F:/загрузки/market-master/market-master" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -699,7 +728,7 @@
       <workItem from="1544525133204" duration="246000" />
       <workItem from="1544544660306" duration="36548000" />
       <workItem from="1544644338859" duration="8790000" />
-      <workItem from="1544699769084" duration="44018000" />
+      <workItem from="1544699769084" duration="46339000" />
     </task>
     <task id="LOCAL-00001" summary="added entities">
       <created>1543401784541</created>
@@ -813,11 +842,18 @@
       <option name="project" value="LOCAL" />
       <updated>1544799849383</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="added edit profile information">
+      <created>1544824078745</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1544824078745</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="236974000" />
+    <option name="totallyTimeSpent" value="239295000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -941,7 +977,8 @@
     <MESSAGE value="change adding to db" />
     <MESSAGE value="added client functional and smth admin functions" />
     <MESSAGE value="fixed mapping modal windows" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed mapping modal windows" />
+    <MESSAGE value="added edit profile information" />
+    <option name="LAST_COMMIT_MESSAGE" value="added edit profile information" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="setValue">
@@ -968,89 +1005,10 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/repository/RoomPriceRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="52" column="22" lean-forward="true" selection-start-line="52" selection-start-column="22" selection-end-line="52" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/command/admin/AdminOrderCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="21" column="51" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/command/admin/RoomCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/command/admin/UserCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="20" column="52" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/command/user/BalanceCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="34" column="39" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/command/user/MakeOrderCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/command/ChangeLanguageCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/command/CommandResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding>
-            <element signature="e#488#489#0" expanded="true" />
-            <element signature="e#515#516#0" expanded="true" />
-            <element signature="e#550#551#0" expanded="true" />
-            <element signature="e#581#582#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/command/user/OrderCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="27" column="62" selection-start-line="27" selection-start-column="62" selection-end-line="27" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/repository/OrderRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="15" column="52" lean-forward="true" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/OrderService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="42" column="10" selection-start-line="42" selection-start-column="10" selection-end-line="45" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -1086,13 +1044,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/entity/Order.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="22" column="28" lean-forward="true" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -1212,13 +1163,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/command/CommandFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="37" column="29" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/fragments/header/userHeader.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -1326,16 +1270,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/repository/AbstractRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="64" selection-start-line="64" selection-end-line="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="488">
@@ -1388,10 +1322,116 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/makeOrder.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="75" lean-forward="true" selection-start-line="8" selection-end-line="10" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/command/admin/SearchRoomByCriteria.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/naming_en.properties">
+      <provider editor-type-id="ResourceBundle" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entity/Order.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="97" column="28" selection-start-line="97" selection-start-column="28" selection-end-line="97" selection-end-column="28" />
+          <folding>
+            <element signature="e#3160#3161#0" expanded="true" />
+            <element signature="e#3201#3202#0" expanded="true" />
+            <element signature="e#3237#3238#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/repository/AbstractRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="49" column="16" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/builder/OrderBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="39" column="7" selection-start-line="39" selection-start-column="7" selection-end-line="39" selection-end-column="7" />
+        <state relative-caret-position="306">
+          <caret line="25" column="46" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="25" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/repository/OrderRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1105">
+          <caret line="80" column="5" selection-start-line="80" selection-start-column="5" selection-end-line="80" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/command/admin/AdminOrderCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/OrderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="59" column="21" selection-start-line="59" selection-start-column="21" selection-end-line="59" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/command/CommandFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="24" column="23" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/command/admin/ProcessOrderCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="23" column="58" selection-start-line="23" selection-start-column="58" selection-end-line="23" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="23" column="84" selection-start-line="23" selection-start-column="70" selection-end-line="23" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/allOrders.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-216">
+          <caret line="61" column="44" lean-forward="true" selection-start-line="61" selection-start-column="44" selection-end-line="61" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/fragments/order/processOrder.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="48" column="33" selection-start-line="48" selection-start-column="33" selection-end-line="48" selection-end-column="33" />
         </state>
       </provider>
     </entry>
