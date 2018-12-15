@@ -6,17 +6,14 @@ import exception.RepositoryException;
 import specification.Specification;
 
 import java.sql.Connection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 public class RoomRepository extends AbstractRepository<Room> {
     private static final String TABLE_NAME = " `room` ";
 
+    private static final String ID = "id";
     private static final String ROOM_NUMBER = "room_number";
     private static final String ROOM_TYPE = "type";
-    private static final String PLACE_NUMBER = "place_number";
     private static final String BUSY = "is_busy";
 
     private static final String SELECT_QUERY = "SELECT * FROM room ";
@@ -28,11 +25,11 @@ public class RoomRepository extends AbstractRepository<Room> {
 
     @Override
     public Map<String, Object> getFields(Room item) {
-        Map<String, Object> values = new HashMap<>();
+        Map<String, Object> values = new LinkedHashMap<>();
         values.put(ROOM_NUMBER, item.getRoomNumber());
         values.put(ROOM_TYPE, item.getRoomType());
-//        values.put(PLACE_NUMBER, item.getPlaceType());
 //        values.put(BUSY, item.isBusy());
+        values.put(ID, item.getId());
 
         return values;
     }

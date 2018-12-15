@@ -22,10 +22,12 @@
 
 
     <div class="modal-content animate">
-        <form action="${pageContext.servletContext.contextPath}/controller?command=updateRoom"
+        <form action="${pageContext.servletContext.contextPath}/controller?command=saveRoom"
               method="post">
+            <input hidden type="text" id="id" name="id" value="">
+
             <label for="valueId"><b>${roomId}</b></label>
-            <input type="text" id="valueId" value="">
+            <input type="text" id="valueId" name="roomNumber" value="">
 
             <label for="typeRoom"><b>${type}</b></label>
             <select id="typeRoom" name="typeRoom" value="">
@@ -39,7 +41,7 @@
                 <option value="President">President</option>
             </select>
             <div>
-                <input class="prcButton" type="submit" value="${edit}"/>
+                <input class="edtButton" type="submit" value="${edit}"/>
             </div>
         </form>
         <button class="cancelButton" onclick="document.getElementById('editRoom').style.display='none'">Cancel

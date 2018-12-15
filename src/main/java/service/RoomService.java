@@ -35,7 +35,7 @@ public class RoomService {
         }
     }
 
-    public void addRoom(Integer id, String roomNumber, RoomType roomType) throws ServiceException {
+    public void saveRoom(Integer id, String roomNumber, RoomType roomType) throws ServiceException {
         try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
             RoomRepository roomRepository = repositoryCreator.getRoomRepository();
             Room room = new Room(id, roomNumber, roomType);

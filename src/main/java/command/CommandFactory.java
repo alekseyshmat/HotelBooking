@@ -4,10 +4,7 @@ import command.admin.*;
 import command.admin.order.AdminOrderCommand;
 import command.admin.order.CompleteOrderCommand;
 import command.admin.order.ProcessOrderCommand;
-import command.admin.room.AddRoomCommand;
-import command.admin.room.AddRoomPriceCommand;
-import command.admin.room.RoomCommand;
-import command.admin.room.RoomPricesCommand;
+import command.admin.room.*;
 import command.user.BalanceCommand;
 import command.user.MakeOrderCommand;
 import command.user.OrderCommand;
@@ -40,8 +37,8 @@ public class CommandFactory {
                 return new CompleteOrderCommand();
             case "changeLanguage":
                 return new ChangeLanguageCommand();
-            case"addRoom":
-                return new AddRoomCommand();
+            case"saveRoom":
+                return new SaveRoomCommand();
             case"addRoomPrice":
                 return new AddRoomPriceCommand();
             case "signOut":

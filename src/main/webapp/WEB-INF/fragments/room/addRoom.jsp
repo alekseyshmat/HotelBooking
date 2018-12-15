@@ -18,7 +18,7 @@
 <div id="addRoom" class="modal">
 
     <div class="modal-content animate">
-        <form action="${pageContext.servletContext.contextPath}/controller?command=addRoom" method="post">
+        <form action="${pageContext.servletContext.contextPath}/controller?command=saveRoom" method="post">
             <label for="name"><b>${roomId}</b></label>
             <input type="text" id="name" name="roomNumber" required>
             <label for="typeRoom"><b>${type}</b></label>
@@ -37,7 +37,7 @@
             </div>
         </form>
         <div>
-            <button class="cancelButton" onclick="document.getElementById('addRoom').style.display='none'">Cancel
+            <button class="cancelButton" onclick="document.getElementById('saveRoom').style.display='none'">Cancel
             </button>
         </div>
     </div>

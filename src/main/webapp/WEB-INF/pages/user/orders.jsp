@@ -106,7 +106,6 @@
                     <th>${checkInDate}</th>
                     <th>${checkOutDate}</th>
                     <th>${typeRoom}</th>
-                    <th>${placeNumber}</th>
                     <th>${paymentStatus}</th>
                     <th></th>
                 </tr>
@@ -126,11 +125,6 @@
                         <td>
                             <div class="data">
                                     ${order.type}
-                            </div>
-                        </td>
-                        <td>
-                            <div class="data">
-                                    ${order.placeNumber}
                             </div>
                         </td>
                         <td>
