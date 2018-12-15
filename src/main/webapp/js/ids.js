@@ -1,17 +1,9 @@
-var rowV;
-
 function edit() {
-    // var row = row(x);
-    alert(rowV);
     document.getElementById('editRoom').style.display = 'block';
+    var roomId = document.getElementById('btnRoom');
 
-    var rooms = document.getElementsByName('nameRoom');
-    var roomTypes = document.getElementsByName('nameRoomType');
-    document.getElementById('valueId').value = rooms[4-1].innerHTML;
-    document.getElementById('typeRoom').value = roomTypes[4-1].innerHTML;
+    document.getElementById('roomId').value = roomId.value;
+    document.getElementById('editRoomNumber').value = roomId.dataset.roomnumber;
+    document.getElementById('typeRoom').value = roomId.dataset.roomtype;
 
-}
-
-function row(x) {
-     rowV = x.rowIndex;
 }

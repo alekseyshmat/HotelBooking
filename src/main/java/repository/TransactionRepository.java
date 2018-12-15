@@ -6,15 +6,13 @@ import exception.RepositoryException;
 import specification.Specification;
 
 import java.sql.Connection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 public class TransactionRepository extends AbstractRepository<Transaction> {
 
     private static final String TABLE_NAME = " `transaction` ";
     private static final String SELECT_QUERY = "SELECT * FROM ";
+    private static final String ID = "id";
     private static final String ID_CLIENT = "id_client";
     private static final String OPERATION = "operation";
     private static final String DATE = "date";
@@ -43,11 +41,12 @@ public class TransactionRepository extends AbstractRepository<Transaction> {
 
     @Override
     public Map<String, Object> getFields(Transaction item) {
-        Map<String, Object> values = new HashMap<>();
+        Map<String, Object> values = new LinkedHashMap<>();
         values.put(ID_CLIENT, item.getIdClient());
         values.put(OPERATION, item.getOperationType());
         values.put(DATE, item.getDate());
         values.put(SUM, item.getSum());
+        values.put(ID, item.getId());
         return values;
     }
 }

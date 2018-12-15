@@ -53,4 +53,18 @@ public class UserService {
             throw new ServiceException(ex.getMessage(), ex);
         }
     }
+
+    public void payOrder(Integer id, BigDecimal cost) throws ServiceException {
+        try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
+            UserRepository userRepository = repositoryCreator.getUserRepository();
+            User user = new User(id, cost);
+            userRepository.save(user);
+        } catch (RepositoryException ex) {
+            throw new ServiceException(ex.getMessage(), ex);
+        }
+    }
+
+    public void refilBalance() throws ServiceException {
+
+    }
 }

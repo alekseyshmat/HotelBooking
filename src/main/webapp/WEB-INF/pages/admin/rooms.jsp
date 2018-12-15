@@ -40,7 +40,7 @@
                 </tr>
                 <jsp:useBean id="roomList" scope="request" type="java.util.List"/>
                 <c:forEach items="${roomList}" var="room">
-                    <tr onclick=row(this)>
+                    <tr>
                         <td>
                             <div class="data">
                                     ${room.id}
@@ -56,10 +56,10 @@
                                     ${room.busy}
                             </div>
                         </td>
-                        <td class="editButton" width="50" onclick=edit()>
-                            Edit
-                                <%-- <button class="editButton" onclick=edit(this)>Edit
-                                 </button>--%>
+                        <td  width="50" onclick=edit()>
+                            <button  id="btnRoom" value="${room.id}" data-roomnumber="${room.roomNumber}"
+                                    data-roomtype="${room.roomType}" class="editButton" onclick=edit(this)>Edit
+                            </button>
                         </td>
                         <td width="50">
                             <button class="deleteButton">Delete

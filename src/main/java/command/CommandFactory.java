@@ -8,6 +8,7 @@ import command.admin.room.*;
 import command.user.BalanceCommand;
 import command.user.MakeOrderCommand;
 import command.user.OrderCommand;
+import command.user.PayOrderCommand;
 
 public class CommandFactory {
 
@@ -35,6 +36,8 @@ public class CommandFactory {
                 return new ProcessOrderCommand();
             case "completeOrder":
                 return new CompleteOrderCommand();
+            case "payOrder":
+                return new PayOrderCommand();
             case "changeLanguage":
                 return new ChangeLanguageCommand();
             case"saveRoom":

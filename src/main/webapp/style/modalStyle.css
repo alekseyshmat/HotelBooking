@@ -71,6 +71,33 @@ select {
     width: 50%;
 }
 
+.yesButton, .noButton {
+    color: white;
+    padding: 14px 20px;
+    margin: 2% 8% 0 12% ;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 25%;
+}
+
+.yesButton{
+    background-color: green;
+}
+.noButton{
+    background-color: red;
+}
+
+.resultButtons{
+    padding: 10px;
+}
+
+.paymentLabel{
+    text-align:center;
+    margin: 0 30% 15% ;
+    font-size: 20px
+}
+
 .modalContainer {
     padding: 16px;
 }

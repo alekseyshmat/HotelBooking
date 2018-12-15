@@ -32,28 +32,29 @@
         <form action="${pageContext.request.contextPath}/controller?command=completeOrder" method="post">
             <%--<jsp:useBean id="currentOrder" scope="request" type="java.util.List"/>--%>
             <%--<c:forEach items="${currentOrder}" var="order">--%>
-               <%--<label hidden name="id">${order.id}</label>--%>
-               <label hidden name="id">2</label>
-                <label for="name"><b>${name}</b></label>
-                <input type="text" id="name" name="uname" value="${order.firstName} ${order.lastName}"
-                       readonly>
-                <label><b>${checkInDate}</b></label>
-                <input type="text" name="checkInDate" value="${order.checkInDate}"
-                       readonly>
+            <%--<label hidden name="id">${order.id}</label>--%>
+            <label hidden name="id">2</label>
+            <input type="hidden" id="id" name="id" value="2">
+            <label for="name"><b>${name}</b></label>
+            <input type="text" id="name" name="uname" value="${order.firstName} ${order.lastName}"
+                   readonly>
+            <label><b>${checkInDate}</b></label>
+            <input type="text" name="checkInDate" value="${order.checkInDate}"
+                   readonly>
 
-                <label><b>${checkOutDate}</b></label>
-                <input type="text" name="checkOutDate" value="${order.checkOutDate}" readonly>
+            <label><b>${checkOutDate}</b></label>
+            <input type="text" name="checkOutDate" value="${order.checkOutDate}" readonly>
 
-                <label for="roomNumber"><b>${roomNumber}</b></label>
-                <input id="roomNumber" type="text" name="roomNumber" value="${order.roomNumber}" readonly>
+            <label for="roomNumber"><b>${roomNumber}</b></label>
+            <input id="roomNumber" type="text" name="roomNumber" value="${order.roomNumber}" readonly>
 
-                <label for="cost"><b>${cost}</b></label>
-                <input id="cost" type="text" name="cost" value="${order.cost}" readonly>
+            <label for="cost"><b>${cost}</b></label>
+            <input id="cost" type="text" name="cost" value="${order.cost}" readonly>
 
-                <label for="paymentStatus"><b>${paymentStatus}</b></label>
-                <input id="paymentStatus" type="text" name="paymentStatus" value="${order.paymentStatus}" readonly>
+            <label for="paymentStatus"><b>${paymentStatus}</b></label>
+            <input id="paymentStatus" type="text" name="paymentStatus" value="${order.paymentStatus}" readonly>
             <%--</c:forEach>--%>
-                <button class="prcButton" type="submit">${complete}</button>
+            <button class="prcButton" type="submit">${complete}</button>
         </form>
 
         <div>

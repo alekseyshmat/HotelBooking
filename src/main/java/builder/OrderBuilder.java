@@ -1,12 +1,17 @@
 package builder;
 
-import entity.Order;
-import entity.types.*;
 
-import javax.servlet.http.HttpSession;
+import entity.Order;
+import entity.types.OrderStatus;
+import entity.types.PaymentStatus;
+import entity.types.PaymentType;
+import entity.types.RoomType;
+
 import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Date;
 
 public class OrderBuilder implements Builder<Order> {
@@ -17,7 +22,6 @@ public class OrderBuilder implements Builder<Order> {
     private static final String CHECK_OUT_DATE = "check_out_date";
     private static final String INVOICE_DATE = "invoice_date";
     private static final String TYPE = "type";
-    private static final String PLACE_NUMBER = "place_number";
     private static final String PAYMENT_TYPE = "payment_type";
     private static final String PAYMENT_STATUS = "payment_status";
     private static final String ORDER_STATUS = "order_status";
@@ -43,7 +47,7 @@ public class OrderBuilder implements Builder<Order> {
         String lastName = resultSet.getString(LAST_NAME);
         BigDecimal cost = resultSet.getBigDecimal(COST);
 
-        return new Order(id, idClient, checkInDate, checkOutDate,invoiceDate, roomType,  paymentType,
-                paymentStatus, orderStatus, firstName, lastName,cost);
+        return new Order(id, idClient, checkInDate, checkOutDate, invoiceDate, roomType, paymentType,
+                paymentStatus, orderStatus, firstName, lastName, cost);
     }
 }

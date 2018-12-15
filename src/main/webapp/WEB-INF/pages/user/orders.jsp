@@ -82,9 +82,8 @@
                         <td>
                             <c:choose>
                                 <c:when test="${activeOrder.paymentStatus == 'UNPAID'}">
-                                    <button class="paymentButton"
-                                            onclick="document.getElementById('processOrder').style.display='block'">${pay}
-                                    </button>
+                                    <input type="submit" value="${pay}" class="paymentButton"
+                                            onclick="document.getElementById('payProve').style.display='block'"/>
                                 </c:when>
                                 <c:when test="${activeOrder.paymentStatus == 'PAID'}">
                                     <button disabled class="paymentButton">${pay}
@@ -143,8 +142,7 @@
             </table>
         </div>
     </div>
-
 </div>
-<%--TODO ДОБАВИТЬ КНОПКУ ОТМЕНИТЬ ЗАКАЗ--%>
+<jsp:include page="../../fragments/order/payOrder.jsp"/>
 </body>
 </html>

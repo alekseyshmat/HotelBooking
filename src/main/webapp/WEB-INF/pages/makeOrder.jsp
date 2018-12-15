@@ -63,22 +63,6 @@
 
             <div class="row">
                 <div class="label">
-                    <label for="placeNumber">${placeNumber}</label>
-                </div>
-                <div class="inputParameter">
-                    <select id="placeNumber" name="placeNumber">
-                        <option disabled>${placeNumber}</option>
-                        <option value="Single">Single</option>
-                        <option value="DoubleTwin">Double twin</option>
-                        <option value="Twin">Twin</option>
-                        <option value="Triple">Triple</option>
-                        <option value="Quadriple">Quadriple</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="label">
                     <label for="paymentType">${paymentType}</label>
                 </div>
                 <div class="inputParameter">

@@ -24,10 +24,10 @@
     <div class="modal-content animate">
         <form action="${pageContext.servletContext.contextPath}/controller?command=saveRoom"
               method="post">
-            <input hidden type="text" id="id" name="id" value="">
+            <input type="hidden" id="roomId" name="id" value="">
 
-            <label for="valueId"><b>${roomId}</b></label>
-            <input type="text" id="valueId" name="roomNumber" value="">
+            <label for="editRoomNumber"><b>${roomId}</b></label>
+            <input type="text" id="editRoomNumber" name="roomNumber" value="">
 
             <label for="typeRoom"><b>${type}</b></label>
             <select id="typeRoom" name="typeRoom" value="">

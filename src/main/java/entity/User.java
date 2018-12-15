@@ -44,6 +44,11 @@ public class User implements Serializable, Entity {
         this.lastName = lastName;
     }
 
+    public User(Integer id, BigDecimal balance) {
+        this.id = id;
+        this.balance = balance;
+    }
+
     public Integer getId() {
         return id;
     }

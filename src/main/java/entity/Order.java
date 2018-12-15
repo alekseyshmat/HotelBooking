@@ -1,21 +1,27 @@
 package entity;
 
-import entity.types.*;
+import entity.types.OrderStatus;
+import entity.types.PaymentStatus;
+import entity.types.PaymentType;
+import entity.types.RoomType;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Objects;
 
 public class Order implements Entity {
 
     private Integer id;
-    private int idClient;
-    private int idRoom;
+    private Integer idClient;
+    private Integer idRoom;
     private Date checkInDate;
     private Date checkOutDate;
     private RoomType type;
     private PaymentType paymentType;
-    private Date invoiceDate;
+    private LocalDate invoiceDate;
+    private Date invoiceDateNew;
     private PaymentStatus paymentStatus;
     private OrderStatus orderStatus;
     private String firstName;
@@ -23,8 +29,8 @@ public class Order implements Entity {
     private BigDecimal cost;
     private String roomNumber;
 
-    public Order(Integer id, int idClient, Date checkInDate, Date checkOutDate,
-                 PaymentType paymentType, Date invoiceDate, PaymentStatus paymentStatus, OrderStatus orderStatus) {
+    public Order(Integer id, Integer idClient, Date checkInDate, Date checkOutDate,
+                 PaymentType paymentType, LocalDate invoiceDate, PaymentStatus paymentStatus, OrderStatus orderStatus) {
         this.id = id;
         this.idClient = idClient;
         this.checkInDate = checkInDate;
@@ -35,7 +41,7 @@ public class Order implements Entity {
         this.orderStatus = orderStatus;
     }
 
-    public Order(Integer id, int idClient, Date checkInDate, Date checkOutDate, Date invoiceDate, RoomType type,
+    public Order(Integer id, Integer idClient, Date checkInDate, Date checkOutDate, LocalDate invoiceDate, RoomType type,
                  PaymentType paymentType, PaymentStatus paymentStatus,
                  OrderStatus orderStatus, String firstName, String lastName, BigDecimal cost) {
         this.id = id;
@@ -53,7 +59,7 @@ public class Order implements Entity {
 
     }
 
-    public Order(Integer id, int idClient, Date checkInDate, Date checkOutDate, RoomType type,
+    public Order(Integer id, Integer idClient, Date checkInDate, Date checkOutDate, RoomType type,
                  PaymentType paymentType, PaymentStatus paymentStatus, OrderStatus orderStatus,
                  BigDecimal cost, String roomNumber) {
         this.id = id;
@@ -68,7 +74,7 @@ public class Order implements Entity {
         this.roomNumber = roomNumber;
     }
 
-    public Order(Integer id, int idRoom, BigDecimal cost, OrderStatus orderStatus) {
+    public Order(Integer id, Integer idRoom, BigDecimal cost, OrderStatus orderStatus) {
         this.id = id;
         this.idRoom = idRoom;
         this.cost = cost;
@@ -76,10 +82,26 @@ public class Order implements Entity {
     }
 
 
-    public Order(Integer id, Date invoiceDate, OrderStatus orderStatus) {
+    public Order(Integer id, LocalDate invoiceDate, OrderStatus orderStatus) {
         this.id = id;
         this.invoiceDate = invoiceDate;
         this.orderStatus = orderStatus;
+    }
+
+    public Order(Integer id, Integer idClient, Date checkInDate, Date checkOutDate, Date invoiceDate,
+                 RoomType roomType, PaymentType paymentType, PaymentStatus paymentStatus,
+                 OrderStatus orderStatus, String firstName, String lastName, BigDecimal cost) {
+        this.id = id;
+        this.idClient = idClient;
+        this.checkInDate = checkInDate;
+        this.checkOutDate = checkOutDate;
+        this.paymentType = paymentType;
+        this.invoiceDateNew = invoiceDate;
+        this.paymentStatus = paymentStatus;
+        this.orderStatus = orderStatus;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.cost = cost;
     }
 
     public Integer getId() {
@@ -90,19 +112,19 @@ public class Order implements Entity {
         this.id = id;
     }
 
-    public int getIdClient() {
+    public Integer getIdClient() {
         return idClient;
     }
 
-    public void setIdClient(int idClient) {
+    public void setIdClient(Integer idClient) {
         this.idClient = idClient;
     }
 
-    public int getIdRoom() {
+    public Integer getIdRoom() {
         return idRoom;
     }
 
-    public void setIdRoom(int idRoom) {
+    public void setIdRoom(Integer idRoom) {
         this.idRoom = idRoom;
     }
 
@@ -130,13 +152,6 @@ public class Order implements Entity {
         this.paymentType = paymentType;
     }
 
-    public Date getImvoiceDate() {
-        return invoiceDate;
-    }
-
-    public void setImvoiceDate(Date imvoiceDate) {
-        this.invoiceDate = imvoiceDate;
-    }
 
     public PaymentStatus getPaymentStatus() {
         return paymentStatus;
@@ -162,11 +177,11 @@ public class Order implements Entity {
         this.type = type;
     }
 
-    public Date getInvoiceDate() {
+    public LocalDate getInvoiceDate() {
         return invoiceDate;
     }
 
-    public void setInvoiceDate(Date invoiceDate) {
+    public void setInvoiceDate(LocalDate invoiceDate) {
         this.invoiceDate = invoiceDate;
     }
 
