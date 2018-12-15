@@ -14,16 +14,12 @@
 <head>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/modalStyle.css">
     <script src="${pageContext.request.contextPath}/js/edit.js"></script>
+    <script src="${pageContext.request.contextPath}/js/ids.js"></script>
 </head>
 <body>
 
 <div id="editRoom" class="modal">
-    <script>
-        var input = document.getElementById('valueId');
-        var roomIds = document.getElementById('idRoom');
 
-        input.value = roomIds;
-    </script>
 
     <div class="modal-content animate">
         <form action="${pageContext.servletContext.contextPath}/controller?command=updateRoom"
@@ -32,7 +28,7 @@
             <input type="text" id="valueId" value="">
 
             <label for="typeRoom"><b>${type}</b></label>
-            <select id="typeRoom" name="typeRoom">
+            <select id="typeRoom" name="typeRoom" value="">
                 <option disabled>${type}</option>
                 <option value="Apartment">Apartment</option>
                 <option value="Business">Business</option>

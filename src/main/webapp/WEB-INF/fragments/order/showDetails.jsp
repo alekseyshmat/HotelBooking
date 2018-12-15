@@ -8,6 +8,13 @@
 <fmt:message bundle="${naming}" key="table.label.roomNumber" var="roomId"/>
 <fmt:message bundle="${naming}" key="table.label.type" var="type"/>
 <fmt:message bundle="${naming}" key="button.label.add" var="add"/>
+<fmt:message bundle="${naming}" key="table.label.checkInDate" var="checkInDate"/>
+<fmt:message bundle="${naming}" key="table.label.checkOutDate" var="checkOutDate"/>
+<fmt:message bundle="${naming}" key="table.label.invoiceDate" var="invoiceDate"/>
+<fmt:message bundle="${naming}" key="table.label.name" var="name"/>
+<fmt:message bundle="${naming}" key="table.label.roomNumber" var="roomNumber"/>
+<fmt:message bundle="${naming}" key="table.label.cost" var="cost"/>
+<fmt:message bundle="${naming}" key="button.label.cancel" var="cancel"/>
 
 <html>
 <head>
@@ -18,22 +25,32 @@
 <div id="showDetails" class="modal">
 
     <div class="modal-content animate">
-        <label><b>Username</b></label>
-        <label>{Name} {Surname}</label>
+        <%--<jsp:useBean id="currentCompletedOrder" scope="request" type="java.util.List"/>--%>
+        <%--<c:forEach items="${currentCompletedOrder}" var="order">--%>
+            <label hidden name="id">2</label>
+            <label for="name"><b>${name}</b></label>
+            <input type="text" id="name" name="uname" value="${order.firstName} ${order.lastName}"
+                   readonly>
+            <label><b>${checkInDate}</b></label>
+            <input type="text" name="checkInDate" value="${order.checkInDate}"
+                   readonly>
 
-        <label><b>{CheckInDate}</b></label>
-        <input type="text" name="checkInDate" value="{checkInDate}"
-               readonly>
-        <label><b>{CheckOutDate}</b></label>
-        <input type="text" name="{checkOutDate}" readonly>
-        <label><b>{Type}</b></label>
-        <input type="text" name="type" value="{type}" readonly>
-        <label for="typeRoom"><b>TypeRoom</b></label>
-        <input id="typeRoom" type="text" name="type" value="{type}" readonly>
+            <label><b>${checkOutDate}</b></label>
+            <input type="text" name="checkOutDate" value="${order.checkOutDate}" readonly>
 
+            <label for="roomNumber"><b>${roomNumber}</b></label>
+            <input id="roomNumber" type="text" name="roomNumber" value="${order.roomNumber}" readonly>
+
+            <label for="cost"><b>${cost}</b></label>
+            <input id="cost" type="text" name="cost" value="${order.cost}" readonly>
+
+            <label><b>${invoiceDate}</b></label>
+            <input type="text" name="checkOutDate" value="${order.invoiceDate}" readonly>
+
+        <%--</c:forEach>--%>
         <div>
             <button class="cancelButton" type="submit"
-                    onclick="document.getElementById('showDetails').style.display='none'">Cancel
+                    onclick="document.getElementById('showDetails').style.display='none'">${cancel}
             </button>
         </div>
     </div>

@@ -18,6 +18,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/dataStyle.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/tableStyle.css">
+    <script src="${pageContext.request.contextPath}/js/ids.js"></script>
     <title>${rooms}</title>
 </head>
 <body>
@@ -39,31 +40,26 @@
                 </tr>
                 <jsp:useBean id="roomList" scope="request" type="java.util.List"/>
                 <c:forEach items="${roomList}" var="room">
-                    <tr>
+                    <tr onclick=row(this)>
                         <td>
                             <div class="data">
                                     ${room.id}
                             </div>
                         </td>
-                        <td width="70" idRoom="${room.id}">
-                            <div class="data">
-                                    ${room.roomNumber}
-                            </div>
+                        <td width="70"
+                            name="nameRoom">${room.roomNumber}
                         </td>
-                        <td>
-                            <div class="data">
-                                    ${room.roomType}
-                            </div>
+                        <td name="nameRoomType">${room.roomType}
                         </td>
                         <td>
                             <div class="data">
                                     ${room.busy}
                             </div>
                         </td>
-                        <td width="50">
-                            <button class="editButton"
-                                    onclick="document.getElementById('editRoom').style.display='block'">Edit
-                            </button>
+                        <td class="editButton" width="50" onclick=edit()>
+                            Edit
+                                <%-- <button class="editButton" onclick=edit(this)>Edit
+                                 </button>--%>
                         </td>
                         <td width="50">
                             <button class="deleteButton">Delete

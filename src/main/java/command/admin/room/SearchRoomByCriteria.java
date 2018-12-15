@@ -1,4 +1,4 @@
-package command.admin;
+package command.admin.room;
 
 import command.Command;
 import command.CommandResult;
@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
-public class RoomCommand implements Command {
+public class SearchRoomByCriteria implements Command {
 
-    private static final String ROOMS_PAGE = "/WEB-INF/pages/admin/rooms.jsp";
+    private static final String ROOMS_LIST = "roomsWithCriteria";
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
-        RoomService roomService = new RoomService();
-        List<Room> roomList = roomService.findAll();
-        request.setAttribute("roomList", roomList);
 
-        return CommandResult.forward(ROOMS_PAGE);
+        RoomService roomService = new RoomService();
+        List<Room> roomsWithCriteria = roomService.findAllByCriteria(null, null,null,false);
+        request.setAttribute(ROOMS_LIST, roomsWithCriteria);
+        return null;
     }
 }

@@ -50,7 +50,6 @@
                     <th>${name}</th>
                     <th>${checkInDate}</th>
                     <th>${checkOutDate}</th>
-                    <th>${placeNumber}</th>
                     <th>${typeRoom}</th>
                     <th></th>
                 </tr>
@@ -79,17 +78,14 @@
                         </td>
                         <td>
                             <div class="data">
-                                    ${order.placeNumber}
-                            </div>
-                        </td>
-                        <td>
-                            <div class="data">
                                     ${order.type}
                             </div>
                         </td>
                         <td>
                             <button class="processButton"
-                                    onclick="document.getElementById('processOrder').style.display='block'">Process
+                                    onclick="document.getElementById('processOrder').style.display='block'"
+
+                            >Process
                             </button>
                         </td>
 
@@ -146,12 +142,12 @@
                         <td>
                             <c:choose>
                                 <c:when test="${order.paymentStatus == 'UNPAID'}">
-                                    <button class="completeButton"
-                                            onclick="document.getElementById('processOrder').style.display='block'">${complete}
+                                    <button class="completeButton">${complete}
                                     </button>
                                 </c:when>
                                 <c:when test="${order.paymentStatus == 'PAID'}">
-                                    <button class="completeButton">${complete}
+                                    <button class="completeButton"
+                                            onclick="document.getElementById('completeOrder').style.display='block'">${complete}
                                     </button>
                                 </c:when>
                             </c:choose>
@@ -202,6 +198,7 @@
 
 </div>
 <jsp:include page="../../fragments/order/processOrder.jsp"/>
+<jsp:include page="../../fragments/order/completeOrder.jsp"/>
 <jsp:include page="../../fragments/order/showDetails.jsp"/>
 </body>
 </html>

@@ -43,7 +43,6 @@ public class OrderRepository extends AbstractRepository<Order> {
         values.put(CHECK_OUT_DATE,item.getCheckOutDate() );
         values.put(INVOICE_DATE,item.getInvoiceDate() );
         values.put(TYPE,item.getType() );
-        values.put(PLACE_NUMBER,item.getPlaceNumber() );
         values.put(PAYMENT_TYPE,item.getPaymentType() );
         values.put(PAYMENT_STATUS,item.getPaymentStatus() );
         values.put(ORDER_STATUS,item.getOrderStatus() );

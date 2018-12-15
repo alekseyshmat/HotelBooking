@@ -1,10 +1,8 @@
 package builder;
 
 import entity.Room;
-import entity.types.PlaceType;
 import entity.types.RoomType;
 
-import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 

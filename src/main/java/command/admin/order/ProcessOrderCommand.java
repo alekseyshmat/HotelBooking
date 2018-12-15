@@ -1,4 +1,4 @@
-package command.admin;
+package command.admin.order;
 
 import command.Command;
 import command.CommandResult;

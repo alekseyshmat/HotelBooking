@@ -29,14 +29,13 @@ public class UserOrderBuilder implements Builder<Order> {
         Date checkInDate = resultSet.getDate(CHECK_IN_DATE);
         Date checkOutDate = resultSet.getDate(CHECK_OUT_DATE);
         RoomType roomType = RoomType.valueOf(resultSet.getString(TYPE).toUpperCase());
-        PlaceType placeType = PlaceType.valueOf(resultSet.getString(PLACE_NUMBER).toUpperCase());
         PaymentType paymentType = PaymentType.valueOf(resultSet.getString(PAYMENT_TYPE).toUpperCase());
         PaymentStatus paymentStatus = PaymentStatus.valueOf(resultSet.getString(PAYMENT_STATUS).toUpperCase());
         OrderStatus orderStatus = OrderStatus.valueOf(resultSet.getString(ORDER_STATUS).toUpperCase());
         BigDecimal cost = resultSet.getBigDecimal(COST);
         String roomNumber = resultSet.getString(ROOM_NUMBER);
 
-        return new Order(id, idClient, checkInDate, checkOutDate, roomType, placeType, paymentType,
+        return new Order(id, idClient, checkInDate, checkOutDate, roomType, paymentType,
                 paymentStatus, orderStatus, cost, roomNumber);
     }
 }

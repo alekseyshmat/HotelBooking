@@ -14,7 +14,6 @@ public class Order implements Entity {
     private Date checkInDate;
     private Date checkOutDate;
     private RoomType type;
-    private PlaceType placeNumber;
     private PaymentType paymentType;
     private Date invoiceDate;
     private PaymentStatus paymentStatus;
@@ -24,20 +23,19 @@ public class Order implements Entity {
     private BigDecimal cost;
     private String roomNumber;
 
-    public Order(Integer id, int idClient, Date checkInDate, Date checkOutDate, PlaceType placeNumber,
+    public Order(Integer id, int idClient, Date checkInDate, Date checkOutDate,
                  PaymentType paymentType, Date invoiceDate, PaymentStatus paymentStatus, OrderStatus orderStatus) {
         this.id = id;
         this.idClient = idClient;
         this.checkInDate = checkInDate;
         this.checkOutDate = checkOutDate;
-        this.placeNumber = placeNumber;
         this.paymentType = paymentType;
         this.invoiceDate = invoiceDate;
         this.paymentStatus = paymentStatus;
         this.orderStatus = orderStatus;
     }
 
-    public Order(Integer id, int idClient, Date checkInDate, Date checkOutDate, Date invoiceDate, RoomType type, PlaceType placeNumber,
+    public Order(Integer id, int idClient, Date checkInDate, Date checkOutDate, Date invoiceDate, RoomType type,
                  PaymentType paymentType, PaymentStatus paymentStatus,
                  OrderStatus orderStatus, String firstName, String lastName, BigDecimal cost) {
         this.id = id;
@@ -46,7 +44,6 @@ public class Order implements Entity {
         this.checkOutDate = checkOutDate;
         this.invoiceDate = invoiceDate;
         this.type = type;
-        this.placeNumber = placeNumber;
         this.paymentType = paymentType;
         this.paymentStatus = paymentStatus;
         this.orderStatus = orderStatus;
@@ -56,7 +53,7 @@ public class Order implements Entity {
 
     }
 
-    public Order(Integer id, int idClient, Date checkInDate, Date checkOutDate, RoomType type, PlaceType placeNumber,
+    public Order(Integer id, int idClient, Date checkInDate, Date checkOutDate, RoomType type,
                  PaymentType paymentType, PaymentStatus paymentStatus, OrderStatus orderStatus,
                  BigDecimal cost, String roomNumber) {
         this.id = id;
@@ -64,7 +61,6 @@ public class Order implements Entity {
         this.checkInDate = checkInDate;
         this.checkOutDate = checkOutDate;
         this.type = type;
-        this.placeNumber = placeNumber;
         this.paymentType = paymentType;
         this.paymentStatus = paymentStatus;
         this.orderStatus = orderStatus;
@@ -76,6 +72,13 @@ public class Order implements Entity {
         this.id = id;
         this.idRoom = idRoom;
         this.cost = cost;
+        this.orderStatus = orderStatus;
+    }
+
+
+    public Order(Integer id, Date invoiceDate, OrderStatus orderStatus) {
+        this.id = id;
+        this.invoiceDate = invoiceDate;
         this.orderStatus = orderStatus;
     }
 
@@ -117,14 +120,6 @@ public class Order implements Entity {
 
     public void setCheckOutDate(Date checkOutDate) {
         this.checkOutDate = checkOutDate;
-    }
-
-    public PlaceType getPlaceNumber() {
-        return placeNumber;
-    }
-
-    public void setPlaceNumber(PlaceType placeNumber) {
-        this.placeNumber = placeNumber;
     }
 
     public PaymentType getPaymentType() {
@@ -218,7 +213,6 @@ public class Order implements Entity {
                 idClient == order.idClient &&
                 Objects.equals(checkInDate, order.checkInDate) &&
                 Objects.equals(checkOutDate, order.checkOutDate) &&
-                Objects.equals(placeNumber, order.placeNumber) &&
                 Objects.equals(paymentType, order.paymentType) &&
                 Objects.equals(invoiceDate, order.invoiceDate) &&
                 Objects.equals(paymentStatus, order.paymentStatus) &&
@@ -227,7 +221,7 @@ public class Order implements Entity {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, idClient, checkInDate, checkOutDate, placeNumber,
+        return Objects.hash(id, idClient, checkInDate, checkOutDate,
                 paymentType, invoiceDate, paymentStatus, orderStatus);
     }
 
@@ -238,7 +232,6 @@ public class Order implements Entity {
                 ", id client=" + idClient +
                 ", check in date=" + checkInDate +
                 ", check out date=" + checkOutDate +
-                ", place type=" + placeNumber +
                 ", payment type=" + paymentType +
                 ", invoice date=" + invoiceDate +
                 ", payment status=" + paymentStatus +

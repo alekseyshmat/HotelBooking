@@ -3,7 +3,6 @@ package command.user;
 import command.Command;
 import command.CommandResult;
 import entity.types.PaymentType;
-import entity.types.PlaceType;
 import entity.types.RoomType;
 import service.OrderService;
 
@@ -41,14 +40,11 @@ public class MakeOrderCommand implements Command {
         String stringRoomType = request.getParameter(TYPE);
         RoomType roomType = RoomType.valueOf(stringRoomType.toUpperCase());
 
-        String stringPlaceType = request.getParameter(PLACE_NUMBER);
-        PlaceType placeType = PlaceType.valueOf(stringPlaceType.toUpperCase());
-
         String stringPaymentType = request.getParameter(PAYMENT_TYPE);
         PaymentType paymentType = PaymentType.valueOf(stringPaymentType.toUpperCase());
 
         OrderService orderService = new OrderService();
-        orderService.makeOrder(idClient, checkInDate, checkOutDate, roomType, placeType, paymentType);
+        orderService.makeOrder(idClient, checkInDate, checkOutDate, roomType, paymentType);
 
         return CommandResult.redirect(MAIN_PAGE);
     }

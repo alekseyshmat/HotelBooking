@@ -1,6 +1,6 @@
 package command;
 
-import command.admin.AdminOrderCommand;
+import command.admin.order.AdminOrderCommand;
 import entity.User;
 import entity.types.Role;
 import exception.ServiceException;

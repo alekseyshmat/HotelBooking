@@ -1,6 +1,5 @@
 package entity;
 
-import entity.types.PlaceType;
 import entity.types.RoomType;
 
 import java.math.BigDecimal;
@@ -11,7 +10,6 @@ public class Room implements Entity {
     private Integer id;
     private String roomNumber;
     private RoomType roomType;
-    private PlaceType placeType;
     private BigDecimal cost;
     private boolean busy;
 
@@ -54,14 +52,6 @@ public class Room implements Entity {
         this.roomType = roomType;
     }
 
-    public PlaceType getPlaceType() {
-        return placeType;
-    }
-
-    public void setPlaceType(PlaceType placeType) {
-        this.placeType = placeType;
-    }
-
     public BigDecimal getCost() {
         return cost;
     }
@@ -92,14 +82,13 @@ public class Room implements Entity {
         return id == room.id &&
                 Objects.equals(roomNumber, room.roomNumber) &&
                 Objects.equals(roomType, room.roomType) &&
-                Objects.equals(placeType, room.placeType) &&
                 Objects.equals(cost, room.cost) &&
                 Objects.equals(busy, room.busy);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, roomNumber, roomType, placeType, cost, busy);
+        return Objects.hash(id, roomNumber, roomType,  cost, busy);
     }
 
     @Override
@@ -108,7 +97,6 @@ public class Room implements Entity {
                 ", id=" + id +
                 ", room number=" + roomNumber +
                 ", room type=" + roomType +
-                ", place type=" + placeType +
                 ", cost=" + cost +
                 ", busy=" + busy;
     }
