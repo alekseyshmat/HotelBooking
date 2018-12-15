@@ -96,12 +96,18 @@ public class Order implements Entity {
         this.checkInDate = checkInDate;
         this.checkOutDate = checkOutDate;
         this.paymentType = paymentType;
+        this.type = roomType;
         this.invoiceDateNew = invoiceDate;
         this.paymentStatus = paymentStatus;
         this.orderStatus = orderStatus;
         this.firstName = firstName;
         this.lastName = lastName;
         this.cost = cost;
+    }
+
+    public Order(Integer id, PaymentStatus paymentStatus) {
+        this.id = id;
+        this.paymentStatus = paymentStatus;
     }
 
     public Integer getId() {

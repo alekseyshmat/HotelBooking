@@ -5,6 +5,7 @@ import command.CommandResult;
 import entity.Order;
 import entity.User;
 import entity.types.OperationType;
+import entity.types.PaymentStatus;
 import exception.ServiceException;
 import service.OrderService;
 import service.TransactionService;
@@ -46,14 +47,15 @@ public class PayOrderCommand implements Command {
             Optional<User> optionalUser = userService.findById(id);
             if (optionalUser.isPresent()) {
                 User user = optionalUser.get();
-
+    //todo add validation
                 BigDecimal balance = user.getBalance();
                 BigDecimal mod = balance.subtract(cost);
                 userService.payOrder(id, mod);
+                orderService.payOrder(orderId, PaymentStatus.PAID);
             }
             TransactionService transactionService = new TransactionService();
-            transactionService.addOperations(null, id, OperationType.CHARGEOF, currentDate  , cost);
+            transactionService.addOperations(null, id, OperationType.CHARGEOF, currentDate, cost);
         }
-        return CommandResult.redirect(USER_ORDERS);
+        return new OrderCommand().execute(request,response );
     }
 }

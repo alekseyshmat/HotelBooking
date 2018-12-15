@@ -7,9 +7,9 @@ import java.util.List;
 
 public class FindById implements Specification {
 
-    private int id;
+    private Integer id;
 
-    public FindById(int id) {
+    public FindById(Integer id) {
         this.id = id;
     }
 

@@ -42,12 +42,13 @@ public class OrderBuilder implements Builder<Order> {
         PaymentType paymentType = PaymentType.valueOf(resultSet.getString(PAYMENT_TYPE).toUpperCase());
         PaymentStatus paymentStatus = PaymentStatus.valueOf(resultSet.getString(PAYMENT_STATUS).toUpperCase());
         OrderStatus orderStatus = OrderStatus.valueOf(resultSet.getString(ORDER_STATUS).toUpperCase());
-
-        String firstName = resultSet.getString(FIRST_NAME);
-        String lastName = resultSet.getString(LAST_NAME);
         BigDecimal cost = resultSet.getBigDecimal(COST);
 
+//        String firstName = resultSet.getString(FIRST_NAME);
+//        String lastName = resultSet.getString(LAST_NAME);
+
+
         return new Order(id, idClient, checkInDate, checkOutDate, invoiceDate, roomType, paymentType,
-                paymentStatus, orderStatus, firstName, lastName, cost);
+                paymentStatus, orderStatus, null, null, cost);
     }
 }

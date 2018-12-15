@@ -2,6 +2,7 @@ package service;
 
 import entity.Order;
 import entity.types.OrderStatus;
+import entity.types.PaymentStatus;
 import entity.types.PaymentType;
 import entity.types.RoomType;
 import exception.RepositoryException;
@@ -42,7 +43,7 @@ public class OrderService {
     }
 
     public void makeOrder(int idClient, LocalDate checkInDate, LocalDate checkOutDate,
-                          RoomType roomType,  PaymentType paymentType) {
+                          RoomType roomType, PaymentType paymentType) {
         RepositoryCreator repositoryCreator = new RepositoryCreator();
         OrderRepository orderRepository = repositoryCreator.getOrderRepository();
 //        orderRepository.queryAdd(new MakeOrder(idClient, checkInDate,
@@ -81,6 +82,16 @@ public class OrderService {
         try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
             OrderRepository orderRepository = repositoryCreator.getOrderRepository();
             Order order = new Order(id, invoiceDate, orderStatus);
+            orderRepository.save(order);
+        } catch (RepositoryException ex) {
+            throw new ServiceException(ex.getMessage(), ex);
+        }
+    }
+
+    public void payOrder(Integer id, PaymentStatus paymentStatus) throws ServiceException {
+        try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
+            OrderRepository orderRepository = repositoryCreator.getOrderRepository();
+            Order order = new Order(id, paymentStatus);
             orderRepository.save(order);
         } catch (RepositoryException ex) {
             throw new ServiceException(ex.getMessage(), ex);

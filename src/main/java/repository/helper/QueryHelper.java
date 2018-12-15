@@ -18,8 +18,11 @@ public class QueryHelper {
 
         for (Map.Entry<String, Object> entry : fields.entrySet()) {
             String column = entry.getKey();
-            columns.append(" `").append(column).append("`,");
-            values.append(" ?,");
+            Object value = entry.getValue();
+            if (value != null) {
+                columns.append(" `").append(column).append("`,");
+                values.append(" ?,");
+            }
         }
 
         values.deleteCharAt(values.lastIndexOf(","));

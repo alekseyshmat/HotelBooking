@@ -18,18 +18,20 @@
 
     <div class="modal-content animate">
         <form action="${pageContext.request.contextPath}/controller?command=payOrder" method="post">
-        <%--<jsp:useBean id="currentCompletedOrder" scope="request" type="java.util.List"/>--%>
-        <%--<c:forEach items="${currentCompletedOrder}" var="order">--%>
-        <label hidden name="orderId">2</label>
-        <label class="paymentLabel"><b>${provePayment}</b></label>
+            <%--<jsp:useBean id="currentCompletedOrder" scope="request" type="java.util.List"/>--%>
+            <%--<c:forEach items="${currentCompletedOrder}" var="order">--%>
+            <%--<input  name="orderId" id="orderId" type="hidden" value=""/>--%>
+            <input name="orderId" id="orderId" type="hidden" value="3"/>
+            <label class="paymentLabel"><b>${provePayment}</b></label>
 
-        <%--</c:forEach>--%>
-        <div>
+            <%--</c:forEach>--%>
+            <div>
             <span class="resultButtons">
-                <input class="yesButton" type="submit" value=" ${yes}"/>
+                <button class="yesButton" type="submit">${yes}
+                </button>
             </span>
 
-        </div>
+            </div>
         </form>
         <span class="resultButtons">
                 <button class="noButton" type="submit"

@@ -5,12 +5,12 @@ import specification.Specification;
 import java.util.Collections;
 import java.util.List;
 
-public class FindById implements Specification {
+public class FindByIdClient implements Specification {
 
-    private int idCLient;
+    private Integer idClient;
 
-    public FindById(int idCLient) {
-        this.idCLient = idCLient;
+    public FindByIdClient(Integer idClient) {
+        this.idClient = idClient;
     }
 
     @Override
@@ -20,6 +20,6 @@ public class FindById implements Specification {
 
     @Override
     public List<Object> getParametres() {
-        return Collections.singletonList(idCLient);
+        return Collections.singletonList(idClient);
     }
 }

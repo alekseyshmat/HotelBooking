@@ -9,25 +9,16 @@ import java.time.LocalDateTime;
 public class Transaction implements Entity {
 
     private Integer id;
-    private int idClient;
+    private Integer idClient;
     private OperationType operationType;
-    private LocalDateTime date;
-    private LocalDate dater;
+    private LocalDate date;
     private BigDecimal sum;
 
-    public Transaction(Integer id, int idClient, OperationType operationType, LocalDateTime date, BigDecimal sum) {
+    public Transaction(Integer id, Integer idClient, OperationType operationType, LocalDate date, BigDecimal sum) {
         this.id = id;
         this.idClient = idClient;
         this.operationType = operationType;
         this.date = date;
-        this.sum = sum;
-    }
-
-    public Transaction(Integer id, int idClient, OperationType operationType, LocalDate date, BigDecimal sum) {
-        this.id = id;
-        this.idClient = idClient;
-        this.operationType = operationType;
-        this.dater = date;
         this.sum = sum;
     }
 
@@ -40,20 +31,12 @@ public class Transaction implements Entity {
         this.id = id;
     }
 
-    public int getIdClient() {
+    public Integer getIdClient() {
         return idClient;
     }
 
-    public void setIdClient(int idClient) {
+    public void setIdClient(Integer idClient) {
         this.idClient = idClient;
-    }
-
-    public LocalDate getDater() {
-        return dater;
-    }
-
-    public void setDater(LocalDate dater) {
-        this.dater = dater;
     }
 
     public OperationType getOperationType() {
@@ -64,11 +47,11 @@ public class Transaction implements Entity {
         this.operationType = operationType;
     }
 
-    public LocalDateTime getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(LocalDateTime date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
