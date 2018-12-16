@@ -61,18 +61,6 @@
                 </div>
             </div>
 
-            <div class="row">
-                <div class="label">
-                    <label for="paymentType">${paymentType}</label>
-                </div>
-                <div class="inputParameter">
-                    <select id="paymentType" name="paymentType">
-                        <option disabled>${paymentType}</option>
-                        <option value="creditCard">Credit card</option>
-                        <option value="cash">cash</option>
-                    </select>
-                </div>
-            </div>
             <div class="submitButton">
                 <input class="submitBtn" type="submit" value="${makeOrder}">
             </div>

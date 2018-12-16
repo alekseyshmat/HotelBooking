@@ -54,10 +54,10 @@ public class UserService {
         }
     }
 
-    public void updateBalance(Integer id, BigDecimal cost) throws ServiceException {
+    public void updateBalance(Integer id, BigDecimal balance) throws ServiceException {
         try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
             UserRepository userRepository = repositoryCreator.getUserRepository();
-            User user = new User(id, cost);
+            User user = new User(id, balance);
             userRepository.save(user);
         } catch (RepositoryException ex) {
             throw new ServiceException(ex.getMessage(), ex);

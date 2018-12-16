@@ -8,10 +8,10 @@ import java.util.List;
 
 public class FindByIdAndStatus implements Specification {
 
-    private int idClient;
+    private Integer idClient;
     private OrderStatus orderStatus;
 
-    public FindByIdAndStatus(int idClient, OrderStatus orderStatus) {
+    public FindByIdAndStatus(Integer idClient, OrderStatus orderStatus) {
         this.idClient = idClient;
         this.orderStatus = orderStatus;
     }

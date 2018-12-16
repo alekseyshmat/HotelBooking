@@ -8,10 +8,10 @@ import java.util.List;
 
 public class FindByIdAndStatusJoinRoom implements Specification {
 
-    private int idClient;
+    private Integer idClient;
     private OrderStatus orderStatus;
 
-    public FindByIdAndStatusJoinRoom(int idClient, OrderStatus orderStatus) {
+    public FindByIdAndStatusJoinRoom(Integer idClient, OrderStatus orderStatus) {
         this.idClient = idClient;
         this.orderStatus = orderStatus;
     }

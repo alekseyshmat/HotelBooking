@@ -17,8 +17,6 @@ public class Room implements Entity {
         this.id = id;
         this.roomNumber = roomNumber;
         this.roomType = roomType;
-//        this.placeType = placeType;
-//        this.cost = cost;
         this.busy = busy;
     }
 

@@ -13,7 +13,7 @@ import specification.searchSpecification.room.FindByCriteria;
 import java.time.LocalDate;
 import java.util.List;
 
-public class RoomService {
+public class  RoomService {
 
     public List<Room> findAll() throws ServiceException {
         try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {

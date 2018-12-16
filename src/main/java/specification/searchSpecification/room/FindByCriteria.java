@@ -1,6 +1,5 @@
 package specification.searchSpecification.room;
 
-import entity.types.OrderStatus;
 import entity.types.RoomType;
 import specification.Specification;
 

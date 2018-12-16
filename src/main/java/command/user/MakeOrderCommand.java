@@ -2,8 +2,8 @@ package command.user;
 
 import command.Command;
 import command.CommandResult;
-import entity.types.PaymentType;
 import entity.types.RoomType;
+import exception.ServiceException;
 import service.OrderService;
 
 import javax.servlet.http.HttpServletRequest;
@@ -20,14 +20,12 @@ public class MakeOrderCommand implements Command {
     private static final String CHECK_IN_DATE = "checkInDate";
     private static final String CHECK_OUT_DATE = "checkOutDate";
     private static final String TYPE = "typeRoom";
-    private static final String PLACE_NUMBER = "placeNumber";
-    private static final String PAYMENT_TYPE = "paymentType";
     private static final String DATE_PATTERN = "yyyy-MM-dd";
 
     @Override
-    public CommandResult execute(HttpServletRequest request, HttpServletResponse response) {
+    public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
         HttpSession session = request.getSession();
-        int idClient = (int) session.getAttribute(ID_CLIENT);
+        Integer idClient = (Integer) session.getAttribute(ID_CLIENT);
 
         String stringCheckInDate = request.getParameter(CHECK_IN_DATE);
         String stringCheckOutDate = request.getParameter(CHECK_OUT_DATE);
@@ -40,11 +38,8 @@ public class MakeOrderCommand implements Command {
         String stringRoomType = request.getParameter(TYPE);
         RoomType roomType = RoomType.valueOf(stringRoomType.toUpperCase());
 
-        String stringPaymentType = request.getParameter(PAYMENT_TYPE);
-        PaymentType paymentType = PaymentType.valueOf(stringPaymentType.toUpperCase());
-
         OrderService orderService = new OrderService();
-        orderService.makeOrder(idClient, checkInDate, checkOutDate, roomType, paymentType);
+        orderService.makeOrder(null, idClient, checkInDate, checkOutDate, roomType);
 
         return CommandResult.redirect(MAIN_PAGE);
     }

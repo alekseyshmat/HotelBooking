@@ -6,6 +6,7 @@
 <fmt:setBundle basename="naming" var="naming"/>
 
 <fmt:message bundle="${naming}" key="user.label.balance" var="balance"/>
+<fmt:message bundle="${naming}" key="user.label.enterSum" var="enterSum"/>
 <fmt:message bundle="${naming}" key="table.label.operation" var="operation"/>
 <fmt:message bundle="${naming}" key="table.label.dateOperation" var="dateOperation"/>
 <fmt:message bundle="${naming}" key="table.label.sum" var="sum"/>
@@ -14,7 +15,6 @@
 
 <html>
 <head>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/style/dataStyle.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/tableStyle.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/balanceStyle.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/tabStyle.css">
@@ -34,12 +34,19 @@
     <div id="balance" class="rightColumn" style="display: block;">
         <div class="balanceBar">
             <jsp:useBean id="user" scope="request" type="entity.User"/>
+
             <div class="balanceStatus">
-                ${balance}: ${user.balance}
+                ${balance}: ${user.balance}$
             </div>
-            <div class="balanceButton">
-                <a class="addBalance" href=#>${add}</a>
-            </div>
+
+            <form action="${pageContext.request.contextPath}/controller?command=refileBalance" method="post">
+                <div class="inputBalance">
+                    <input type="text" id="sumUp" name="sumUp" placeholder="${enterSum}">
+                </div>
+                <div class="balanceButton">
+                    <button class="addBalance" type="submit">${add}</button>
+                </div>
+            </form>
         </div>
     </div>
 

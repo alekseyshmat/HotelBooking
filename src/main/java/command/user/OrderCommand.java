@@ -22,7 +22,7 @@ public class OrderCommand implements Command {
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
         HttpSession session = request.getSession();
-        int id = (int) session.getAttribute(ID);
+        Integer id = (Integer) session.getAttribute(ID);
 
         OrderService orderService = new OrderService();
         List<Order> orderList = orderService.findByIdAndStatusWithJoin(id, OrderStatus.INPROCESS);

@@ -19,6 +19,7 @@ public class User implements Serializable, Entity {
     private BigDecimal balance;
     private Role role;
 
+    //builder
     public User(Integer id, String firstName, String lastName, Date birthday, String email, String login, String password, BigDecimal balance, Role role) {
         this.id = id;
         this.firstName = firstName;
@@ -31,19 +32,14 @@ public class User implements Serializable, Entity {
         this.role = role;
     }
 
-    public User(Integer id, String firstName, String lastName, BigDecimal balance) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.balance = balance;
-    }
-
+    //update profile
     public User(Integer id, String firstName, String lastName) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
     }
 
+    //update balance
     public User(Integer id, BigDecimal balance) {
         this.id = id;
         this.balance = balance;
