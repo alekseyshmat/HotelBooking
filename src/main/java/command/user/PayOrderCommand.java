@@ -50,7 +50,7 @@ public class PayOrderCommand implements Command {
     //todo add validation
                 BigDecimal balance = user.getBalance();
                 BigDecimal mod = balance.subtract(cost);
-                userService.payOrder(id, mod);
+                userService.updateBalance(id, mod);
                 orderService.payOrder(orderId, PaymentStatus.PAID);
             }
             TransactionService transactionService = new TransactionService();

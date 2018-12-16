@@ -1,6 +1,6 @@
 package entity.types;
 
 public enum OperationType {
-    REFIL,
+    REFILE,
     CHARGEOF
 }

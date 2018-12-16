@@ -54,7 +54,7 @@ public class UserService {
         }
     }
 
-    public void payOrder(Integer id, BigDecimal cost) throws ServiceException {
+    public void updateBalance(Integer id, BigDecimal cost) throws ServiceException {
         try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
             UserRepository userRepository = repositoryCreator.getUserRepository();
             User user = new User(id, cost);
@@ -64,7 +64,4 @@ public class UserService {
         }
     }
 
-    public void refilBalance() throws ServiceException {
-
-    }
 }

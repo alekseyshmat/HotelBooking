@@ -1,20 +1,58 @@
-.balanceBar{
-    padding: 5% 10%;
-    margin: 0 0 0 0;
+body{
+    background-image: url(../img/hotel.jpg);
+    background-size: cover;
 }
-.balanceStatus{
+
+* {
+    box-sizing: border-box;
+}
+
+
+.container {
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.leftColumn {
     float: left;
-    margin-left: -12%;
     width: 25%;
+    padding: 20px;
 }
 
-.balanceButton{
+.rightColumn {
     overflow: hidden;
+    margin-top: 5%;
     float: left;
-    width: 50%;
+    width: 70%;
+    background-color:rgba(220, 220, 220, 0.5);
+    padding: 20px;
+
 }
 
-.addBalance{
+.balanceStatus {
+    float: left;
+    margin: 0 10% 0 0;
+    width: 25%;
+    font-size: 25px;
+}
+
+.inputBalance {
+    padding: 7% 0;
+}
+
+input[type=text] {
+    width: 15%;
+    padding: 10px 15px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
+.balanceButton {
+    float: left;
+    width: 45%;
+}
+
+.addBalance {
     overflow: hidden;
     background-color: #000080;
     opacity: 0.7;
@@ -23,10 +61,10 @@
     cursor: pointer;
     font-size: 18px;
     color: white;
-    padding: 15px 50px;
-    margin: 3px 25%;
+    padding: 10px 50px;
+    margin: -25.5% 40%;
 }
 
-.addBalance:hover{
+.addBalance:hover {
     opacity: 1;
 }

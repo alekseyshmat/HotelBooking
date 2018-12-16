@@ -5,10 +5,7 @@ import command.admin.order.AdminOrderCommand;
 import command.admin.order.CompleteOrderCommand;
 import command.admin.order.ProcessOrderCommand;
 import command.admin.room.*;
-import command.user.BalanceCommand;
-import command.user.MakeOrderCommand;
-import command.user.OrderCommand;
-import command.user.PayOrderCommand;
+import command.user.*;
 
 public class CommandFactory {
 
@@ -30,13 +27,15 @@ public class CommandFactory {
                 return new RoomPricesCommand();
             case "showBalance":
                 return new BalanceCommand();
+            case "refileBalance":
+                return new RefileBalanceCommand();
             case "makeOrder":
                 return new MakeOrderCommand();
             case "processOrder":
                 return new ProcessOrderCommand();
             case "completeOrder":
                 return new CompleteOrderCommand();
-            case "payOrder":
+            case "updateBalance":
                 return new PayOrderCommand();
             case "changeLanguage":
                 return new ChangeLanguageCommand();
