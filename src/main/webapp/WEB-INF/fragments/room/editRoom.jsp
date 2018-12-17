@@ -9,6 +9,13 @@
 <fmt:message bundle="${naming}" key="table.label.type" var="type"/>
 <fmt:message bundle="${naming}" key="button.label.add" var="add"/>
 <fmt:message bundle="${naming}" key="button.label.edit" var="edit"/>
+<fmt:message bundle="${naming}" key="room.label.apartment" var="apartment"/>
+<fmt:message bundle="${naming}" key="room.label.business" var="business"/>
+<fmt:message bundle="${naming}" key="room.label.deluxe" var="deluxe"/>
+<fmt:message bundle="${naming}" key="room.label.duplex" var="duplex"/>
+<fmt:message bundle="${naming}" key="room.label.familyRoom" var="familyRoom"/>
+<fmt:message bundle="${naming}" key="room.label.standard" var="standard"/>
+<fmt:message bundle="${naming}" key="room.label.president" var="president"/>
 
 <html>
 <head>
@@ -24,21 +31,21 @@
     <div class="modal-content animate">
         <form action="${pageContext.servletContext.contextPath}/controller?command=saveRoom"
               method="post">
-            <input type="hidden" id="roomId" name="id" value="">
+            <input type="hidden" id="roomId" name="roomId" value="">
 
             <label for="editRoomNumber"><b>${roomId}</b></label>
             <input type="text" id="editRoomNumber" name="roomNumber" value="">
 
-            <label for="typeRoom"><b>${type}</b></label>
-            <select id="typeRoom" name="typeRoom" value="">
+            <label for="editTypeRoom"><b>${type}</b></label>
+            <select id="editTypeRoom" name="editTypeRoom" value="">
                 <option disabled>${type}</option>
-                <option value="Apartment">Apartment</option>
-                <option value="Business">Business</option>
-                <option value="Deluxe">Deluxe</option>
-                <option value="Duplex">Duplex</option>
-                <option value="FamilyRoom">Family room</option>
-                <option value="Standard">Standard</option>
-                <option value="President">President</option>
+                <option value="APARTMENT">${apartment}</option>
+                <option value="BUSINESS">${business}</option>
+                <option value="DELUXE">${deluxe}</option>
+                <option value="DUPLEX">${duplex}</option>
+                <option value="FAMILYROOM">${familyRoom}</option>
+                <option value="STANDARD">${standard}</option>
+                <option value="PRESIDENT">${president}</option>
             </select>
             <div>
                 <input class="edtButton" type="submit" value="${edit}"/>

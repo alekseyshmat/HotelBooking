@@ -1,9 +1,9 @@
-function edit() {
+function edit(button) {
     document.getElementById('editRoom').style.display = 'block';
-    var roomId = document.getElementById('btnRoom');
 
-    document.getElementById('roomId').value = roomId.value;
-    document.getElementById('editRoomNumber').value = roomId.dataset.roomnumber;
-    document.getElementById('typeRoom').value = roomId.dataset.roomtype;
+    document.getElementById('roomId').value = button.id;
+    document.getElementById('editRoomNumber').value = button.dataset.roomnumber;
+    alert(button.dataset.roomtype);
+    document.getElementById('editTypeRoom').value = button.dataset.roomtype;
 
 }

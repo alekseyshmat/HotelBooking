@@ -99,7 +99,7 @@
                             </div>
                         </td>
                         <td width="50" onclick=edit()>
-                            <button id="btnRoom" value="${room.id}" data-roomnumber="${room.roomNumber}"
+                            <button id="${room.id}" name="btnRoom" value="${room.id}" data-roomnumber="${room.roomNumber}"
                                     data-roomtype="${room.roomType}" class="editButton" onclick=edit(this)>${edit}
                             </button>
                         </td>
