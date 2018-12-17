@@ -13,7 +13,7 @@ import java.util.Optional;
 
 public class LoginCommand implements Command {
 
-    private static final String MAIN_PAGE = "/WEB-INF/pages/makeOrder.jsp";
+    private static final String MAIN_PAGE = "/controller?command=mainPage";
     private static final String ADMIN_PAGE = "/WEB-INF/pages/admin/roomPrices.jsp";
     private static final String ID = "id";
     private static final String NAME = "name";

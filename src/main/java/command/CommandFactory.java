@@ -29,6 +29,8 @@ public class CommandFactory {
                 return new BalanceCommand();
             case "refileBalance":
                 return new RefileBalanceCommand();
+            case "mainPage":
+                return new MainPageCommand();
             case "makeOrder":
                 return new MakeOrderCommand();
             case "processOrder":

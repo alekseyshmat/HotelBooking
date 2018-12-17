@@ -6,6 +6,7 @@ import entity.types.RoomType;
 import exception.ServiceException;
 import service.OrderService;
 
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -26,10 +27,8 @@ public class MakeOrderCommand implements Command {
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
         HttpSession session = request.getSession();
         Integer idClient = (Integer) session.getAttribute(ID_CLIENT);
-
         String stringCheckInDate = request.getParameter(CHECK_IN_DATE);
         String stringCheckOutDate = request.getParameter(CHECK_OUT_DATE);
-
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(DATE_PATTERN);
 
         LocalDate checkInDate = LocalDate.parse(stringCheckInDate, formatter);
