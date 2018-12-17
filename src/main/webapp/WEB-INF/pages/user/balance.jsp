@@ -12,6 +12,9 @@
 <fmt:message bundle="${naming}" key="table.label.sum" var="sum"/>
 <fmt:message bundle="${naming}" key="button.label.add" var="add"/>
 <fmt:message bundle="${naming}" key="button.label.showHistory" var="showHistory"/>
+<fmt:message bundle="${naming}" key="button.label.topUp" var="topUp"/>
+<fmt:message bundle="${naming}" key="table.label.moneyTransfer" var="moneytransfer"/>
+<fmt:message bundle="${naming}" key="table.label.paymentForServices" var="paymentForServices"/>
 
 <html>
 <head>
@@ -44,7 +47,7 @@
                     <input type="text" id="sumUp" name="sumUp" placeholder="${enterSum}">
                 </div>
                 <div class="balanceButton">
-                    <button class="addBalance" type="submit">${add}</button>
+                    <button class="addBalance" type="submit">${topUp}</button>
                 </div>
             </form>
         </div>
@@ -63,7 +66,14 @@
                     <tr>
                         <td>
                             <div class="data">
-                                    ${transaction.operationType}
+                                <c:choose>
+                                    <c:when test="${transaction.operationType == 'MONEYTRANSFER'}">
+                                        ${moneytransfer}
+                                    </c:when>
+                                    <c:when test="${transaction.operationType== 'PAYMENTFORSERVICES'}">
+                                        ${paymentForServices}
+                                    </c:when>
+                                </c:choose>
                             </div>
                         </td>
                         <td>

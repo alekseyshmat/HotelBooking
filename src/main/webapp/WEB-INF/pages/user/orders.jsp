@@ -19,6 +19,15 @@
 <fmt:message bundle="${naming}" key="button.label.cancel" var="cancel"/>
 <fmt:message bundle="${naming}" key="table.label.sum" var="sum"/>
 <fmt:message bundle="${naming}" key="table.label.roomNumber" var="roomNumber"/>
+<fmt:message bundle="${naming}" key="table.label.paid" var="paid"/>
+<fmt:message bundle="${naming}" key="table.label.unpaid" var="unpaid"/>
+<fmt:message bundle="${naming}" key="room.label.apartment" var="apartment"/>
+<fmt:message bundle="${naming}" key="room.label.business" var="business"/>
+<fmt:message bundle="${naming}" key="room.label.deluxe" var="deluxe"/>
+<fmt:message bundle="${naming}" key="room.label.duplex" var="duplex"/>
+<fmt:message bundle="${naming}" key="room.label.familyRoom" var="familyRoom"/>
+<fmt:message bundle="${naming}" key="room.label.standard" var="standard"/>
+<fmt:message bundle="${naming}" key="room.label.president" var="president"/>
 
 
 <html>
@@ -71,7 +80,14 @@
                         </td>
                         <td>
                             <div class="data">
-                                    ${activeOrder.paymentStatus}
+                                <c:choose>
+                                    <c:when test="${activeOrder.paymentStatus == 'UNPAID'}">
+                                        ${unpaid}
+                                    </c:when>
+                                    <c:when test="${activeOrder.paymentStatus == 'PAID'}">
+                                        ${paid}
+                                    </c:when>
+                                </c:choose>
                             </div>
                         </td>
                         <td>
@@ -83,7 +99,7 @@
                             <c:choose>
                                 <c:when test="${activeOrder.paymentStatus == 'UNPAID'}">
                                     <input type="submit" value="${pay}" class="paymentButton"
-                                            onclick="document.getElementById('payProve').style.display='block'"/>
+                                           onclick="document.getElementById('payProve').style.display='block'"/>
                                 </c:when>
                                 <c:when test="${activeOrder.paymentStatus == 'PAID'}">
                                     <button disabled class="paymentButton">${pay}
@@ -123,12 +139,43 @@
                         </td>
                         <td>
                             <div class="data">
-                                    ${order.type}
+                                <c:choose>
+                                    <c:when test="${order.type == 'APARTMENT'}">
+                                        ${apartment}
+                                    </c:when>
+                                    <c:when test="${order.type== 'BUSINESS'}">
+                                        ${business}
+                                    </c:when>
+                                    <c:when test="${order.type== 'DELUXE'}">
+                                        ${deluxe}
+                                    </c:when>
+                                    <c:when test="${order.type== 'DUPLEX'}">
+                                        ${duplex}
+                                    </c:when>
+                                    <c:when test="${order.type== 'FAMILYROOM'}">
+                                        ${familyRoom}
+                                    </c:when>
+                                    <c:when test="${order.type== 'STANDARD'}">
+                                        ${standard}
+                                    </c:when>
+                                    <c:when test="${order.type== 'PRESIDENT'}">
+                                        ${president}
+                                    </c:when>
+                                </c:choose>
                             </div>
                         </td>
                         <td>
                             <div class="data">
-                                    ${order.paymentStatus}
+                                <div class="data">
+                                    <c:choose>
+                                        <c:when test="${order.paymentStatus == 'UNPAID'}">
+                                            ${unpaid}
+                                        </c:when>
+                                        <c:when test="${order.paymentStatus == 'PAID'}">
+                                            ${paid}
+                                        </c:when>
+                                    </c:choose>
+                                </div>
                             </div>
                         </td>
                         <td>

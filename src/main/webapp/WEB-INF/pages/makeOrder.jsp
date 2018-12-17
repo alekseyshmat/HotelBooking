@@ -11,6 +11,14 @@
 <fmt:message bundle="${naming}" key="table.label.typeRoom" var="typeRoom"/>
 <fmt:message bundle="${naming}" key="table.label.placeNumber" var="placeNumber"/>
 <fmt:message bundle="${naming}" key="table.label.paymentType" var="paymentType"/>
+<fmt:message bundle="${naming}" key="table.label.paymentType" var="paymentType"/>
+<fmt:message bundle="${naming}" key="room.label.apartment" var="apartment"/>
+<fmt:message bundle="${naming}" key="room.label.business" var="business"/>
+<fmt:message bundle="${naming}" key="room.label.deluxe" var="deluxe"/>
+<fmt:message bundle="${naming}" key="room.label.duplex" var="duplex"/>
+<fmt:message bundle="${naming}" key="room.label.familyRoom" var="familyRoom"/>
+<fmt:message bundle="${naming}" key="room.label.standard" var="standard"/>
+<fmt:message bundle="${naming}" key="room.label.president" var="president"/>
 
 <html>
 
@@ -50,13 +58,13 @@
                 <div class="inputParameter">
                     <select id="typeRoom" name="typeRoom">
                         <option disabled>${typeRoom}</option>
-                        <option value="Apartment">Apartment</option>
-                        <option value="Business">Business</option>
-                        <option value="Deluxe">Deluxe</option>
-                        <option value="Duplex">Duplex</option>
-                        <option value="FamilyRoom">Family room</option>
-                        <option value="Standard">Standard</option>
-                        <option value="President">President</option>
+                        <option value="Apartment">${apartment}</option>
+                        <option value="Business">${business}</option>
+                        <option value="Deluxe">${deluxe}</option>
+                        <option value="Duplex">${duplex}</option>
+                        <option value="FamilyRoom">${familyRoom}</option>
+                        <option value="Standard">${standard}</option>
+                        <option value="President">${president}</option>
                     </select>
                 </div>
             </div>

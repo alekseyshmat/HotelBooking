@@ -14,12 +14,22 @@
 <fmt:message bundle="${naming}" key="table.label.orderStatus" var="orderStatus"/>
 <fmt:message bundle="${naming}" key="button.label.active" var="active"/>
 <fmt:message bundle="${naming}" key="button.label.processed" var="processed"/>
+<fmt:message bundle="${naming}" key="button.label.process" var="process"/>
 <fmt:message bundle="${naming}" key="button.label.completed" var="completed"/>
 <fmt:message bundle="${naming}" key="button.label.complete" var="complete"/>
 <fmt:message bundle="${naming}" key="button.label.showDetails" var="showDetails"/>
 <fmt:message bundle="${naming}" key="table.label.paymentStatus" var="paymentStatus"/>
 <fmt:message bundle="${naming}" key="table.label.sum" var="sum"/>
 <fmt:message bundle="${naming}" key="table.label.typeRoom" var="typeRoom"/>
+<fmt:message bundle="${naming}" key="table.label.paid" var="paid"/>
+<fmt:message bundle="${naming}" key="table.label.unpaid" var="unpaid"/>
+<fmt:message bundle="${naming}" key="room.label.apartment" var="apartment"/>
+<fmt:message bundle="${naming}" key="room.label.business" var="business"/>
+<fmt:message bundle="${naming}" key="room.label.deluxe" var="deluxe"/>
+<fmt:message bundle="${naming}" key="room.label.duplex" var="duplex"/>
+<fmt:message bundle="${naming}" key="room.label.familyRoom" var="familyRoom"/>
+<fmt:message bundle="${naming}" key="room.label.standard" var="standard"/>
+<fmt:message bundle="${naming}" key="room.label.president" var="president"/>
 
 <html>
 <head>
@@ -78,14 +88,34 @@
                         </td>
                         <td>
                             <div class="data">
-                                    ${order.type}
+                                <c:choose>
+                                    <c:when test="${order.type == 'APARTMENT'}">
+                                        ${apartment}
+                                    </c:when>
+                                    <c:when test="${order.type== 'BUSINESS'}">
+                                        ${business}
+                                    </c:when>
+                                    <c:when test="${order.type== 'DELUXE'}">
+                                        ${deluxe}
+                                    </c:when>
+                                    <c:when test="${order.type== 'DUPLEX'}">
+                                        ${duplex}
+                                    </c:when>
+                                    <c:when test="${order.type== 'FAMILYROOM'}">
+                                        ${familyRoom}
+                                    </c:when>
+                                    <c:when test="${order.type== 'STANDARD'}">
+                                        ${standard}
+                                    </c:when>
+                                    <c:when test="${order.type== 'PRESIDENT'}">
+                                        ${president}
+                                    </c:when>
+                                </c:choose>
                             </div>
                         </td>
                         <td>
                             <button class="processButton"
-                                    onclick="document.getElementById('processOrder').style.display='block'"
-
-                            >Process
+                                    onclick="document.getElementById('processOrder').style.display='block'">${process}
                             </button>
                         </td>
 
@@ -131,7 +161,14 @@
                         </td>
                         <td>
                             <div class="data">
-                                    ${order.paymentStatus}
+                                <c:choose>
+                                    <c:when test="${order.paymentStatus == 'UNPAID'}">
+                                        ${unpaid}
+                                    </c:when>
+                                    <c:when test="${order.paymentStatus == 'PAID'}">
+                                        ${paid}
+                                    </c:when>
+                                </c:choose>
                             </div>
                         </td>
                         <td>

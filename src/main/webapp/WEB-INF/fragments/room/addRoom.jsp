@@ -8,6 +8,15 @@
 <fmt:message bundle="${naming}" key="table.label.roomNumber" var="roomId"/>
 <fmt:message bundle="${naming}" key="table.label.type" var="type"/>
 <fmt:message bundle="${naming}" key="button.label.add" var="add"/>
+<fmt:message bundle="${naming}" key="button.label.cancel" var="cancel"/>
+<fmt:message bundle="${naming}" key="room.label.apartment" var="apartment"/>
+<fmt:message bundle="${naming}" key="room.label.business" var="business"/>
+<fmt:message bundle="${naming}" key="room.label.deluxe" var="deluxe"/>
+<fmt:message bundle="${naming}" key="room.label.duplex" var="duplex"/>
+<fmt:message bundle="${naming}" key="room.label.familyRoom" var="familyRoom"/>
+<fmt:message bundle="${naming}" key="room.label.standard" var="standard"/>
+<fmt:message bundle="${naming}" key="room.label.president" var="president"/>
+
 
 <html>
 <head>
@@ -24,20 +33,20 @@
             <label for="typeRoom"><b>${type}</b></label>
             <select id="typeRoom" name="typeRoom">
                 <option disabled>${type}</option>
-                <option value="Apartment">Apartment</option>
-                <option value="Business">Business</option>
-                <option value="Deluxe">Deluxe</option>
-                <option value="Duplex">Duplex</option>
-                <option value="FamilyRoom">Family room</option>
-                <option value="Standard">Standard</option>
-                <option value="President">President</option>
+                <option value="Apartment">${apartment}</option>
+                <option value="Business">${business}</option>
+                <option value="Deluxe">${deluxe}</option>
+                <option value="Duplex">${duplex}</option>
+                <option value="FamilyRoom">${familyRoom}</option>
+                <option value="Standard">${standard}</option>
+                <option value="President">${president}</option>
             </select>
             <div>
                 <input class="prcButton" type="submit" value="${add}"/>
             </div>
         </form>
         <div>
-            <button class="cancelButton" onclick="document.getElementById('saveRoom').style.display='none'">Cancel
+            <button class="cancelButton" onclick="document.getElementById('addRoom').style.display='none'">${cancel}
             </button>
         </div>
     </div>

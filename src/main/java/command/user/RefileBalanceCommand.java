@@ -41,7 +41,7 @@ public class RefileBalanceCommand implements Command {
             BigDecimal newBalance = balance.add(sumUp);
             userService.updateBalance(id, newBalance);
             TransactionService transactionService = new TransactionService();
-            transactionService.addOperations(null, id, OperationType.REFILE, currentDate, sumUp);
+            transactionService.addOperations(null, id, OperationType.MONEYTRANSFER, currentDate, sumUp);
         }
 
         return new BalanceCommand().execute(request, response);

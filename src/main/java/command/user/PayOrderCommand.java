@@ -54,7 +54,7 @@ public class PayOrderCommand implements Command {
                 orderService.payOrder(orderId, PaymentStatus.PAID);
             }
             TransactionService transactionService = new TransactionService();
-            transactionService.addOperations(null, id, OperationType.CHARGEOF, currentDate, cost);
+            transactionService.addOperations(null, id, OperationType.PAYMENTFORSERVICES, currentDate, cost);
         }
         return new OrderCommand().execute(request,response );
     }

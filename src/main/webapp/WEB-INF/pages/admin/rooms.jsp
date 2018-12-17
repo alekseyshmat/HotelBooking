@@ -12,6 +12,18 @@
 <fmt:message bundle="${naming}" key="table.label.placeNumber" var="placeNumber"/>
 <fmt:message bundle="${naming}" key="table.label.cost" var="cost"/>
 <fmt:message bundle="${naming}" key="table.label.isBusy" var="isBusy"/>
+<fmt:message bundle="${naming}" key="button.label.edit" var="edit"/>
+<fmt:message bundle="${naming}" key="button.label.delete" var="delete"/>
+<fmt:message bundle="${naming}" key="button.label.add" var="add"/>
+<fmt:message bundle="${naming}" key="room.label.apartment" var="apartment"/>
+<fmt:message bundle="${naming}" key="room.label.business" var="business"/>
+<fmt:message bundle="${naming}" key="room.label.deluxe" var="deluxe"/>
+<fmt:message bundle="${naming}" key="room.label.duplex" var="duplex"/>
+<fmt:message bundle="${naming}" key="room.label.familyRoom" var="familyRoom"/>
+<fmt:message bundle="${naming}" key="room.label.standard" var="standard"/>
+<fmt:message bundle="${naming}" key="room.label.president" var="president"/>
+<fmt:message bundle="${naming}" key="room.label.busy" var="busy"/>
+<fmt:message bundle="${naming}" key="room.label.free" var="free"/>
 
 <html>
 <head>
@@ -49,20 +61,50 @@
                         <td width="70"
                             name="nameRoom">${room.roomNumber}
                         </td>
-                        <td name="nameRoomType">${room.roomType}
+                        <td name="nameRoomType">
+                            <c:choose>
+                                <c:when test="${room.roomType == 'APARTMENT'}">
+                                    ${apartment}
+                                </c:when>
+                                <c:when test="${room.roomType == 'BUSINESS'}">
+                                    ${business}
+                                </c:when>
+                                <c:when test="${room.roomType == 'DELUXE'}">
+                                    ${deluxe}
+                                </c:when>
+                                <c:when test="${room.roomType == 'DUPLEX'}">
+                                    ${duplex}
+                                </c:when>
+                                <c:when test="${room.roomType == 'FAMILYROOM'}">
+                                    ${familyRoom}
+                                </c:when>
+                                <c:when test="${room.roomType == 'STANDARD'}">
+                                    ${standard}
+                                </c:when>
+                                <c:when test="${room.roomType == 'PRESIDENT'}">
+                                    ${president}
+                                </c:when>
+                            </c:choose>
                         </td>
                         <td>
                             <div class="data">
-                                    ${room.busy}
+                                <c:choose>
+                                    <c:when test="${room.busy == 'true'}">
+                                        ${busy}
+                                    </c:when>
+                                    <c:when test="${room.busy == 'false'}">
+                                        ${free}
+                                    </c:when>
+                                </c:choose>
                             </div>
                         </td>
-                        <td  width="50" onclick=edit()>
-                            <button  id="btnRoom" value="${room.id}" data-roomnumber="${room.roomNumber}"
-                                    data-roomtype="${room.roomType}" class="editButton" onclick=edit(this)>Edit
+                        <td width="50" onclick=edit()>
+                            <button id="btnRoom" value="${room.id}" data-roomnumber="${room.roomNumber}"
+                                    data-roomtype="${room.roomType}" class="editButton" onclick=edit(this)>${edit}
                             </button>
                         </td>
                         <td width="50">
-                            <button class="deleteButton">Delete
+                            <button class="deleteButton">${delete}
                             </button>
                         </td>
                     </tr>
@@ -73,7 +115,7 @@
     </div>
     <div class="addPanel">
         <button class="addButton"
-                onclick="document.getElementById('addRoom').style.display='block'">Add
+                onclick="document.getElementById('addRoom').style.display='block'">${add}
         </button>
     </div>
 </div>

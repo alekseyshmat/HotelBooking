@@ -10,6 +10,7 @@
 <fmt:message bundle="${naming}" key="table.label.startDate" var="startDate"/>
 <fmt:message bundle="${naming}" key="table.label.endDate" var="endDate"/>
 <fmt:message bundle="${naming}" key="table.label.cost" var="cost"/>
+<fmt:message bundle="${naming}" key="button.label.add" var="add"/>
 
 <html>
 <head>
@@ -69,7 +70,7 @@
     </div>
     <div class="addPanel">
         <button class="addButton"
-                onclick="document.getElementById('addRoomPrice').style.display='block'">Add
+                onclick="document.getElementById('addRoomPrice').style.display='block'">${add}
         </button>
     </div>
 </div>

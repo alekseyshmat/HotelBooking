@@ -12,6 +12,7 @@
 <fmt:message bundle="${naming}" key="table.label.startDate" var="startDate"/>
 <fmt:message bundle="${naming}" key="table.label.enterCost" var="enterCost"/>
 <fmt:message bundle="${naming}" key="button.label.cancel" var="cancel"/>
+<fmt:message bundle="${naming}" key="table.label.cost" var="cost"/>
 
 <html>
 <head>
@@ -31,17 +32,16 @@
                     <option value="${room.id}">${room.roomNumber}</option>
                 </c:forEach>
             </select>
-            <label for="startDate">${startDate}</label>
+            <label for="startDate"><b>${startDate}</b></label>
             <input id="startDate" type="date" name="startDate" required>
 
-            <label for="endDate">${endDate}</label>
+            <label for="endDate"><b>${endDate}</b></label>
             <input id="endDate" type="date" name="endDate" placeholder="dd" required>
-            <label for="cost">${endDate}</label>
+            <label for="cost"><b>${cost}</b></label>
             <input id="cost" type="text" name="cost" placeholder="${enterCost}" required>
 
             <div>
                 <input class="prcButton" type="submit" value="${add}"/>
-
             </div>
         </form>
         <div>
