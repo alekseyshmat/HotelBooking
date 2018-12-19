@@ -23,7 +23,7 @@ public class OrderService {
     public Optional<Order> findById(Integer id) throws ServiceException {
         try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
             OrderRepository orderRepository = repositoryCreator.getOrderRepository();
-            return orderRepository.query(new FindById(id));
+            return orderRepository.queryUser(new FindById(id));
         } catch (RepositoryException ex) {
             throw new ServiceException(ex.getMessage(), ex);
         }

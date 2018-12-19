@@ -74,4 +74,11 @@ public class OrderRepository extends AbstractRepository<Order> {
         List<Object> params = specification.getParametres();
         return executeQuery(query, builder, params);
     }
+
+    public Optional<Order> queryUser(Specification specification) throws RepositoryException {
+        String query = SELECT_QUERY + specification.toSql();
+        Builder<Order> builder = new UserOrderBuilder();
+        List<Object> params = specification.getParametres();
+        return executeQueryForSingleResult(query, builder, params);
+    }
 }

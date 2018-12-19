@@ -30,7 +30,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/dataStyle.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/tableStyle.css">
-    <script src="${pageContext.request.contextPath}/js/ids.js"></script>
+    <script src="${pageContext.request.contextPath}/js/editRoom.js"></script>
     <title>${rooms}</title>
 </head>
 <body>
@@ -99,8 +99,10 @@
                             </div>
                         </td>
                         <td width="50" onclick=edit()>
-                            <button id="${room.id}" name="btnRoom" value="${room.id}" data-roomnumber="${room.roomNumber}"
-                                    data-roomtype="${room.roomType}" class="editButton" onclick=edit(this)>${edit}
+                            <button id="${room.id}" name="btnRoom" value="${room.id}"
+                                    data-roomnumber="${room.roomNumber}"
+                                    data-roomtype="${room.roomType}"
+                                    class="editButton" onclick=edit(this)>${edit}
                             </button>
                         </td>
                         <td width="50">

@@ -32,6 +32,7 @@ public class UserOrderBuilder implements Builder<Order> {
         PaymentStatus paymentStatus = PaymentStatus.valueOf(resultSet.getString(PAYMENT_STATUS).toUpperCase());
         OrderStatus orderStatus = OrderStatus.valueOf(resultSet.getString(ORDER_STATUS).toUpperCase());
         BigDecimal cost = resultSet.getBigDecimal(COST);
+
         String roomNumber = resultSet.getString(ROOM_NUMBER);
 
         return new Order(id, idClient, checkInDate, checkOutDate, roomType,

@@ -17,20 +17,15 @@
 <div id="payProve" class="modal">
 
     <div class="modal-content animate">
-        <form action="${pageContext.request.contextPath}/controller?command=payOrder" method="post">
-            <%--<jsp:useBean id="currentCompletedOrder" scope="request" type="java.util.List"/>--%>
-            <%--<c:forEach items="${currentCompletedOrder}" var="order">--%>
-            <%--<input  name="orderId" id="orderId" type="hidden" value=""/>--%>
-            <input name="orderId" id="orderId" type="hidden" value="3"/>
+        <form action="${pageContext.request.contextPath}/controller?command=updateBalance" method="post">
+            <input name="orderId" id="orderId" type="hidden" value=""/>
             <label class="paymentLabel"><b>${provePayment}</b></label>
 
-            <%--</c:forEach>--%>
             <div>
             <span class="resultButtons">
                 <button class="yesButton" type="submit">${yes}
                 </button>
             </span>
-
             </div>
         </form>
         <span class="resultButtons">

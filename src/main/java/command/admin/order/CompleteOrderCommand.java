@@ -15,7 +15,7 @@ public class CompleteOrderCommand implements Command {
 
     private static final String ADMIN_ORDERS = "/WEB-INF/pages/admin/allOrders.jsp";
     private static final String DATE_PATTERN = "yyyy-MM-dd";
-    private static final String ID = "id";
+    private static final String ID = "activeId";
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {

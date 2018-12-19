@@ -38,6 +38,8 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/tableStyle.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/tabStyle.css">
     <script src="${pageContext.request.contextPath}/js/tab.js"></script>
+    <script src="${pageContext.request.contextPath}/js/adminOrders.js"></script>
+
     <title>All orders</title>
 </head>
 <body>
@@ -114,8 +116,13 @@
                             </div>
                         </td>
                         <td>
-                            <button class="processButton"
-                                    onclick="document.getElementById('processOrder').style.display='block'">${process}
+                            <button data-procid="${order.id}"
+                                    data-name="${order.lastName} ${order.firstName}"
+                                    data-paystatus="${order.paymentStatus}"
+                                    data-indate="${order.checkInDate}"
+                                    data-outdate="${order.checkOutDate}"
+                                    class="processButton"
+                                    onclick=procOrderBtn(this)>${process}
                             </button>
                         </td>
 
@@ -183,8 +190,15 @@
                                     </button>
                                 </c:when>
                                 <c:when test="${order.paymentStatus == 'PAID'}">
-                                    <button class="completeButton"
-                                            onclick="document.getElementById('completeOrder').style.display='block'">${complete}
+                                    <button data-activeid="${order.id}"
+                                            data-name="${order.lastName} ${order.firstName}"
+                                            data-paystatus="${order.paymentStatus}"
+                                            data-indate="${order.checkInDate}"
+                                            data-outdate="${order.checkOutDate}"
+                                        <%--data-roomnumber="${order.roomNumber}"--%>
+                                            data-cost="${order.cost}"
+                                            class="completeButton"
+                                            onclick="completeOrderBtn(this)">${complete}
                                     </button>
                                 </c:when>
                             </c:choose>
@@ -222,8 +236,15 @@
                             </div>
                         </td>
                         <td>
-                            <button class="showDetailsButton"
-                                    onclick="document.getElementById('showDetails').style.display='block'">${showDetails}
+                            <button data-completeid="${order.id}"
+                                    data-name="${order.lastName} ${order.firstName}"
+                                    data-indate="${order.checkInDate}"
+                                    data-outdate="${order.checkOutDate}"
+                                    data-invoicedate="${order.invoiceDate}"
+                                <%--data-roomnumber="${order.roomNumber}"--%>
+                                    data-cost="${order.cost}"
+                                    class="showDetailsButton"
+                                    onclick=showDetailsBtn(this)>${showDetails}
                             </button>
                         </td>
 

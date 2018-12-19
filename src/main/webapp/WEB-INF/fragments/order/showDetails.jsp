@@ -19,42 +19,37 @@
 <html>
 <head>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/modalStyle.css">
-    <script src="${pageContext.request.contextPath}/js/processOrder.js"></script>
+    <script src="${pageContext.request.contextPath}/js/showDetails.js"></script>
 </head>
 <body>
 <div id="showDetails" class="modal">
 
     <div class="modal-content animate">
-        <%--<jsp:useBean id="currentCompletedOrder" scope="request" type="java.util.List"/>--%>
-        <%--<c:forEach items="${currentCompletedOrder}" var="order">--%>
-            <label hidden name="id">2</label>
-            <label for="name"><b>${name}</b></label>
-            <input type="text" id="name" name="uname" value="${order.firstName} ${order.lastName}"
-                   readonly>
-            <label><b>${checkInDate}</b></label>
-            <input type="text" name="checkInDate" value="${order.checkInDate}"
-                   readonly>
+        <label for="completeName"><b>${name}</b></label>
+        <input type="text" id="completeName" value=""
+               readonly>
+        <label><b>${checkInDate}</b></label>
+        <input type="text" id="completeCheckInDate" name="completeCheckInDate" value=""
+               readonly>
 
-            <label><b>${checkOutDate}</b></label>
-            <input type="text" name="checkOutDate" value="${order.checkOutDate}" readonly>
+        <label><b>${checkOutDate}</b></label>
+        <input type="text" id="completeCheckOutDate" name="completeCheckOutDate" value="" readonly>
 
-            <label for="roomNumber"><b>${roomNumber}</b></label>
-            <input id="roomNumber" type="text" name="roomNumber" value="${order.roomNumber}" readonly>
+        <label for="completeRoomNumber"><b>${roomNumber}</b></label>
+        <input id="completeRoomNumber" type="text" value="" readonly>
 
-            <label for="cost"><b>${cost}</b></label>
-            <input id="cost" type="text" name="cost" value="${order.cost}" readonly>
+        <label for="completeCost"><b>${cost}</b></label>
+        <input type="text" id="completeCost" value="" readonly>
 
-            <label><b>${invoiceDate}</b></label>
-            <input type="text" name="checkOutDate" value="${order.invoiceDate}" readonly>
+        <label><b>${invoiceDate}</b></label>
+        <input type="text" id="completeInvoiceDate" value="" readonly>
 
-        <%--</c:forEach>--%>
         <div>
             <button class="cancelButton" type="submit"
                     onclick="document.getElementById('showDetails').style.display='none'">${cancel}
             </button>
         </div>
     </div>
-
 </div>
 </body>
 </html>

@@ -30,30 +30,25 @@
 
     <div class="modal-content animate">
         <form action="${pageContext.request.contextPath}/controller?command=completeOrder" method="post">
-            <%--<jsp:useBean id="currentOrder" scope="request" type="java.util.List"/>--%>
-            <%--<c:forEach items="${currentOrder}" var="order">--%>
-            <%--<label hidden name="id">${order.id}</label>--%>
-            <label hidden name="id">2</label>
-            <input type="hidden" id="id" name="id" value="2">
-            <label for="name"><b>${name}</b></label>
-            <input type="text" id="name" name="uname" value="${order.firstName} ${order.lastName}"
+            <input type="hidden" id="activeId" name="activeId" value="">
+            <label for="activeName"><b>${name}</b></label>
+            <input type="text" id="activeName" name="activeName" value=""
                    readonly>
             <label><b>${checkInDate}</b></label>
-            <input type="text" name="checkInDate" value="${order.checkInDate}"
+            <input type="text" id="activeCheckInDate" name="activeCheckInDate" value=""
                    readonly>
 
             <label><b>${checkOutDate}</b></label>
-            <input type="text" name="checkOutDate" value="${order.checkOutDate}" readonly>
+            <input type="text" id="activeCheckOutDate" name="activeCheckOutDate" value="" readonly>
 
-            <label for="roomNumber"><b>${roomNumber}</b></label>
-            <input id="roomNumber" type="text" name="roomNumber" value="${order.roomNumber}" readonly>
+            <label for="activeRoomNumber"><b>${roomNumber}</b></label>
+            <input id="activeRoomNumber" type="text" name="activeRoomNumber" value="" readonly>
 
-            <label for="cost"><b>${cost}</b></label>
-            <input id="cost" type="text" name="cost" value="${order.cost}" readonly>
+            <label for="activeCost"><b>${cost}</b></label>
+            <input id="activeCost" type="text" name="activeCost" value="" readonly>
 
-            <label for="paymentStatus"><b>${paymentStatus}</b></label>
-            <input id="paymentStatus" type="text" name="paymentStatus" value="${order.paymentStatus}" readonly>
-            <%--</c:forEach>--%>
+            <label for="activePaymentStatus"><b>${paymentStatus}</b></label>
+            <input id="activePaymentStatus" type="text" name="activePaymentStatus" value="" readonly>
             <button class="prcButton" type="submit">${complete}</button>
         </form>
 

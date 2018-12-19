@@ -21,7 +21,7 @@
 <head>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/modalStyle.css">
     <script src="${pageContext.request.contextPath}/js/edit.js"></script>
-    <script src="${pageContext.request.contextPath}/js/ids.js"></script>
+    <script src="${pageContext.request.contextPath}/js/editRoom.js"></script>
 </head>
 <body>
 

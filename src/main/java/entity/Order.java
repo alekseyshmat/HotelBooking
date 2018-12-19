@@ -48,7 +48,7 @@ public class Order implements Entity {
         this.orderStatus = orderStatus;
     }
 
-    //complete order
+    //adminOrders order
     public Order(Integer id, LocalDate invoiceDate, OrderStatus orderStatus) {
         this.id = id;
         this.invoiceDate = invoiceDate;

@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/tableStyle.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/tabStyle.css">
     <script src="${pageContext.request.contextPath}/js/tab.js"></script>
+    <script src="${pageContext.request.contextPath}/js/userOrder.js"></script>
     <title>My orders</title>
 </head>
 <body>
@@ -98,8 +99,10 @@
                         <td>
                             <c:choose>
                                 <c:when test="${activeOrder.paymentStatus == 'UNPAID'}">
-                                    <input type="submit" value="${pay}" class="paymentButton"
-                                           onclick="document.getElementById('payProve').style.display='block'"/>
+                                    <button type="submit" data-orderid="${activeOrder.id}" value="" class="paymentButton"
+                                            onclick="payOrder(this)">
+                                            ${pay}
+                                    </button>
                                 </c:when>
                                 <c:when test="${activeOrder.paymentStatus == 'PAID'}">
                                     <button disabled class="paymentButton">${pay}
