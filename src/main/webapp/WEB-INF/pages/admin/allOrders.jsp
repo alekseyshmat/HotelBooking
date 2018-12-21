@@ -108,11 +108,11 @@
                                         ${familyRoom}
                                     </c:when>
                                     <c:when test="${order.type== 'STANDARD'}">
-                                        ${standard}
-                                    </c:when>
-                                    <c:when test="${order.type== 'PRESIDENT'}">
-                                        ${president}
-                                    </c:when>
+                                    ${standard}
+                                </c:when>
+                                <c:when test="${order.type== 'PRESIDENT'}">
+                                    ${president}
+                                </c:when>
                                 </c:choose>
                             </div>
                         </td>

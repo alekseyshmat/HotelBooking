@@ -15,8 +15,10 @@
 <fmt:message bundle="${naming}" key="table.label.paymentStatus" var="paymentStatus"/>
 <fmt:message bundle="${naming}" key="button.label.active" var="active"/>
 <fmt:message bundle="${naming}" key="button.label.processed" var="processed"/>
+<fmt:message bundle="${naming}" key="button.label.completed" var="completed"/>
 <fmt:message bundle="${naming}" key="button.label.pay" var="pay"/>
 <fmt:message bundle="${naming}" key="button.label.cancel" var="cancel"/>
+<fmt:message bundle="${naming}" key="button.label.canceled" var="canceled"/>
 <fmt:message bundle="${naming}" key="table.label.sum" var="sum"/>
 <fmt:message bundle="${naming}" key="table.label.roomNumber" var="roomNumber"/>
 <fmt:message bundle="${naming}" key="table.label.paid" var="paid"/>
@@ -28,7 +30,9 @@
 <fmt:message bundle="${naming}" key="room.label.familyRoom" var="familyRoom"/>
 <fmt:message bundle="${naming}" key="room.label.standard" var="standard"/>
 <fmt:message bundle="${naming}" key="room.label.president" var="president"/>
-
+<fmt:message bundle="${naming}" key="table.label.name" var="name"/>
+<fmt:message bundle="${naming}" key="table.label.invoiceDate" var="invoiceDate"/>
+<fmt:message bundle="${naming}" key="button.label.showDetails" var="showDetails"/>
 
 <html>
 <head>
@@ -45,6 +49,7 @@
     <div class="tab">
         <button class="tabLinks active" onclick="openCity(event, 'active')">${active}</button>
         <button class="tabLinks" onclick="openCity(event, 'processed')">${processed}</button>
+        <button class="tabLinks" onclick="openCity(event, 'completed')">${completed}</button>
     </div>
     <div class="leftColumn">
         <jsp:include page="../../fragments/header/userHeader.jsp"/>
@@ -99,7 +104,8 @@
                         <td>
                             <c:choose>
                                 <c:when test="${activeOrder.paymentStatus == 'UNPAID'}">
-                                    <button type="submit" data-orderid="${activeOrder.id}" value="" class="paymentButton"
+                                    <button type="submit" data-orderid="${activeOrder.id}" value=""
+                                            class="paymentButton"
                                             onclick="payOrder(this)">
                                             ${pay}
                                     </button>
@@ -182,8 +188,10 @@
                             </div>
                         </td>
                         <td>
-                            <button class="deleteButton"
-                                    onclick="document.getElementById('processOrder').style.display='block'">${cancel}
+                            <button type="submit" class="deleteButton"
+                                    data-orderid="${order.id}"
+                                    value=""
+                                    onclick="cancelOrder(this)">${cancel}
                             </button>
                         </td>
 
@@ -192,7 +200,62 @@
             </table>
         </div>
     </div>
+
+    <div id="completed" class="rightColumn" style="display: none;">
+        <div class="card">
+            <table>
+                <tr>
+                    <th>${id}</th>
+                    <th>${name}</th>
+                    <th>${invoiceDate}</th>
+                    <th></th>
+                </tr>
+                <jsp:useBean id="completedOrderList" scope="request" type="java.util.List"/>
+                <c:forEach items="${completedOrderList}" var="order">
+                    <tr>
+                        <td>
+                            <div class="data">
+                                #${order.id}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="data">
+                                    ${order.user.lastName} ${order.user.firstName}
+                            </div>
+                        </td>
+
+                        <td>
+                            <div class="data">
+                                    ${order.invoiceDate}
+                            </div>
+                        </td>
+                        <td>
+                            <c:choose>
+                                <c:when test="${order.orderStatus == 'CANCELED'}">
+                                    ${canceled}
+                                </c:when>
+                                <c:when test="${order.orderStatus== 'COMPLETED'}">
+                                    <button data-completeid="${order.id}"
+                                            data-name="${order.user.lastName} ${order.user.firstName}"
+                                            data-indate="${order.checkInDate}"
+                                            data-outdate="${order.checkOutDate}"
+                                            data-invoicedate="${order.invoiceDate}"
+                                            data-roomnumber="${order.room.roomNumber}"
+                                            data-cost="${order.cost}"
+                                            class="showDetailsButton"
+                                            onclick=showDetailsBtn(this)>${showDetails}
+                                    </button>
+                                </c:when>
+                            </c:choose>
+                        </td>
+                    </tr>
+                </c:forEach>
+            </table>
+        </div>
+    </div>
 </div>
 <jsp:include page="../../fragments/order/payOrder.jsp"/>
+<jsp:include page="../../fragments/order/showDetails.jsp"/>
+<jsp:include page="../../fragments/order/canceledOrder.jsp"/>
 </body>
 </html>

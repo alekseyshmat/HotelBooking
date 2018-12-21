@@ -9,10 +9,7 @@ import exception.ServiceException;
 import repository.OrderRepository;
 import repository.creator.RepositoryCreator;
 import specification.searchSpecification.FindById;
-import specification.searchSpecification.order.FindByIdAndStatus;
-import specification.searchSpecification.order.FindByIdAndStatusJoinRoom;
-import specification.searchSpecification.order.FindByStatusJoinUser;
-import specification.searchSpecification.order.FindOptionalById;
+import specification.searchSpecification.order.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -40,17 +37,6 @@ public class OrderService {
         }
     }
 
-
-    public void makeOrder(Integer id, Integer idClient, LocalDate checkInDate, LocalDate checkOutDate,
-                          RoomType roomType) throws ServiceException {
-        try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
-            OrderRepository orderRepository = repositoryCreator.getOrderRepository();
-            Order order = new Order(id, idClient, checkInDate, checkOutDate, roomType);
-            orderRepository.save(order);
-        } catch (RepositoryException ex) {
-            throw new ServiceException(ex.getMessage(), ex);
-        }
-    }
 //user
     public List<Order> findByIdAndStatus(Integer id, OrderStatus orderStatus) throws ServiceException {
         try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
@@ -61,6 +47,15 @@ public class OrderService {
         }
     }
 
+    public List<Order> findByIdAndTwoStatus(Integer id, OrderStatus firstOrderStatus, OrderStatus secondOrderStatus)
+            throws ServiceException {
+        try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
+            OrderRepository orderRepository = repositoryCreator.getOrderRepository();
+            return orderRepository.queryAll(new FindByIdAndTwoStatus(id, firstOrderStatus, secondOrderStatus));
+        } catch (RepositoryException ex) {
+            throw new ServiceException(ex.getMessage(), ex);
+        }
+    }
 
     public void processOrder(Integer id, Integer idRoom, BigDecimal cost, OrderStatus orderStatus) throws ServiceException {
         try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
@@ -92,4 +87,24 @@ public class OrderService {
         }
     }
 
+    public void makeOrder(Integer id, Integer idClient, LocalDate checkInDate, LocalDate checkOutDate,
+                          RoomType roomType) throws ServiceException {
+        try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
+            OrderRepository orderRepository = repositoryCreator.getOrderRepository();
+            Order order = new Order(id, idClient, checkInDate, checkOutDate, roomType);
+            orderRepository.save(order);
+        } catch (RepositoryException ex) {
+            throw new ServiceException(ex.getMessage(), ex);
+        }
+    }
+
+    public void cancelOrder(Integer id, OrderStatus orderStatus) throws ServiceException {
+        try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
+            Order order = new Order(id, orderStatus);
+            OrderRepository orderRepository = repositoryCreator.getOrderRepository();
+            orderRepository.save(order);
+        } catch (RepositoryException ex) {
+            throw new ServiceException(ex.getMessage(), ex);
+        }
+    }
 }

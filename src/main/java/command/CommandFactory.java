@@ -37,6 +37,8 @@ public class CommandFactory {
                 return new ProcessOrderCommand();
             case "completeOrder":
                 return new CompleteOrderCommand();
+            case "cancelOrder":
+                return new CancelOrderCommand();
             case "updateBalance":
                 return new PayOrderCommand();
             case "changeLanguage":

@@ -119,6 +119,11 @@ public class Order implements Entity {
         this.room = room;
     }
 
+    public Order(Integer id, OrderStatus orderStatus) {
+        this.id = id;
+        this.orderStatus = orderStatus;
+    }
+
     public Integer getId() {
         return id;
     }
