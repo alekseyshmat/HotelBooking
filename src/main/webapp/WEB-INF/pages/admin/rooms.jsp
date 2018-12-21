@@ -87,7 +87,7 @@
                             </c:choose>
                         </td>
                         <td>
-                            <div class="data">
+                           <%-- <div class="data">
                                 <c:choose>
                                     <c:when test="${room.busy == 'true'}">
                                         ${busy}
@@ -96,7 +96,7 @@
                                         ${free}
                                     </c:when>
                                 </c:choose>
-                            </div>
+                            </div>--%>
                         </td>
                         <td width="50" onclick=edit()>
                             <button id="${room.id}" name="btnRoom" value="${room.id}"

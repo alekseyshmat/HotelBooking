@@ -15,7 +15,7 @@ function completeOrderBtn(button) {
     document.getElementById('activeName').value = button.dataset.name;
     document.getElementById('activeCheckInDate').value = button.dataset.indate;
     document.getElementById('activeCheckOutDate').value = button.dataset.outdate;
-    // document.getElementById('activeRoomNumber').value = button.dataset.roomnumber;
+    document.getElementById('activeRoomNumber').value = button.dataset.roomnumber;
     document.getElementById('activeCost').value = button.dataset.cost;
     document.getElementById('activePaymentStatus').value = button.dataset.paystatus;
 
@@ -28,7 +28,7 @@ function showDetailsBtn(button) {
     document.getElementById('completeCheckInDate').value = button.dataset.indate;
     document.getElementById('completeCheckOutDate').value = button.dataset.outdate;
     document.getElementById('completeInvoiceDate').value = button.dataset.invoicedate;
-    // document.getElementById('completeRoomNumber').value = button.dataset.roomnumber;
+    document.getElementById('completeRoomNumber').value = button.dataset.roomnumber;
     document.getElementById('completeCost').value = button.dataset.cost;
 }
 

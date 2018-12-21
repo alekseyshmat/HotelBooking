@@ -51,7 +51,6 @@ public class ConnectionPool {
         }
     }
     public Connection getConnection() {
-
         try {
             lock.lock();
             semaphore.acquire();

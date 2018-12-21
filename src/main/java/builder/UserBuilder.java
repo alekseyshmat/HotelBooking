@@ -20,7 +20,6 @@ public class UserBuilder implements Builder<User> {
     private static final String BALANCE = "balance";
     private static final String ROLE = "role";
 
-
     @Override
     public User build(ResultSet resultSet) throws SQLException {
         Integer id = resultSet.getInt(ID);

@@ -76,7 +76,7 @@
                         </td>
                         <td>
                             <div class="data">
-                                    ${activeOrder.roomNumber}
+                                    ${activeOrder.room.roomNumber}
                             </div>
                         </td>
                         <td>

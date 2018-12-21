@@ -22,7 +22,7 @@ public class RoomPriceService {
         }
     }
 
-    public void addPrice(Integer id, int roomId, LocalDate startDate, LocalDate endDate, BigDecimal cost) throws ServiceException {
+    public void addPrice(Integer id, Integer roomId, LocalDate startDate, LocalDate endDate, BigDecimal cost) throws ServiceException {
         try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
             RoomPriceRepository roomPriceRepository = repositoryCreator.getRoomPriceRepository();
             RoomPrice roomPrice = new RoomPrice(id, roomId, startDate, endDate, cost);

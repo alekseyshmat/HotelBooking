@@ -49,6 +49,8 @@ public class CommandFactory {
                 return new SignOutCommand();
             case "editProfile":
                 return new EditProfileCommand();
+            case "searchRoomByCriteria":
+                return new SearchRoomByCriteria();
             default:
                 throw new UnsupportedOperationException();
         }

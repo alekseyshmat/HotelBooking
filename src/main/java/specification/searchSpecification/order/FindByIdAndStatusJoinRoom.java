@@ -18,7 +18,8 @@ public class FindByIdAndStatusJoinRoom implements Specification {
 
     @Override
     public String toSql() {
-        return "left JOIN room r ON r.id = `order`.id_room where (`order`.id_client = ? AND order_status = ?)";
+//        return "left JOIN room r ON r.id = `order`.id_room where (`order`.id_client = ? AND order_status = ?)";
+        return "INNER JOIN user u ON u.id = `order`.id_client LEFT JOIN room r ON r.id=`order`.id_room  where (`order`.id_client = ? AND order_status = ?)";
     }
 
     @Override

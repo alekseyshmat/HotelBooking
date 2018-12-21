@@ -20,15 +20,19 @@ public class Order implements Entity {
     private LocalDate invoiceDate;
     private PaymentStatus paymentStatus;
     private OrderStatus orderStatus;
-    private String firstName;
-    private String lastName;
     private BigDecimal cost;
-    private String roomNumber;
+    private User user;
+    private Room room;
+
+//    private String firstName;
+//    private String lastName;
+//
+//    private String roomNumber;
 
     //builder user
     public Order(Integer id, Integer idClient, LocalDate checkInDate, LocalDate checkOutDate, RoomType type,
-                   PaymentStatus paymentStatus, OrderStatus orderStatus,
-                 BigDecimal cost, String roomNumber) {
+                 PaymentStatus paymentStatus, OrderStatus orderStatus,
+                 BigDecimal cost) {
         this.id = id;
         this.idClient = idClient;
         this.checkInDate = checkInDate;
@@ -37,7 +41,7 @@ public class Order implements Entity {
         this.paymentStatus = paymentStatus;
         this.orderStatus = orderStatus;
         this.cost = cost;
-        this.roomNumber = roomNumber;
+//        this.roomNumber = roomNumber;
     }
 
     //process order
@@ -58,7 +62,7 @@ public class Order implements Entity {
     //show order admin
     public Order(Integer id, Integer idClient, LocalDate checkInDate, LocalDate checkOutDate, LocalDate invoiceDate,
                  RoomType roomType, PaymentStatus paymentStatus,
-                 OrderStatus orderStatus, String firstName, String lastName, BigDecimal cost) {
+                 OrderStatus orderStatus, BigDecimal cost) {
         this.id = id;
         this.idClient = idClient;
         this.checkInDate = checkInDate;
@@ -67,8 +71,8 @@ public class Order implements Entity {
         this.invoiceDate = invoiceDate;
         this.paymentStatus = paymentStatus;
         this.orderStatus = orderStatus;
-        this.firstName = firstName;
-        this.lastName = lastName;
+//        this.firstName = firstName;
+//        this.lastName = lastName;
         this.cost = cost;
     }
 
@@ -85,6 +89,34 @@ public class Order implements Entity {
         this.checkInDate = checkInDate;
         this.checkOutDate = checkOutDate;
         this.type = roomType;
+    }
+
+    public Order(Integer id, Integer idClient, LocalDate checkInDate, LocalDate checkOutDate, LocalDate invoiceDate,
+                 RoomType roomType, PaymentStatus paymentStatus, OrderStatus orderStatus, BigDecimal cost, User user, Room room) {
+        this.id = id;
+        this.idClient = idClient;
+        this.checkInDate = checkInDate;
+        this.checkOutDate = checkOutDate;
+        this.invoiceDate = invoiceDate;
+        this.type = roomType;
+        this.paymentStatus = paymentStatus;
+        this.orderStatus = orderStatus;
+        this.cost = cost;
+        this.user = user;
+        this.room = room;
+
+    }
+
+    public Order(Integer id, Integer idClient, LocalDate checkInDate, LocalDate checkOutDate, RoomType roomType, PaymentStatus paymentStatus, OrderStatus orderStatus, BigDecimal cost, Room room) {
+        this.id = id;
+        this.idClient = idClient;
+        this.checkInDate = checkInDate;
+        this.checkOutDate = checkOutDate;
+        this.type = roomType;
+        this.paymentStatus = paymentStatus;
+        this.orderStatus = orderStatus;
+        this.cost = cost;
+        this.room = room;
     }
 
     public Integer getId() {
@@ -159,21 +191,6 @@ public class Order implements Entity {
         this.invoiceDate = invoiceDate;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
 
     public BigDecimal getCost() {
         return cost;
@@ -183,8 +200,20 @@ public class Order implements Entity {
         this.cost = cost;
     }
 
-    public String getRoomNumber() {
-        return roomNumber;
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
     }
 
     @Override
@@ -210,7 +239,7 @@ public class Order implements Entity {
     @Override
     public int hashCode() {
         return Objects.hash(id, idClient, checkInDate, checkOutDate,
-                 invoiceDate, paymentStatus, orderStatus);
+                invoiceDate, paymentStatus, orderStatus);
     }
 
     @Override

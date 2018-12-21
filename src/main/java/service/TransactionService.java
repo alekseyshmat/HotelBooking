@@ -16,7 +16,7 @@ public class TransactionService {
 
     public List<Transaction> findById(Integer id) throws ServiceException {
         try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
-            TransactionRepository transactionRepository = repositoryCreator.getTransctionRepository();
+            TransactionRepository transactionRepository = repositoryCreator.getTransactionRepository();
             return transactionRepository.queryAll(new FindByIdClient(id));
         } catch (RepositoryException ex) {
             throw new ServiceException(ex.getMessage(), ex);
@@ -25,7 +25,7 @@ public class TransactionService {
 
     public void addOperations(Integer id, Integer idClient, OperationType operationType, LocalDate date, BigDecimal sum) throws ServiceException {
         try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
-            TransactionRepository transactionRepository = repositoryCreator.getTransctionRepository();
+            TransactionRepository transactionRepository = repositoryCreator.getTransactionRepository();
             Transaction transaction = new Transaction(id, idClient, operationType, date, sum);
             transactionRepository.save(transaction);
         } catch (RepositoryException ex) {

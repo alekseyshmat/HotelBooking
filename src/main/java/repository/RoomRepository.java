@@ -6,7 +6,10 @@ import exception.RepositoryException;
 import specification.Specification;
 
 import java.sql.Connection;
-import java.util.*;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
 public class RoomRepository extends AbstractRepository<Room> {
     private static final String TABLE_NAME = " `room` ";

@@ -1,5 +1,6 @@
 package builder;
 
+import entity.Room;
 import entity.RoomPrice;
 
 import java.math.BigDecimal;
@@ -19,8 +20,10 @@ public class RoomPriceBuilder implements Builder<RoomPrice> {
 
     @Override
     public RoomPrice build(ResultSet resultSet) throws SQLException {
+        Room room = new RoomBuilder().build(resultSet);
+
         Integer id = resultSet.getInt(ID);
-        int idRoom = resultSet.getInt(ID_ROOM);
+        Integer idRoom = resultSet.getInt(ID_ROOM);
         String roomNumber = resultSet.getString(ROOM_NUMBER);
 
         Date start = resultSet.getDate(START_DATE);
@@ -30,6 +33,6 @@ public class RoomPriceBuilder implements Builder<RoomPrice> {
         LocalDate startDate = start.toLocalDate();
         LocalDate endDate = end.toLocalDate();
 
-        return new RoomPrice(id, idRoom, roomNumber, startDate, endDate, cost);
+        return new RoomPrice(id, idRoom, roomNumber, startDate, endDate, cost, room);
     }
 }

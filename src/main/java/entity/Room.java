@@ -11,19 +11,22 @@ public class Room implements Entity {
     private String roomNumber;
     private RoomType roomType;
     private BigDecimal cost;
-    private boolean busy;
 
-    public Room(Integer id, String roomNumber, RoomType roomType, boolean busy) {
-        this.id = id;
-        this.roomNumber = roomNumber;
-        this.roomType = roomType;
-        this.busy = busy;
-    }
-
+    //build without join
     public Room(Integer id, String roomNumber, RoomType roomType) {
         this.id = id;
         this.roomNumber = roomNumber;
         this.roomType = roomType;
+    }
+
+
+
+    //build with join
+    public Room(Integer id, String roomNumber, RoomType roomType, BigDecimal cost, boolean busy) {
+        this.id = id;
+        this.roomNumber = roomNumber;
+        this.roomType = roomType;
+        this.cost = cost;
     }
 
     public Integer getId() {
@@ -58,13 +61,6 @@ public class Room implements Entity {
         this.cost = cost;
     }
 
-    public boolean isBusy() {
-        return busy;
-    }
-
-    public void setBusy(boolean busy) {
-        this.busy = busy;
-    }
 
     @Override
     public boolean equals(Object obj) {
@@ -80,13 +76,12 @@ public class Room implements Entity {
         return id == room.id &&
                 Objects.equals(roomNumber, room.roomNumber) &&
                 Objects.equals(roomType, room.roomType) &&
-                Objects.equals(cost, room.cost) &&
-                Objects.equals(busy, room.busy);
+                Objects.equals(cost, room.cost);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, roomNumber, roomType,  cost, busy);
+        return Objects.hash(id, roomNumber, roomType, cost);
     }
 
     @Override
@@ -95,7 +90,6 @@ public class Room implements Entity {
                 ", id=" + id +
                 ", room number=" + roomNumber +
                 ", room type=" + roomType +
-                ", cost=" + cost +
-                ", busy=" + busy;
+                ", cost=" + cost;
     }
 }

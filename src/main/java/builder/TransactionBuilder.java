@@ -20,7 +20,7 @@ public class TransactionBuilder implements Builder<Transaction> {
     @Override
     public Transaction build(ResultSet resultSet) throws SQLException {
         Integer id = resultSet.getInt(ID);
-        int idClient = resultSet.getInt(ID_CLIENT);
+        Integer idClient = resultSet.getInt(ID_CLIENT);
         OperationType operationType = OperationType.valueOf(resultSet.getString(OPERATION).toUpperCase());
         Date oldDate = resultSet.getDate(DATE);
         LocalDate date = oldDate.toLocalDate();

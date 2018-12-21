@@ -31,8 +31,12 @@ public class RepositoryCreator implements AutoCloseable {
         return new RoomPriceRepository(connection);
     }
 
-    public TransactionRepository getTransctionRepository() {
+    public TransactionRepository getTransactionRepository() {
         return new TransactionRepository(connection);
+    }
+
+    public RoomBusyRepository getRoomBusyRepository() {
+        return new RoomBusyRepository(connection);
     }
 
     @Override

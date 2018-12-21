@@ -17,6 +17,7 @@ public class SaveRoomCommand implements Command {
     private static final String ID = "roomId";
     private static final String ROOM_NUMBER = "roomNumber";
     private static final String ROOM_TYPE = "editTypeRoom";
+    private static final String ROOM_LIST = "roomList";
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
@@ -34,7 +35,7 @@ public class SaveRoomCommand implements Command {
         roomService.saveRoom(id, roomNumber, roomType);
 
         List<Room> roomList = roomService.findAll();
-        request.setAttribute("roomList", roomList);
+        request.setAttribute(ROOM_LIST, roomList);
 
         return CommandResult.redirect(MAIN_PAGE);
     }

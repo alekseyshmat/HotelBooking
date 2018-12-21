@@ -54,6 +54,7 @@
     <div class="leftColumn">
         <jsp:include page="../../fragments/header/adminHeader.jsp"/>
     </div>
+
     <div id="processed" class="rightColumn" style="display: block;">
         <div class="card">
             <table>
@@ -75,7 +76,7 @@
                         </td>
                         <td>
                             <div class="data">
-                                    ${order.lastName} ${order.firstName}
+                                    ${order.user.lastName} ${order.user.firstName}
                             </div>
                         </td>
                         <td>
@@ -116,17 +117,22 @@
                             </div>
                         </td>
                         <td>
-                            <button data-procid="${order.id}"
-                                    data-name="${order.lastName} ${order.firstName}"
-                                    data-paystatus="${order.paymentStatus}"
-                                    data-indate="${order.checkInDate}"
-                                    data-outdate="${order.checkOutDate}"
-                                    class="processButton"
-                                    onclick=procOrderBtn(this)>${process}
-                            </button>
-                        </td>
+                            <a class="processButton"
+                               href="${pageContext.servletContext.contextPath}/controller?command=searchRoomByCriteria&id=${order.id}&inDate=${order.checkInDate}&outDate=${order.checkOutDate}&type=${order.type}">${process}</a>
 
+                                <%--  <button data-procid="${order.id}"
+                                          data-name="${order.lastName} ${order.firstName}"
+                                          data-paystatus="${order.paymentStatus}"
+                                          data-indate="${order.checkInDate}"
+                                          data-outdate="${order.checkOutDate}"
+                                          class="processButton"
+                                          type="submit"
+                                      &lt;%&ndash;onclick=procOrderBtn(this)&ndash;%&gt;
+                                  >${process}
+                                  </button>--%>
+                        </td>
                     </tr>
+
                 </c:forEach>
             </table>
         </div>
@@ -153,7 +159,7 @@
                         </td>
                         <td>
                             <div class="data">
-                                    ${order.lastName} ${order.firstName}
+                                    ${order.user.lastName} ${order.user.firstName}
                             </div>
                         </td>
                         <td>
@@ -191,11 +197,11 @@
                                 </c:when>
                                 <c:when test="${order.paymentStatus == 'PAID'}">
                                     <button data-activeid="${order.id}"
-                                            data-name="${order.lastName} ${order.firstName}"
+                                            data-name="${order.user.lastName} ${order.user.firstName}"
                                             data-paystatus="${order.paymentStatus}"
                                             data-indate="${order.checkInDate}"
                                             data-outdate="${order.checkOutDate}"
-                                        <%--data-roomnumber="${order.roomNumber}"--%>
+                                            data-roomnumber="${order.room.roomNumber}"
                                             data-cost="${order.cost}"
                                             class="completeButton"
                                             onclick="completeOrderBtn(this)">${complete}
@@ -227,7 +233,7 @@
                         </td>
                         <td>
                             <div class="data">
-                                    ${order.lastName} ${order.firstName}
+                                    ${order.user.lastName} ${order.user.firstName}
                             </div>
                         </td>
                         <td>
@@ -237,11 +243,11 @@
                         </td>
                         <td>
                             <button data-completeid="${order.id}"
-                                    data-name="${order.lastName} ${order.firstName}"
+                                    data-name="${order.user.lastName} ${order.user.firstName}"
                                     data-indate="${order.checkInDate}"
                                     data-outdate="${order.checkOutDate}"
                                     data-invoicedate="${order.invoiceDate}"
-                                <%--data-roomnumber="${order.roomNumber}"--%>
+                                    data-roomnumber="${order.room.roomNumber}"
                                     data-cost="${order.cost}"
                                     class="showDetailsButton"
                                     onclick=showDetailsBtn(this)>${showDetails}

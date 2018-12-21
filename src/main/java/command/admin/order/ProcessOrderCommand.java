@@ -8,26 +8,30 @@ import service.OrderService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.math.BigDecimal;
 
 public class ProcessOrderCommand implements Command {
 
     private static final String ADMIN_ORDERS = "/WEB-INF/pages/admin/allOrders.jsp";
-    private static final String ID = "id";
+    private static final String ID_ORDER = "idOrder";
     private static final String ID_ROOM = "idRoom";
     private static final String COST = "cost";
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
-        Integer id = Integer.valueOf(request.getParameter(ID));
+        HttpSession session = request.getSession();
+        Integer idOrder = (Integer) session.getAttribute(ID_ORDER);
+        session.removeAttribute(ID_ORDER);
+        Integer idRoom = Integer.valueOf(request.getParameter(ID_ROOM));
 
-        BigDecimal cost = BigDecimal.valueOf(Long.parseLong(request.getParameter(COST)));
-
-        int idRoom = Integer.valueOf(request.getParameter(ID_ROOM));
+        String stringCost = request.getParameter(COST);
+        BigDecimal cost = new BigDecimal(stringCost);
 
         OrderService orderService = new OrderService();
-        orderService.processOrder(id, idRoom, cost, OrderStatus.SEEN);
+        orderService.processOrder(idOrder, idRoom, cost, OrderStatus.SEEN);
 
-        return CommandResult.redirect(ADMIN_ORDERS);
+//        return CommandResult.redirect(ADMIN_ORDERS);
+        return new AdminOrderCommand().execute(request, response);
     }
 }

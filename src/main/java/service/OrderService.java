@@ -12,6 +12,7 @@ import specification.searchSpecification.FindById;
 import specification.searchSpecification.order.FindByIdAndStatus;
 import specification.searchSpecification.order.FindByIdAndStatusJoinRoom;
 import specification.searchSpecification.order.FindByStatusJoinUser;
+import specification.searchSpecification.order.FindOptionalById;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -23,12 +24,13 @@ public class OrderService {
     public Optional<Order> findById(Integer id) throws ServiceException {
         try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
             OrderRepository orderRepository = repositoryCreator.getOrderRepository();
-            return orderRepository.queryUser(new FindById(id));
+            return orderRepository.query(new FindOptionalById(id));
         } catch (RepositoryException ex) {
             throw new ServiceException(ex.getMessage(), ex);
         }
     }
 
+    //admin
     public List<Order> findByStatus(OrderStatus orderStatus) throws ServiceException {
         try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
             OrderRepository orderRepository = repositoryCreator.getOrderRepository();
@@ -37,6 +39,7 @@ public class OrderService {
             throw new ServiceException(ex.getMessage(), ex);
         }
     }
+
 
     public void makeOrder(Integer id, Integer idClient, LocalDate checkInDate, LocalDate checkOutDate,
                           RoomType roomType) throws ServiceException {
@@ -48,26 +51,18 @@ public class OrderService {
             throw new ServiceException(ex.getMessage(), ex);
         }
     }
-
+//user
     public List<Order> findByIdAndStatus(Integer id, OrderStatus orderStatus) throws ServiceException {
         try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
             OrderRepository orderRepository = repositoryCreator.getOrderRepository();
-            return orderRepository.queryAllUser(new FindByIdAndStatus(id, orderStatus));
+            return orderRepository.queryAll(new FindByIdAndStatusJoinRoom(id, orderStatus));
         } catch (RepositoryException ex) {
             throw new ServiceException(ex.getMessage(), ex);
         }
     }
 
-    public List<Order> findByIdAndStatusWithJoin(Integer id, OrderStatus orderStatus) throws ServiceException {
-        try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
-            OrderRepository orderRepository = repositoryCreator.getOrderRepository();
-            return orderRepository.queryAllUser(new FindByIdAndStatusJoinRoom(id, orderStatus));
-        } catch (RepositoryException ex) {
-            throw new ServiceException(ex.getMessage(), ex);
-        }
-    }
 
-    public void processOrder(Integer id, int idRoom, BigDecimal cost, OrderStatus orderStatus) throws ServiceException {
+    public void processOrder(Integer id, Integer idRoom, BigDecimal cost, OrderStatus orderStatus) throws ServiceException {
         try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
             OrderRepository orderRepository = repositoryCreator.getOrderRepository();
             Order order = new Order(id, idRoom, cost, orderStatus);
@@ -96,4 +91,5 @@ public class OrderService {
             throw new ServiceException(ex.getMessage(), ex);
         }
     }
+
 }

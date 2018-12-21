@@ -47,7 +47,7 @@ public class PayOrderCommand implements Command {
             Optional<User> optionalUser = userService.findById(id);
             if (optionalUser.isPresent()) {
                 User user = optionalUser.get();
-    //todo add validation
+                //todo add validation
                 BigDecimal balance = user.getBalance();
                 BigDecimal newBalance = balance.subtract(cost);
                 userService.updateBalance(id, newBalance);
@@ -56,6 +56,6 @@ public class PayOrderCommand implements Command {
             TransactionService transactionService = new TransactionService();
             transactionService.addOperations(null, id, OperationType.PAYMENTFORSERVICES, currentDate, cost);
         }
-        return new OrderCommand().execute(request,response );
+        return new OrderCommand().execute(request, response);
     }
 }

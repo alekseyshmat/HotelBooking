@@ -32,14 +32,14 @@ public class AddRoomPriceCommand implements Command {
         String stringStartDate = request.getParameter(START_DATE);
         String stringEndDate = request.getParameter(END_DATE);
 
-        int roomId = Integer.parseInt(stringRoomId);
+        Integer roomId = Integer.parseInt(stringRoomId);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(DATE_PATTERN);
 
         LocalDate startDate = LocalDate.parse(stringStartDate, formatter);
         LocalDate endDate = LocalDate.parse(stringEndDate, formatter);
 
         String stringCost = request.getParameter(COST);
-        BigDecimal cost = BigDecimal.valueOf(Long.parseLong(stringCost));
+        BigDecimal cost = new BigDecimal(stringCost);
 
         RoomPriceService roomPriceService = new RoomPriceService();
         roomPriceService.addPrice(null, roomId, startDate, endDate, cost);

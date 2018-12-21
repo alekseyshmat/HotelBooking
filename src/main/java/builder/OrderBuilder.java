@@ -2,6 +2,8 @@ package builder;
 
 
 import entity.Order;
+import entity.Room;
+import entity.User;
 import entity.types.OrderStatus;
 import entity.types.PaymentStatus;
 import entity.types.RoomType;
@@ -23,14 +25,13 @@ public class OrderBuilder implements Builder<Order> {
     private static final String TYPE = "type";
     private static final String PAYMENT_STATUS = "payment_status";
     private static final String ORDER_STATUS = "order_status";
-    private static final String FIRST_NAME = "first_name";
-    private static final String LAST_NAME = "last_name";
     private static final String COST = "cost";
     private static final String DATE_PATTERN = "yyyy-MM-dd";
 
-
     @Override
     public Order build(ResultSet resultSet) throws SQLException {
+        User user = new UserBuilder().build(resultSet);
+        Room room = new RoomBuilder().build(resultSet);
 
         Integer id = resultSet.getInt(ID);
         Integer idClient = resultSet.getInt(ID_CLIENT);
@@ -51,11 +52,7 @@ public class OrderBuilder implements Builder<Order> {
         OrderStatus orderStatus = OrderStatus.valueOf(resultSet.getString(ORDER_STATUS).toUpperCase());
         BigDecimal cost = resultSet.getBigDecimal(COST);
 
-        String firstName = resultSet.getString(FIRST_NAME);
-        String lastName = resultSet.getString(LAST_NAME);
-
-
         return new Order(id, idClient, checkInDate, checkOutDate, invoiceDate, roomType,
-                paymentStatus, orderStatus, firstName, lastName, cost);
+                paymentStatus, orderStatus, cost, user, room);
     }
 }

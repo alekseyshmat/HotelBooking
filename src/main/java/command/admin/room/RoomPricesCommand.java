@@ -17,6 +17,7 @@ public class RoomPricesCommand implements Command {
 
     private static final String ROOM_PRICES_PAGE = "/WEB-INF/pages/admin/roomPrices.jsp";
     private static final String PRICE_LIST = "roomPriceList";
+    private static final String ROOM_LIST = "roomList";
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
@@ -25,7 +26,7 @@ public class RoomPricesCommand implements Command {
 
         RoomService roomService = new RoomService();
         List<Room> roomList = roomService.findAll();
-        request.setAttribute("roomList", roomList);
+        request.setAttribute(ROOM_LIST, roomList);
         request.setAttribute(PRICE_LIST, roomPriceList);
 
         return CommandResult.forward(ROOM_PRICES_PAGE);

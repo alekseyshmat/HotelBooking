@@ -12,22 +12,38 @@ public class FindByCriteria implements Specification {
     private RoomType roomType;
     private LocalDate checkInDate;
     private LocalDate checkOutDate;
-    private boolean roomStatus;
 
-    public FindByCriteria(RoomType roomType, LocalDate checkInDate, LocalDate checkOutDate, boolean roomStatus) {
+    public FindByCriteria(RoomType roomType, LocalDate checkInDate, LocalDate checkOutDate) {
         this.roomType = roomType;
         this.checkInDate = checkInDate;
         this.checkOutDate = checkOutDate;
-        this.roomStatus = roomStatus;
     }
 
     @Override
     public String toSql() {
-        return "WHERE (is_busy= ?  AND room.type =?)";
+//        return "INNER JOIN room_price rp ON rp.id_room = room.id WHERE (is_busy= ?  AND room.type =?)"
+      /* return "RIGHT JOIN room " +
+                "ON room.id = room_busy.id_room " +
+                "LEFT JOIN room_price rp " +
+                "ON room_busy.id_room = rp.id_room WHERE(type = ?  " +
+                "AND(( ? NOT BETWEEN date_start and date_end AND ? NOT BETWEEN date_start and date_end ) " +
+                "OR ( date_start IS NOT NULL OR date_end IS NOT NULL )) " +
+                "AND(( ? BETWEEN start_date and end_date AND ? BETWEEN start_date and end_date ) " +
+                "OR  ( cost IS NULL)))";*/
+
+        return "RIGHT JOIN room " +
+                "ON room.id = room_busy.id_room " +
+                "LEFT JOIN room_price rp " +
+                "ON room_busy.id_room = rp.id_room WHERE(type =? " +
+                "AND ? NOT BETWEEN date_start and date_end " +
+                " AND ? NOT BETWEEN date_start and date_end " +
+                " AND ? BETWEEN start_date and end_date AND ? BETWEEN start_date and end_date " +
+                ")";
     }
 
     @Override
     public List<Object> getParametres() {
-        return Arrays.asList(roomType, checkInDate, checkOutDate, roomStatus);
+//        return Arrays.asList(roomType, checkInDate, checkOutDate, roomStatus);
+        return Arrays.asList(roomType, checkInDate, checkOutDate, checkInDate, checkOutDate);
     }
 }
