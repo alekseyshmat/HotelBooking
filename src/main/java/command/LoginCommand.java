@@ -36,7 +36,7 @@ public class LoginCommand implements Command {
         String name = user1.getFirstName();
         HttpSession session = request.getSession();
 
-        int id = user1.getId();
+        Integer id = user1.getId();
 
         session.setAttribute(ID, id);
         session.setAttribute(NAME, name);

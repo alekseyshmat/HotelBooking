@@ -9,49 +9,71 @@ import command.user.*;
 
 public class CommandFactory {
 
+    private static final String LOGIN = "login";
+    private static final String SHOW_PROFILE = "showProfile";
+    private static final String SHOW_ORDERS = "showOrders";
+    private static final String SHOW_ALL_ORDERS = "showAllOrders";
+    private static final String SHOW_USERS = "showUsers";
+    private static final String SHOW_ROOMS = "showRooms";
+    private static final String SHOW_ROOM_PRICES = "showRoomPrices";
+    private static final String SHOW_BALANCE = "showBalance";
+    private static final String REFILE_BALANCE = "refileBalance";
+    private static final String MAIN_PAGE = "mainPage";
+    private static final String MAKE_ORDER = "makeOrder";
+    private static final String PROCESS_ORDER = "processOrder";
+    private static final String COMPLETE_ORDER = "completeOrder";
+    private static final String CANCEL_ORDER = "cancelOrder";
+    private static final String UPDATE_BALANCE = "updateBalance";
+    private static final String CHANGE_LANGUAGE = "changeLanguage";
+    private static final String SAVE_ROOM = "saveRoom";
+    private static final String ADD_ROOM_PRICE = "addRoomPrice";
+    private static final String SIGN_OUT = "signOut";
+    private static final String EDIT_PROFILE = "editProfile";
+    private static final String SEARCH_ROOM_BY_CRITERIA = "searchRoomByCriteria";
+
     public Command create(String command) {
         switch (command) {
-            case "login":
+            case LOGIN:
                 return new LoginCommand();
-            case "showProfile":
+            case SHOW_PROFILE:
                 return new ProfileCommand();
-            case "showOrders":
+            case SHOW_ORDERS:
                 return new OrderCommand();
-            case "showAllOrders":
+            case SHOW_ALL_ORDERS:
                 return new AdminOrderCommand();
-            case "showUsers":
+            case SHOW_USERS:
                 return new UserCommand();
-            case "showRooms":
+            case SHOW_ROOMS:
                 return new RoomCommand();
-            case "showRoomPrices":
+            case SHOW_ROOM_PRICES:
                 return new RoomPricesCommand();
-            case "showBalance":
+            case SHOW_BALANCE:
                 return new BalanceCommand();
-            case "refileBalance":
+            case REFILE_BALANCE:
                 return new RefileBalanceCommand();
-            case "mainPage":
+            case MAIN_PAGE:
                 return new MainPageCommand();
-            case "makeOrder":
+            case MAKE_ORDER:
                 return new MakeOrderCommand();
-            case "processOrder":
+            case PROCESS_ORDER:
                 return new ProcessOrderCommand();
-            case "completeOrder":
+            case COMPLETE_ORDER:
                 return new CompleteOrderCommand();
-            case "cancelOrder":
+            case CANCEL_ORDER:
                 return new CancelOrderCommand();
-            case "updateBalance":
+            case UPDATE_BALANCE:
                 return new PayOrderCommand();
-            case "changeLanguage":
+            case CHANGE_LANGUAGE:
                 return new ChangeLanguageCommand();
-            case"saveRoom":
+            case SAVE_ROOM:
                 return new SaveRoomCommand();
-            case"addRoomPrice":
+            case ADD_ROOM_PRICE:
                 return new AddRoomPriceCommand();
-            case "signOut":
+            case SIGN_OUT:
                 return new SignOutCommand();
-            case "editProfile":
+            case EDIT_PROFILE:
                 return new EditProfileCommand();
-            case "searchRoomByCriteria":
+            case SEARCH_ROOM_BY_CRITERIA:
                 return new SearchRoomByCriteria();
             default:
                 throw new UnsupportedOperationException();
