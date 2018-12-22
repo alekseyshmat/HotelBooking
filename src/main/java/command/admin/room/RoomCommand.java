@@ -18,7 +18,12 @@ public class RoomCommand implements Command {
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
         RoomService roomService = new RoomService();
+
+
         List<Room> roomList = roomService.findAll();
+
+        int count = roomList.size();
+
         request.setAttribute(ROOM_LIST, roomList);
 
         return CommandResult.forward(ROOMS_PAGE);

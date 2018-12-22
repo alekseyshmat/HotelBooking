@@ -1,5 +1,6 @@
 package specification.searchSpecification.user;
 
+import org.apache.commons.codec.digest.DigestUtils;
 import specification.Specification;
 
 import java.util.Arrays;
@@ -22,6 +23,11 @@ public class FindByLoginAndPassword implements Specification {
 
     @Override
     public List<Object> getParametres() {
-        return Arrays.asList(login, password);
+        String encryptedPassword = decryptPassword(password);
+        return Arrays.asList(login, encryptedPassword);
+    }
+
+    private String decryptPassword(String password) {
+        return DigestUtils.md5Hex(password);
     }
 }

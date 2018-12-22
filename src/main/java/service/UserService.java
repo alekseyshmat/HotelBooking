@@ -25,7 +25,7 @@ public class UserService {
         }
     }
 
-    public Optional<User> findById(int id) throws ServiceException {
+    public Optional<User> findById(Integer id) throws ServiceException {
         try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
             UserRepository userRepository = repositoryCreator.getUserRepository();
             return userRepository.query(new FindById(id));
