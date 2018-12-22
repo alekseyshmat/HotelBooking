@@ -25,11 +25,13 @@
     <form action="${pageContext.servletContext.contextPath}/controller?command=login" method="post">
         <div class="loginForm">
             <div class="inputText">
-                <input type="text" id="username" name="username" placeholder=${placeLogin}>
+                <input type="text" id="username" name="username" placeholder="${placeLogin}"
+                       pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" required>
             </div>
 
             <div class="inputText">
-                <input type="password" id="password" name="password" placeholder=${placePassword}>
+                <input type="password" id="password" name="password" placeholder="${placePassword}"
+                       pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[A-Z])[A-Za-z\d]{8,}$" required>
             </div>
             <c:if test="${not empty errorMessage}">
                 <div class="wrongParametres">
