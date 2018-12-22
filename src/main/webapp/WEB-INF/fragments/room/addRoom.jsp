@@ -28,11 +28,11 @@
 
     <div class="modal-content animate">
         <form action="${pageContext.servletContext.contextPath}/controller?command=saveRoom" method="post">
-            <label for="name"><b>${roomId}</b></label>
-            <input type="text" id="name" name="roomNumber" required>
+            <label for="roomNumber"><b>${roomId}</b></label>
+            <input type="text" id="roomNumber" name="roomNumber" required>
             <label for="typeRoom"><b>${type}</b></label>
             <select id="typeRoom" name="typeRoom">
-                <option disabled>${type}</option>
+                <option selected disabled>${type}</option>
                 <option value="Apartment">${apartment}</option>
                 <option value="Business">${business}</option>
                 <option value="Deluxe">${deluxe}</option>

@@ -12,8 +12,7 @@ public class MainPageCommand implements Command {
     private static final String MAIN_PAGE = "/WEB-INF/pages/makeOrder.jsp";
 
     @Override
-    public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
-
+    public CommandResult execute(HttpServletRequest request, HttpServletResponse response) {
         return CommandResult.forward(MAIN_PAGE);
     }
 }

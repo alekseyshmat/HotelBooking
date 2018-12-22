@@ -13,7 +13,7 @@ import java.time.format.DateTimeFormatter;
 
 public class CompleteOrderCommand implements Command {
 
-    private static final String ADMIN_ORDERS = "/WEB-INF/pages/admin/allOrders.jsp";
+    private static final String ADMIN_ORDERS = "controller?command=showAllOrders";
     private static final String DATE_PATTERN = "yyyy-MM-dd";
     private static final String ID = "activeId";
 
@@ -27,6 +27,6 @@ public class CompleteOrderCommand implements Command {
         OrderService orderService = new OrderService();
         orderService.completeOrder(id, currentDate, OrderStatus.COMPLETED);
 
-        return new AdminOrderCommand().execute(request,response );
+        return CommandResult.redirect(ADMIN_ORDERS);
     }
 }

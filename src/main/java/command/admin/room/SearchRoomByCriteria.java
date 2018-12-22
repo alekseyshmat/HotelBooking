@@ -17,7 +17,7 @@ import java.util.List;
 
 public class SearchRoomByCriteria implements Command {
 
-    private static final String SELECT_PAGE = "/WEB-INF/pages/admin/roomSelection.jsp";
+    private static final String SELECT_PAGE = "controller?command=searchRoomByCriteria";
     private static final String ROOMS_LIST = "roomsWithCriteria";
     private static final String ID = "id";
     private static final String IN_DATE = "inDate";

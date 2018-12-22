@@ -12,16 +12,18 @@ import java.util.Optional;
 public class ProfileCommand implements Command {
 
     private static final String PROFILE = "/WEB-INF/pages/profile.jsp";
+    private static final String ID = "id";
+    private static final String USER ="user";
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
         HttpSession session = request.getSession();
-        int id = (int) session.getAttribute("id");
+        Integer id = (Integer) session.getAttribute(ID);
 
         UserService userService = new UserService();
         Optional<User> user = userService.findById(id);
-        user.ifPresent(aUser -> request.setAttribute("user", aUser));
+        user.ifPresent(aUser -> request.setAttribute(USER, aUser));
 
-        return new CommandResult(PROFILE, false);
+        return CommandResult.forward(PROFILE);
     }
 }

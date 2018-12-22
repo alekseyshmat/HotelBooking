@@ -13,8 +13,8 @@ import java.util.Optional;
 
 public class LoginCommand implements Command {
 
-    private static final String MAIN_PAGE = "/controller?command=mainPage";
-    private static final String ADMIN_PAGE = "/WEB-INF/pages/admin/roomPrices.jsp";
+    private static final String MAIN_PAGE = "controller?command=mainPage";
+    private static final String ADMIN_PAGE = "controller?command=showAllOrders";
     private static final String ID = "id";
     private static final String NAME = "name";
     private static final String ROLE = "role";
@@ -32,19 +32,16 @@ public class LoginCommand implements Command {
             user1 = user.get();
 
         }
+        Integer id = user1.getId();
         Role role = user1.getRole();
         String name = user1.getFirstName();
         HttpSession session = request.getSession();
-
-        Integer id = user1.getId();
 
         session.setAttribute(ID, id);
         session.setAttribute(NAME, name);
         session.setAttribute(ROLE, role);
         return Role.ADMIN.equals(role) ?
-                new AdminOrderCommand().execute(request, response) :
-//                CommandResult.redirect(ADMIN_PAGE) :
+                CommandResult.redirect(ADMIN_PAGE) :
                 CommandResult.redirect(MAIN_PAGE);
-
     }
 }

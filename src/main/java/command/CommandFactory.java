@@ -2,6 +2,7 @@ package command;
 
 import command.admin.*;
 import command.admin.order.AdminOrderCommand;
+import command.admin.order.AdminStartPageCommand;
 import command.admin.order.CompleteOrderCommand;
 import command.admin.order.ProcessOrderCommand;
 import command.admin.room.*;
@@ -19,6 +20,7 @@ public class CommandFactory {
     private static final String SHOW_BALANCE = "showBalance";
     private static final String REFILE_BALANCE = "refileBalance";
     private static final String MAIN_PAGE = "mainPage";
+    private static final String ADMIN_MAIN_PAGE = "adminPage";
     private static final String MAKE_ORDER = "makeOrder";
     private static final String PROCESS_ORDER = "processOrder";
     private static final String COMPLETE_ORDER = "completeOrder";
@@ -27,7 +29,7 @@ public class CommandFactory {
     private static final String CHANGE_LANGUAGE = "changeLanguage";
     private static final String SAVE_ROOM = "saveRoom";
     private static final String ADD_ROOM_PRICE = "addRoomPrice";
-    private static final String SIGN_OUT = "signOut";
+    private static final String LOG_OUT = "signOut";
     private static final String EDIT_PROFILE = "editProfile";
     private static final String SEARCH_ROOM_BY_CRITERIA = "searchRoomByCriteria";
 
@@ -53,6 +55,8 @@ public class CommandFactory {
                 return new RefileBalanceCommand();
             case MAIN_PAGE:
                 return new MainPageCommand();
+            case ADMIN_MAIN_PAGE:
+                return new AdminStartPageCommand();
             case MAKE_ORDER:
                 return new MakeOrderCommand();
             case PROCESS_ORDER:
@@ -69,8 +73,8 @@ public class CommandFactory {
                 return new SaveRoomCommand();
             case ADD_ROOM_PRICE:
                 return new AddRoomPriceCommand();
-            case SIGN_OUT:
-                return new SignOutCommand();
+            case LOG_OUT:
+                return new LogOutCommand();
             case EDIT_PROFILE:
                 return new EditProfileCommand();
             case SEARCH_ROOM_BY_CRITERIA:

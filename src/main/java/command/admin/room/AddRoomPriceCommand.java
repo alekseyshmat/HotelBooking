@@ -18,7 +18,7 @@ import java.util.List;
 
 public class AddRoomPriceCommand implements Command {
 
-    private static final String ROOM_PRICES_PAGE = "/WEB-INF/pages/admin/roomPrices.jsp";
+    private static final String ROOM_PRICES_PAGE = "controller?command=showRoomPrices";
     private static final String PRICE_LIST = "roomPriceList";
     private static final String ROOM_ID = "roomId";
     private static final String START_DATE = "startDate";

@@ -4,7 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class SignOutCommand implements Command {
+public class LogOutCommand implements Command {
 
     private static final String LOGIN_PAGE = "/WEB-INF/pages/login.jsp";
     private static final String ID = "id";
@@ -17,6 +17,6 @@ public class SignOutCommand implements Command {
         session.removeAttribute(ID);
         session.removeAttribute(NAME);
         session.removeAttribute(ROLE);
-        return CommandResult.redirect(LOGIN_PAGE);
+        return CommandResult.forward(LOGIN_PAGE);
     }
 }

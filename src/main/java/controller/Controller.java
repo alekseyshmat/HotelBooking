@@ -15,6 +15,8 @@ import java.io.IOException;
 
 public class Controller extends HttpServlet {
 
+    private static final String COMMAND = "command";
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         process(req, resp);
@@ -27,7 +29,7 @@ public class Controller extends HttpServlet {
 
     private void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         CommandFactory factory = new CommandFactory();
-        String parametr = req.getParameter("command");
+        String parametr = req.getParameter(COMMAND);
         Command command = factory.create(parametr);
         CommandResult commandResult = null;
         try {
@@ -37,16 +39,12 @@ public class Controller extends HttpServlet {
         }
 
         String page = commandResult.getPage();
-      /*  if (commandResult.isRedirect()) {
-            sendRedirect(resp, page);
-        } else {*/
+        if (commandResult.isRedirect()) {
+            resp.sendRedirect(page);
+        } else {
             ServletContext servletContext = getServletContext();
             RequestDispatcher requestDispatcher = servletContext.getRequestDispatcher(page);
             requestDispatcher.forward(req, resp);
-//        }
-    }
-
-    private void sendRedirect(HttpServletResponse response, String page) throws IOException {
-        response.sendRedirect(page);
+        }
     }
 }

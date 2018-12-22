@@ -34,6 +34,8 @@ public class UserFilter implements Filter {
     private static final String ADD_ROOM_PRICE = "addRoomPrice";
     private static final String SEARCH_ROOM_BY_CRITERIA = "searchRoomByCriteria";
     private static final String ROLE = "role";
+    private static final String COMMAND = "command";
+    private static final String LOGIN_PAGE = "/WEB-INF/pages/login.jsp";
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -42,33 +44,33 @@ public class UserFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        String parametr = servletRequest.getParameter("command");
-        if (parametr != null) {
+        String parameter = servletRequest.getParameter(COMMAND);
+        if (parameter != null) {
             HttpSession session = ((HttpServletRequest) servletRequest).getSession();
             Role role = (Role) session.getAttribute(ROLE);
-            if (parametr.equals(SHOW_ALL_ORDERS) ||
-                    parametr.equals(SHOW_USERS) ||
-                    parametr.equals(SHOW_ROOMS) ||
-                    parametr.equals(SHOW_ROOM_PRICES) ||
-                    parametr.equals(PROCESS_ORDER) ||
-                    parametr.equals(COMPLETE_ORDER) ||
-                    parametr.equals(SAVE_ROOM) ||
-                    parametr.equals(ADD_ROOM_PRICE) ||
-                    parametr.equals(SEARCH_ROOM_BY_CRITERIA)) {
+            if (parameter.equals(SHOW_ALL_ORDERS) ||
+                    parameter.equals(SHOW_USERS) ||
+                    parameter.equals(SHOW_ROOMS) ||
+                    parameter.equals(SHOW_ROOM_PRICES) ||
+                    parameter.equals(PROCESS_ORDER) ||
+                    parameter.equals(COMPLETE_ORDER) ||
+                    parameter.equals(SAVE_ROOM) ||
+                    parameter.equals(ADD_ROOM_PRICE) ||
+                    parameter.equals(SEARCH_ROOM_BY_CRITERIA)) {
 
                 if (role.equals(Role.USER)) {
-                    ((HttpServletResponse) servletResponse).sendRedirect("/WEB-INF/pages/login.jsp"); //todo add page
+                    ((HttpServletResponse) servletResponse).sendRedirect(LOGIN_PAGE); //todo add page
                     return;
                 }
-            } else if (parametr.equals(SHOW_ORDERS) ||
-                    parametr.equals(SHOW_BALANCE) ||
-                    parametr.equals(REFILE_BALANCE) ||
-                    parametr.equals(MAIN_PAGE) ||
-                    parametr.equals(MAKE_ORDER) ||
-                    parametr.equals(CANCEL_ORDER) ||
-                    parametr.equals(UPDATE_BALANCE)) {
+            } else if (parameter.equals(SHOW_ORDERS) ||
+                    parameter.equals(SHOW_BALANCE) ||
+                    parameter.equals(REFILE_BALANCE) ||
+                    parameter.equals(MAIN_PAGE) ||
+                    parameter.equals(MAKE_ORDER) ||
+                    parameter.equals(CANCEL_ORDER) ||
+                    parameter.equals(UPDATE_BALANCE)) {
                 if (role.equals(Role.ADMIN)) {
-                    ((HttpServletResponse) servletResponse).sendRedirect("/WEB-INF/pages/login.jsp"); //todo add page
+                    ((HttpServletResponse) servletResponse).sendRedirect(LOGIN_PAGE); //todo add page
                     return;
                 }
             }

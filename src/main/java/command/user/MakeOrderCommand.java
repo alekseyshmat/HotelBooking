@@ -15,7 +15,7 @@ import java.time.format.DateTimeFormatter;
 
 public class MakeOrderCommand implements Command {
 
-    private static final String MAIN_PAGE = "/WEB-INF/pages/makeOrder.jsp";
+    private static final String MAIN_PAGE = "controller?command=mainPage";
 
     private static final String ID_CLIENT = "id";
     private static final String CHECK_IN_DATE = "checkInDate";

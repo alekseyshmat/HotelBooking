@@ -9,11 +9,10 @@ import javax.servlet.http.HttpSession;
 
 public class EditProfileCommand implements Command {
 
-    private static final String PROFILE = "/WEB-INF/pages/profile.jsp";
+    private static final String PROFILE = "controller?command=showProfile";
     private static final String ID = "id";
     private static final String FIRST_NAME = "firstName";
     private static final String LAST_NAME = "lastName";
-    private static final String BALANCE = "balance";
     private static final String NAME = "name";
 
     @Override
@@ -28,7 +27,6 @@ public class EditProfileCommand implements Command {
 
         session.removeAttribute(NAME);
         session.setAttribute(NAME, firstName);
-//        return CommandResult.redirect(PROFILE);
-        return new ProfileCommand().execute(request, response);
+        return CommandResult.redirect(PROFILE);
     }
 }

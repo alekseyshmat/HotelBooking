@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 
 public class ProcessOrderCommand implements Command {
 
-    private static final String ADMIN_ORDERS = "/WEB-INF/pages/admin/allOrders.jsp";
+    private static final String ADMIN_ORDERS = "controller?command=showAllOrders";
     private static final String ID_ORDER = "idOrder";
     private static final String ID_ROOM = "idRoom";
     private static final String COST = "cost";
@@ -31,7 +31,6 @@ public class ProcessOrderCommand implements Command {
         OrderService orderService = new OrderService();
         orderService.processOrder(idOrder, idRoom, cost, OrderStatus.SEEN);
 
-//        return CommandResult.redirect(ADMIN_ORDERS);
-        return new AdminOrderCommand().execute(request, response);
+        return CommandResult.redirect(ADMIN_ORDERS);
     }
 }

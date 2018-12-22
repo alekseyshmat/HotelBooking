@@ -49,7 +49,8 @@ public class PayOrderCommand implements Command {
                 User user = optionalUser.get();
                 //todo add validation
                 BigDecimal balance = user.getBalance();
-                BigDecimal newBalance = balance.subtract(cost);
+                BigDecimal newBalance = balance.subtract(cost); //todo add to service
+
                 userService.updateBalance(id, newBalance);
                 orderService.payOrder(orderId, PaymentStatus.PAID);
             }

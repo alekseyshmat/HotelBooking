@@ -13,10 +13,10 @@ import java.util.List;
 
 public class SaveRoomCommand implements Command {
 
-    private static final String MAIN_PAGE = "/WEB-INF/pages/admin/rooms.jsp";
+    private static final String MAIN_PAGE = "controller?command=showRooms";
     private static final String ID = "roomId";
     private static final String ROOM_NUMBER = "roomNumber";
-    private static final String ROOM_TYPE = "editTypeRoom";
+    private static final String ROOM_TYPE = "typeRoom";
     private static final String ROOM_LIST = "roomList";
 
     @Override
