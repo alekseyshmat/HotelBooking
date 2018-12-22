@@ -15,33 +15,38 @@ public class LoginCommand implements Command {
 
     private static final String MAIN_PAGE = "controller?command=mainPage";
     private static final String ADMIN_PAGE = "controller?command=showAllOrders";
+    private static final String LOGIN_PAGE = "/WEB-INF/pages/login.jsp";
     private static final String ID = "id";
     private static final String NAME = "name";
     private static final String ROLE = "role";
+    private static final String USERNAME = "username";
+    private static final String PASSWORD = "password";
+    private static final String ERROR_MESSAGE = "errorMessage";
+    private static final String WRONG_PARAMETER = "Wrong login or password";
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
-        UserService service = new UserService();
-        String login = request.getParameter("username");
-        String password = request.getParameter("password");
-        Optional<User> user = service.login(login, password);
-        //todo проверка
-
-        User user1 = null;
-        if (user.isPresent()) {
-            user1 = user.get();
-
-        }
-        Integer id = user1.getId();
-        Role role = user1.getRole();
-        String name = user1.getFirstName();
         HttpSession session = request.getSession();
+        UserService service = new UserService();
+        String login = request.getParameter(USERNAME);
+        String password = request.getParameter(PASSWORD);
+        Optional<User> optionalUser = service.login(login, password);
 
-        session.setAttribute(ID, id);
-        session.setAttribute(NAME, name);
-        session.setAttribute(ROLE, role);
-        return Role.ADMIN.equals(role) ?
-                CommandResult.redirect(ADMIN_PAGE) :
-                CommandResult.redirect(MAIN_PAGE);
+        if (optionalUser.isPresent()) {
+            User user = optionalUser.get();
+            Integer id = user.getId();
+            Role role = user.getRole();
+            String name = user.getFirstName();
+
+            session.setAttribute(ID, id);
+            session.setAttribute(NAME, name);
+            session.setAttribute(ROLE, role);
+            return Role.ADMIN.equals(role) ?
+                    CommandResult.redirect(ADMIN_PAGE) :
+                    CommandResult.redirect(MAIN_PAGE);
+        } else {
+            request.setAttribute(ERROR_MESSAGE, WRONG_PARAMETER);
+            return CommandResult.forward(LOGIN_PAGE);
+        }
     }
 }

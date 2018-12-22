@@ -9,6 +9,7 @@
 <fmt:message bundle="${naming}" key="user.label.login.placeholder" var="placeLogin"/>
 <fmt:message bundle="${naming}" key="user.label.password.placeholder" var="placePassword"/>
 <fmt:message bundle="${naming}" key="user.label.login" var="logIn"/>
+<fmt:message bundle="${naming}" key="login.label.wrongParams" var="wrongParams"/>
 
 <html>
 
@@ -30,10 +31,14 @@
             <div class="inputText">
                 <input type="password" id="password" name="password" placeholder=${placePassword}>
             </div>
+            <c:if test="${not empty errorMessage}">
+                <div class="wrongParametres">
+                    <label>${wrongParams}</label>
+                </div>
+            </c:if>
             <div class="submitButton">
                 <input class="submitBtn" type="submit" value=${logIn}>
             </div>
-
         </div>
     </form>
 </div>

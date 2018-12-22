@@ -21,6 +21,12 @@ body {
     border-radius: 50% ;
 }
 
+.wrongParametres{
+    font-size: 18px;
+    color:red;
+    margin: -4% 0 2% 0;
+}
+
 input[type="text"], input[type="password"] {
     width: 350px;
     height: 50px;
@@ -32,6 +38,12 @@ input[type="text"], input[type="password"] {
 
 .inputText input:hover{
     box-shadow: 0 0 8px 4px rgba(0, 191, 255, 0.35);
+}
+
+.inputText input:after{
+    content: "";
+    display: none;
+    clear: both;
 }
 
 .submitBtn {

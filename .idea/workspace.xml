@@ -8,10 +8,11 @@
   <component name="ChangeListManager">
     <list default="true" id="ed67534d-1a8a-4535-8b45-654f7512ef26" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/admin/room/RoomCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/command/admin/room/RoomCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/specification/searchSpecification/user/FindByLoginAndPassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/specification/searchSpecification/user/FindByLoginAndPassword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/command/LoginCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/command/LoginCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/naming_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/naming_en.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/naming_ru.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/naming_ru.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/style/loginStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/loginStyle.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -70,15 +71,15 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="44" />
-          <entry key="css" value="105" />
+          <entry key="css" value="108" />
           <entry key="gitignore" value="1" />
-          <entry key="java" value="1601" />
+          <entry key="java" value="1604" />
           <entry key="jpg" value="2" />
           <entry key="js" value="81" />
-          <entry key="jsp" value="524" />
+          <entry key="jsp" value="525" />
           <entry key="jspf" value="1" />
           <entry key="png" value="1" />
-          <entry key="properties" value="57" />
+          <entry key="properties" value="59" />
           <entry key="rnc" value="1" />
           <entry key="sql" value="2" />
           <entry key="tld" value="1" />
@@ -91,14 +92,14 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="44" />
-          <entry key="CSS" value="105" />
+          <entry key="CSS" value="108" />
           <entry key="Database Element" value="1" />
           <entry key="Image" value="3" />
-          <entry key="JAVA" value="1601" />
-          <entry key="JSP" value="525" />
+          <entry key="JAVA" value="1604" />
+          <entry key="JSP" value="526" />
           <entry key="JavaScript" value="81" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Properties" value="57" />
+          <entry key="Properties" value="59" />
           <entry key="RNG Compact" value="1" />
           <entry key="Scratch" value="2" />
           <entry key="TypeScript" value="1" />
@@ -107,26 +108,26 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="474" />
+          <entry key="css" value="504" />
           <entry key="dummy" value="113" />
           <entry key="gitignore" value="16" />
-          <entry key="java" value="26009" />
+          <entry key="java" value="26266" />
           <entry key="js" value="709" />
-          <entry key="jsp" value="8695" />
+          <entry key="jsp" value="8734" />
           <entry key="jspf" value="177" />
-          <entry key="properties" value="1468" />
-          <entry key="txt" value="927" />
+          <entry key="properties" value="1510" />
+          <entry key="txt" value="955" />
           <entry key="xml" value="75" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="474" />
-          <entry key="JAVA" value="26009" />
-          <entry key="JSP" value="8872" />
+          <entry key="CSS" value="504" />
+          <entry key="JAVA" value="26266" />
+          <entry key="JSP" value="8911" />
           <entry key="JavaScript" value="709" />
-          <entry key="PLAIN_TEXT" value="1056" />
-          <entry key="Properties" value="1468" />
+          <entry key="PLAIN_TEXT" value="1084" />
+          <entry key="Properties" value="1510" />
           <entry key="XML" value="75" />
         </counts>
       </usages-collector>
@@ -162,95 +163,47 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/command/admin/room/SaveRoomCommand.java">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="18" column="53" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/fragments/room/editRoom.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="39" column="48" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/allOrders.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#4726#6000#0#JSP" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/rooms.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-459" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/fragments/room/addRoom.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="32" column="32" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/repository/UserRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="46" column="26" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/repository/AbstractRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-121">
-              <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/service/UserService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="21" column="55" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
+            <state relative-caret-position="335">
+              <caret line="36" column="22" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/specification/searchSpecification/user/FindByLoginAndPassword.java">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/style/loginStyle.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-              <folding>
-                <element signature="e#779#780#0" expanded="true" />
-                <element signature="e#830#831#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="357">
+              <caret line="45" column="18" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/naming_en.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="45" selection-start-line="45" selection-end-line="45" />
+            <state relative-caret-position="652">
+              <caret line="75" selection-start-line="75" selection-end-line="75" selection-end-column="23" />
+            </state>
+          </provider>
+          <provider editor-type-id="ResourceBundle" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/command/LoginCommand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="302">
+              <caret line="47" column="19" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/command/admin/room/AddRoomPriceCommand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-204">
+              <caret line="20" column="52" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="71" />
             </state>
           </provider>
         </entry>
@@ -294,8 +247,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/entity/Room.java" />
-        <option value="$PROJECT_DIR$/src/main/java/builder/RoomBuilder.java" />
         <option value="$PROJECT_DIR$/src/main/java/repository/RoomRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/builder/RoomPriceBuilder.java" />
         <option value="$PROJECT_DIR$/src/main/java/entity/RoomPrice.java" />
@@ -313,8 +264,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/allOrders.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/entity/Order.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/OrderService.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/naming_en.properties" />
-        <option value="$PROJECT_DIR$/src/main/resources/naming_ru.properties" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/orders.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/fragments/order/canceledOrder.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/userOrder.js" />
@@ -324,7 +273,6 @@
         <option value="$PROJECT_DIR$/src/main/java/command/user/PayOrderCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/command/admin/order/AdminStartPageCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/Controller.java" />
-        <option value="$PROJECT_DIR$/src/main/java/command/LoginCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/command/admin/order/CompleteOrderCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/command/admin/order/ProcessOrderCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/command/admin/room/AddRoomPriceCommand.java" />
@@ -345,6 +293,11 @@
         <option value="$PROJECT_DIR$/src/main/java/service/UserService.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/specification/searchSpecification/user/FindByLoginAndPassword.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/naming_en.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/naming_ru.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/command/LoginCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/style/loginStyle.css" />
       </list>
     </option>
   </component>
@@ -525,6 +478,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="style" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hotelBooking" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hotelBooking" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -545,16 +506,6 @@
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="hotelBooking" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hotelBooking" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -568,7 +519,7 @@
     <property name="SearchEverywhereHistoryKey" value="Ma&#9;FILE&#9;jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/util/Map.java&#10;CHECK_&#9;PSI&#9;JAVA://builder.OrderBuilder#CHECK_IN_DATE&#10;showAllOrders&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545513613980" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545515227246" />
     <property name="database.console.LAST_STATE" value="true" />
     <property name="last_opened_file_path" value="F:/загрузки/market-master/market-master" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -762,7 +713,7 @@
       <workItem from="1545119687004" duration="2791000" />
       <workItem from="1545156196929" duration="349000" />
       <workItem from="1545156603613" duration="26926000" />
-      <workItem from="1545309717728" duration="51949000" />
+      <workItem from="1545309717728" duration="53502000" />
     </task>
     <task id="LOCAL-00001" summary="added entities">
       <created>1543401784541</created>
@@ -988,11 +939,18 @@
       <option name="project" value="LOCAL" />
       <updated>1545511602668</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="added encrypting password">
+      <created>1545513682560</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1545513682561</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="394277000" />
+    <option name="totallyTimeSpent" value="395830000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1007,7 +965,7 @@
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7704918" visible="true" weight="0.2700454" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7704918" visible="true" weight="0.2700454" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
@@ -1017,7 +975,7 @@
       <window_info id="Web" order="7" sideWeight="0.22950819" side_tool="true" weight="0.2065053" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32886904" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.27083334" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.22619048" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49924356" weight="0.39136904" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1111,7 +1069,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="SHOW_UNVERSIONED_FILES_WHILE_COMMIT" value="false" />
-    <MESSAGE value="added user mapping" />
     <MESSAGE value="added some command and mapping" />
     <MESSAGE value="added making order" />
     <MESSAGE value="defragment style and add modal view" />
@@ -1136,7 +1093,8 @@
     <MESSAGE value="added cancellation order by user" />
     <MESSAGE value="added user filter" />
     <MESSAGE value="fixed redirect" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed redirect" />
+    <MESSAGE value="added encrypting password" />
+    <option name="LAST_COMMIT_MESSAGE" value="added encrypting password" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1205,41 +1163,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/dataBase/ConnectionPool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="715">
-          <caret line="56" column="31" selection-start-line="56" selection-start-column="31" selection-end-line="56" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/util/AbstractSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="57" column="22" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/util/TreeSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="91" column="39" selection-start-line="91" selection-start-column="39" selection-end-line="91" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/util/NavigableSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="89" column="17" selection-start-line="89" selection-start-column="17" selection-end-line="89" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/util/Set.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7974">
-          <caret line="112" column="17" selection-start-line="112" selection-start-column="17" selection-end-line="112" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/util/Deque.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="424">
@@ -1330,20 +1253,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/command/LoginCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="18" column="46" lean-forward="true" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/command/admin/room/AddRoomPriceCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="20" column="52" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="71" />
         </state>
       </provider>
     </entry>
@@ -1481,13 +1390,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/command/LogOutCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" column="51" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/filter/LanguageFilter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="293">
@@ -1500,34 +1402,6 @@
         <state relative-caret-position="100">
           <caret line="68" column="51" lean-forward="true" selection-start-line="68" selection-start-column="51" selection-end-line="68" selection-end-column="51" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/fragments/room/addRoom.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="32" column="32" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/fragments/room/editRoom.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="39" column="48" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/allOrders.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#4726#6000#0#JSP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/rooms.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-459" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/repository/OrderRepository.java">
@@ -1553,6 +1427,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/command/admin/room/RoomCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/fragments/room/editRoom.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="39" column="48" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/command/admin/room/SaveRoomCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -1560,17 +1448,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/repository/AbstractRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/allOrders.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-121">
-          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+        <state>
+          <folding>
+            <element signature="e#4726#6000#0#JSP" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/command/admin/room/RoomCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/rooms.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="-459" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/fragments/room/addRoom.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="32" column="32" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -1581,10 +1476,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/repository/AbstractRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-121">
+          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="21" column="55" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/specification/searchSpecification/user/FindByLoginAndPassword.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#779#780#0" expanded="true" />
+            <element signature="e#830#831#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1595,14 +1508,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/specification/searchSpecification/user/FindByLoginAndPassword.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/command/LogOutCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="e#779#780#0" expanded="true" />
-            <element signature="e#830#831#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="102">
+          <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/naming_ru.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="519">
+          <caret line="75" column="183" selection-start-line="75" selection-start-column="183" selection-end-line="75" selection-end-column="183" />
+        </state>
+      </provider>
+      <provider editor-type-id="ResourceBundle" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/command/admin/room/AddRoomPriceCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-204">
+          <caret line="20" column="52" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/command/LoginCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="47" column="19" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/naming_en.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="652">
+          <caret line="75" selection-start-line="75" selection-end-line="75" selection-end-column="23" />
+        </state>
+      </provider>
+      <provider editor-type-id="ResourceBundle" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="36" column="22" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/style/makeOrderStyle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-344" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/style/loginStyle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="45" column="18" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
         </state>
       </provider>
     </entry>
