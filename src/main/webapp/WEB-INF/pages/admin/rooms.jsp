@@ -41,10 +41,15 @@
         <jsp:include page="../../fragments/header/adminHeader.jsp"/>
     </div>
     <div class="rightColumn">
-        <jsp:useBean id="pages" scope="request" type="java.util.List"/>
-        <c:forEach items="${pages}" var="pages">
-            <a href="${pageContext.servletContext.contextPath}/controller?command=showRooms&pageNumber=${pages}">${pages}</a>
-        </c:forEach>
+        <div class="pages">
+            <jsp:useBean id="pages" scope="request" type="java.util.List"/>
+            <c:forEach items="${pages}" var="pages">
+                <a href="${pageContext.servletContext.contextPath}/controller?command=showRooms&pageNumber=${pages}&limit=${limit}">${pages}</a>
+            </c:forEach>
+        </div>
+        <a href="${pageContext.servletContext.contextPath}/controller?command=showRooms&pageNumber=1&limit=5">5</a>
+        <a href="${pageContext.servletContext.contextPath}/controller?command=showRooms&pageNumber=1&limit=10">10</a>
+        <a href="${pageContext.servletContext.contextPath}/controller?command=showRooms&pageNumber=1&limit=15">15</a>
         <div class="card">
             <table width="100%">
                 <tr>
