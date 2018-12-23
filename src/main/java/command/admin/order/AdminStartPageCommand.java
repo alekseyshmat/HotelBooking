@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class AdminStartPageCommand implements Command {
 
-    private static final String ADMIN_ORDERS = "/WEB-INF/pages/admin/allOrders.jsp";
+    private static final String ADMIN_ORDERS = "/WEB-INF/pages/admin/roomSelection.jsp";
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {

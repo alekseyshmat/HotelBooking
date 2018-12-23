@@ -15,8 +15,10 @@ public class SaveRoomCommand implements Command {
 
     private static final String MAIN_PAGE = "controller?command=showRooms";
     private static final String ID = "roomId";
-    private static final String ROOM_NUMBER = "roomNumber";
-    private static final String ROOM_TYPE = "typeRoom";
+    private static final String EDIT_ROOM_NUMBER = "editRoomNumber";
+    private static final String EDIT_ROOM_TYPE = "editTypeRoom";
+    private static final String ADD_ROOM_NUMBER = "addRoomNumber";
+    private static final String ADD_ROOM_TYPE = "addTypeRoom";
     private static final String ROOM_LIST = "roomList";
 
     @Override
@@ -26,9 +28,15 @@ public class SaveRoomCommand implements Command {
         if (stringId != null) {
             id = Integer.valueOf(stringId);
         }
-        String roomNumber = request.getParameter(ROOM_NUMBER);
+        String roomNumber = request.getParameter(EDIT_ROOM_NUMBER);
+        if (roomNumber == null) {
+            roomNumber = request.getParameter(ADD_ROOM_NUMBER);
+        }
 
-        String stringRoomType = request.getParameter(ROOM_TYPE);
+        String stringRoomType = request.getParameter(EDIT_ROOM_TYPE);
+        if (stringRoomType == null) {
+            stringRoomType = request.getParameter(ADD_ROOM_TYPE);
+        }
         RoomType roomType = RoomType.valueOf(stringRoomType.toUpperCase());
 
         RoomService roomService = new RoomService();

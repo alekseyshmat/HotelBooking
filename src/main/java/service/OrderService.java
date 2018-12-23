@@ -12,6 +12,7 @@ import specification.searchSpecification.FindById;
 import specification.searchSpecification.order.*;
 
 import java.math.BigDecimal;
+import java.sql.Date;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
@@ -87,7 +88,7 @@ public class OrderService {
         }
     }
 
-    public void makeOrder(Integer id, Integer idClient, LocalDate checkInDate, LocalDate checkOutDate,
+    public void makeOrder(Integer id, Integer idClient, Date checkInDate, Date checkOutDate,
                           RoomType roomType) throws ServiceException {
         try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
             OrderRepository orderRepository = repositoryCreator.getOrderRepository();

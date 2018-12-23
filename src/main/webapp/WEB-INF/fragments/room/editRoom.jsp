@@ -33,11 +33,11 @@
               method="post">
             <input type="hidden" id="roomId" name="roomId" value="">
 
-            <label for="roomNumber"><b>${roomId}</b></label>
-            <input type="text" id="roomNumber" name="roomNumber" value="">
+            <label for="editRoomNumber"><b>${roomId}</b></label>
+            <input type="text" id="editRoomNumber" name="editRoomNumber" value="" required>
 
-            <label for="typeRoom"><b>${type}</b></label>
-            <select id="typeRoom" name="typeRoom" value="">
+            <label for="editTypeRoom"><b>${type}</b></label>
+            <select id="editTypeRoom" name="editTypeRoom" value="">
                 <option disabled>${type}</option>
                 <option value="APARTMENT">${apartment}</option>
                 <option value="BUSINESS">${business}</option>

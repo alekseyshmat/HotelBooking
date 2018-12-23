@@ -28,7 +28,7 @@
 
     <filter>
         <filter-name>UserFilter</filter-name>
-        <filter-class>filter.UserFilter</filter-class>
+        <filter-class>filter.AccessFilter</filter-class>
     </filter>
 
     <filter-mapping>

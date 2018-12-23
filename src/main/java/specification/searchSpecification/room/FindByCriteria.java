@@ -3,6 +3,7 @@ package specification.searchSpecification.room;
 import entity.types.RoomType;
 import specification.Specification;
 
+import java.sql.Date;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
@@ -10,10 +11,10 @@ import java.util.List;
 public class FindByCriteria implements Specification {
 
     private RoomType roomType;
-    private LocalDate checkInDate;
-    private LocalDate checkOutDate;
+    private Date checkInDate;
+    private Date checkOutDate;
 
-    public FindByCriteria(RoomType roomType, LocalDate checkInDate, LocalDate checkOutDate) {
+    public FindByCriteria(RoomType roomType, Date checkInDate, Date checkOutDate) {
         this.roomType = roomType;
         this.checkInDate = checkInDate;
         this.checkOutDate = checkOutDate;
@@ -33,11 +34,13 @@ public class FindByCriteria implements Specification {
 
         return "RIGHT JOIN room " +
                 "ON room.id = room_busy.id_room " +
-                "LEFT JOIN room_price rp " +
-                "ON room_busy.id_room = rp.id_room WHERE(type =? " +
-                "AND ? NOT BETWEEN date_start and date_end " +
-                " AND ? NOT BETWEEN date_start and date_end " +
-                " AND ? BETWEEN start_date and end_date AND ? BETWEEN start_date and end_date " +
+                "LEFT JOIN room_price " +
+                "ON room.id = room_price.id_room WHERE(type =? " +
+                "AND ((? NOT BETWEEN date_start and date_end " +
+                " AND ? NOT BETWEEN date_start and date_end) " +
+                "OR (date_start IS NULL AND date_end IS NULL)) " +
+                " AND ? BETWEEN start_date and end_date " +
+                " AND ? BETWEEN start_date and end_date " +
                 ")";
     }
 

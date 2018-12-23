@@ -1,6 +1,5 @@
 package filter;
 
-import command.Command;
 import entity.types.Role;
 
 import javax.servlet.*;
@@ -9,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-public class UserFilter implements Filter {
+public class AccessFilter implements Filter {
 
     private static final String LOGIN = "login";
     private static final String SHOW_PROFILE = "showProfile";
@@ -35,7 +34,7 @@ public class UserFilter implements Filter {
     private static final String SEARCH_ROOM_BY_CRITERIA = "searchRoomByCriteria";
     private static final String ROLE = "role";
     private static final String COMMAND = "command";
-    private static final String LOGIN_PAGE = "/WEB-INF/pages/login.jsp";
+    private static final String LOGIN_PAGE = "/WEB-INF/pages/AccessError.jsp";
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {

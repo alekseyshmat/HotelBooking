@@ -25,11 +25,11 @@ public class RoomBusyBuilder implements Builder<RoomBusy> {
         Integer idRoom = resultSet.getInt(ID_ROOM);
 
         Date stingsStartDate = resultSet.getDate(START_DATE);
-        LocalDate startDate = stingsStartDate.toLocalDate();
+//        LocalDate startDate = stingsStartDate.toLocalDate();
 
         Date stingEndDate = resultSet.getDate(END_DATE);
-        LocalDate endDate = stingEndDate.toLocalDate();
+//        LocalDate endDate = stingEndDate.toLocalDate();
 
-        return new RoomBusy(id, idRoom, startDate, endDate, room, roomPrice);
+        return new RoomBusy(id, idRoom, stingsStartDate, stingEndDate, room, roomPrice);
     }
 }

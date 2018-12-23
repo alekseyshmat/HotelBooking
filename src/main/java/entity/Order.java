@@ -5,8 +5,8 @@ import entity.types.PaymentStatus;
 import entity.types.RoomType;
 
 import java.math.BigDecimal;
+import java.sql.Date;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.Objects;
 
 public class Order implements Entity {
@@ -14,8 +14,8 @@ public class Order implements Entity {
     private Integer id;
     private Integer idClient;
     private Integer idRoom;
-    private LocalDate checkInDate;
-    private LocalDate checkOutDate;
+    private Date checkInDate;
+    private Date checkOutDate;
     private RoomType type;
     private LocalDate invoiceDate;
     private PaymentStatus paymentStatus;
@@ -24,13 +24,9 @@ public class Order implements Entity {
     private User user;
     private Room room;
 
-//    private String firstName;
-//    private String lastName;
-//
-//    private String roomNumber;
 
     //builder user
-    public Order(Integer id, Integer idClient, LocalDate checkInDate, LocalDate checkOutDate, RoomType type,
+    public Order(Integer id, Integer idClient, Date checkInDate, Date checkOutDate, RoomType type,
                  PaymentStatus paymentStatus, OrderStatus orderStatus,
                  BigDecimal cost) {
         this.id = id;
@@ -60,7 +56,7 @@ public class Order implements Entity {
     }
 
     //show order admin
-    public Order(Integer id, Integer idClient, LocalDate checkInDate, LocalDate checkOutDate, LocalDate invoiceDate,
+    public Order(Integer id, Integer idClient, Date checkInDate, Date checkOutDate, LocalDate invoiceDate,
                  RoomType roomType, PaymentStatus paymentStatus,
                  OrderStatus orderStatus, BigDecimal cost) {
         this.id = id;
@@ -83,7 +79,7 @@ public class Order implements Entity {
     }
 
     //make order
-    public Order(Integer id, Integer idClient, LocalDate checkInDate, LocalDate checkOutDate, RoomType roomType) {
+    public Order(Integer id, Integer idClient, Date checkInDate, Date checkOutDate, RoomType roomType) {
         this.id = id;
         this.idClient = idClient;
         this.checkInDate = checkInDate;
@@ -91,7 +87,7 @@ public class Order implements Entity {
         this.type = roomType;
     }
 
-    public Order(Integer id, Integer idClient, LocalDate checkInDate, LocalDate checkOutDate, LocalDate invoiceDate,
+    public Order(Integer id, Integer idClient, Date checkInDate, Date checkOutDate, LocalDate invoiceDate,
                  RoomType roomType, PaymentStatus paymentStatus, OrderStatus orderStatus, BigDecimal cost, User user, Room room) {
         this.id = id;
         this.idClient = idClient;
@@ -107,7 +103,8 @@ public class Order implements Entity {
 
     }
 
-    public Order(Integer id, Integer idClient, LocalDate checkInDate, LocalDate checkOutDate, RoomType roomType, PaymentStatus paymentStatus, OrderStatus orderStatus, BigDecimal cost, Room room) {
+    public Order(Integer id, Integer idClient, Date checkInDate, Date checkOutDate, RoomType roomType,
+                 PaymentStatus paymentStatus, OrderStatus orderStatus, BigDecimal cost, Room room) {
         this.id = id;
         this.idClient = idClient;
         this.checkInDate = checkInDate;
@@ -148,19 +145,19 @@ public class Order implements Entity {
         this.idRoom = idRoom;
     }
 
-    public LocalDate getCheckInDate() {
+    public Date getCheckInDate() {
         return checkInDate;
     }
 
-    public void setCheckInDate(LocalDate checkInDate) {
+    public void setCheckInDate(Date checkInDate) {
         this.checkInDate = checkInDate;
     }
 
-    public LocalDate getCheckOutDate() {
+    public Date getCheckOutDate() {
         return checkOutDate;
     }
 
-    public void setCheckOutDate(LocalDate checkOutDate) {
+    public void setCheckOutDate(Date checkOutDate) {
         this.checkOutDate = checkOutDate;
     }
 

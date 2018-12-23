@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.sql.Date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -21,7 +22,6 @@ public class MakeOrderCommand implements Command {
     private static final String CHECK_IN_DATE = "checkInDate";
     private static final String CHECK_OUT_DATE = "checkOutDate";
     private static final String TYPE = "typeRoom";
-    private static final String DATE_PATTERN = "yyyy-MM-dd";
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
@@ -29,10 +29,9 @@ public class MakeOrderCommand implements Command {
         Integer idClient = (Integer) session.getAttribute(ID_CLIENT);
         String stringCheckInDate = request.getParameter(CHECK_IN_DATE);
         String stringCheckOutDate = request.getParameter(CHECK_OUT_DATE);
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(DATE_PATTERN);
 
-        LocalDate checkInDate = LocalDate.parse(stringCheckInDate, formatter);
-        LocalDate checkOutDate = LocalDate.parse(stringCheckOutDate, formatter);
+        Date checkInDate = Date.valueOf(stringCheckInDate);
+        Date checkOutDate = Date.valueOf(stringCheckOutDate);
 
         String stringRoomType = request.getParameter(TYPE);
         RoomType roomType = RoomType.valueOf(stringRoomType.toUpperCase());

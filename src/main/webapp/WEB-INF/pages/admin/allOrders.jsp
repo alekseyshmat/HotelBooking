@@ -34,6 +34,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/dataStyle.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/tableStyle.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/tabStyle.css">
@@ -108,11 +109,11 @@
                                         ${familyRoom}
                                     </c:when>
                                     <c:when test="${order.type== 'STANDARD'}">
-                                    ${standard}
-                                </c:when>
-                                <c:when test="${order.type== 'PRESIDENT'}">
-                                    ${president}
-                                </c:when>
+                                        ${standard}
+                                    </c:when>
+                                    <c:when test="${order.type== 'PRESIDENT'}">
+                                        ${president}
+                                    </c:when>
                                 </c:choose>
                             </div>
                         </td>

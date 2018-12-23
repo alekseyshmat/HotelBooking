@@ -28,6 +28,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/dataStyle.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/tableStyle.css">
     <script src="${pageContext.request.contextPath}/js/editRoom.js"></script>
@@ -41,7 +42,7 @@
     </div>
     <div class="rightColumn">
         <div class="card">
-            <table>
+            <table width="100%">
                 <tr>
                     <th>${id}</th>
                     <th>${roomId}</th>
@@ -98,7 +99,7 @@
                                 </c:choose>
                             </div>--%>
                         </td>
-                        <td width="50" onclick=edit()>
+                        <td width="50" >
                             <button id="${room.id}" name="btnRoom" value="${room.id}"
                                     data-roomnumber="${room.roomNumber}"
                                     data-roomtype="${room.roomType}"

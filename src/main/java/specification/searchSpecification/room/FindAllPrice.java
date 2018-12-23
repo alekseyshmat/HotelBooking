@@ -9,7 +9,7 @@ public class FindAllPrice implements Specification {
 
     @Override
     public String toSql() {
-        return "INNER JOIN room r ON r.id = room_price.id_room;";
+        return "INNER JOIN room ON room.id = room_price.id_room;";
     }
 
     @Override

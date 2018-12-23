@@ -35,8 +35,9 @@ public class OrderBuilder implements Builder<Order> {
 
         Integer id = resultSet.getInt(ID);
         Integer idClient = resultSet.getInt(ID_CLIENT);
-        LocalDate checkInDate = (resultSet.getDate(CHECK_IN_DATE)).toLocalDate();
-        LocalDate checkOutDate = (resultSet.getDate(CHECK_OUT_DATE)).toLocalDate();
+        Date checkInDate = resultSet.getDate(CHECK_IN_DATE);
+        Date checkOutDate = resultSet.getDate(CHECK_OUT_DATE);
+
         Date date = resultSet.getDate(INVOICE_DATE);
         LocalDate invoiceDate;
 
