@@ -13,7 +13,7 @@ public class ProfileCommand implements Command {
 
     private static final String PROFILE = "/WEB-INF/pages/profile.jsp";
     private static final String ID = "id";
-    private static final String USER ="user";
+    private static final String USER = "user";
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {

@@ -53,6 +53,7 @@ select {
 }
 
 .edtButton {
+    color:black;
     background-color: #FFFF00;
 }
 
@@ -62,7 +63,7 @@ select {
 
 .cancelButton {
     background-color: #f44336;
-    color: white;
+    color: black;
     padding: 14px 25px;
     margin: 3px 25%;
     border: none;

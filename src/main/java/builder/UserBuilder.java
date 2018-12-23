@@ -1,6 +1,7 @@
 package builder;
 
 import entity.User;
+import entity.types.BlockingStatus;
 import entity.types.Role;
 
 import java.math.BigDecimal;
@@ -19,6 +20,7 @@ public class UserBuilder implements Builder<User> {
     private static final String PASSWORD = "password";
     private static final String BALANCE = "balance";
     private static final String ROLE = "role";
+    private static final String BLOCKING_STATUS = "blocking_status";
 
     @Override
     public User build(ResultSet resultSet) throws SQLException {
@@ -31,7 +33,8 @@ public class UserBuilder implements Builder<User> {
         String password = resultSet.getString(PASSWORD);
         BigDecimal balance = resultSet.getBigDecimal(BALANCE);
         Role role = Role.valueOf(resultSet.getString(ROLE).toUpperCase());
+        BlockingStatus blockingStatus = BlockingStatus.valueOf(resultSet.getString(BLOCKING_STATUS).toUpperCase());
 
-        return new User(id, firstName, lastName, birthday, email, login, password, balance, role);
+        return new User(id, firstName, lastName, birthday, email, login, password, balance, role, blockingStatus);
     }
 }

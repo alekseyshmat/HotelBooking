@@ -15,6 +15,8 @@
 <fmt:message bundle="${naming}" key="admin.label.roomsPrices" var="roomPrices"/>
 <fmt:message bundle="${naming}" key="table.label.birthday" var="birthday"/>
 <fmt:message bundle="${naming}" key="table.label.email" var="email"/>
+<fmt:message bundle="${naming}" key="table.label.block" var="block"/>
+<fmt:message bundle="${naming}" key="table.label.unblock" var="unblock"/>
 
 <html>
 <head>
@@ -35,15 +37,20 @@
         <div class="card">
             <table>
                 <tr>
+                    <th>${id}</th>
                     <th>${lastName}</th>
                     <th>${firstName}</th>
                     <th>${birthday}</th>
                     <th>${email}</th>
+                    <th></th>
                 </tr>
                 <jsp:useBean id="userList" scope="request" type="java.util.List"/>
 
                 <c:forEach items="${userList}" var="user">
                     <tr>
+                        <td>
+                                ${user.id}
+                        </td>
                         <td>
                             <div class="data">
                                     ${user.lastName}
@@ -62,6 +69,22 @@
                         <td>
                             <div class="data">
                                     ${user.email}
+                            </div>
+                        </td>
+                        <td width=20%>
+                            <div class="blockedBtn">
+                                <c:choose>
+                                    <c:when test="${user.blockingStatus == 'UNBLOCKED'}">
+                                        <a class="block"
+                                           href="${pageContext.servletContext.contextPath}/controller?command=changeBlockingStatus&idClient=${user.id}&blockingStatus=blocked">
+                                            ${block} </a>
+                                    </c:when>
+                                    <c:when test="${user.blockingStatus == 'BLOCKED'}">
+                                        <a class="unblock"
+                                           href="${pageContext.servletContext.contextPath}/controller?command=changeBlockingStatus&idClient=${user.id}&blockingStatus=unblocked">
+                                            ${unblock} </a>
+                                    </c:when>
+                                </c:choose>
                             </div>
                         </td>
 

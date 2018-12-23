@@ -17,7 +17,7 @@ public class Order implements Entity {
     private Date checkInDate;
     private Date checkOutDate;
     private RoomType type;
-    private LocalDate invoiceDate;
+    private Date invoiceDate;
     private PaymentStatus paymentStatus;
     private OrderStatus orderStatus;
     private BigDecimal cost;
@@ -37,7 +37,6 @@ public class Order implements Entity {
         this.paymentStatus = paymentStatus;
         this.orderStatus = orderStatus;
         this.cost = cost;
-//        this.roomNumber = roomNumber;
     }
 
     //process order
@@ -49,14 +48,14 @@ public class Order implements Entity {
     }
 
     //adminOrders order
-    public Order(Integer id, LocalDate invoiceDate, OrderStatus orderStatus) {
+    public Order(Integer id, Date invoiceDate, OrderStatus orderStatus) {
         this.id = id;
         this.invoiceDate = invoiceDate;
         this.orderStatus = orderStatus;
     }
 
     //show order admin
-    public Order(Integer id, Integer idClient, Date checkInDate, Date checkOutDate, LocalDate invoiceDate,
+    public Order(Integer id, Integer idClient, Date checkInDate, Date checkOutDate, Date invoiceDate,
                  RoomType roomType, PaymentStatus paymentStatus,
                  OrderStatus orderStatus, BigDecimal cost) {
         this.id = id;
@@ -67,8 +66,6 @@ public class Order implements Entity {
         this.invoiceDate = invoiceDate;
         this.paymentStatus = paymentStatus;
         this.orderStatus = orderStatus;
-//        this.firstName = firstName;
-//        this.lastName = lastName;
         this.cost = cost;
     }
 
@@ -87,7 +84,7 @@ public class Order implements Entity {
         this.type = roomType;
     }
 
-    public Order(Integer id, Integer idClient, Date checkInDate, Date checkOutDate, LocalDate invoiceDate,
+    public Order(Integer id, Integer idClient, Date checkInDate, Date checkOutDate, Date invoiceDate,
                  RoomType roomType, PaymentStatus paymentStatus, OrderStatus orderStatus, BigDecimal cost, User user, Room room) {
         this.id = id;
         this.idClient = idClient;
@@ -185,11 +182,11 @@ public class Order implements Entity {
         this.type = type;
     }
 
-    public LocalDate getInvoiceDate() {
+    public Date getInvoiceDate() {
         return invoiceDate;
     }
 
-    public void setInvoiceDate(LocalDate invoiceDate) {
+    public void setInvoiceDate(Date invoiceDate) {
         this.invoiceDate = invoiceDate;
     }
 

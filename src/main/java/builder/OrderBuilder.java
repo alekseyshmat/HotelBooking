@@ -38,15 +38,7 @@ public class OrderBuilder implements Builder<Order> {
         Date checkInDate = resultSet.getDate(CHECK_IN_DATE);
         Date checkOutDate = resultSet.getDate(CHECK_OUT_DATE);
 
-        Date date = resultSet.getDate(INVOICE_DATE);
-        LocalDate invoiceDate;
-
-        if (date != null) {
-            invoiceDate = date.toLocalDate();
-        } else {
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern(DATE_PATTERN);
-            invoiceDate = LocalDate.parse(LocalDate.now().format(formatter), formatter);
-        }
+        Date invoiceDate = resultSet.getDate(INVOICE_DATE);
 
         RoomType roomType = RoomType.valueOf(resultSet.getString(TYPE).toUpperCase());
         PaymentStatus paymentStatus = PaymentStatus.valueOf(resultSet.getString(PAYMENT_STATUS).toUpperCase());

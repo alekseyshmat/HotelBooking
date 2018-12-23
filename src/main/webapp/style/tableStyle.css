@@ -21,7 +21,7 @@ th {
     color: white;
 }
 
-.processButton, .editButton, .deleteButton, .paymentButton, .completeButton, .showDetailsButton {
+.processButton, .editButton, .deleteButton, .paymentButton, .completeButton, .showDetailsButton, .block, .unblock {
     padding: 8px 25px;
     margin: 0 0 0 0;
     opacity: 0.7;
@@ -50,13 +50,28 @@ th {
     background-color: #00FF00; /*ADD8E6*/
 }
 
+.block{
+    background-color: red;
+}
+
+.unblock{
+    background-color: #00FF00;
+}
+
+.blockedBtn a, .prcBtn a{
+    /*font-size: 16px;*/
+    text-align: center;
+    color: black;
+    text-decoration: none;
+}
+
 .showDetailsButton {
     background-color: #008B8B; /*ADD8E6*/
 }
 
 
 .processButton:hover, .editButton:hover, .deleteButton:hover, .paymentButton:hover,
-.completeButton:hover, .showDetailsButton:hover {
+.completeButton:hover, .showDetailsButton:hover, .block:hover, .unblock:hover{
     opacity: 0.8;
 }
 

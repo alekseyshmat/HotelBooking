@@ -11,6 +11,7 @@ public class Room implements Entity {
     private String roomNumber;
     private RoomType roomType;
     private BigDecimal cost;
+    private boolean isDeleted;
 
     //build without join
     public Room(Integer id, String roomNumber, RoomType roomType) {
@@ -61,6 +62,17 @@ public class Room implements Entity {
         this.cost = cost;
     }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public boolean isDeleted() {
+        return isDeleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        isDeleted = deleted;
+    }
 
     @Override
     public boolean equals(Object obj) {

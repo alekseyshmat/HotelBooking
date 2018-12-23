@@ -68,7 +68,7 @@ public class OrderService {
         }
     }
 
-    public void completeOrder(Integer id, LocalDate invoiceDate, OrderStatus orderStatus) throws ServiceException {
+    public void completeOrder(Integer id, Date invoiceDate, OrderStatus orderStatus) throws ServiceException {
         try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
             OrderRepository orderRepository = repositoryCreator.getOrderRepository();
             Order order = new Order(id, invoiceDate, orderStatus);

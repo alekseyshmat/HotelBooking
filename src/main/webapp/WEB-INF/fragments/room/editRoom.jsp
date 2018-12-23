@@ -9,6 +9,7 @@
 <fmt:message bundle="${naming}" key="table.label.type" var="type"/>
 <fmt:message bundle="${naming}" key="button.label.add" var="add"/>
 <fmt:message bundle="${naming}" key="button.label.edit" var="edit"/>
+<fmt:message bundle="${naming}" key="button.label.cancel" var="cancel"/>
 <fmt:message bundle="${naming}" key="room.label.apartment" var="apartment"/>
 <fmt:message bundle="${naming}" key="room.label.business" var="business"/>
 <fmt:message bundle="${naming}" key="room.label.deluxe" var="deluxe"/>
@@ -51,7 +52,7 @@
                 <input class="edtButton" type="submit" value="${edit}"/>
             </div>
         </form>
-        <button class="cancelButton" onclick="document.getElementById('editRoom').style.display='none'">Cancel
+        <button class="cancelButton" onclick="document.getElementById('editRoom').style.display='none'">${cancel}
         </button>
     </div>
 </div>

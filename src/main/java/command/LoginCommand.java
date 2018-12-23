@@ -1,7 +1,7 @@
 package command;
 
-import command.admin.order.AdminOrderCommand;
 import entity.User;
+import entity.types.BlockingStatus;
 import entity.types.Role;
 import exception.ServiceException;
 import service.UserService;
@@ -23,6 +23,7 @@ public class LoginCommand implements Command {
     private static final String PASSWORD = "password";
     private static final String ERROR_MESSAGE = "errorMessage";
     private static final String WRONG_PARAMETER = "Wrong login or password";
+    private static final String BLOCKING_ACCOUNT = "Your account is blocked";
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
@@ -34,6 +35,13 @@ public class LoginCommand implements Command {
 
         if (optionalUser.isPresent()) {
             User user = optionalUser.get();
+
+            BlockingStatus blockingStatus = user.getBlockingStatus();
+            if (blockingStatus.equals(BlockingStatus.BLOCKED)) {
+                request.setAttribute(ERROR_MESSAGE, BLOCKING_ACCOUNT);
+                return CommandResult.forward(LOGIN_PAGE);
+            }
+
             Integer id = user.getId();
             Role role = user.getRole();
             String name = user.getFirstName();

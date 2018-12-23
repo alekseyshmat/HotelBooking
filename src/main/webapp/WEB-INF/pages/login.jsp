@@ -10,6 +10,7 @@
 <fmt:message bundle="${naming}" key="user.label.password.placeholder" var="placePassword"/>
 <fmt:message bundle="${naming}" key="user.label.login" var="logIn"/>
 <fmt:message bundle="${naming}" key="login.label.wrongParams" var="wrongParams"/>
+<fmt:message bundle="${naming}" key="login.label.blockingAccount" var="blockingAccount"/>
 
 <html>
 
@@ -32,11 +33,18 @@
 
             <div class="inputText">
                 <input type="password" id="password" name="password" placeholder="${placePassword}"
-                       pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[A-Z])[A-Za-z\d]{8,}$" required>
+                       required>
             </div>
             <c:if test="${not empty errorMessage}">
                 <div class="wrongParametres">
-                    <label>${wrongParams}</label>
+                    <c:choose>
+                        <c:when test="${errorMessage eq 'Wrong login or password'}">
+                            <label>${wrongParams}</label>
+                        </c:when>
+                        <c:when test="${errorMessage eq 'Your account is blocked'}">
+                            <label>${blockingAccount}</label>
+                        </c:when>
+                    </c:choose>
                 </div>
             </c:if>
             <div class="submitButton">

@@ -1,6 +1,7 @@
 package service;
 
 import entity.User;
+import entity.types.BlockingStatus;
 import entity.types.Role;
 import exception.RepositoryException;
 import exception.ServiceException;
@@ -58,6 +59,16 @@ public class UserService {
         try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
             UserRepository userRepository = repositoryCreator.getUserRepository();
             User user = new User(id, balance);
+            userRepository.save(user);
+        } catch (RepositoryException ex) {
+            throw new ServiceException(ex.getMessage(), ex);
+        }
+    }
+
+    public void changeBlockingStatus(Integer id, BlockingStatus blockingStatus) throws ServiceException {
+        try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
+            User user = new User(id, blockingStatus);
+            UserRepository userRepository = repositoryCreator.getUserRepository();
             userRepository.save(user);
         } catch (RepositoryException ex) {
             throw new ServiceException(ex.getMessage(), ex);

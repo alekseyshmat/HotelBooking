@@ -118,19 +118,10 @@
                             </div>
                         </td>
                         <td>
-                            <a class="processButton"
-                               href="${pageContext.servletContext.contextPath}/controller?command=searchRoomByCriteria&id=${order.id}&inDate=${order.checkInDate}&outDate=${order.checkOutDate}&type=${order.type}">${process}</a>
-
-                                <%--  <button data-procid="${order.id}"
-                                          data-name="${order.lastName} ${order.firstName}"
-                                          data-paystatus="${order.paymentStatus}"
-                                          data-indate="${order.checkInDate}"
-                                          data-outdate="${order.checkOutDate}"
-                                          class="processButton"
-                                          type="submit"
-                                      &lt;%&ndash;onclick=procOrderBtn(this)&ndash;%&gt;
-                                  >${process}
-                                  </button>--%>
+                            <div class="prcBtn">
+                                <a class="processButton"
+                                   href="${pageContext.servletContext.contextPath}/controller?command=searchRoomByCriteria&id=${order.id}&inDate=${order.checkInDate}&outDate=${order.checkOutDate}&type=${order.type}">${process}</a>
+                            </div>
                         </td>
                     </tr>
 

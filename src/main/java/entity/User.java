@@ -1,5 +1,6 @@
 package entity;
 
+import entity.types.BlockingStatus;
 import entity.types.Role;
 
 import java.io.Serializable;
@@ -16,11 +17,13 @@ public class User implements Serializable, Entity {
     private String email;
     private String login;
     private String password;
+    private BlockingStatus blockingStatus;
     private BigDecimal balance;
     private Role role;
 
     //builder
-    public User(Integer id, String firstName, String lastName, Date birthday, String email, String login, String password, BigDecimal balance, Role role) {
+    public User(Integer id, String firstName, String lastName, Date birthday, String email, String login, String password,
+                BigDecimal balance, Role role, BlockingStatus blockingStatus) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -30,6 +33,7 @@ public class User implements Serializable, Entity {
         this.password = password;
         this.balance = balance;
         this.role = role;
+        this.blockingStatus = blockingStatus;
     }
 
     //update profile
@@ -43,6 +47,11 @@ public class User implements Serializable, Entity {
     public User(Integer id, BigDecimal balance) {
         this.id = id;
         this.balance = balance;
+    }
+
+    public User(Integer id, BlockingStatus active) {
+        this.id = id;
+        this.blockingStatus = active;
     }
 
     public Integer getId() {
@@ -111,6 +120,18 @@ public class User implements Serializable, Entity {
 
     public Role getRole() {
         return role;
+    }
+
+    public BlockingStatus getBlockingStatus() {
+        return blockingStatus;
+    }
+
+    public void setBlockingStatus(BlockingStatus blockingStatus) {
+        this.blockingStatus = blockingStatus;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     @Override

@@ -18,10 +18,9 @@ public class UserRepository extends AbstractRepository<User> {
     private static final String FIRST_NAME = "first_name";
     private static final String BIRTHDAY = "birthday";
     private static final String EMAIL = "email";
-    private static final String USERNAME = "username";
-    private static final String PASSWORD = "password";
     private static final String BALANCE = "balance";
     private static final String ROLE = "role";
+    private static final String ACTIVE = "blocking_status";
 
 
     public UserRepository(Connection connection) {
@@ -33,7 +32,11 @@ public class UserRepository extends AbstractRepository<User> {
         Map<String, Object> values = new LinkedHashMap<>();
         values.put(LAST_NAME, item.getLastName());
         values.put(FIRST_NAME, item.getFirstName());
+        values.put(BIRTHDAY, item.getBirthday());
         values.put(BALANCE, item.getBalance());
+        values.put(EMAIL, item.getEmail());
+        values.put(ROLE, item.getRole());
+        values.put(ACTIVE, item.getBlockingStatus());
         values.put(ID, item.getId());
         return values;
     }

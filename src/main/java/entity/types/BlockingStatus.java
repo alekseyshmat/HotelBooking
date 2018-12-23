@@ -1,12 +1,10 @@
 package entity.types;
 
-public enum Role {
-    USER("user"),
-    ADMIN("admin"),
-    MAINADMIN("mainAdmin");
+public enum BlockingStatus {
+    BLOCKED("blocked"),
+    UNBLOCKED("unblocked");
     private String value;
-
-    Role(String value) {
+    BlockingStatus(String value) {
         this.value = value;
     }
 
