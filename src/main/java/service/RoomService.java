@@ -9,6 +9,7 @@ import repository.creator.RepositoryCreator;
 import repository.RoomRepository;
 import specification.searchSpecification.room.FindAll;
 import specification.searchSpecification.room.FindByCriteria;
+import specification.searchSpecification.room.FindWithOffset;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -19,6 +20,15 @@ public class RoomService {
         try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
             RoomRepository roomRepository = repositoryCreator.getRoomRepository();
             return roomRepository.queryAll(new FindAll());
+        } catch (RepositoryException ex) {
+            throw new ServiceException(ex.getMessage(), ex);
+        }
+    }
+
+    public List<Room> findAll(Integer limit, Integer offset) throws ServiceException {
+        try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
+            RoomRepository roomRepository = repositoryCreator.getRoomRepository();
+            return roomRepository.queryAll(new FindWithOffset(limit, offset));
         } catch (RepositoryException ex) {
             throw new ServiceException(ex.getMessage(), ex);
         }

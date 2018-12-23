@@ -57,7 +57,7 @@ select {
     background-color: #FFFF00;
 }
 
-.prcButton:hover, .cancelButton:hover {
+.prcButton:hover, .cancelButton:hover, .edtButton:hover {
     opacity: 0.8;
 }
 

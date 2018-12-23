@@ -41,6 +41,10 @@
         <jsp:include page="../../fragments/header/adminHeader.jsp"/>
     </div>
     <div class="rightColumn">
+        <jsp:useBean id="pages" scope="request" type="java.util.List"/>
+        <c:forEach items="${pages}" var="pages">
+            <a href="${pageContext.servletContext.contextPath}/controller?command=showRooms&pageNumber=${pages}">${pages}</a>
+        </c:forEach>
         <div class="card">
             <table width="100%">
                 <tr>
@@ -90,7 +94,7 @@
                         <td>
 
                         </td>
-                        <td width="50" >
+                        <td width="50">
                             <button id="${room.id}" name="btnRoom" value="${room.id}"
                                     data-roomnumber="${room.roomNumber}"
                                     data-roomtype="${room.roomType}"
@@ -104,7 +108,6 @@
                     </tr>
                 </c:forEach>
             </table>
-
         </div>
     </div>
     <div class="addPanel">

@@ -17,11 +17,11 @@ import javax.servlet.http.HttpSession;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.Optional;
 
 public class PayOrderCommand implements Command {
 
-    private static final String USER_ORDERS = "/WEB-INF/pages/user/orders.jsp";
     private static final String ORDER_ID = "orderId";
     private static final String ID = "id";
     private static final String DATE_PATTERN = "yyyy-MM-dd";
@@ -41,6 +41,8 @@ public class PayOrderCommand implements Command {
         Optional<Order> optionalOrder = orderService.findById(orderId);
         if (optionalOrder.isPresent()) {
             Order order = optionalOrder.get();
+            //todo add count days
+//            int days = Days
             BigDecimal cost = order.getCost();
 
             UserService userService = new UserService();

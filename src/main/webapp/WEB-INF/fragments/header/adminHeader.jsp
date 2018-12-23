@@ -25,7 +25,7 @@
     <a href="controller?command=showAllOrders">${orders}</a>
 </div>
 <div class="buttons">
-    <a href="controller?command=showRooms">${rooms}</a>
+    <a href="controller?command=showRooms&pageNumber=1">${rooms}</a>
 </div>
 <div class="buttons">
     <a href="controller?command=showUsers">${users}</a>

@@ -63,7 +63,12 @@ public class QueryHelper {
     public static void prepare(PreparedStatement preparedStatement, List<Object> params) throws SQLException {
         int length = params.size();
         for (int i = 0; i < length; i++) {
-            preparedStatement.setString(i + 1, String.valueOf(params.get(i)));
+            Object param = params.get(i);
+            if (!(param instanceof Integer)) {
+                preparedStatement.setString(i + 1, String.valueOf(param));
+            } else {
+                preparedStatement.setInt(i + 1, (Integer) param);
+            }
         }
     }
 }

@@ -19,7 +19,7 @@ public class RoomRepository extends AbstractRepository<Room> {
     private static final String ROOM_TYPE = "type";
     private static final String BUSY = "is_busy";
 
-    private static final String SELECT_QUERY = "SELECT * FROM room ";
+    private static final String SELECT_QUERY = "SELECT * FROM `room` ";
 
 
     public RoomRepository(Connection connection) {
