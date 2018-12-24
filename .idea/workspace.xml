@@ -8,8 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ed67534d-1a8a-4535-8b45-654f7512ef26" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/PagesDelimeter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/PagesDelimeter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/style/tableStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/tableStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/rooms.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/rooms.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -69,7 +68,7 @@
         <counts>
           <entry key="class" value="48" />
           <entry key="css" value="126" />
-          <entry key="gitignore" value="1" />
+          <entry key="gitignore" value="2" />
           <entry key="java" value="1743" />
           <entry key="jpg" value="3" />
           <entry key="js" value="91" />
@@ -95,7 +94,7 @@
           <entry key="JAVA" value="1743" />
           <entry key="JSP" value="590" />
           <entry key="JavaScript" value="91" />
-          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="PLAIN_TEXT" value="2" />
           <entry key="Properties" value="68" />
           <entry key="RNG Compact" value="1" />
           <entry key="Scratch" value="2" />
@@ -107,10 +106,10 @@
         <counts>
           <entry key="css" value="668" />
           <entry key="dummy" value="119" />
-          <entry key="gitignore" value="16" />
+          <entry key="gitignore" value="24" />
           <entry key="java" value="30023" />
           <entry key="js" value="756" />
-          <entry key="jsp" value="10226" />
+          <entry key="jsp" value="10229" />
           <entry key="jspf" value="177" />
           <entry key="properties" value="1750" />
           <entry key="txt" value="1201" />
@@ -121,9 +120,9 @@
         <counts>
           <entry key="CSS" value="668" />
           <entry key="JAVA" value="30023" />
-          <entry key="JSP" value="10403" />
+          <entry key="JSP" value="10406" />
           <entry key="JavaScript" value="756" />
-          <entry key="PLAIN_TEXT" value="1336" />
+          <entry key="PLAIN_TEXT" value="1344" />
           <entry key="Properties" value="1750" />
           <entry key="XML" value="75" />
         </counts>
@@ -160,15 +159,6 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/command/admin/room/RoomCommand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="38" column="52" selection-start-line="38" selection-start-column="52" selection-end-line="38" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/roomPrices.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="199">
@@ -180,8 +170,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/rooms.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-53">
-              <caret line="105" column="38" selection-start-line="105" selection-start-column="38" selection-end-line="105" selection-end-column="38" />
+            <state relative-caret-position="49">
+              <caret line="105" column="37" selection-start-line="105" selection-start-column="37" selection-end-line="105" selection-end-column="37" />
               <folding>
                 <element signature="n#c:choose#0;n#c:forEach#0;n#jsp:root#0;n#!!top" />
               </folding>
@@ -190,6 +180,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="6" lean-forward="true" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/style/tableStyle.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="366">
@@ -295,7 +294,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/service/RoomBusyService.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/roomSelection.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/command/admin/order/ProcessOrderCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/command/user/MakeOrderCommand.java" />
@@ -342,10 +340,11 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/fragments/room/addRoomPrice.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/addPrice.js" />
         <option value="$PROJECT_DIR$/src/main/java/command/admin/room/RoomPricesCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/rooms.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/roomPrices.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/util/PagesDelimeter.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/style/tableStyle.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/rooms.jsp" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -378,9 +377,9 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="225" />
-    <option name="y" value="-10" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="528" />
+    <option name="y" value="86" />
     <option name="width" value="782" />
     <option name="height" value="775" />
   </component>
@@ -566,7 +565,7 @@
     <property name="SearchEverywhereHistoryKey" value="Ma&#9;FILE&#9;jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/util/Map.java&#10;CHECK_&#9;PSI&#9;JAVA://builder.OrderBuilder#CHECK_IN_DATE&#10;showAllOrders&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545685631555" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545687704411" />
     <property name="database.console.LAST_STATE" value="true" />
     <property name="last_opened_file_path" value="F:/загрузки/market-master/market-master" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -761,7 +760,7 @@
       <workItem from="1545119687004" duration="2791000" />
       <workItem from="1545156196929" duration="349000" />
       <workItem from="1545156603613" duration="26926000" />
-      <workItem from="1545309717728" duration="111157000" />
+      <workItem from="1545309717728" duration="112621000" />
     </task>
     <task id="LOCAL-00001" summary="added entities">
       <created>1543401784541</created>
@@ -1043,11 +1042,18 @@
       <option name="project" value="LOCAL" />
       <updated>1545684233405</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="fixed mapping, adding room price">
+      <created>1545685732163</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1545685732163</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="453485000" />
+    <option name="totallyTimeSpent" value="454949000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1059,10 +1065,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <frame x="528" y="86" width="782" height="775" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7704918" visible="true" weight="0.21785174" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7704918" visible="true" weight="0.39889196" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
@@ -1072,7 +1078,7 @@
       <window_info id="Web" order="7" sideWeight="0.22950819" side_tool="true" weight="0.2065053" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32886904" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.20684524" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2096531" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49924356" weight="0.33184522" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1270,13 +1276,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/entity/Transaction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/command/user/PayOrderCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
@@ -1624,16 +1623,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/rooms.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-53">
-          <caret line="105" column="38" selection-start-line="105" selection-start-column="38" selection-end-line="105" selection-end-column="38" />
-          <folding>
-            <element signature="n#c:choose#0;n#c:forEach#0;n#jsp:root#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/util/PagesDelimeter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -1648,6 +1637,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="366">
           <caret line="152" selection-start-line="152" selection-end-line="152" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/rooms.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="49">
+          <caret line="105" column="37" selection-start-line="105" selection-start-column="37" selection-end-line="105" selection-end-column="37" />
+          <folding>
+            <element signature="n#c:choose#0;n#c:forEach#0;n#jsp:root#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="6" lean-forward="true" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
         </state>
       </provider>
     </entry>

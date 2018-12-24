@@ -103,7 +103,7 @@
                                 </c:when>
                             </c:choose>
                         </td>
-                        <td width="150">
+                        <td width="130">
                             <div class="showPriceButton">
                                 <a href="${pageContext.servletContext.contextPath}/controller?command=showRoomPrices&roomId=${room.id}&roomLimit=${requestScope.limit}&roomPage=${requestScope.pageNumber}"
                                    class="showRoomPrice">${showPrice}
