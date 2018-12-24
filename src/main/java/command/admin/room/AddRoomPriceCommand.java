@@ -42,12 +42,6 @@ public class AddRoomPriceCommand implements Command {
         RoomPriceService roomPriceService = new RoomPriceService();
         roomPriceService.addPrice(null, roomId, startDate, endDate, cost);
 
-      /*  List<RoomPrice> roomPriceList = roomPriceService.findAll();
-        request.setAttribute(PRICE_LIST, roomPriceList);
-
-        RoomService roomService = new RoomService();
-        List<Room> roomList = roomService.findAll();
-        request.setAttribute("roomList", roomList);*/
         String limit = request.getParameter(LIMIT);
         String page = request.getParameter(PAGE);
         return CommandResult.redirect(ROOM_PRICES_PAGE + stringRoomId + ROOM_LIMIT + limit + ROOM_PAGE + page);
