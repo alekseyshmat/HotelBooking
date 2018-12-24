@@ -21,10 +21,11 @@ th {
     color: white;
 }
 
-.processButton, .editButton, .deleteButton, .paymentButton, .completeButton, .showDetailsButton, .block, .unblock {
-    padding: 8px 25px;
+.processButton, .editButton, .deleteButton, .paymentButton, .completeButton, .showDetailsButton, .block, .unblock, .showRoomPrice {
+    padding: 9px 15px;
     margin: 0 0 0 0;
     opacity: 0.7;
+    font-size: 15px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -58,7 +59,7 @@ th {
     background-color: #00FF00;
 }
 
-.blockedBtn a, .prcBtn a{
+.blockedBtn a, .prcBtn a, .showPriceButton a{
     /*font-size: 16px;*/
     text-align: center;
     color: black;
@@ -69,14 +70,17 @@ th {
     background-color: #008B8B; /*ADD8E6*/
 }
 
+.showRoomPrice{
+    background-color: #008B8B;
+}
+
 
 .processButton:hover, .editButton:hover, .deleteButton:hover, .paymentButton:hover,
-.completeButton:hover, .showDetailsButton:hover, .block:hover, .unblock:hover{
+.completeButton:hover, .showDetailsButton:hover, .block:hover, .unblock:hover, .showRoomPrice:hover{
     opacity: 0.8;
 }
 
 .addPanel {
-    padding: 15% 45%;
 }
 
 .addButton {
@@ -86,14 +90,65 @@ th {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 17px;
     color: white;
-    padding: 15px 50px;
-    margin: 3px 25%;
+    padding: 10px 10px;
+    margin: 1.5% 35% -1%;
 }
 
 .addButton:hover {
     opacity: 1;
 }
 
+.itemLimit a{
+    text-decoration: none;
+    overflow: hidden;
+    background-color: #778899;
+    opacity: 0.7;
+    float: right;
+    border: 0.5px solid black;
+    cursor: pointer;
+    color: white;
+    padding: 5px 8px;
+    margin: -10px 5px 5px;
+}
+.itemLimit a.active{
+    background-color: #DCDCDC;
+    color:black;
+}
+
+.itemLimit a:hover{
+    opacity:1;
+}
+
+.pages{
+    margin:2% 40% 0;
+}
+.pages a{
+    text-decoration: none;
+    color:black;
+    padding: 2px 4px;
+
+    border: 1px solid black;
+}
+.pages a:hover{
+    background-color: #DCDCDC;
+    opacity:1;
+}
+
+.priceLabel{
+    font-size:25px;
+    margin: -4% 35% 3% ;
+}
+
+.returnPriceLabel a{
+    text-decoration: none;
+    color:black;
+    /*         padding: 2px 4px; */
+}
+
+.returnPriceLabel{
+    font-size:18px;
+    margin: 2% 0 -1%;
+}
 

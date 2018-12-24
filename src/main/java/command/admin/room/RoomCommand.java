@@ -36,6 +36,7 @@ public class RoomCommand implements Command {
 
         request.setAttribute(LIMIT, limit);
         request.setAttribute(PAGES, pages);
+        request.setAttribute(PAGE_NUMBER, pageNumber);
         request.setAttribute(ROOM_LIST, roomList);
         return CommandResult.forward(ROOMS_PAGE);
     }

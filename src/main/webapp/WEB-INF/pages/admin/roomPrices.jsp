@@ -1,4 +1,4 @@
-    <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -10,7 +10,9 @@
 <fmt:message bundle="${naming}" key="table.label.startDate" var="startDate"/>
 <fmt:message bundle="${naming}" key="table.label.endDate" var="endDate"/>
 <fmt:message bundle="${naming}" key="table.label.cost" var="cost"/>
-<fmt:message bundle="${naming}" key="button.label.add" var="add"/>
+<fmt:message bundle="${naming}" key="button.label.addRoomPrice" var="addRoomPrice"/>
+<fmt:message bundle="${naming}" key="table.label.priceForRoom" var="priceForRoom"/>
+<fmt:message bundle="${naming}" key="table.label.returnPage" var="returnPage"/>
 
 <html>
 <head>
@@ -18,6 +20,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/dataStyle.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/tableStyle.css">
+    <script src="${pageContext.request.contextPath}/js/addPrice.js"></script>
     <title>Room prices</title>
 </head>
 <body>
@@ -26,12 +29,25 @@
     <div class="leftColumn">
         <jsp:include page="../../fragments/header/adminHeader.jsp"/>
     </div>
-    <div class="rightColumn">
+
+</div>
+<div class="rightColumn">
+    <div class="infoLabels">
+        <div class="returnPriceLabel">
+            <c:if test="${not empty requestScope.roomPage && not empty requestScope.roomLimit}">
+                <a href="${pageContext.servletContext.contextPath}/controller?command=showRooms&pageNumber=${requestScope.roomPage}&limit=${requestScope.roomLimit}"
+                >${returnPage}</a>
+            </c:if>
+            <div class="priceLabel">
+                <c:if test="${not empty requestScope.roomNumber}">
+                    ${priceForRoom} ${requestScope.roomNumber}
+                </c:if>
+            </div>
+        </div>
         <div class="card">
             <table>
                 <tr>
                     <th>${id}</th>
-                    <th>${roomId}</th>
                     <th>${startDate}</th>
                     <th>${endDate}</th>
                     <th>${cost}</th>
@@ -42,11 +58,6 @@
                         <td>
                             <div class="data">
                                     ${roomPrice.id}
-                            </div>
-                        </td>
-                        <td>
-                            <div class="data">
-                                    ${roomPrice.room.roomNumber}
                             </div>
                         </td>
                         <td>
@@ -68,11 +79,12 @@
                 </c:forEach>
             </table>
         </div>
-    </div>
-    <div class="addPanel">
-        <button class="addButton"
-                onclick="document.getElementById('addRoomPrice').style.display='block'">${add}
-        </button>
+        <div class="addPanel">
+            <button data-roomid="${requestScope.roomId}"
+                    class="addButton"
+                    onclick="addPrice(this)">${addRoomPrice}
+            </button>
+        </div>
     </div>
 </div>
 <jsp:include page="../../fragments/room/addRoomPrice.jsp"/>

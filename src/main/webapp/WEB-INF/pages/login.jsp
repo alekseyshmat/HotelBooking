@@ -35,13 +35,13 @@
                 <input type="password" id="password" name="password" placeholder="${placePassword}"
                        required>
             </div>
-            <c:if test="${not empty errorMessage}">
+            <c:if test="${not empty requestScope.errorMessage}">
                 <div class="wrongParametres">
                     <c:choose>
-                        <c:when test="${errorMessage eq 'Wrong login or password'}">
+                        <c:when test="${requestScope.errorMessage eq 'Wrong login or password'}">
                             <label>${wrongParams}</label>
                         </c:when>
-                        <c:when test="${errorMessage eq 'Your account is blocked'}">
+                        <c:when test="${requestScope.errorMessage eq 'Your account is blocked'}">
                             <label>${blockingAccount}</label>
                         </c:when>
                     </c:choose>

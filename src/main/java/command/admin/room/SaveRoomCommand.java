@@ -13,7 +13,7 @@ import java.util.List;
 
 public class SaveRoomCommand implements Command {
 
-    private static final String MAIN_PAGE = "controller?command=showRooms&pageNumber=1&limit=10";
+    private static final String MAIN_PAGE = "controller?command=showRooms&pageNumber=1&limit=5";
     private static final String ID = "roomId";
     private static final String EDIT_ROOM_NUMBER = "editRoomNumber";
     private static final String EDIT_ROOM_TYPE = "editTypeRoom";

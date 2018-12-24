@@ -13,10 +13,10 @@ import java.util.List;
 
 public class RoomPriceService {
 
-    public List<RoomPrice> findAll() throws ServiceException {
+    public List<RoomPrice> findAll(Integer id) throws ServiceException {
         try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
             RoomPriceRepository roomPriceRepository = repositoryCreator.getRoomPriceRepository();
-            return roomPriceRepository.queryAll(new FindAllPrice());
+            return roomPriceRepository.queryAll(new FindAllPrice(id));
         } catch (RepositoryException ex) {
             throw new ServiceException(ex.getMessage(), ex);
         }

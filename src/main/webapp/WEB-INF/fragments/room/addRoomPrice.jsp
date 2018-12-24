@@ -23,15 +23,11 @@
 <div id="addRoomPrice" class="modal">
 
     <div class="modal-content animate">
-        <form action="${pageContext.servletContext.contextPath}/controller?command=addRoomPrice"
+        <form action="${pageContext.servletContext.contextPath}/controller?command=addRoomPrice&limit=${requestScope.roomLimit}&roomPage=${requestScope.roomPage}"
               method="post">
             <label for="roomId"><b>${roomId}</b></label>
-            <select id="roomId" name="roomId">
-                <jsp:useBean id="roomList" scope="request" type="java.util.List"/>
-                <c:forEach items="${roomList}" var="room">
-                    <option value="${room.id}">${room.roomNumber}</option>
-                </c:forEach>
-            </select>
+            <input id="roomIdHidden" name="roomId" type="hidden"  value="">
+            <input id="roomId" name="roomId" type="text" disabled value="">
             <label for="startDate"><b>${startDate}</b></label>
             <input id="startDate" type="date" name="startDate" required>
 

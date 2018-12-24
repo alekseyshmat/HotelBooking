@@ -14,7 +14,8 @@
 <fmt:message bundle="${naming}" key="table.label.isBusy" var="isBusy"/>
 <fmt:message bundle="${naming}" key="button.label.edit" var="edit"/>
 <fmt:message bundle="${naming}" key="button.label.delete" var="delete"/>
-<fmt:message bundle="${naming}" key="button.label.add" var="add"/>
+<fmt:message bundle="${naming}" key="button.label.addRoom" var="addRoom"/>
+<fmt:message bundle="${naming}" key="button.label.showPrice" var="showPrice"/>
 <fmt:message bundle="${naming}" key="room.label.apartment" var="apartment"/>
 <fmt:message bundle="${naming}" key="room.label.business" var="business"/>
 <fmt:message bundle="${naming}" key="room.label.deluxe" var="deluxe"/>
@@ -41,22 +42,28 @@
         <jsp:include page="../../fragments/header/adminHeader.jsp"/>
     </div>
     <div class="rightColumn">
-        <div class="pages">
-            <jsp:useBean id="pages" scope="request" type="java.util.List"/>
-            <c:forEach items="${pages}" var="pages">
-                <a href="${pageContext.servletContext.contextPath}/controller?command=showRooms&pageNumber=${pages}&limit=${limit}">${pages}</a>
-            </c:forEach>
+        <div class="itemLimit">
+            <a class=" "
+               href="${pageContext.servletContext.contextPath}/controller?command=showRooms&pageNumber=1&limit=15"
+               formmethod="post" onclick=changeStatus(event)>15
+            </a>
+            <a class=" "
+               href="${pageContext.servletContext.contextPath}/controller?command=showRooms&pageNumber=1&limit=10"
+               formmethod="post" onclick=changeStatus(event)>10
+            </a>
+            <a class=" "
+               href="${pageContext.servletContext.contextPath}/controller?command=showRooms&pageNumber=1&limit=5"
+               formmethod="post" onclick=changeStatus(event)>5
+            </a>
         </div>
-        <a href="${pageContext.servletContext.contextPath}/controller?command=showRooms&pageNumber=1&limit=5">5</a>
-        <a href="${pageContext.servletContext.contextPath}/controller?command=showRooms&pageNumber=1&limit=10">10</a>
-        <a href="${pageContext.servletContext.contextPath}/controller?command=showRooms&pageNumber=1&limit=15">15</a>
+
         <div class="card">
             <table width="100%">
                 <tr>
                     <th>${id}</th>
                     <th>${roomId}</th>
                     <th>${type}</th>
-                    <th>${isBusy}</th>
+                    <th>${cost}</th>
                     <th></th>
                     <th></th>
                 </tr>
@@ -96,8 +103,12 @@
                                 </c:when>
                             </c:choose>
                         </td>
-                        <td>
-
+                        <td width="150">
+                            <div class="showPriceButton">
+                                <a href="${pageContext.servletContext.contextPath}/controller?command=showRoomPrices&roomId=${room.id}&roomLimit=${requestScope.limit}&roomPage=${requestScope.pageNumber}"
+                                   class="showRoomPrice">${showPrice}
+                                </a>
+                            </div>
                         </td>
                         <td width="50">
                             <button id="${room.id}" name="btnRoom" value="${room.id}"
@@ -114,11 +125,17 @@
                 </c:forEach>
             </table>
         </div>
-    </div>
-    <div class="addPanel">
-        <button class="addButton"
-                onclick="document.getElementById('addRoom').style.display='block'">${add}
-        </button>
+        <div class="pages">
+            <jsp:useBean id="pages" scope="request" type="java.util.List"/>
+            <c:forEach items="${pages}" var="pages">
+                <a href="${pageContext.servletContext.contextPath}/controller?command=showRooms&pageNumber=${pages}&limit=${limit}">${pages}</a>
+            </c:forEach>
+        </div>
+        <div class="addPanel">
+            <button class="addButton"
+                    onclick="document.getElementById('addRoom').style.display='block'">${addRoom}
+            </button>
+        </div>
     </div>
 </div>
 <jsp:include page="../../fragments/room/addRoom.jsp"/>
