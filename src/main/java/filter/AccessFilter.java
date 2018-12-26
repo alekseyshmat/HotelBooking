@@ -34,7 +34,7 @@ public class AccessFilter implements Filter {
     private static final String SEARCH_ROOM_BY_CRITERIA = "searchRoomByCriteria";
     private static final String ROLE = "role";
     private static final String COMMAND = "command";
-    private static final String LOGIN_PAGE = "/WEB-INF/pages/AccessError.jsp";
+    private static final String ERROR_PAGE = "/WEB-INF/pages/AccessError.jsp";
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -58,7 +58,7 @@ public class AccessFilter implements Filter {
                     parameter.equals(SEARCH_ROOM_BY_CRITERIA)) {
 
                 if (role.equals(Role.USER)) {
-                    ((HttpServletResponse) servletResponse).sendRedirect(LOGIN_PAGE); //todo add page
+                    ((HttpServletResponse) servletResponse).sendError(401); //todo add page
                     return;
                 }
             } else if (parameter.equals(SHOW_ORDERS) ||
@@ -69,7 +69,7 @@ public class AccessFilter implements Filter {
                     parameter.equals(CANCEL_ORDER) ||
                     parameter.equals(UPDATE_BALANCE)) {
                 if (role.equals(Role.ADMIN)) {
-                    ((HttpServletResponse) servletResponse).sendRedirect(LOGIN_PAGE); //todo add page
+                    ((HttpServletResponse) servletResponse).sendError(401); //todo add page
                     return;
                 }
             }

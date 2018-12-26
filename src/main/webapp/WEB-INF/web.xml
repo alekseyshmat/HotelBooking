@@ -36,6 +36,13 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
-
+    <error-page>
+        <error-code>401</error-code>
+        <location>/WEB-INF/pages/AccsessError.jsp</location>
+    </error-page>
+<!--    <error-page>
+        <exception-type>javax.servlet.ServletException</exception-type>
+        <location>/WEB-INF/pages/AccsessError.jsp</location>
+    </error-page>-->
 
 </web-app>

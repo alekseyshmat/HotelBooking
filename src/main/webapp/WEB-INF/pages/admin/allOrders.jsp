@@ -10,7 +10,7 @@
 <fmt:message bundle="${naming}" key="table.label.checkInDate" var="checkInDate"/>
 <fmt:message bundle="${naming}" key="table.label.checkOutDate" var="checkOutDate"/>
 <fmt:message bundle="${naming}" key="table.label.invoiceDate" var="invoiceDate"/>
-<fmt:message bundle="${naming}" key="table.label.placeNumber" var="placeNumber"/>
+<fmt:message bundle="${naming}" key="table.label.roomNumber" var="roomNumber"/>
 <fmt:message bundle="${naming}" key="table.label.orderStatus" var="orderStatus"/>
 <fmt:message bundle="${naming}" key="button.label.active" var="active"/>
 <fmt:message bundle="${naming}" key="button.label.processed" var="processed"/>
@@ -137,6 +137,7 @@
                     <th>${name}</th>
                     <th>${checkInDate}</th>
                     <th>${checkOutDate}</th>
+                    <th>${roomNumber}</th>
                     <th>${paymentStatus}</th>
                     <th>${sum}</th>
                     <th></th>
@@ -162,6 +163,11 @@
                         <td>
                             <div class="data">
                                     ${order.checkOutDate}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="data">
+                                    ${order.room.roomNumber}
                             </div>
                         </td>
                         <td>

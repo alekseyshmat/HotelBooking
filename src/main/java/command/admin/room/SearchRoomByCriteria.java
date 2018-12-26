@@ -45,7 +45,6 @@ public class SearchRoomByCriteria implements Command {
         RoomBusyService roomBusyService = new RoomBusyService();
         List<RoomBusy> roomsWithCriteria = roomBusyService.findAllByCriteria(roomType, checkInDate, checkOutDate);
         request.setAttribute(ROOMS_LIST, roomsWithCriteria);
-        System.out.println(roomsWithCriteria.get(0).getRoom().getId());
         return CommandResult.forward(SELECT_PAGE);
     }
 }

@@ -28,6 +28,6 @@ public class FindByLoginAndPassword implements Specification {
     }
 
     private String decryptPassword(String password) {
-        return DigestUtils.md5Hex(password);
+        return DigestUtils.sha512Hex(password);
     }
 }

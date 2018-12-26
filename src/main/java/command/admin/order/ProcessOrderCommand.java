@@ -3,11 +3,11 @@ package command.admin.order;
 import command.Command;
 import command.CommandResult;
 import entity.Order;
-import entity.RoomBusy;
 import entity.types.OrderStatus;
 import exception.ServiceException;
 import service.OrderService;
 import service.RoomBusyService;
+import util.DateCalculator;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -22,11 +22,10 @@ public class ProcessOrderCommand implements Command {
     private static final String ID_ORDER = "idOrder";
     private static final String ID_ROOM = "idRoom";
     private static final String COST = "cost";
-    private static final String CHECK_IN_DATE = "checkInDate";
-    private static final String CHECK_OUT_DATE = "checkOutDate";
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
+        DateCalculator dateCalculator = new DateCalculator();
         HttpSession session = request.getSession();
         Integer idOrder = (Integer) session.getAttribute(ID_ORDER);
         session.removeAttribute(ID_ORDER);
@@ -36,17 +35,20 @@ public class ProcessOrderCommand implements Command {
         BigDecimal cost = new BigDecimal(stringCost);
 
         OrderService orderService = new OrderService();
-        orderService.processOrder(idOrder, idRoom, cost, OrderStatus.SEEN);
-
         Optional<Order> optionalOrder = orderService.findById(idOrder);
 
         Date startDate = null;
         Date endDate = null;
+        int days = 1;
         if (optionalOrder.isPresent()) {
             Order order = optionalOrder.get();
             startDate = order.getCheckInDate();
             endDate = order.getCheckOutDate();
+            days = dateCalculator.daysBetween(startDate, endDate);
         }
+
+        BigDecimal overallCost = cost.multiply(new BigDecimal(days));
+        orderService.processOrder(idOrder, idRoom, overallCost, OrderStatus.SEEN);
 
         RoomBusyService roomBusyService = new RoomBusyService();
         roomBusyService.addBusyRoom(null, idRoom, startDate, endDate);

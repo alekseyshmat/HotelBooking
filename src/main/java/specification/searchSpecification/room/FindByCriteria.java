@@ -40,13 +40,13 @@ public class FindByCriteria implements Specification {
                 " AND ? NOT BETWEEN date_start and date_end) " +
                 "OR (date_start IS NULL AND date_end IS NULL)) " +
                 " AND ? BETWEEN start_date and end_date " +
-                " AND ? BETWEEN start_date and end_date " +
+//                " AND ? BETWEEN start_date and end_date " +
                 ")";
     }
 
     @Override
     public List<Object> getParametres() {
 //        return Arrays.asList(roomType, checkInDate, checkOutDate, roomStatus);
-        return Arrays.asList(roomType, checkInDate, checkOutDate, checkInDate, checkOutDate);
+        return Arrays.asList(roomType, checkInDate, checkOutDate, checkInDate);
     }
 }

@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class LanguageFilter implements Filter {
 
-    private static final String EN = "en";
+    private static final String EN = "EN";
     private static final String LANGUAGE = "language";
 
     @Override

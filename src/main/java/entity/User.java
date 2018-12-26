@@ -10,6 +10,8 @@ import java.util.Objects;
 
 public class User implements Serializable, Entity {
 
+    private static final long serialVersionUID = 4958483859493859385L;
+
     private Integer id;
     private String firstName;
     private String lastName;

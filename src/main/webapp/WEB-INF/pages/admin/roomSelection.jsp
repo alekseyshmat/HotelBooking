@@ -8,6 +8,13 @@
 <fmt:message bundle="${naming}" key="table.label.type" var="type"/>
 <fmt:message bundle="${naming}" key="table.label.cost" var="cost"/>
 <fmt:message bundle="${naming}" key="table.label.roomNumber" var="roomNumber"/>
+<fmt:message bundle="${naming}" key="room.label.apartment" var="apartment"/>
+<fmt:message bundle="${naming}" key="room.label.business" var="business"/>
+<fmt:message bundle="${naming}" key="room.label.deluxe" var="deluxe"/>
+<fmt:message bundle="${naming}" key="room.label.duplex" var="duplex"/>
+<fmt:message bundle="${naming}" key="room.label.familyRoom" var="familyRoom"/>
+<fmt:message bundle="${naming}" key="room.label.standard" var="standard"/>
+<fmt:message bundle="${naming}" key="room.label.president" var="president"/>
 
 <html>
 <head>
@@ -47,7 +54,29 @@
                             </td>
                             <td>
                                 <div class="data">
-                                        ${foundRooms.room.roomType}
+                                    <c:choose>
+                                        <c:when test="${foundRooms.room.roomType == 'APARTMENT'}">
+                                            ${apartment}
+                                        </c:when>
+                                        <c:when test="${foundRooms.room.roomType == 'BUSINESS'}">
+                                            ${business}
+                                        </c:when>
+                                        <c:when test="${foundRooms.room.roomType == 'DELUXE'}">
+                                            ${deluxe}
+                                        </c:when>
+                                        <c:when test="${foundRooms.room.roomType == 'DUPLEX'}">
+                                            ${duplex}
+                                        </c:when>
+                                        <c:when test="${foundRooms.room.roomType == 'FAMILYROOM'}">
+                                            ${familyRoom}
+                                        </c:when>
+                                        <c:when test="${foundRooms.room.roomType == 'STANDARD'}">
+                                            ${standard}
+                                        </c:when>
+                                        <c:when test="${foundRooms.room.roomType == 'PRESIDENT'}">
+                                            ${president}
+                                        </c:when>
+                                    </c:choose>
                                 </div>
                             </td>
                             <td>
