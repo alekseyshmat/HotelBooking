@@ -1,25 +1,36 @@
 package dataBase;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Properties;
 
 public class ConnectionCreator {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/hotelbooking?autoReconnect=true&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/Moscow";
-    private static final String NAME = "root";
-    private static final String PASSWORD = "root";
-    private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
-
-    public static Connection createConnection() {
+    public Connection createConnection() {
         try {
-            Class.forName(DRIVER);
-            return DriverManager.getConnection(URL, NAME, PASSWORD);
+            Class<? extends ConnectionCreator> aClass = this.getClass();
+            ClassLoader classLoader = aClass.getClassLoader();
+            InputStream inputStream = classLoader.getResourceAsStream("db.properties");
+
+            Properties property = new Properties();
+            property.load(inputStream);
+
+            String url = property.getProperty("db.url");
+            String name = property.getProperty("db.name");
+            String password = property.getProperty("db.password");
+            String driver = property.getProperty("db.driver");
+
+            Class.forName(driver);
+            return DriverManager.getConnection(url, name, password);
         } catch (SQLException e) {
-            System.out.println(" не подключилось");
             throw new IllegalArgumentException();
         } catch (ClassNotFoundException e) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Driver is not found" + e.getMessage(), e);
+        } catch (IOException e) {
+            throw new IllegalArgumentException("File not found" + e.getMessage(), e);
         }
     }
 }

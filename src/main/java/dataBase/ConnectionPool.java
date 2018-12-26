@@ -1,8 +1,11 @@
 package dataBase;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.Properties;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.locks.ReentrantLock;
@@ -14,9 +17,11 @@ public class ConnectionPool {
     private static ConnectionPool instance;
     private Deque<Connection> connections;
     private Semaphore semaphore;
-    private int connectionSize = 10;
+    private ConnectionCreator connectionCreator = new ConnectionCreator();
+    private int connectionSize;
 
     private ConnectionPool() {
+        readConnectionSizeFromProperties();
         initConnections();
         createConnections();
     }
@@ -43,13 +48,29 @@ public class ConnectionPool {
 
     private void createConnections() {
         for (int i = 0; i < connectionSize; i++) {
-            Connection connection = ConnectionCreator.createConnection();
+            Connection connection = connectionCreator.createConnection();
             connections.push(connection);
         }
         if (connections.isEmpty()) {
             throw new IllegalArgumentException("Connections are not created!");
         }
     }
+
+    private void readConnectionSizeFromProperties() {
+        try {
+            Class<? extends ConnectionPool> aClass = this.getClass();
+            ClassLoader classLoader = aClass.getClassLoader();
+            InputStream inputStream = classLoader.getResourceAsStream("db.properties");
+
+            Properties property = new Properties();
+            property.load(inputStream);
+
+            connectionSize = Integer.parseInt(property.getProperty("db.connectionSize"));
+        } catch (IOException e) {
+            throw new IllegalArgumentException("File not found" + e.getMessage(), e);
+        }
+    }
+
     public Connection getConnection() {
         try {
             lock.lock();
@@ -62,7 +83,7 @@ public class ConnectionPool {
         }
     }
 
-    public void returnConnection(Connection connection){
+    public void returnConnection(Connection connection) {
         try {
             lock.lock();
             connections.push(connection);

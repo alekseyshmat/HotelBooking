@@ -8,7 +8,7 @@ public class ChangeLanguageCommand implements Command {
 
     private static final String LANGUAGE = "language";
     private static final String CURRENT_COMMAND = "currentcommand";
-    private static final String FORWARD_COMMAND = "/controller?command=";
+    private static final String REDIRECT_COMMAND = "controller?command=";
     private static final String LANG = "lang";
 
     @Override
@@ -19,6 +19,6 @@ public class ChangeLanguageCommand implements Command {
 
         session.setAttribute(LANGUAGE, language);
 
-        return CommandResult.forward(FORWARD_COMMAND + page);
+        return CommandResult.redirect(REDIRECT_COMMAND + page);
     }
 }

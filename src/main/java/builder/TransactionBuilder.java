@@ -11,7 +11,7 @@ import java.time.LocalDate;
 
 public class TransactionBuilder implements Builder<Transaction> {
 
-    private static final String ID ="id";
+    private static final String ID = "id";
     private static final String ID_CLIENT = "id_client";
     private static final String OPERATION = "operation";
     private static final String DATE = "date";
