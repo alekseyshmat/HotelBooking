@@ -1,4 +1,4 @@
-table {
+/*table {
     border-collapse: collapse;
     width: 100%;
 }
@@ -19,9 +19,68 @@ tr {
 th {
     background-color: #000080;
     color: white;
+}*/
+
+table {
+    /*font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;*/
+    font-size: 17px;
+    border-radius: 10px;
+    border-spacing: 0;
+    text-align: center;
+    width: 100%;
 }
 
-.processButton, .editButton, .deleteButton, .paymentButton, .completeButton, .showDetailsButton, .block, .unblock, .showRoomPrice {
+th {
+    background: #333;
+    color: white;
+    text-shadow: 0 1px 1px #2D2020;
+    padding: 10px 20px;
+}
+
+th, td {
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    border-color: white;
+}
+
+th:first-child, td:first-child {
+    text-align: left;
+}
+
+th:first-child {
+    border-top-left-radius: 10px;
+}
+
+th:last-child {
+    border-top-right-radius: 10px;
+    border-right: none;
+}
+
+td {
+    padding: 10px 20px;
+    background: #F8E391;
+}
+
+tr:last-child td:first-child {
+    border-radius: 0 0 0 10px;
+}
+
+tr:last-child td:last-child {
+    border-radius: 0 0 10px 0;
+}
+
+tr td:last-child {
+    border-right: none;
+}
+
+.tableScroll {
+    height: 47%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+.processButton, .paymentButton, .completeButton, .block, .unblock, .showDetailsButton {
     padding: 9px 15px;
     margin: 0 0 0 0;
     opacity: 0.7;
@@ -35,12 +94,20 @@ th {
     background-color: #32CD32;
 }
 
-.editButton {
-    background-color: #FFFF00;
+.editButton, .deleteButton, .showRoomPrice {
+    border-radius: 4px;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+}
+
+.tableImg {
+    width: 42px;
+    height: 42px;
 }
 
 .deleteButton {
-    background-color: #f44336;
+    /*background-color: #f44336;*/
 }
 
 .paymentButton {
@@ -51,15 +118,15 @@ th {
     background-color: #00FF00; /*ADD8E6*/
 }
 
-.block{
+.block {
     background-color: red;
 }
 
-.unblock{
+.unblock {
     background-color: #00FF00;
 }
 
-.blockedBtn a, .prcBtn a, .showPriceButton a{
+.blockedBtn a, .prcBtn a, .showPriceButton a {
     /*font-size: 16px;*/
     text-align: center;
     color: black;
@@ -70,13 +137,12 @@ th {
     background-color: #008B8B; /*ADD8E6*/
 }
 
-.showRoomPrice{
-    background-color: #008B8B;
+.showRoomPrice {
+    /*background-color: #008B8B;*/
 }
 
-
 .processButton:hover, .editButton:hover, .deleteButton:hover, .paymentButton:hover,
-.completeButton:hover, .showDetailsButton:hover, .block:hover, .unblock:hover, .showRoomPrice:hover{
+.completeButton:hover, .showDetailsButton:hover, .block:hover, .unblock:hover, .showRoomPrice:hover {
     opacity: 0.8;
 }
 
@@ -100,7 +166,7 @@ th {
     opacity: 1;
 }
 
-.itemLimit a{
+.itemLimit a {
     text-decoration: none;
     overflow: hidden;
     background-color: #778899;
@@ -112,42 +178,45 @@ th {
     padding: 5px 8px;
     margin: -10px 5px 5px;
 }
-.itemLimit a.active{
+
+.itemLimit a.active {
     background-color: #DCDCDC;
-    color:black;
+    color: black;
 }
 
-.itemLimit a:hover{
-    opacity:1;
+.itemLimit a:hover {
+    opacity: 1;
 }
 
-.pages{
-    margin:2% 0 0;
+.pages {
+    margin: 2% 0 0;
 }
-.pages a{
+
+.pages a {
     text-decoration: none;
-    color:black;
+    color: black;
     padding: 2px 4px;
 
     border: 1px solid black;
 }
-.pages a:hover{
+
+.pages a:hover {
     background-color: #DCDCDC;
-    opacity:1;
+    opacity: 1;
 }
 
-.priceLabel{
-    font-size:25px;
-    margin: -4% 35% 3% ;
+.priceLabel {
+    font-size: 25px;
+    margin: -4% 35% 3%;
 }
 
-.returnPriceLabel a{
+.returnPriceLabel a {
     text-decoration: none;
-    color:black;
+    color: black;
     /*         padding: 2px 4px; */
 }
 
-.returnPriceLabel{
-    font-size:18px;
+.returnPriceLabel {
+    font-size: 18px;
     padding: 2% 0 1%;
 }

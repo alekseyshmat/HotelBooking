@@ -13,20 +13,20 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/style/adminStyle.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/style/verticalMenuStyle.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-
-<div class="buttons">
-    <a href="controller?command=showProfile">${profile}</a>
+<div class="vertical-menu">
+    <div class="buttons">
+        <a href="controller?command=showProfile">${profile}</a>
+    </div>
+    <div class="buttons">
+        <a href="controller?command=showOrders">${orders}</a>
+    </div>
+    <div class="buttons">
+        <a href="controller?command=showBalance">${balance}</a>
+    </div>
 </div>
-<div class="buttons">
-    <a href="controller?command=showOrders">${orders}</a>
-</div>
-<div class="buttons">
-    <a href="controller?command=showBalance">${balance}</a>
-</div>
-
 </body>
 </html>
 

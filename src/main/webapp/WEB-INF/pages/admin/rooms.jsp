@@ -60,11 +60,10 @@
         <div class="card">
             <table width="100%">
                 <tr>
-                    <th>${id}</th>
+                    <th width="75">${id}</th>
                     <th>${roomId}</th>
                     <th>${type}</th>
                     <th>${cost}</th>
-                    <th></th>
                     <th></th>
                 </tr>
                 <jsp:useBean id="roomList" scope="request" type="java.util.List"/>
@@ -72,13 +71,13 @@
                     <tr>
                         <td>
                             <div class="data">
-                                    ${room.id}
+                                #${room.id}
                             </div>
                         </td>
-                        <td width="70"
-                            name="nameRoom">${room.roomNumber}
+                        <td>
+                                ${room.roomNumber}
                         </td>
-                        <td name="nameRoomType">
+                        <td>
                             <c:choose>
                                 <c:when test="${room.roomType == 'APARTMENT'}">
                                     ${apartment}
@@ -103,22 +102,25 @@
                                 </c:when>
                             </c:choose>
                         </td>
-                        <td width="130">
+                        <td>
                             <div class="showPriceButton">
                                 <a href="${pageContext.servletContext.contextPath}/controller?command=showRoomPrices&roomId=${room.id}&roomLimit=${requestScope.limit}&roomPage=${requestScope.pageNumber}"
-                                   class="showRoomPrice">${showPrice}
+                                   class="showRoomPrice">
+                                    <img class="tableImg" src="img/icon/price.png" alt="${showPrice}"
+                                         title="${showPrice}">
                                 </a>
                             </div>
                         </td>
-                        <td width="50">
+                        <td>
                             <button id="${room.id}" name="btnRoom" value="${room.id}"
                                     data-roomnumber="${room.roomNumber}"
                                     data-roomtype="${room.roomType}"
-                                    class="editButton" onclick=edit(this)>${edit}
+                                    class="editButton" onclick=edit(this)>
+                                <img class="tableImg" src="img/icon/edit.png" alt="${edit}" title="${edit}">
                             </button>
-                        </td>
-                        <td width="50">
-                            <button class="deleteButton">${delete}
+
+                            <button class="deleteButton">
+                                <img class="tableImg" src="img/icon/delete.png" alt="${delete}" title="${delete}">
                             </button>
                         </td>
                     </tr>

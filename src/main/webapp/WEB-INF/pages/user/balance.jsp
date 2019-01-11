@@ -55,7 +55,7 @@
     </div>
 
     <div id="showHistory" class="rightColumn" style="display: none;">
-        <div class="card">
+        <div class="tableScroll">
             <table>
                 <tr>
                     <th>${operation}</th>

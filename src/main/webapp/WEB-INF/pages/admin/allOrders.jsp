@@ -48,7 +48,7 @@
 <div class="container">
     <div class="tab">
         <button class="tabLinks active" onclick="openCity(event, 'processed')">${processed}</button>
-        <button class="tabLinks " onclick="openCity(event, 'active')">${active}</button>
+        <button class="tabLinks" onclick="openCity(event, 'active')">${active}</button>
         <button class="tabLinks" onclick="openCity(event, 'completed')">${completed}</button>
     </div>
 
@@ -57,7 +57,7 @@
     </div>
 
     <div id="processed" class="rightColumn" style="display: block;">
-        <div class="card">
+        <div class="tableScroll">
             <table>
                 <tr>
                     <th>${id}</th>
@@ -130,7 +130,7 @@
         </div>
     </div>
     <div id="active" class="rightColumn" style="display: none;">
-        <div class="card">
+        <div class="tableScroll">
             <table>
                 <tr>
                     <th>${id}</th>
@@ -213,7 +213,7 @@
         </div>
     </div>
     <div id="completed" class="rightColumn" style="display: none;">
-        <div class="card">
+        <div class="tableScroll">
             <table>
                 <tr>
                     <th>${id}</th>
@@ -221,6 +221,7 @@
                     <th>${invoiceDate}</th>
                     <th></th>
                 </tr>
+
                 <jsp:useBean id="completedOrderList" scope="request" type="java.util.List"/>
                 <c:forEach items="${completedOrderList}" var="order">
                     <tr>
@@ -248,10 +249,10 @@
                                     data-roomnumber="${order.room.roomNumber}"
                                     data-cost="${order.cost}"
                                     class="showDetailsButton"
-                                    onclick=showDetailsBtn(this)>${showDetails}
+                                    onclick=showDetailsBtn(this)>
+                                    ${showDetails}
                             </button>
                         </td>
-
                     </tr>
                 </c:forEach>
             </table>

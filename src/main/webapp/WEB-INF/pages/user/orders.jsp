@@ -57,7 +57,7 @@
     </div>
 
     <div id="active" class="rightColumn" style="display: block;">
-        <div class="card">
+        <div class="tableScroll">
             <table>
                 <tr>
                     <th>${checkInDate}</th>
@@ -125,7 +125,7 @@
     </div>
 
     <div id="processed" class="rightColumn" style="display: none;">
-        <div class="card">
+        <div class="tableScroll">
             <table>
                 <tr>
                     <th>${checkInDate}</th>
@@ -203,7 +203,7 @@
     </div>
 
     <div id="completed" class="rightColumn" style="display: none;">
-        <div class="card">
+        <div class="tableScroll">
             <table>
                 <tr>
                     <th>${id}</th>

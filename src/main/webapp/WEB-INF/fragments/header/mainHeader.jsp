@@ -32,20 +32,18 @@
 
     </div>
     <div class="dropDown">
-        <button class="dropButton">${sessionScope.name}
-            <i class="fa fa-caret-down"></i>
+        <button class="dropButton-profile">${sessionScope.name}
         </button>
-        <div class="dropDownContent">
+        <div class="dropDownContent-profile">
             <a href="${pageContext.servletContext.contextPath}/controller?command=showProfile">${profile}</a>
             <a href="${pageContext.servletContext.contextPath}/controller?command=signOut">${signOut}</a>
         </div>
     </div>
     <div class="dropDown">
-        <button class="dropButton">${sessionScope.language}
-            <i class="fa fa-caret-down"></i>
+        <button class="dropButton-language">${sessionScope.language}
         </button>
         <c:set var="test" value="${pageContext.servletContext.contextPath}"/>
-        <div class="dropDownContent">
+        <div class="dropDownContent-language">
             <a href="${pageContext.servletContext.contextPath}/controller?command=changeLanguage&lang=RU&current${pageContext.request.queryString}">Русский</a>
             <a href="${pageContext.servletContext.contextPath}/controller?command=changeLanguage&lang=EN&current${pageContext.request.queryString}">English</a>
         </div>
