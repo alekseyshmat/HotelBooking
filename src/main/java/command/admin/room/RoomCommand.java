@@ -22,7 +22,7 @@ public class RoomCommand implements Command {
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
-        PagesDelimeter<Room> roomPagesDelimeter = new PagesDelimeter<>();
+        PagesDelimeter<Room> roomPagesDelimiter = new PagesDelimeter<>();
         RoomService roomService = new RoomService();
         List<Room> fullRoomList = roomService.findAll();
 
@@ -32,7 +32,7 @@ public class RoomCommand implements Command {
         Integer offset = limit * (pageNumber - 1);
         List<Room> roomList = roomService.findAll(limit, offset);
 
-        List<Integer> pages = roomPagesDelimeter.calculatePages(fullRoomList, limit);
+        List<Integer> pages = roomPagesDelimiter.calculatePages(fullRoomList, limit);
 
         request.setAttribute(LIMIT, limit);
         request.setAttribute(PAGES, pages);

@@ -6,6 +6,7 @@ import entity.User;
 import entity.types.Role;
 import exception.ServiceException;
 import service.UserService;
+import util.PagesDelimeter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,13 +15,30 @@ import java.util.List;
 public class UserCommand implements Command {
 
     private static final String USERS_PAGE = "/WEB-INF/pages/admin/users.jsp";
+    private static final String PAGE_NUMBER = "pageNumber";
+    private static final String PAGES = "pages";
+    private static final String LIMIT = "limit";
+    private static final String USER_LIST = "userList";
+
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
+        PagesDelimeter<User> roomPagesDelimiter = new PagesDelimeter<>();
         UserService userService = new UserService();
-        List<User> userList = userService.findByRole(Role.USER);
-        request.setAttribute("userList", userList);
+        List<User> fullUserList = userService.findByRole(Role.USER);
 
+        Integer limit = Integer.valueOf(request.getParameter(LIMIT));
+        Integer pageNumber = Integer.valueOf(request.getParameter(PAGE_NUMBER));
+
+        Integer offset = limit * (pageNumber - 1);
+        List<User> userList = userService.findByRole(Role.USER, limit, offset);
+
+        List<Integer> pages = roomPagesDelimiter.calculatePages(fullUserList, limit);
+
+        request.setAttribute(LIMIT, limit);
+        request.setAttribute(PAGES, pages);
+        request.setAttribute(PAGE_NUMBER, pageNumber);
+        request.setAttribute(USER_LIST, userList);
         return CommandResult.forward(USERS_PAGE);
     }
 }

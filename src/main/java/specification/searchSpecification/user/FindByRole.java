@@ -16,7 +16,7 @@ public class FindByRole implements Specification {
 
     @Override
     public String toSql() {
-        return "where role = ?";
+        return "WHERE role = ?";
     }
 
     @Override

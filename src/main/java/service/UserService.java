@@ -10,6 +10,7 @@ import repository.creator.RepositoryCreator;
 import specification.searchSpecification.FindById;
 import specification.searchSpecification.user.FindByLoginAndPassword;
 import specification.searchSpecification.user.FindByRole;
+import specification.searchSpecification.user.FindByRoleWithOffset;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -18,7 +19,7 @@ import java.util.Optional;
 public class UserService {
 
     public Optional<User> login(String login, String password) throws ServiceException {
-        try (RepositoryCreator repositoryCreator = new RepositoryCreator();) {
+        try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
             UserRepository userRepository = repositoryCreator.getUserRepository();
             return userRepository.query(new FindByLoginAndPassword(login, password));
         } catch (RepositoryException ex) {
@@ -40,6 +41,15 @@ public class UserService {
         try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
             UserRepository userRepository = repositoryCreator.getUserRepository();
             return userRepository.queryAll(new FindByRole(role));
+        } catch (RepositoryException ex) {
+            throw new ServiceException(ex.getMessage(), ex);
+        }
+    }
+
+    public List<User> findByRole(Role role, Integer limit, Integer offset) throws ServiceException {
+        try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
+            UserRepository userRepository = repositoryCreator.getUserRepository();
+            return userRepository.queryAll(new FindByRoleWithOffset(role, limit, offset));
         } catch (RepositoryException ex) {
             throw new ServiceException(ex.getMessage(), ex);
         }

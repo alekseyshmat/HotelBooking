@@ -34,6 +34,20 @@
         <jsp:include page="../../fragments/header/adminHeader.jsp"/>
     </div>
     <div class="rightColumn">
+        <div class="itemLimit">
+            <a class=" "
+               href="${pageContext.servletContext.contextPath}/controller?command=showUsers&pageNumber=1&limit=15"
+               formmethod="post" onclick=changeStatus(event)>15
+            </a>
+            <a class=" "
+               href="${pageContext.servletContext.contextPath}/controller?command=showUsers&pageNumber=1&limit=10"
+               formmethod="post" onclick=changeStatus(event)>10
+            </a>
+            <a class=" "
+               href="${pageContext.servletContext.contextPath}/controller?command=showUsers&pageNumber=1&limit=5"
+               formmethod="post" onclick=changeStatus(event)>5
+            </a>
+        </div>
         <div class="card">
             <table>
                 <tr>
@@ -49,7 +63,7 @@
                 <c:forEach items="${userList}" var="user">
                     <tr>
                         <td>
-                                ${user.id}
+                                #${user.id}
                         </td>
                         <td>
                             <div class="data">
@@ -91,6 +105,12 @@
                     </tr>
                 </c:forEach>
             </table>
+        </div>
+        <div class="pages">
+            <jsp:useBean id="pages" scope="request" type="java.util.List"/>
+            <c:forEach items="${pages}" var="pages">
+                <a href="${pageContext.servletContext.contextPath}/controller?command=showUsers&pageNumber=${pages}&limit=${limit}">${pages}</a>
+            </c:forEach>
         </div>
     </div>
 </div>
