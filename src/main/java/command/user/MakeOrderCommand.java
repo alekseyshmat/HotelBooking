@@ -6,13 +6,10 @@ import entity.types.RoomType;
 import exception.ServiceException;
 import service.OrderService;
 
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.sql.Date;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 public class MakeOrderCommand implements Command {
 

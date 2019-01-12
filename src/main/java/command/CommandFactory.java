@@ -30,6 +30,7 @@ public class CommandFactory {
     private static final String SAVE_ROOM = "saveRoom";
     private static final String ADD_ROOM_PRICE = "addRoomPrice";
     private static final String LOG_OUT = "signOut";
+    private static final String SIGN_UP = "signUp";
     private static final String EDIT_PROFILE = "editProfile";
     private static final String SEARCH_ROOM_BY_CRITERIA = "searchRoomByCriteria";
     private static final String CHANGE_BLOCKING_STATUS = "changeBlockingStatus";
@@ -85,6 +86,8 @@ public class CommandFactory {
                 return new ChangeBlockingStatus();
             case START_PAGE:
                 return new StartPageCommand();
+            case SIGN_UP:
+                return new SignUpCommand();
             default:
                 throw new UnsupportedOperationException();
         }

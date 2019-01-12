@@ -5,6 +5,7 @@ import entity.types.BlockingStatus;
 import entity.types.Role;
 import exception.RepositoryException;
 import exception.ServiceException;
+import org.apache.commons.codec.digest.DigestUtils;
 import repository.UserRepository;
 import repository.creator.RepositoryCreator;
 import specification.searchSpecification.FindById;
@@ -13,6 +14,7 @@ import specification.searchSpecification.user.FindByRole;
 import specification.searchSpecification.user.FindByRoleWithOffset;
 
 import java.math.BigDecimal;
+import java.sql.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -35,7 +37,6 @@ public class UserService {
             throw new ServiceException(ex.getMessage(), ex);
         }
     }
-
 
     public List<User> findByRole(Role role) throws ServiceException {
         try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
@@ -75,6 +76,18 @@ public class UserService {
         }
     }
 
+    public void signUpUser(Integer id, String firstName, String lastName, String email,
+                           String login, String password, Date birthday) throws ServiceException {
+        try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
+            UserRepository userRepository = repositoryCreator.getUserRepository();
+            String decryptedPassword = DigestUtils.sha512Hex(password);
+            User user = new User(id, firstName, lastName, birthday, email, login, decryptedPassword);
+            userRepository.save(user);
+        } catch (RepositoryException ex) {
+            throw new ServiceException(ex.getMessage(), ex);
+        }
+    }
+
     public void changeBlockingStatus(Integer id, BlockingStatus blockingStatus) throws ServiceException {
         try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
             User user = new User(id, blockingStatus);
@@ -84,5 +97,6 @@ public class UserService {
             throw new ServiceException(ex.getMessage(), ex);
         }
     }
+
 
 }

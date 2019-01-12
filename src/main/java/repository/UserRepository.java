@@ -21,7 +21,8 @@ public class UserRepository extends AbstractRepository<User> {
     private static final String BALANCE = "balance";
     private static final String ROLE = "role";
     private static final String ACTIVE = "blocking_status";
-
+    private static final String USERNAME = "username";
+    private static final String PASSWORD = "password";
 
     public UserRepository(Connection connection) {
         super(connection);
@@ -37,6 +38,8 @@ public class UserRepository extends AbstractRepository<User> {
         values.put(EMAIL, item.getEmail());
         values.put(ROLE, item.getRole());
         values.put(ACTIVE, item.getBlockingStatus());
+        values.put(USERNAME, item.getLogin());
+        values.put(PASSWORD, item.getPassword());
         values.put(ID, item.getId());
         return values;
     }

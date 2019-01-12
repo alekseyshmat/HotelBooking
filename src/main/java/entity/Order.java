@@ -6,7 +6,6 @@ import entity.types.RoomType;
 
 import java.math.BigDecimal;
 import java.sql.Date;
-import java.time.LocalDate;
 import java.util.Objects;
 
 public class Order implements Entity {

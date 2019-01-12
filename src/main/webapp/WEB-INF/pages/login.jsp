@@ -48,7 +48,8 @@
                 </div>
 
                 <div class="inputText">
-                    <input class="signInForm" type="password" id="password" name="password" placeholder="${placePassword}"
+                    <input class="signInForm" type="password" id="password" name="password"
+                           placeholder="${placePassword}"
                            required>
                 </div>
                 <c:if test="${not empty requestScope.errorMessage}">
@@ -69,26 +70,27 @@
     </div>
 
     <div class="formType" id="signUpForm" style="display: none;">
-        <form>
+        <form action="${pageContext.servletContext.contextPath}/controller?command=signUp" method="post">
             <div class="inputText">
-                <input class="signUpForm" type="text" id="lastName" placeholder="${lastName}" required>
+                <input class="signUpForm" type="text" id="lastName" name="lastName" placeholder="${lastName}" required>
             </div>
             <div class="inputText">
-                <input class="signUpForm" type="text" id="firstName" placeholder="${firstName}" required>
+                <input class="signUpForm" type="text" id="firstName" name="firstName" placeholder="${firstName}" required>
             </div>
             <div class="inputText">
-                <input class="signUpForm" type="text" id="email" placeholder="${email}" required>
+                <input class="signUpForm" type="text" id="email" name="email" placeholder="${email}" required>
             </div>
             <div class="inputText">
-                <input class="signUpForm" type="text" id="birthday" placeholder="${birthday}"
+                <input class="signUpForm" type="text" id="birthday" name="birthday" placeholder="${birthday}"
                        onfocus="(this.type='date')" onblur="(this.type='text')" required>
             </div>
             <div class="inputText">
-                <input class="signUpForm" type="text" id="login" placeholder="${placeLogin}"
-                       pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" required>
+                <input class="signUpForm" type="text" id="login" name="login" placeholder="${placeLogin}"
+                       pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" autocomplete="off" required>
             </div>
             <div class="inputText">
-                <input class="signUpForm" type="password" id="userPass" placeholder="${placePassword}"
+                <input class="signUpForm" type="password" id="userPass" name="userPass" placeholder="${placePassword}"
+                       autocomplete="off"
                        required>
             </div>
 

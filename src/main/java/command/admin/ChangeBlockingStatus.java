@@ -13,7 +13,7 @@ public class ChangeBlockingStatus implements Command {
 
     private static final String ID_CLIENT = "idClient";
     private static final String BLOCKING_STATUS = "blockingStatus";
-    private static final String USER_COMMAND = "controller?command=showUsers";
+    private static final String USER_COMMAND = "controller?command=showUsers&pageNumber=1&limit=5";
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {

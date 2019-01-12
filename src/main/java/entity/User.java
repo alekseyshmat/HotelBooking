@@ -5,7 +5,7 @@ import entity.types.Role;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.Date;
+import java.sql.Date;
 import java.util.Objects;
 
 public class User implements Serializable, Entity {
@@ -54,6 +54,16 @@ public class User implements Serializable, Entity {
     public User(Integer id, BlockingStatus active) {
         this.id = id;
         this.blockingStatus = active;
+    }
+
+    public User(Integer id, String firstName, String lastName, java.sql.Date birthday, String email, String login, String password) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.birthday = birthday;
+        this.email = email;
+        this.login = login;
+        this.password = password;
     }
 
     public Integer getId() {
