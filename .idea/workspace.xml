@@ -7,18 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed67534d-1a8a-4535-8b45-654f7512ef26" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/command/StartPageCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/startPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/ChangeLanguageCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/command/ChangeLanguageCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/CommandFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/command/CommandFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/naming_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/naming_en.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/naming_ru.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/naming_ru.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/fragments/header/mainHeader.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/fragments/header/mainHeader.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/profile.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/style/dataStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/dataStyle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/style/loginStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/loginStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/style/mainHeaderStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/mainHeaderStyle.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -62,15 +57,15 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="48" />
-          <entry key="css" value="146" />
+          <entry key="css" value="147" />
           <entry key="gitignore" value="5" />
           <entry key="java" value="1808" />
           <entry key="jpg" value="6" />
-          <entry key="js" value="94" />
-          <entry key="jsp" value="617" />
+          <entry key="js" value="96" />
+          <entry key="jsp" value="620" />
           <entry key="jspf" value="1" />
           <entry key="png" value="1" />
-          <entry key="properties" value="82" />
+          <entry key="properties" value="84" />
           <entry key="rnc" value="1" />
           <entry key="sql" value="3" />
           <entry key="tld" value="1" />
@@ -84,15 +79,15 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="48" />
-          <entry key="CSS" value="146" />
+          <entry key="CSS" value="147" />
           <entry key="Database Element" value="2" />
           <entry key="Git file" value="3" />
           <entry key="Image" value="7" />
           <entry key="JAVA" value="1808" />
-          <entry key="JSP" value="618" />
-          <entry key="JavaScript" value="94" />
+          <entry key="JSP" value="621" />
+          <entry key="JavaScript" value="96" />
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Properties" value="82" />
+          <entry key="Properties" value="84" />
           <entry key="RNG Compact" value="1" />
           <entry key="Scratch" value="3" />
           <entry key="TypeScript" value="1" />
@@ -101,27 +96,27 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="829" />
+          <entry key="css" value="835" />
           <entry key="dummy" value="127" />
           <entry key="gitignore" value="27" />
           <entry key="java" value="31294" />
           <entry key="js" value="756" />
-          <entry key="jsp" value="10733" />
+          <entry key="jsp" value="10789" />
           <entry key="jspf" value="177" />
-          <entry key="properties" value="1848" />
-          <entry key="txt" value="1384" />
+          <entry key="properties" value="1879" />
+          <entry key="txt" value="1456" />
           <entry key="xml" value="130" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="829" />
+          <entry key="CSS" value="835" />
           <entry key="Git file" value="2" />
           <entry key="JAVA" value="31294" />
-          <entry key="JSP" value="10910" />
+          <entry key="JSP" value="10966" />
           <entry key="JavaScript" value="756" />
-          <entry key="PLAIN_TEXT" value="1536" />
-          <entry key="Properties" value="1848" />
+          <entry key="PLAIN_TEXT" value="1608" />
+          <entry key="Properties" value="1879" />
           <entry key="XML" value="130" />
         </counts>
       </usages-collector>
@@ -159,29 +154,55 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="302">
+              <caret line="41" column="65" selection-start-line="41" selection-start-column="65" selection-end-line="41" selection-end-column="65" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/naming_en.properties">
+          <provider editor-type-id="ResourceBundle" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/naming_ru.properties">
+          <provider editor-type-id="ResourceBundle" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="54" selection-start-line="4" selection-start-column="54" selection-end-line="4" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/command/ChangeLanguageCommand.java">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/style/loginStyle.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="18" column="48" lean-forward="true" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+            <state relative-caret-position="216">
+              <caret line="57" column="14" selection-start-line="57" selection-start-column="14" selection-end-line="57" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/command/LoginCommand.java">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/js/startPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-277">
-              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/command/user/MainPageCommand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="21" lean-forward="true" selection-start-column="21" selection-end-column="21" />
+            <state relative-caret-position="119">
+              <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -195,8 +216,8 @@
         <option value="Interface" />
         <option value="Jsp File" />
         <option value="Enum" />
-        <option value="JavaScript File" />
         <option value="Class" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -227,7 +248,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/js/addPrice.js" />
         <option value="$PROJECT_DIR$/src/main/java/command/admin/room/RoomPricesCommand.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/roomPrices.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/util/PagesDelimeter.java" />
@@ -249,7 +269,6 @@
         <option value="$PROJECT_DIR$/src/main/java/util/DateHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/command/admin/order/ProcessOrderCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/builder/OrderBuilder.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/naming_ru.properties" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/db.properties" />
         <option value="$PROJECT_DIR$/src/main/webapp/style/tabStyle.css" />
@@ -269,15 +288,17 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/users.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/profile.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/style/dataStyle.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/naming_en.properties" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/fragments/header/mainHeader.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/style/loginStyle.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/style/mainHeaderStyle.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/command/StartPageCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/command/ChangeLanguageCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/command/CommandFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/js/startPage.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/naming_en.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/naming_ru.properties" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/style/loginStyle.css" />
       </list>
     </option>
   </component>
@@ -372,42 +393,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hotelBooking" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hotelBooking" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="command" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hotelBooking" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hotelBooking" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="command" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hotelBooking" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hotelBooking" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="command" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="room" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hotelBooking" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hotelBooking" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="command" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hotelBooking" type="b2602c69:ProjectViewProjectNode" />
@@ -535,7 +520,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="true" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547291397169" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547303400302" />
     <property name="database.console.LAST_STATE" value="true" />
     <property name="last_opened_file_path" value="F:/загрузки/HotelBooking-master/HotelBooking-master" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -750,14 +735,7 @@
       <workItem from="1545762349259" duration="361000" />
       <workItem from="1545774906465" duration="18695000" />
       <workItem from="1545844614881" duration="4689000" />
-      <workItem from="1546883741999" duration="28935000" />
-    </task>
-    <task id="LOCAL-00001" summary="added entities">
-      <created>1543401784541</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1543401784541</updated>
+      <workItem from="1546883741999" duration="33323000" />
     </task>
     <task id="LOCAL-00002" summary="start work">
       <created>1543685162340</created>
@@ -1095,11 +1073,18 @@
       <option name="project" value="LOCAL" />
       <updated>1547242360317</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="change authorization page and fixed changed language on this page">
+      <created>1547291437154</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1547291437159</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="508657000" />
+    <option name="totallyTimeSpent" value="513045000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1233,7 +1218,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="SHOW_UNVERSIONED_FILES_WHILE_COMMIT" value="false" />
-    <MESSAGE value="added refile user balance" />
     <MESSAGE value="fixed troubles with invoice Date/localDate and fixed making order by user" />
     <MESSAGE value="fixed localization" />
     <MESSAGE value="added all localization" />
@@ -1258,7 +1242,8 @@
     <MESSAGE value="change some style of header and tables" />
     <MESSAGE value="added page-mapping users" />
     <MESSAGE value="added images" />
-    <option name="LAST_COMMIT_MESSAGE" value="added images" />
+    <MESSAGE value="change authorization page and fixed changed language on this page" />
+    <option name="LAST_COMMIT_MESSAGE" value="change authorization page and fixed changed language on this page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1325,13 +1310,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/util/DateCalculator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dataBase/ConnectionPool.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="373">
@@ -1374,14 +1352,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/naming_ru.properties">
-      <provider editor-type-id="ResourceBundle" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-688">
-          <caret line="13" column="56" selection-start-line="13" selection-start-column="56" selection-end-line="13" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/db.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1402,9 +1372,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/js/adminOrders.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/tab.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/fragments/header/userHeader.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -1419,13 +1386,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
           <caret line="208" column="23" selection-start-line="208" selection-start-column="21" selection-end-line="208" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/allOrders.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="62" column="23" lean-forward="true" selection-start-line="62" selection-start-column="23" selection-end-line="62" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -1557,28 +1517,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/img/bg02.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/naming_en.properties">
-      <provider editor-type-id="ResourceBundle" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="20" lean-forward="true" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="24" column="56" selection-start-line="24" selection-start-column="56" selection-end-line="24" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/style/loginStyle.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/style/mainHeaderStyle.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -1590,13 +1528,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="42" column="11" selection-start-line="42" selection-start-column="11" selection-end-line="42" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/profile.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="26" column="56" selection-start-line="26" selection-start-column="56" selection-end-line="26" selection-end-column="56" />
         </state>
       </provider>
     </entry>
@@ -1635,13 +1566,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/command/LoginCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-277">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/command/StartPageCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1652,6 +1576,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/command/ChangeLanguageCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="18" column="48" lean-forward="true" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/command/user/MainPageCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1659,10 +1590,80 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/command/ChangeLanguageCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/command/LoginCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="18" column="48" lean-forward="true" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+        <state relative-caret-position="-277">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/tab.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/allOrders.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="131" column="48" lean-forward="true" selection-start-line="131" selection-start-column="48" selection-end-line="131" selection-end-column="48" />
+          <folding>
+            <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/profile.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" selection-start-line="7" selection-end-line="10" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/startPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/naming_en.properties">
+      <provider editor-type-id="ResourceBundle" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/naming_ru.properties">
+      <provider editor-type-id="ResourceBundle" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="54" selection-start-line="4" selection-start-column="54" selection-end-line="4" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="41" column="65" selection-start-line="41" selection-start-column="65" selection-end-line="41" selection-end-column="65" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/style/loginStyle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="57" column="14" selection-start-line="57" selection-start-column="14" selection-end-line="57" selection-end-column="14" />
         </state>
       </provider>
     </entry>

@@ -5,7 +5,7 @@
 <fmt:setLocale value="${sessionScope.language}"/>
 <fmt:setBundle basename="naming" var="naming"/>
 
-<fmt:message bundle="${naming}" key="mainHeader.label.signOut" var="signOut"/>
+<fmt:message bundle="${naming}" key="mainHeader.label.logOut" var="signOut"/>
 <fmt:message bundle="${naming}" key="mainHeader.label.profile" var="profile"/>
 <fmt:message bundle="${naming}" key="mainHeader.label.home" var="home"/>
 <fmt:message bundle="${naming}" key="mainHeader.label.lang" var="lang"/>
