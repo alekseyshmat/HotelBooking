@@ -88,6 +88,8 @@
         </div>
     </div>
 </div>
+
 <jsp:include page="../../fragments/room/addRoomPrice.jsp"/>
+<jsp:include page="/WEB-INF/fragments/header/footer.jsp"/>
 </body>
 </html>

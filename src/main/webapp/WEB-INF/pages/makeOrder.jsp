@@ -74,8 +74,8 @@
             <div class="submitButton">
                 <input class="submitBtn" type="submit" value="${makeOrder}">
             </div>
-
         </form>
     </div>
+<jsp:include page="/WEB-INF/fragments/header/footer.jsp"/>
 </body>
 </html>

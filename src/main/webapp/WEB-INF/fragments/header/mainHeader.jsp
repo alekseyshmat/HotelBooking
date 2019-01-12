@@ -15,7 +15,6 @@
 <html lang="${sessionScope.language}">
 <head>
     <meta charset="utf-8">
-
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/mainHeaderStyle.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -51,7 +50,6 @@
             <a href="${pageContext.servletContext.contextPath}/controller?command=changeLanguage&lang=EN&current${pageContext.request.queryString}">English</a>
         </div>
     </div>
-
 
     <c:if test="${sessionScope.role == 'USER'}">
         <div class="optionalButton">

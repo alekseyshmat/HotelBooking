@@ -45,7 +45,7 @@
     <title>All orders</title>
 </head>
 <body>
-<jsp:include page="../../fragments/header/mainHeader.jsp"/>
+<jsp:include page="/WEB-INF/fragments/header/mainHeader.jsp"/>
 <div class="container">
     <div class="tab">
         <button class="tabLinks active" onclick="openCity(event, 'processed')">${processed}</button>
@@ -54,7 +54,7 @@
     </div>
 
     <div class="leftColumn">
-        <jsp:include page="../../fragments/header/adminHeader.jsp"/>
+        <jsp:include page="/WEB-INF/fragments/header/adminHeader.jsp"/>
     </div>
 
     <div id="processed" class="rightColumn" style="display: block;">
@@ -259,10 +259,11 @@
             </table>
         </div>
     </div>
-
 </div>
-<jsp:include page="../../fragments/order/processOrder.jsp"/>
-<jsp:include page="../../fragments/order/completeOrder.jsp"/>
-<jsp:include page="../../fragments/order/showDetails.jsp"/>
+
+<jsp:include page="/WEB-INF/fragments/order/processOrder.jsp"/>
+<jsp:include page="/WEB-INF/fragments/order/completeOrder.jsp"/>
+<jsp:include page="/WEB-INF/fragments/order/showDetails.jsp"/>
+<jsp:include page="/WEB-INF/fragments/header/footer.jsp"/>
 </body>
 </html>

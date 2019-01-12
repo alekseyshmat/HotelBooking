@@ -76,7 +76,8 @@
                 <input class="signUpForm" type="text" id="lastName" name="lastName" placeholder="${lastName}" required>
             </div>
             <div class="inputText">
-                <input class="signUpForm" type="text" id="firstName" name="firstName" placeholder="${firstName}" required>
+                <input class="signUpForm" type="text" id="firstName" name="firstName" placeholder="${firstName}"
+                       required>
             </div>
             <div class="inputText">
                 <input class="signUpForm" type="text" id="email" name="email" placeholder="${email}" required>
@@ -101,6 +102,6 @@
         </form>
     </div>
 </div>
-
+<jsp:include page="/WEB-INF/fragments/header/footer.jsp"/>
 </body>
 </html>

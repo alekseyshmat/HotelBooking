@@ -141,7 +141,9 @@
         </div>
     </div>
 </div>
-<jsp:include page="../../fragments/room/addRoom.jsp"/>
-<jsp:include page="../../fragments/room/editRoom.jsp"/>
+
+<jsp:include page="/WEB-INF/fragments/room/addRoom.jsp"/>
+<jsp:include page="/WEB-INF/fragments/room/editRoom.jsp"/>
+<jsp:include page="/WEB-INF/fragments/header/footer.jsp"/>
 </body>
 </html>

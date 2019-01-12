@@ -28,11 +28,11 @@
     <title>${users}</title>
 </head>
 <body>
-<jsp:include page="../../fragments/header/mainHeader.jsp"/>
+<jsp:include page="/WEB-INF/fragments/header/mainHeader.jsp"/>
 
 <div class="container">
     <div class="leftColumn">
-        <jsp:include page="../../fragments/header/adminHeader.jsp"/>
+        <jsp:include page="/WEB-INF/fragments/header/adminHeader.jsp"/>
     </div>
     <div class="rightColumn">
         <div class="itemLimit">
@@ -64,7 +64,7 @@
                 <c:forEach items="${userList}" var="user">
                     <tr>
                         <td>
-                                #${user.id}
+                            #${user.id}
                         </td>
                         <td>
                             <div class="data">
@@ -92,12 +92,12 @@
                                     <c:when test="${user.blockingStatus == 'UNBLOCKED'}">
                                         <a class="block"
                                            href="${pageContext.servletContext.contextPath}/controller?command=changeBlockingStatus&idClient=${user.id}&blockingStatus=blocked">
-                                            ${block} </a>
+                                                ${block} </a>
                                     </c:when>
                                     <c:when test="${user.blockingStatus == 'BLOCKED'}">
                                         <a class="unblock"
                                            href="${pageContext.servletContext.contextPath}/controller?command=changeBlockingStatus&idClient=${user.id}&blockingStatus=unblocked">
-                                            ${unblock} </a>
+                                                ${unblock} </a>
                                     </c:when>
                                 </c:choose>
                             </div>
@@ -115,6 +115,6 @@
         </div>
     </div>
 </div>
-
+<jsp:include page="/WEB-INF/fragments/header/footer.jsp"/>
 </body>
 </html>

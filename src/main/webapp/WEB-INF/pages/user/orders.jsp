@@ -256,8 +256,10 @@
         </div>
     </div>
 </div>
-<jsp:include page="../../fragments/order/payOrder.jsp"/>
-<jsp:include page="../../fragments/order/showDetails.jsp"/>
-<jsp:include page="../../fragments/order/canceledOrder.jsp"/>
+
+<jsp:include page="/WEB-INF/fragments/order/payOrder.jsp"/>
+<jsp:include page="/WEB-INF/fragments/order/showDetails.jsp"/>
+<jsp:include page="/WEB-INF/fragments/order/canceledOrder.jsp"/>
+<jsp:include page="/WEB-INF/fragments/header/footer.jsp"/>
 </body>
 </html>

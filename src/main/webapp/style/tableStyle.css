@@ -1,28 +1,4 @@
-/*table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-th, td {
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #f2f2f2
-}
-
-tr {
-    background-color: #A9A9A9
-}
-
-th {
-    background-color: #000080;
-    color: white;
-}*/
-
 table {
-    /*font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;*/
     font-size: 17px;
     border-radius: 10px;
     border-spacing: 0;
@@ -58,7 +34,7 @@ th:last-child {
 
 td {
     padding: 10px 20px;
-    background: #F8E391;
+    background: rgba(175, 238, 238, 0.6);
 }
 
 tr:last-child td:first-child {
@@ -102,8 +78,8 @@ tr td:last-child {
 }
 
 .tableImg {
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 32px;
 }
 
 .deleteButton {

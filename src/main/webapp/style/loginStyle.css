@@ -1,8 +1,7 @@
 body {
-    background-image: url(../img/bg00.jpg);
+    background-image: url(../img/bg13.jpg);
     z-index: 99;
 }
-
 
 input[type=radio]:checked + label {
     opacity: 1;
@@ -13,12 +12,12 @@ input[type=radio] {
 }
 
 .infoLabel {
-    padding: 11%;
-    margin: 0 0 -23% 0;
+    padding: 100px;
+    margin: 0 0 -265px 0;
 }
 
 .info {
-    color: #fff;
+    color: #000;
     cursor: pointer;
     display: inline-block;
     font-size: 22px;
@@ -51,26 +50,26 @@ label[for="signin"] {
 }
 
 .startPageContainer #signInForm {
-    height: 260px;
+    height: 240px;
 }
 
 .startPageContainer #signUpForm {
-    height: 360px;
+    height: 370px;
 }
 
 .signUpForm {
     width: 350px;
-    height: 30px;
-    font-size: 18px;
+    height: 34px;
     border-radius: 6px;
     padding-left: 18px;
     margin: 2% 0 0 0;
+    font-size:17px;
 }
 
 .signInForm {
     width: 350px;
-    height: 50px;
-    font-size: 18px;
+    height: 40px;
+    font-size: 17px;
     border-radius: 6px;
     padding-left: 18px;
 }
@@ -118,7 +117,6 @@ label[for="signin"] {
     color: red;
     margin: -3% 0 3% 0;
 }
-
 
 
 

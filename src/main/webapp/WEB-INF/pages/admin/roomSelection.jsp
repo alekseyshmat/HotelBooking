@@ -97,5 +97,6 @@
         </div>
     </form>
 </div>
+<jsp:include page="/WEB-INF/fragments/header/footer.jsp"/>
 </body>
 </html>

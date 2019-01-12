@@ -88,10 +88,11 @@
                 <div class="submitButton">
                     <input class="submitBtn" type="submit" value="${save}">
                 </div>
-
             </form>
         </div>
     </div>
 </div>
+<jsp:include page="/WEB-INF/fragments/header/footer.jsp"/>
+
 </body>
 </html>
