@@ -33,6 +33,7 @@ public class CommandFactory {
     private static final String EDIT_PROFILE = "editProfile";
     private static final String SEARCH_ROOM_BY_CRITERIA = "searchRoomByCriteria";
     private static final String CHANGE_BLOCKING_STATUS = "changeBlockingStatus";
+    private static final String START_PAGE = "startPage";
 
     public Command create(String command) {
         switch (command) {
@@ -82,6 +83,8 @@ public class CommandFactory {
                 return new SearchRoomByCriteria();
             case CHANGE_BLOCKING_STATUS:
                 return new ChangeBlockingStatus();
+            case START_PAGE:
+                return new StartPageCommand();
             default:
                 throw new UnsupportedOperationException();
         }

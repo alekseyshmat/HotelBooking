@@ -1,6 +1,5 @@
 body{
-    background-image: url(../img/hotel.jpg);
-   /*background-color: #f0f2f4;*/
+    background-image: url(../img/bg03.jpg);
     background-size: cover;
 }
 
@@ -25,7 +24,7 @@ body{
     margin-top: 5%;
     float: left;
     width: 70%;
-    background-color:rgba(220, 220, 220, 0.5);
+    background-color:rgba(105, 105, 105, 0.5);
     padding: 20px;
 
 }

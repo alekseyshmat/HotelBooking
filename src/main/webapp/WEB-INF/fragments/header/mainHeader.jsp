@@ -31,14 +31,16 @@
         </c:choose>
 
     </div>
-    <div class="dropDown">
-        <button class="dropButton-profile">${sessionScope.name}
-        </button>
-        <div class="dropDownContent-profile">
-            <a href="${pageContext.servletContext.contextPath}/controller?command=showProfile">${profile}</a>
-            <a href="${pageContext.servletContext.contextPath}/controller?command=signOut">${signOut}</a>
+    <c:if test="${not empty sessionScope.role}">
+        <div class="dropDown">
+            <button class="dropButton-profile">${sessionScope.name}
+            </button>
+            <div class="dropDownContent-profile">
+                <a href="${pageContext.servletContext.contextPath}/controller?command=showProfile">${profile}</a>
+                <a href="${pageContext.servletContext.contextPath}/controller?command=signOut">${signOut}</a>
+            </div>
         </div>
-    </div>
+    </c:if>
     <div class="dropDown">
         <button class="dropButton-language">${sessionScope.language}
         </button>

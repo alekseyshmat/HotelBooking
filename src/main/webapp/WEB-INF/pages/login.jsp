@@ -22,36 +22,43 @@
 </head>
 
 <body>
-<div class="loginLabel">
-    <img src="img/user4.jpg"/>
-    <form action="${pageContext.servletContext.contextPath}/controller?command=login" method="post">
-        <div class="loginForm">
-            <div class="inputText">
-                <input type="text" id="username" name="username" placeholder="${placeLogin}"
-                       pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" required>
-            </div>
-
-            <div class="inputText">
-                <input type="password" id="password" name="password" placeholder="${placePassword}"
-                       required>
-            </div>
-            <c:if test="${not empty requestScope.errorMessage}">
-                <div class="wrongParametres">
-                    <c:choose>
-                        <c:when test="${requestScope.errorMessage eq 'Wrong login or password'}">
-                            <label>${wrongParams}</label>
-                        </c:when>
-                        <c:when test="${requestScope.errorMessage eq 'Your account is blocked'}">
-                            <label>${blockingAccount}</label>
-                        </c:when>
-                    </c:choose>
+<jsp:include page="../fragments/header/mainHeader.jsp"/>
+<div class="startPageContainer">
+    <%--<img src="img/user4.jpg"/>--%>
+    <div class="infoLabel">
+        <label class="info" for="signin">Sign in</label>
+        <input id="signin" name="action" type="radio" value="signin">
+        <label class="info" for="signup">Sign up</label>
+        <input id="signup" name="action" type="radio" value="signup">
+    </div>
+    <div class="signIn">
+        <form action="${pageContext.servletContext.contextPath}/controller?command=login" method="post">
+            <div class="loginForm">
+                <div class="inputText">
+                    <input type="text" id="username" name="username" placeholder="${placeLogin}"
+                           pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" required>
                 </div>
-            </c:if>
-            <div class="submitButton">
+
+                <div class="inputText">
+                    <input type="password" id="password" name="password" placeholder="${placePassword}"
+                           required>
+                </div>
+                <c:if test="${not empty requestScope.errorMessage}">
+                    <div class="wrongParametres">
+                        <c:choose>
+                            <c:when test="${requestScope.errorMessage eq 'Wrong login or password'}">
+                                <label>${wrongParams}</label>
+                            </c:when>
+                            <c:when test="${requestScope.errorMessage eq 'Your account is blocked'}">
+                                <label>${blockingAccount}</label>
+                            </c:when>
+                        </c:choose>
+                    </div>
+                </c:if>
                 <input class="submitBtn" type="submit" value=${logIn}>
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
 </div>
 
 </body>

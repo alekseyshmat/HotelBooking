@@ -37,59 +37,59 @@
         </c:choose>
     </div>
     <div class="rightColumn">
+        <div class="card">
+            <form action="controller?command=editProfile" method="post">
+                <div class="row">
+                    <div class="label">
+                        <label for="lastName">${lastName}:</label>
+                    </div>
+                    <div class="value">
+                        <input type="text" id="lastName" name="lastName" value="${user.lastName}">
+                    </div>
+                </div>
 
-        <form action="controller?command=editProfile" method="post">
+                <div class="row">
+                    <div class="label">
+                        <label for="firstName">${firstName}:</label>
+                    </div>
+                    <div class="value">
+                        <input type="text" id="firstName" name="firstName" value="${user.firstName}">
+                    </div>
+                </div>
 
-            <div class="row">
-                <div class="label">
-                    <label for="lastName">${lastName}:</label>
+                <div class="row">
+                    <div class="label">
+                        <label for="birthday">${birthday}:</label>
+                    </div>
+                    <div class="value">
+                        <input type="text" id="birthday" name="birthday" value="${user.birthday}" readonly>
+                    </div>
                 </div>
-                <div class="value">
-                    <input type="text" id="lastName" name="lastName" value="${user.lastName}">
-                </div>
-            </div>
 
-            <div class="row">
-                <div class="label">
-                    <label for="firstName">${firstName}:</label>
+                <div class="row">
+                    <div class="label">
+                        <label for="email">${email}:</label>
+                    </div>
+                    <div class="value">
+                        <input type="text" id="email" name="email" value="${user.email}" readonly>
+                    </div>
                 </div>
-                <div class="value">
-                    <input type="text" id="firstName" name="firstName" value="${user.firstName}">
-                </div>
-            </div>
 
-            <div class="row">
-                <div class="label">
-                    <label for="birthday">${birthday}:</label>
+                <div class="row">
+                    <div class="label">
+                        <label for="username">${username}:</label>
+                    </div>
+                    <div class="value">
+                        <input type="text" id="username" name="username" value="${user.login}" readonly>
+                    </div>
                 </div>
-                <div class="value">
-                    <input type="text" id="birthday" name="birthday" value="${user.birthday}" readonly>
-                </div>
-            </div>
 
-            <div class="row">
-                <div class="label">
-                    <label for="email">${email}:</label>
+                <div class="submitButton">
+                    <input class="submitBtn" type="submit" value="${save}">
                 </div>
-                <div class="value">
-                    <input type="text" id="email" name="email" value="${user.email}" readonly>
-                </div>
-            </div>
 
-            <div class="row">
-                <div class="label">
-                    <label for="username">${username}:</label>
-                </div>
-                <div class="value">
-                    <input type="text" id="username" name="username" value="${user.login}" readonly>
-                </div>
-            </div>
-
-            <div class="submitButton">
-                <input class="submitBtn" type="submit" value="${save}">
-            </div>
-
-        </form>
+            </form>
+        </div>
     </div>
 </div>
 </body>
