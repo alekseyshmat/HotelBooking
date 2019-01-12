@@ -23,6 +23,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/img/icon/favicon.png" type="image/png">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/loginStyle.css" type="text/css">
     <script src="${pageContext.request.contextPath}/js/startPage.js"></script>
     <title>${logIn}</title>

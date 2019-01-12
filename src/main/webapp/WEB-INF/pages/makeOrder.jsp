@@ -25,6 +25,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>${makeOrder}</title>
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/img/icon/favicon.png" type="image/png">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/makeOrderStyle.css">
 </head>
 

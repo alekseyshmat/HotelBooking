@@ -19,6 +19,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>${profile}</title>
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/img/icon/favicon.png" type="image/png">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/profileStyle.css">
     <jsp:useBean id="user" scope="request" type="entity.User"/>
 </head>
