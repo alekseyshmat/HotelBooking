@@ -21,6 +21,7 @@ public class RoomPricesCommand implements Command {
     private static final String ROOM_LIMIT = "roomLimit";
     private static final String ROOM_PAGE = "roomPage";
     private static final String ROOM_NUMBER = "roomNumber";
+    private static final String MESSAGE = "message";
     private static final Integer ROOM_INDEX = 0;
 
     @Override
@@ -28,6 +29,7 @@ public class RoomPricesCommand implements Command {
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
         Integer roomPageLimit = Integer.valueOf(request.getParameter(ROOM_LIMIT));
         request.setAttribute(ROOM_LIMIT, roomPageLimit);
+
         Integer roomPage = Integer.valueOf(request.getParameter(ROOM_PAGE));
         request.setAttribute(ROOM_PAGE, roomPage);
 
@@ -41,11 +43,16 @@ public class RoomPricesCommand implements Command {
             request.setAttribute(ROOM_NUMBER, roomNumber);
         }
         request.setAttribute(ROOM_ID, roomId);
+
         RoomService roomService = new RoomService();
         List<Room> roomList = roomService.findAll();
         request.setAttribute(ROOM_LIST, roomList);
         request.setAttribute(PRICE_LIST, roomPriceList);
 
+        String message = request.getParameter(MESSAGE);
+        if (message != null) {
+            request.setAttribute(MESSAGE, message);
+        }
         return CommandResult.forward(ROOM_PRICES_PAGE);
     }
 }

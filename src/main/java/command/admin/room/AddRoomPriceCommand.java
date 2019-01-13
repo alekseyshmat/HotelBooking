@@ -23,6 +23,7 @@ public class AddRoomPriceCommand implements Command {
     private static final String LIMIT = "limit";
     private static final String PAGE = "roomPage";
     private static final String DATE_PATTERN = "yyyy-MM-dd";
+    private static final String MESSAGE = "&message=addPrice";
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
@@ -44,6 +45,7 @@ public class AddRoomPriceCommand implements Command {
 
         String limit = request.getParameter(LIMIT);
         String page = request.getParameter(PAGE);
-        return CommandResult.redirect(ROOM_PRICES_PAGE + stringRoomId + ROOM_LIMIT + limit + ROOM_PAGE + page);
+
+        return CommandResult.redirect(ROOM_PRICES_PAGE + stringRoomId + ROOM_LIMIT + limit + ROOM_PAGE + page + MESSAGE);
     }
 }

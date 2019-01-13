@@ -25,6 +25,8 @@
 <fmt:message bundle="${naming}" key="room.label.president" var="president"/>
 <fmt:message bundle="${naming}" key="room.label.busy" var="busy"/>
 <fmt:message bundle="${naming}" key="room.label.free" var="free"/>
+<fmt:message bundle="${naming}" key="room.label.addingRoom" var="addingRoom"/>
+<fmt:message bundle="${naming}" key="room.label.editingRoom" var="editingRoom"/>
 
 <html>
 <head>
@@ -33,31 +35,31 @@
     <link rel="shortcut icon" href="${pageContext.request.contextPath}/img/icon/favicon.png" type="image/png">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/dataStyle.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/tableStyle.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/style/modalStyle.css">
     <script src="${pageContext.request.contextPath}/js/editRoom.js"></script>
     <title>${rooms}</title>
 </head>
 <body>
-<jsp:include page="../../fragments/header/mainHeader.jsp"/>
+<jsp:include page="/WEB-INF/fragments/header/mainHeader.jsp"/>
 <div class="container">
     <div class="leftColumn">
-        <jsp:include page="../../fragments/header/adminHeader.jsp"/>
+        <jsp:include page="/WEB-INF/fragments/header/adminHeader.jsp"/>
     </div>
     <div class="rightColumn">
         <div class="itemLimit">
             <a class=" "
                href="${pageContext.servletContext.contextPath}/controller?command=showRooms&pageNumber=1&limit=15"
-               formmethod="post" onclick=changeStatus(event)>15
+               onclick=changeStatus(event)>15
             </a>
             <a class=" "
                href="${pageContext.servletContext.contextPath}/controller?command=showRooms&pageNumber=1&limit=10"
-               formmethod="post" onclick=changeStatus(event)>10
+               onclick=changeStatus(event)>10
             </a>
             <a class=" "
                href="${pageContext.servletContext.contextPath}/controller?command=showRooms&pageNumber=1&limit=5"
-               formmethod="post" onclick=changeStatus(event)>5
+               onclick=changeStatus(event)>5
             </a>
         </div>
-
         <div class="card">
             <table width="100%">
                 <tr>
@@ -139,6 +141,25 @@
                     onclick="document.getElementById('addRoom').style.display='block'">${addRoom}
             </button>
         </div>
+        <c:if test="${not empty requestScope.notifyMessage}">
+            <div class="modal" id="roomNotify" style="display: block;">
+                <div class="modal-content animate">
+        <span class="resultButtons">
+            <c:choose>
+                <c:when test="${requestScope.notifyMessage eq 'added'}">
+                    <label>${addingRoom}</label>
+                </c:when>
+                <c:when test="${requestScope.notifyMessage eq 'edited'}">
+                    <label>${editingRoom}</label>
+                </c:when>
+            </c:choose>
+                <a class="noButton" type="submit"
+                   href="${pageContext.servletContext.contextPath}/controller?command=showRooms&pageNumber=${requestScope.pageNumber}&limit=${requestScope.limit}">Ok
+                </a>
+        </span>
+                </div>
+            </div>
+        </c:if>
     </div>
 </div>
 

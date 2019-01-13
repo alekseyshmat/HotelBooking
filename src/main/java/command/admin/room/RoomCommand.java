@@ -19,6 +19,8 @@ public class RoomCommand implements Command {
     private static final String PAGE_NUMBER = "pageNumber";
     private static final String PAGES = "pages";
     private static final String LIMIT = "limit";
+    private static final String MESSAGE = "message";
+    private static final String NOTIFY_MESSAGE = "notifyMessage";
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
@@ -38,6 +40,11 @@ public class RoomCommand implements Command {
         request.setAttribute(PAGES, pages);
         request.setAttribute(PAGE_NUMBER, pageNumber);
         request.setAttribute(ROOM_LIST, roomList);
+
+        String notifyMessage = request.getParameter(MESSAGE);
+        if (notifyMessage != null) {
+            request.setAttribute(NOTIFY_MESSAGE, notifyMessage);
+        }
         return CommandResult.forward(ROOMS_PAGE);
     }
 }

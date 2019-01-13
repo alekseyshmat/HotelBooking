@@ -50,7 +50,8 @@
             </button>
         </div>
     </div>
-
 </div>
+
+<%--<jsp:include page="/WEB-INF/fragments/room/addRoomNotify.jsp"/>--%>
 </body>
 </html>

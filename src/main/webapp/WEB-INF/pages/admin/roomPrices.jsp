@@ -13,6 +13,7 @@
 <fmt:message bundle="${naming}" key="button.label.addRoomPrice" var="addRoomPrice"/>
 <fmt:message bundle="${naming}" key="table.label.priceForRoom" var="priceForRoom"/>
 <fmt:message bundle="${naming}" key="table.label.returnPage" var="returnPage"/>
+<fmt:message bundle="${naming}" key="room.label.addingPrice" var="addingPrice"/>
 
 <html>
 <head>
@@ -31,65 +32,76 @@
         <jsp:include page="../../fragments/header/adminHeader.jsp"/>
     </div>
 
-</div>
-<div class="rightColumn">
-    <div class="infoLabels">
-        <div class="returnPriceLabel">
-            <c:if test="${not empty requestScope.roomPage && not empty requestScope.roomLimit}">
-                <a href="${pageContext.servletContext.contextPath}/controller?command=showRooms&pageNumber=${requestScope.roomPage}&limit=${requestScope.roomLimit}"
-                >${returnPage}</a>
-            </c:if>
-            <div class="priceLabel">
-                <c:if test="${not empty requestScope.roomNumber}">
-                    ${priceForRoom} ${requestScope.roomNumber}
+    <div class="rightColumn">
+        <div class="infoLabels">
+            <div class="returnPriceLabel">
+                <c:if test="${not empty requestScope.roomPage && not empty requestScope.roomLimit}">
+                    <a href="${pageContext.servletContext.contextPath}/controller?command=showRooms&pageNumber=${requestScope.roomPage}&limit=${requestScope.roomLimit}"
+                    >${returnPage}</a>
                 </c:if>
+                <div class="priceLabel">
+                    <c:if test="${not empty requestScope.roomNumber}">
+                        ${priceForRoom} ${requestScope.roomNumber}
+                    </c:if>
+                </div>
             </div>
-        </div>
-        <div class="card">
-            <table>
-                <tr>
-                    <th>${id}</th>
-                    <th>${startDate}</th>
-                    <th>${endDate}</th>
-                    <th>${cost}</th>
-                </tr>
-                <jsp:useBean id="roomPriceList" scope="request" type="java.util.List"/>
-                <c:forEach items="${roomPriceList}" var="roomPrice">
+            <div class="card">
+                <table>
                     <tr>
-                        <td>
-                            <div class="data">
-                                    ${roomPrice.id}
-                            </div>
-                        </td>
-                        <td>
-                            <div class="data">
-                                    ${roomPrice.startDate}
-                            </div>
-                        </td>
-                        <td>
-                            <div class="data">
-                                    ${roomPrice.endDate}
-                            </div>
-                        </td>
-                        <td>
-                            <div class="data">
-                                    ${roomPrice.cost}
-                            </div>
-                        </td>
+                        <th>${id}</th>
+                        <th>${startDate}</th>
+                        <th>${endDate}</th>
+                        <th>${cost}</th>
                     </tr>
-                </c:forEach>
-            </table>
-        </div>
-        <div class="addPanel">
-            <button data-roomid="${requestScope.roomId}"
-                    class="addButton"
-                    onclick="addPrice(this)">${addRoomPrice}
-            </button>
+                    <jsp:useBean id="roomPriceList" scope="request" type="java.util.List"/>
+                    <c:forEach items="${roomPriceList}" var="roomPrice">
+                        <tr>
+                            <td>
+                                <div class="data">
+                                        ${roomPrice.id}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="data">
+                                        ${roomPrice.startDate}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="data">
+                                        ${roomPrice.endDate}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="data">
+                                        ${roomPrice.cost}
+                                </div>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                </table>
+            </div>
+            <div class="addPanel">
+                <button data-roomid="${requestScope.roomId}"
+                        class="addButton"
+                        onclick="addPrice(this)">${addRoomPrice}
+                </button>
+            </div>
+            <c:if test="${not empty requestScope.message}">
+                <div class="modal" id="roomPriceNotify" style="display: block;">
+                    <div class="modal-content animate">
+                       <span class="resultButtons">
+                        <label>${addingPrice}</label>
+                <a class="noButton" type="submit"
+                   href="${pageContext.servletContext.contextPath}/controller?command=showRoomPrices&roomId=${requestScope.roomId}&roomLimit=${requestScope.roomLimit}&roomPage=${requestScope.roomPage}">Ok
+                </a>
+                       </span>
+                    </div>
+                </div>
+            </c:if>
         </div>
     </div>
 </div>
-
-<jsp:include page="../../fragments/room/addRoomPrice.jsp"/>
+<jsp:include page="/WEB-INF/fragments/room/addRoomPrice.jsp"/>
 <jsp:include page="/WEB-INF/fragments/header/footer.jsp"/>
 </body>
 </html>
