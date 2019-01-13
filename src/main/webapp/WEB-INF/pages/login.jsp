@@ -20,6 +20,9 @@
 
 <fmt:message bundle="${naming}" key="signup.valid.validLastName" var="validLastName"/>
 <fmt:message bundle="${naming}" key="signup.valid.validFirstName" var="validFirstName"/>
+<fmt:message bundle="${naming}" key="signup.valid.validEmail" var="validEmail"/>
+<fmt:message bundle="${naming}" key="signup.valid.validLogin" var="validLogin"/>
+<fmt:message bundle="${naming}" key="signup.valid.validPassword" var="validPassword"/>
 
 <html>
 <head>
@@ -32,6 +35,10 @@
 </head>
 
 <body>
+<c:if test="${not empty requestScope.signUpError}">
+<body onload="changeForm('signUpForm')">
+</c:if>
+
 <jsp:include page="../fragments/header/mainHeader.jsp"/>
 <div class="startPageContainer">
     <div class="infoLabel">
@@ -76,16 +83,36 @@
         <form action="${pageContext.servletContext.contextPath}/controller?command=signUp" method="post">
             <div class="inputText">
                 <input class="signUpForm" type="text" id="lastName" name="lastName" placeholder="${lastName}"
-                       pattern="^([a-zA-Z]){3,44}$"  required>
+                       pattern="^([a-zA-Z]){3,44}$" required>
             </div>
+
+            <c:if test="${(not empty requestScope.signUpError) and (requestScope.signUpError eq 'lastName')}">
+                <div class="wrongSignUpParametres">
+                    <label>${validLastName}</label>
+                </div>
+            </c:if>
+
             <div class="inputText">
                 <input class="signUpForm" type="text" id="firstName" name="firstName" placeholder="${firstName}"
                        pattern="^([a-zA-Z]){3,44}$" required>
             </div>
+
+            <c:if test="${(not empty requestScope.signUpError) and (requestScope.signUpError eq 'firstName')}">
+                <div class="wrongSignUpParametres">
+                    <label>${validFirstName}</label>
+                </div>
+            </c:if>
+
             <div class="inputText">
                 <input class="signUpForm" type="text" id="email" name="email" placeholder="${email}"
                        pattern="^(\w+[\.-]?\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6})$" required>
             </div>
+            <c:if test="${(not empty requestScope.signUpError) and (requestScope.signUpError eq 'email')}">
+                <div class="wrongSignUpParametres">
+                    <label>${validEmail}</label>
+                </div>
+            </c:if>
+
             <div class="inputText">
                 <input class="signUpForm" type="text" id="birthday" name="birthday" placeholder="${birthday}"
                        onfocus="(this.type='date')" onblur="(this.type='text')" required>
@@ -94,12 +121,21 @@
                 <input class="signUpForm" type="text" id="login" name="login" placeholder="${placeLogin}"
                        pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" autocomplete="off" required>
             </div>
+            <c:if test="${(not empty requestScope.signUpError) and (requestScope.signUpError eq 'login')}">
+                <div class="wrongSignUpParametres">
+                    <label>${validLogin}</label>
+                </div>
+            </c:if>
             <div class="inputText">
                 <input class="signUpForm" type="password" id="userPass" name="userPass" placeholder="${placePassword}"
                        autocomplete="off" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$"
                        required>
             </div>
-
+            <c:if test="${(not empty requestScope.signUpError) and (requestScope.signUpError eq 'userPass')}">
+                <div class="wrongSignUpParametres">
+                    <label>${validPassword}</label>
+                </div>
+            </c:if>
             <div class="submitButton">
                 <input class="submitBtn" id="signUpButton" type="submit" value=${signUp}>
             </div>

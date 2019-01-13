@@ -62,7 +62,7 @@ label[for="signin"] {
 }
 
 .startPageContainer #signUpForm {
-    height: 370px;
+    height: 380px;
 }
 
 .signUpForm {
@@ -113,20 +113,26 @@ label[for="signin"] {
 }
 
 #signUpButton {
-    margin: 20px 0 20px 0;
+    margin: 10px 0 20px 0;
 }
 
 #signUpButton:hover, #signInButton:hover {
     background-color: rgba(105, 105, 105, 1);
 }
 
+.wrongParametres, .wrongSignUpParametres {
+    color: red;
+}
+
 .wrongParametres {
     font-size: 18px;
-    color: red;
     margin: -3% 0 3% 0;
 }
 
-
+.wrongSignUpParametres {
+    margin-top: 5px;
+    font-size: 16px;
+}
 
 
 

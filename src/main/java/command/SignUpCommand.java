@@ -19,6 +19,8 @@ public class SignUpCommand implements Command {
     private static final String LOGIN = "login";
     private static final String PASSWORD = "userPass";
     private static final String START_PAGE = "controller?command=startPage";
+    private static final String LOGIN_PAGE = "/WEB-INF/pages/login.jsp";
+    private static final String SIGN_UP_ERROR = "signUpError";
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
@@ -38,7 +40,9 @@ public class SignUpCommand implements Command {
 
         Validation validation = new Validation();
         if (!validation.isValidData(signUpData)) {
-            return CommandResult.forward("/WEB-INF/pages/AccsessError.jsp"); //todo add page
+            String errorName = validation.getInvalidData();
+            request.setAttribute(SIGN_UP_ERROR, errorName);
+            return CommandResult.forward(LOGIN_PAGE);
         }
 
         UserService userService = new UserService();
