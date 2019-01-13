@@ -22,10 +22,11 @@ import java.util.Optional;
 
 public class PayOrderCommand implements Command {
 
+    private static final String ORDER_PAGE = "controller?command=showOrders";
+    private static final String MESSAGE = "&message=payOrder";
     private static final String ORDER_ID = "orderId";
     private static final String ID = "id";
     private static final String DATE_PATTERN = "yyyy-MM-dd";
-
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
@@ -51,7 +52,8 @@ public class PayOrderCommand implements Command {
                 User user = optionalUser.get();
                 //todo add validation
                 BigDecimal balance = user.getBalance();
-                BigDecimal newBalance = balance.subtract(cost); //todo add to service
+                BigDecimal newBalance = balance.subtract(cost);
+                //todo add to service
 
                 userService.updateBalance(id, newBalance);
                 orderService.payOrder(orderId, PaymentStatus.PAID);
@@ -59,6 +61,6 @@ public class PayOrderCommand implements Command {
             TransactionService transactionService = new TransactionService();
             transactionService.addOperations(null, id, OperationType.PAYMENTFORSERVICES, currentDate, cost);
         }
-        return new OrderCommand().execute(request, response);
+        return CommandResult.redirect(ORDER_PAGE + MESSAGE);
     }
 }

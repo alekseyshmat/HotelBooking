@@ -33,6 +33,7 @@
 <fmt:message bundle="${naming}" key="table.label.name" var="name"/>
 <fmt:message bundle="${naming}" key="table.label.invoiceDate" var="invoiceDate"/>
 <fmt:message bundle="${naming}" key="button.label.showDetails" var="showDetails"/>
+<fmt:message bundle="${naming}" key="order.label.payingOrder" var="payingOrder"/>
 
 <html>
 <head>
@@ -123,6 +124,18 @@
                 </c:forEach>
             </table>
         </div>
+        <c:if test="${not empty requestScope.message}">
+            <div class="modal" id="payOrder" style="display: block;">
+                <div class="modal-content animate">
+                       <span class="resultButtons">
+                        <label>${payingOrder}</label>
+                <a class="noButton" type="submit"
+                   href="${pageContext.servletContext.contextPath}/controller?command=showOrders">Ok
+                </a>
+                       </span>
+                </div>
+            </div>
+        </c:if>
     </div>
 
     <div id="processed" class="rightColumn" style="display: none;">

@@ -14,6 +14,7 @@ public class EditProfileCommand implements Command {
     private static final String FIRST_NAME = "firstName";
     private static final String LAST_NAME = "lastName";
     private static final String NAME = "name";
+    private static final String MESSAGE = "&message=editingProfile";
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
@@ -27,6 +28,7 @@ public class EditProfileCommand implements Command {
 
         session.removeAttribute(NAME);
         session.setAttribute(NAME, firstName);
-        return CommandResult.redirect(PROFILE);
+
+        return CommandResult.redirect(PROFILE + MESSAGE);
     }
 }

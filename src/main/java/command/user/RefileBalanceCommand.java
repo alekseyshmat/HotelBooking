@@ -22,6 +22,7 @@ public class RefileBalanceCommand implements Command {
     private static final String ID = "id";
     private static final String DATE_PATTERN = "yyyy-MM-dd";
     private static final String BALANCE_COMMAND = "controller?command=showBalance";
+    private static final String MESSAGE = "&message=refileBalance";
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
@@ -45,6 +46,6 @@ public class RefileBalanceCommand implements Command {
             transactionService.addOperations(null, id, OperationType.MONEYTRANSFER, currentDate, sumUp);
         }
 
-        return CommandResult.redirect(BALANCE_COMMAND);
+        return CommandResult.redirect(BALANCE_COMMAND + MESSAGE);
     }
 }

@@ -14,6 +14,7 @@ public class ProfileCommand implements Command {
     private static final String PROFILE = "/WEB-INF/pages/profile.jsp";
     private static final String ID = "id";
     private static final String USER = "user";
+    private static final String MESSAGE = "message";
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
@@ -24,6 +25,10 @@ public class ProfileCommand implements Command {
         Optional<User> user = userService.findById(id);
         user.ifPresent(aUser -> request.setAttribute(USER, aUser));
 
+        String message = request.getParameter(MESSAGE);
+        if (message != null) {
+            request.setAttribute(MESSAGE, message);
+        }
         return CommandResult.forward(PROFILE);
     }
 }

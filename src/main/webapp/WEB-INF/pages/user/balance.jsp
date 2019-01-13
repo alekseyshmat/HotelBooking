@@ -15,6 +15,7 @@
 <fmt:message bundle="${naming}" key="button.label.topUp" var="topUp"/>
 <fmt:message bundle="${naming}" key="table.label.moneyTransfer" var="moneytransfer"/>
 <fmt:message bundle="${naming}" key="table.label.paymentForServices" var="paymentForServices"/>
+<fmt:message bundle="${naming}" key="profile.label.refileBalance" var="refileBalance"/>
 
 <html>
 <head>
@@ -23,6 +24,8 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/tableStyle.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/balanceStyle.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/tabStyle.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/style/modalStyle.css">
+
     <script src="${pageContext.request.contextPath}/js/tab.js"></script>
     <title>${balance}</title>
 </head>
@@ -53,8 +56,19 @@
                 </div>
             </form>
         </div>
+        <c:if test="${not empty requestScope.message}">
+            <div class="modal" id="refileBalanceNotify" style="display: block;">
+                <div class="modal-content animate">
+                       <span class="resultButtons">
+                        <label>${refileBalance}</label>
+                <a class="noButton" type="submit"
+                   href="${pageContext.servletContext.contextPath}/controller?command=showBalance">Ok
+                </a>
+                       </span>
+                </div>
+            </div>
+        </c:if>
     </div>
-
     <div id="showHistory" class="rightColumn" style="display: none;">
         <div class="tableScroll">
             <table>

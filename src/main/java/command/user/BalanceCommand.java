@@ -21,6 +21,7 @@ public class BalanceCommand implements Command {
     private static final String ID = "id";
     private static final String USER = "user";
     private static final String TRANSACTION_LIST = "transactionList";
+    private static final String MESSAGE = "message";
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
@@ -37,6 +38,10 @@ public class BalanceCommand implements Command {
         request.setAttribute(TRANSACTION_LIST, transactionList);
         request.setAttribute(USER, user);
 
+        String message = request.getParameter(MESSAGE);
+        if (message != null) {
+            request.setAttribute(MESSAGE, message);
+        }
         return CommandResult.forward(BALANCE_PAGE);
     }
 }

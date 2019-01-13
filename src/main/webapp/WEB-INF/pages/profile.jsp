@@ -12,6 +12,7 @@
 <fmt:message bundle="${naming}" key="user.label.login.save" var="save"/>
 <fmt:message bundle="${naming}" key="user.label.login.placeholder" var="username"/>
 <fmt:message bundle="${naming}" key="mainHeader.label.profile" var="profile"/>
+<fmt:message bundle="${naming}" key="profile.label.editingProfile" var="editingProfile"/>
 
 <html>
 
@@ -21,6 +22,7 @@
     <title>${profile}</title>
     <link rel="shortcut icon" href="${pageContext.request.contextPath}/img/icon/favicon.png" type="image/png">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/profileStyle.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/style/modalStyle.css">
     <jsp:useBean id="user" scope="request" type="entity.User"/>
 </head>
 
@@ -90,6 +92,18 @@
                 </div>
             </form>
         </div>
+        <c:if test="${not empty requestScope.message}">
+            <div class="modal" id="profileNotify" style="display: block;">
+                <div class="modal-content animate">
+                       <span class="resultButtons">
+                        <label>${editingProfile}</label>
+                <a class="noButton" type="submit"
+                   href="${pageContext.servletContext.contextPath}/controller?command=showProfile">Ok
+                </a>
+                       </span>
+                </div>
+            </div>
+        </c:if>
     </div>
 </div>
 <jsp:include page="/WEB-INF/fragments/header/footer.jsp"/>
