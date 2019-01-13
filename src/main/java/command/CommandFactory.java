@@ -7,9 +7,12 @@ import command.admin.order.CompleteOrderCommand;
 import command.admin.order.ProcessOrderCommand;
 import command.admin.room.*;
 import command.user.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class CommandFactory {
 
+    private static final Logger LOGGER = LogManager.getLogger(CommandFactory.class);
     private static final String LOGIN = "login";
     private static final String SHOW_PROFILE = "showProfile";
     private static final String SHOW_ORDERS = "showOrders";

@@ -2,10 +2,13 @@ package command;
 
 import exception.ServiceException;
 import service.UserService;
+import util.Validation;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class SignUpCommand implements Command {
 
@@ -22,10 +25,21 @@ public class SignUpCommand implements Command {
         String lastName = request.getParameter(LAST_NAME);
         String firstName = request.getParameter(FIRST_NAME);
         String email = request.getParameter(EMAIL);
-        System.out.println(request.getParameter(BIRTHDAY));
         Date birthday = Date.valueOf(request.getParameter(BIRTHDAY));
         String login = request.getParameter(LOGIN);
         String password = request.getParameter(PASSWORD);
+
+        Map<String, String> signUpData = new HashMap<>();
+        signUpData.put(LAST_NAME, lastName);
+        signUpData.put(FIRST_NAME, firstName);
+        signUpData.put(EMAIL, email);
+        signUpData.put(LOGIN, login);
+        signUpData.put(PASSWORD, password);
+
+        Validation validation = new Validation();
+        if (!validation.isValidData(signUpData)) {
+            return CommandResult.forward("/WEB-INF/pages/AccsessError.jsp"); //todo add page
+        }
 
         UserService userService = new UserService();
         userService.signUpUser(null, firstName, lastName, email, login, password, birthday);

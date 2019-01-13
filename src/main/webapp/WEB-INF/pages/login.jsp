@@ -18,8 +18,10 @@
 <fmt:message bundle="${naming}" key="mainHeader.label.signUp" var="signUp"/>
 <fmt:message bundle="${naming}" key="mainHeader.label.signIn" var="signIn"/>
 
-<html>
+<fmt:message bundle="${naming}" key="signup.valid.validLastName" var="validLastName"/>
+<fmt:message bundle="${naming}" key="signup.valid.validFirstName" var="validFirstName"/>
 
+<html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
@@ -73,14 +75,16 @@
     <div class="formType" id="signUpForm" style="display: none;">
         <form action="${pageContext.servletContext.contextPath}/controller?command=signUp" method="post">
             <div class="inputText">
-                <input class="signUpForm" type="text" id="lastName" name="lastName" placeholder="${lastName}" required>
+                <input class="signUpForm" type="text" id="lastName" name="lastName" placeholder="${lastName}"
+                       pattern="^([a-zA-Z]){3,44}$"  required>
             </div>
             <div class="inputText">
                 <input class="signUpForm" type="text" id="firstName" name="firstName" placeholder="${firstName}"
-                       required>
+                       pattern="^([a-zA-Z]){3,44}$" required>
             </div>
             <div class="inputText">
-                <input class="signUpForm" type="text" id="email" name="email" placeholder="${email}" required>
+                <input class="signUpForm" type="text" id="email" name="email" placeholder="${email}"
+                       pattern="^(\w+[\.-]?\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6})$" required>
             </div>
             <div class="inputText">
                 <input class="signUpForm" type="text" id="birthday" name="birthday" placeholder="${birthday}"
@@ -92,7 +96,7 @@
             </div>
             <div class="inputText">
                 <input class="signUpForm" type="password" id="userPass" name="userPass" placeholder="${placePassword}"
-                       autocomplete="off"
+                       autocomplete="off" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$"
                        required>
             </div>
 
