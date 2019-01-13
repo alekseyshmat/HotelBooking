@@ -16,6 +16,7 @@
 <fmt:message bundle="${naming}" key="table.label.moneyTransfer" var="moneytransfer"/>
 <fmt:message bundle="${naming}" key="table.label.paymentForServices" var="paymentForServices"/>
 <fmt:message bundle="${naming}" key="profile.label.refileBalance" var="refileBalance"/>
+<fmt:message bundle="${naming}" key="profile.label.invalidSum" var="invalidSum"/>
 
 <html>
 <head>
@@ -49,18 +50,27 @@
 
             <form action="${pageContext.request.contextPath}/controller?command=refileBalance" method="post">
                 <div class="inputBalance">
-                    <input type="text" id="sumUp" name="sumUp" placeholder="${enterSum}">
+                    <input type="text" id="sumUp" name="sumUp" placeholder="${enterSum}"
+                           pattern="^([1-9]{1}[0-9]{0,8}\.?[0-9]{0,2})$" required>
                 </div>
                 <div class="balanceButton">
                     <button class="addBalance" type="submit">${topUp}</button>
                 </div>
             </form>
         </div>
+
         <c:if test="${not empty requestScope.message}">
             <div class="modal" id="refileBalanceNotify" style="display: block;">
                 <div class="modal-content animate">
                        <span class="resultButtons">
-                        <label>${refileBalance}</label>
+            <c:choose>
+                <c:when test="${requestScope.message eq 'refileBalance'}">
+                    <label>${refileBalance}</label>
+                </c:when>
+                <c:when test="${requestScope.message eq 'invalidSum'}">
+                    <label>${invalidSum}</label>
+                </c:when>
+            </c:choose>
                 <a class="noButton" type="submit"
                    href="${pageContext.servletContext.contextPath}/controller?command=showBalance">Ok
                 </a>
@@ -68,6 +78,7 @@
                 </div>
             </div>
         </c:if>
+
     </div>
     <div id="showHistory" class="rightColumn" style="display: none;">
         <div class="tableScroll">

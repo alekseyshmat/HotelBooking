@@ -34,6 +34,7 @@
 <fmt:message bundle="${naming}" key="table.label.invoiceDate" var="invoiceDate"/>
 <fmt:message bundle="${naming}" key="button.label.showDetails" var="showDetails"/>
 <fmt:message bundle="${naming}" key="order.label.payingOrder" var="payingOrder"/>
+<fmt:message bundle="${naming}" key="order.label.noMoney" var="noMoney"/>
 
 <html>
 <head>
@@ -128,7 +129,14 @@
             <div class="modal" id="payOrder" style="display: block;">
                 <div class="modal-content animate">
                        <span class="resultButtons">
-                        <label>${payingOrder}</label>
+            <c:choose>
+                <c:when test="${requestScope.message eq 'payOrder'}">
+                    <label>${payingOrder}</label>
+                </c:when>
+                <c:when test="${requestScope.message eq 'noMoney'}">
+                    <label>${noMoney}</label>
+                </c:when>
+            </c:choose>
                 <a class="noButton" type="submit"
                    href="${pageContext.servletContext.contextPath}/controller?command=showOrders">Ok
                 </a>

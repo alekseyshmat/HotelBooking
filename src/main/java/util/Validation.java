@@ -9,12 +9,14 @@ public class Validation {
     private static final String EMAIL = "email";
     private static final String USERNAME = "login";
     private static final String PASSWORD = "userPass";
+    private static final String SUM = "sumUp";
 
 
     private static final String NAME_PATTERN = "^([a-zA-Z]){3,44}$";
     private static final String EMAIL_PATTERN = "^(\\w+[\\.-]?\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,6})$";
     private static final String USERNAME_PATTERN = "^[a-zA-Z][a-zA-Z0-9-_\\.]{1,20}$";
     private static final String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$";
+    private static final String SUM_PATTERN = "^([1-9]{1}[0-9]{0,8}\\.?[0-9]{0,2})$";
 
     private String invalidData;
 
@@ -34,6 +36,8 @@ public class Validation {
                 return USERNAME_PATTERN;
             case PASSWORD:
                 return PASSWORD_PATTERN;
+            case SUM:
+                return SUM_PATTERN;
             default:
                 throw new UnsupportedOperationException();
         }

@@ -39,7 +39,7 @@ public class SignUpCommand implements Command {
         signUpData.put(PASSWORD, password);
 
         Validation validation = new Validation();
-        if (!validation.isValidData(signUpData)) {
+        if (validation.isValidData(signUpData)) {
             String errorName = validation.getInvalidData();
             request.setAttribute(SIGN_UP_ERROR, errorName);
             return CommandResult.forward(LOGIN_PAGE);

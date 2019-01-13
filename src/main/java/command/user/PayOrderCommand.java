@@ -17,13 +17,14 @@ import javax.servlet.http.HttpSession;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.Optional;
 
 public class PayOrderCommand implements Command {
 
     private static final String ORDER_PAGE = "controller?command=showOrders";
-    private static final String MESSAGE = "&message=payOrder";
+    private static final String MESSAGE = "&message=";
+    private static final String PAY_ORDER = "payOrder";
+    private static final String NO_MONEY = "noMoney";
     private static final String ORDER_ID = "orderId";
     private static final String ID = "id";
     private static final String DATE_PATTERN = "yyyy-MM-dd";
@@ -36,31 +37,37 @@ public class PayOrderCommand implements Command {
         HttpSession session = request.getSession();
         Integer id = (Integer) session.getAttribute(ID);
 
-        Integer orderId = Integer.valueOf(request.getParameter(ORDER_ID));
+        String stringOrderId = request.getParameter(ORDER_ID);
+        Integer orderId;
+        if (stringOrderId != null) {
+            orderId = Integer.valueOf(stringOrderId);
+        } else {
+            return CommandResult.forward("nullpage"); //todo add
+        }
         OrderService orderService = new OrderService();
 
         Optional<Order> optionalOrder = orderService.findById(orderId);
         if (optionalOrder.isPresent()) {
             Order order = optionalOrder.get();
-            //todo add count days
-//            int days = Days
             BigDecimal cost = order.getCost();
 
             UserService userService = new UserService();
             Optional<User> optionalUser = userService.findById(id);
             if (optionalUser.isPresent()) {
                 User user = optionalUser.get();
-                //todo add validation
-                BigDecimal balance = user.getBalance();
-                BigDecimal newBalance = balance.subtract(cost);
-                //todo add to service
 
+                BigDecimal userBalance = user.getBalance();
+                if (userBalance.compareTo(cost) < 0) {
+                    return CommandResult.redirect(ORDER_PAGE + MESSAGE + NO_MONEY);
+                }
+
+                BigDecimal newBalance = userBalance.subtract(cost);
                 userService.updateBalance(id, newBalance);
                 orderService.payOrder(orderId, PaymentStatus.PAID);
             }
             TransactionService transactionService = new TransactionService();
             transactionService.addOperations(null, id, OperationType.PAYMENTFORSERVICES, currentDate, cost);
         }
-        return CommandResult.redirect(ORDER_PAGE + MESSAGE);
+        return CommandResult.redirect(ORDER_PAGE + MESSAGE + PAY_ORDER);
     }
 }
