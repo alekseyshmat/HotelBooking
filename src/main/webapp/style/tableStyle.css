@@ -56,7 +56,7 @@ tr td:last-child {
 }
 
 
-.processButton, .paymentButton, .completeButton, .block, .unblock, .showDetailsButton {
+.processButton, .paymentButton, .completeButton, .block, .unblock, .showDetailsButton, .deleteOrderButton {
     padding: 9px 15px;
     margin: 0 0 0 0;
     opacity: 0.7;
@@ -87,11 +87,11 @@ tr td:last-child {
 }
 
 .paymentButton {
-    background-color: #40E0D0; /*ADD8E6*/
+    background-color: #40E0D0;
 }
 
 .completeButton {
-    background-color: #00FF00; /*ADD8E6*/
+    background-color: #00FF00;
 }
 
 .block {
@@ -103,23 +103,21 @@ tr td:last-child {
 }
 
 .blockedBtn a, .prcBtn a, .showPriceButton a {
-    /*font-size: 16px;*/
     text-align: center;
     color: black;
     text-decoration: none;
 }
 
 .showDetailsButton {
-    background-color: #008B8B; /*ADD8E6*/
+    background-color: #008B8B;
 }
 
 
 
 .processButton:hover, .editButton:hover, .deleteButton:hover, .paymentButton:hover,
 .completeButton:hover, .showDetailsButton:hover, .block:hover, .unblock:hover, .showRoomPrice:hover, .deleteOrderButton:hover {
-    opacity: 0.8;
+    opacity: 1;
 }
-
 
 .addButton {
     overflow: hidden;
@@ -185,7 +183,6 @@ tr td:last-child {
 .returnPriceLabel a {
     text-decoration: none;
     color: black;
-    /*         padding: 2px 4px; */
 }
 
 .returnPriceLabel {

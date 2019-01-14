@@ -11,6 +11,7 @@
 <fmt:message bundle="${naming}" key="mainHeader.label.lang" var="lang"/>
 <fmt:message bundle="${naming}" key="mainHeader.label.administrate" var="administrate"/>
 <fmt:message bundle="${naming}" key="admin.label.orders" var="orders"/>
+<fmt:message bundle="${naming}" key="mainHeader.label.signIn" var="signIn"/>
 
 <html lang="${sessionScope.language}">
 <head>
@@ -28,9 +29,18 @@
             <c:when test="${sessionScope.role == 'USER'}">
                 <a href="${pageContext.servletContext.contextPath}/controller?command=mainPage">${home}</a>
             </c:when>
+            <c:when test="${empty sessionScope.role}">
+                <a href="${pageContext.servletContext.contextPath}/controller?command=startPage">${home}</a>
+            </c:when>
         </c:choose>
-
     </div>
+
+    <c:if test="${empty sessionScope.role}">
+        <div class="optionalButton">
+            <a href="${pageContext.request.contextPath}/controller?command=startLogin">${signIn}</a>
+        </div>
+    </c:if>
+
     <c:if test="${not empty sessionScope.role}">
         <div class="dropDown">
             <button class="dropButton-profile">${sessionScope.name}

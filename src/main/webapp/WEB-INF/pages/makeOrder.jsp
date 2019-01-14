@@ -43,7 +43,7 @@
                     <label for="checkInDate">${checkInDate}</label>
                 </div>
                 <div class="inputParameter">
-                    <input id="checkInDate" type="date" name="checkInDate" min="" onclick="">
+                    <input id="checkInDate" type="date" name="checkInDate" required>
                 </div>
             </div>
 
@@ -52,7 +52,7 @@
                     <label for="checkOutDate">${checkOutDate}</label>
                 </div>
                 <div class="inputParameter">
-                    <input id="checkOutDate" type="date" name="checkOutDate" >
+                    <input id="checkOutDate" type="date" name="checkOutDate" required >
                 </div>
             </div>
 
@@ -61,7 +61,7 @@
                     <label for="typeRoom">${typeRoom}</label>
                 </div>
                 <div class="inputParameter">
-                    <select id="typeRoom" name="typeRoom">
+                    <select id="typeRoom" name="typeRoom" required>
                         <option disabled>${typeRoom}</option>
                         <option value="Apartment">${apartment}</option>
                         <option value="Business">${business}</option>
@@ -74,9 +74,17 @@
                 </div>
             </div>
 
-            <div class="submitButton">
-                <input class="submitBtn" type="submit" value="${makeOrder}">
-            </div>
+            <c:if test="${empty sessionScope.role}">
+                <div class="submitHrefButton">
+                    <a class="submitBtn" href="${pageContext.request.contextPath}/controller?command=startLogin">${makeOrder}</a>
+                </div>
+            </c:if>
+            <c:if test="${not empty sessionScope.role}">
+                <div class="submitButton">
+                    <input class="submitBtn" type="submit" value="${makeOrder}">
+                </div>
+            </c:if>
+
         </form>
     </div>
 <jsp:include page="/WEB-INF/fragments/header/footer.jsp"/>
