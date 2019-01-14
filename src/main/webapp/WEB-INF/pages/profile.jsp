@@ -23,7 +23,7 @@
     <title>${profile}</title>
     <link rel="shortcut icon" href="${pageContext.request.contextPath}/img/icon/favicon.png" type="image/png">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/profileStyle.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/style/modalStyle.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/style/notifyStyle.css">
     <jsp:useBean id="user" scope="request" type="entity.User"/>
 </head>
 
@@ -105,21 +105,23 @@
             </form>
         </div>
         <c:if test="${not empty requestScope.message}">
-            <div class="modal" id="profileNotify" style="display: block;">
-                <div class="modal-content animate">
-                       <span class="resultButtons">
-                              <c:choose>
-                                  <c:when test="${requestScope.message eq 'editingProfile'}">
-                                      <label>${editingProfile}</label>
-                                  </c:when>
-                                  <c:when test="${requestScope.message eq 'profileError'}">
-                                      <label>${profileError}</label>
-                                  </c:when>
-                              </c:choose>
-                <a class="noButton" type="submit"
-                   href="${pageContext.servletContext.contextPath}/controller?command=showProfile">Ok
-                </a>
-                       </span>
+            <div class="notify-modal" id="refileBalanceNotify" style="display: block;">
+                <div class="notify-modal-content animate">
+                    <div class="notify-resultButtons">
+                        <c:choose>
+                            <c:when test="${requestScope.message eq 'editingProfile'}">
+                                <label>${editingProfile}</label>
+                            </c:when>
+                            <c:when test="${requestScope.message eq 'profileError'}">
+                                <label>${profileError}</label>
+                            </c:when>
+                        </c:choose>
+                    </div>
+                    <div class="notify-resultButtons">
+                        <a class="okButton" id="okBtn" type="submit"
+                           href="${pageContext.servletContext.contextPath}/controller?command=showProfile">Ok
+                        </a>
+                    </div>
                 </div>
             </div>
         </c:if>

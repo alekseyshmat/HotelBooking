@@ -70,7 +70,7 @@ tr td:last-child {
     background-color: #32CD32;
 }
 
-.editButton, .deleteButton, .showRoomPrice {
+.editButton, .deleteButton, .showRoomPrice, .deleteOrderButton {
     border-radius: 4px;
     background-color: transparent;
     cursor: pointer;
@@ -82,8 +82,8 @@ tr td:last-child {
     height: 32px;
 }
 
-.deleteButton {
-    /*background-color: #f44336;*/
+.deleteOrderButton {
+    background-color: #f44336;
 }
 
 .paymentButton {
@@ -113,17 +113,13 @@ tr td:last-child {
     background-color: #008B8B; /*ADD8E6*/
 }
 
-.showRoomPrice {
-    /*background-color: #008B8B;*/
-}
+
 
 .processButton:hover, .editButton:hover, .deleteButton:hover, .paymentButton:hover,
-.completeButton:hover, .showDetailsButton:hover, .block:hover, .unblock:hover, .showRoomPrice:hover {
+.completeButton:hover, .showDetailsButton:hover, .block:hover, .unblock:hover, .showRoomPrice:hover, .deleteOrderButton:hover {
     opacity: 0.8;
 }
 
-.addPanel {
-}
 
 .addButton {
     overflow: hidden;

@@ -25,8 +25,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/tableStyle.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/balanceStyle.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/tabStyle.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/style/modalStyle.css">
-
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/style/notifyStyle.css">
     <script src="${pageContext.request.contextPath}/js/tab.js"></script>
     <title>${balance}</title>
 </head>
@@ -60,21 +59,23 @@
         </div>
 
         <c:if test="${not empty requestScope.message}">
-            <div class="modal" id="refileBalanceNotify" style="display: block;">
-                <div class="modal-content animate">
-                       <span class="resultButtons">
-            <c:choose>
-                <c:when test="${requestScope.message eq 'refileBalance'}">
-                    <label>${refileBalance}</label>
-                </c:when>
-                <c:when test="${requestScope.message eq 'invalidSum'}">
-                    <label>${invalidSum}</label>
-                </c:when>
-            </c:choose>
-                <a class="noButton" type="submit"
-                   href="${pageContext.servletContext.contextPath}/controller?command=showBalance">Ok
-                </a>
-                       </span>
+            <div class="notify-modal" id="refileBalanceNotify" style="display: block;">
+                <div class="notify-modal-content animate">
+                    <div class="notify-resultButtons">
+                        <c:choose>
+                            <c:when test="${requestScope.message eq 'refileBalance'}">
+                                <label>${refileBalance}</label>
+                            </c:when>
+                            <c:when test="${requestScope.message eq 'invalidSum'}">
+                                <label>${invalidSum}</label>
+                            </c:when>
+                        </c:choose>
+                    </div>
+                    <div class="notify-resultButtons">
+                        <a class="okButton" id="okBtn" type="submit"
+                           href="${pageContext.servletContext.contextPath}/controller?command=showBalance">Ok
+                        </a>
+                    </div>
                 </div>
             </div>
         </c:if>

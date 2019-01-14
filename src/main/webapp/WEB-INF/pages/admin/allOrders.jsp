@@ -41,6 +41,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/dataStyle.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/tableStyle.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/tabStyle.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/style/notifyStyle.css">
     <script src="${pageContext.request.contextPath}/js/tab.js"></script>
     <script src="${pageContext.request.contextPath}/js/adminOrders.js"></script>
 
@@ -325,7 +326,7 @@
     </div>
 </div>
 
-<jsp:include page="/WEB-INF/fragments/order/processOrder.jsp"/>
+<%--<jsp:include page="/WEB-INF/fragments/order/processOrder.jsp"/>--%>
 <jsp:include page="/WEB-INF/fragments/order/completeOrder.jsp"/>
 <jsp:include page="/WEB-INF/fragments/order/showDetails.jsp"/>
 <jsp:include page="/WEB-INF/fragments/header/footer.jsp"/>

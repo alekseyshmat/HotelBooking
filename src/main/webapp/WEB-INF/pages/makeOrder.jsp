@@ -6,6 +6,7 @@
 <fmt:setBundle basename="naming" var="naming"/>
 
 <fmt:message bundle="${naming}" key="mainHeader.label.makeOrder" var="makeOrder"/>
+<fmt:message bundle="${naming}" key="mainHeader.label.welcome" var="welcome"/>
 <fmt:message bundle="${naming}" key="table.label.checkInDate" var="checkInDate"/>
 <fmt:message bundle="${naming}" key="table.label.checkOutDate" var="checkOutDate"/>
 <fmt:message bundle="${naming}" key="table.label.typeRoom" var="typeRoom"/>
@@ -33,6 +34,7 @@
 <body>
 <header>
     <jsp:include page="../fragments/header/mainHeader.jsp"/>
+    <h1>${welcome}</h1>
 </header>
     <div class="makeOrder">
         <form action="${pageContext.servletContext.contextPath}/controller?command=makeOrder" method="post">

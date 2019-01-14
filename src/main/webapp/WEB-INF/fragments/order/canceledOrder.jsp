@@ -15,26 +15,23 @@
 </head>
 <body>
 <div id="cancelProve" class="modal">
-
-    <div class="modal-content animate">
+    <div class="pay-modal-content animate">
         <form action="${pageContext.request.contextPath}/controller?command=cancelOrder" method="post">
             <input name="cancelOrderId" id="cancelOrderId" type="hidden" value=""/>
             <label class="paymentLabel"><b>${proveCancellation}</b></label>
-
             <div>
-            <span class="resultButtons">
-                <button class="yesButton" type="submit">${yes}
-                </button>
-            </span>
+                <div class="resultButtons">
+                    <button class="yesButton" id="yesBtn" type="submit">${yes}
+                    </button>
+                </div>
             </div>
         </form>
-        <span class="resultButtons">
-                <button class="noButton" type="submit"
-                        onclick="document.getElementById('cancelProve').style.display='none'">${no}
-                </button>
-            </span>
+        <div class="resultButtons">
+            <button class="noButton" id="noBtn" type="submit"
+                    onclick="document.getElementById('cancelProve').style.display='none'">${no}
+            </button>
+        </div>
     </div>
-
 </div>
 </body>
 </html>

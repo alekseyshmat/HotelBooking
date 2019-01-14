@@ -36,7 +36,7 @@
     <link rel="shortcut icon" href="${pageContext.request.contextPath}/img/icon/favicon.png" type="image/png">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/dataStyle.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/tableStyle.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/style/modalStyle.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/style/notifyStyle.css">
     <script src="${pageContext.request.contextPath}/js/editRoom.js"></script>
     <title>${rooms}</title>
 </head>
@@ -144,24 +144,26 @@
         </div>
 
         <c:if test="${not empty requestScope.notifyMessage}">
-            <div class="modal" id="roomNotify" style="display: block;">
-                <div class="modal-content animate">
-        <span class="resultButtons">
-            <c:choose>
-                <c:when test="${requestScope.notifyMessage eq 'added'}">
-                    <label>${addingRoom}</label>
-                </c:when>
-                <c:when test="${requestScope.notifyMessage eq 'edited'}">
-                    <label>${editingRoom}</label>
-                </c:when>
-                <c:when test="${requestScope.notifyMessage eq 'invalidRoom'}">
-                    <label>${invalidRoom}</label>
-                </c:when>
-            </c:choose>
-                <a class="noButton" type="submit"
-                   href="${pageContext.servletContext.contextPath}/controller?command=showRooms&pageNumber=${requestScope.pageNumber}&limit=${requestScope.limit}">Ok
-                </a>
-        </span>
+            <div class="notify-modal" id="refileBalanceNotify" style="display: block;">
+                <div class="notify-modal-content animate">
+                    <div class="notify-resultButtons">
+                        <c:choose>
+                            <c:when test="${requestScope.notifyMessage eq 'added'}">
+                                <label>${addingRoom}</label>
+                            </c:when>
+                            <c:when test="${requestScope.notifyMessage eq 'edited'}">
+                                <label>${editingRoom}</label>
+                            </c:when>
+                            <c:when test="${requestScope.notifyMessage eq 'invalidRoom'}">
+                                <label>${invalidRoom}</label>
+                            </c:when>
+                        </c:choose>
+                    </div>
+                    <div class="notify-resultButtons">
+                        <a class="okButton" id="okBtn" type="submit"
+                           href="${pageContext.servletContext.contextPath}/controller?command=showRooms&pageNumber=${requestScope.pageNumber}&limit=${requestScope.limit}">Ok
+                        </a>
+                    </div>
                 </div>
             </div>
         </c:if>

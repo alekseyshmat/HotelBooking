@@ -35,6 +35,7 @@
 <fmt:message bundle="${naming}" key="button.label.showDetails" var="showDetails"/>
 <fmt:message bundle="${naming}" key="order.label.payingOrder" var="payingOrder"/>
 <fmt:message bundle="${naming}" key="order.label.noMoney" var="noMoney"/>
+<fmt:message bundle="${naming}" key="order.label.noPayOrder" var="noPayOrder"/>
 <fmt:message bundle="${naming}" key="order.title.myOrders" var="myOrders"/>
 
 <html>
@@ -44,6 +45,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/dataStyle.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/tableStyle.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/tabStyle.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/style/notifyStyle.css">
     <script src="${pageContext.request.contextPath}/js/tab.js"></script>
     <script src="${pageContext.request.contextPath}/js/userOrder.js"></script>
     <title>${myOrders}</title>
@@ -141,21 +143,26 @@
             </table>
         </div>
         <c:if test="${not empty requestScope.message}">
-            <div class="modal" id="payOrder" style="display: block;">
-                <div class="modal-content animate">
-                       <span class="resultButtons">
-            <c:choose>
-                <c:when test="${requestScope.message eq 'payOrder'}">
-                    <label>${payingOrder}</label>
-                </c:when>
-                <c:when test="${requestScope.message eq 'noMoney'}">
-                    <label>${noMoney}</label>
-                </c:when>
-            </c:choose>
-                <a class="noButton" type="submit"
-                   href="${pageContext.servletContext.contextPath}/controller?command=showOrders">Ok
-                </a>
-                       </span>
+            <div class="notify-modal" id="refileBalanceNotify" style="display: block;">
+                <div class="notify-modal-content animate">
+                    <div class="notify-resultButtons">
+                        <c:choose>
+                            <c:when test="${requestScope.message eq 'payOrder'}">
+                                <label>${payingOrder}</label>
+                            </c:when>
+                            <c:when test="${requestScope.message eq 'noMoney'}">
+                                <label>${noMoney}</label>
+                            </c:when>
+                            <c:when test="${requestScope.message eq 'noPayOrder'}">
+                                <label>${noPayOrder}</label>
+                            </c:when>
+                        </c:choose>
+                    </div>
+                    <div class="notify-resultButtons">
+                        <a class="okButton" id="okBtn" type="submit"
+                           href="${pageContext.servletContext.contextPath}/controller?command=showOrders">Ok
+                        </a>
+                    </div>
                 </div>
             </div>
         </c:if>
@@ -240,7 +247,7 @@
                             </div>
                         </td>
                         <td>
-                            <button type="submit" class="deleteButton"
+                            <button type="submit" class="deleteOrderButton"
                                     data-orderid="${order.id}"
                                     value=""
                                     onclick="cancelOrder(this)">${cancel}

@@ -1,5 +1,5 @@
 body{
-    background-image: url(../img/hotel12.jpg);
+    background-image: url(../img/bg14.jpg);
     background-size: cover;
 }
 
@@ -8,9 +8,9 @@ body{
 }
 
 .makeOrder {
-    width: 450px;
-    height: 245px;
-    background-color: rgba(173, 216, 230, 0.8);
+    width: 470px;
+    height: 255px;
+    background-color:rgba(105, 105, 105, 0.7);
     margin: 160px auto 0 auto;
     text-align: center;
     border-radius: 10px;
@@ -19,7 +19,9 @@ body{
 .label {
     float: left;
     width: 30%;
+    font-size:18px;
     margin-top: 15px;
+
 }
 
 .inputParameter {
@@ -32,12 +34,14 @@ input[type = date], select{
     width: 90%;
     padding: 5px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 5px;
+    font-size:16px;
 }
 
 .row{
-    padding: 10px 20px;
+    padding: 10px 15px;
     margin: 0 0 0 0;
+
 }
 .row:after {
     content: "";
@@ -49,8 +53,8 @@ input[type = date], select{
     padding: 10px 40px;
     margin: 10px 0 20px 0;
     font-size: 16px;
-    color: black;
-    background-color: rgba(30, 144, 255, 0.5);
+    color: #fff;
+    background-color:#333;
     border: none;
     border-radius: 6px;
     cursor: pointer;
@@ -58,6 +62,11 @@ input[type = date], select{
 
 .submitBtn:hover {
     transition: all 0.3s;
-    background-color: rgba(173, 216, 230, 0.8);
     color: black;
+    background-color:#fff;
+}
+
+h1{
+    text-align:center;
+    margin:2% 0 -5% 0;
 }

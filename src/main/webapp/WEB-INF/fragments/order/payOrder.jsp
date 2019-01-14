@@ -10,29 +10,28 @@
 
 <html>
 <head>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/style/modalStyle.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/style/notifyStyle.css">
     <script src="${pageContext.request.contextPath}/js/processOrder.js"></script>
 </head>
 <body>
-<div id="payProve" class="modal">
+<div id="payProve" class="pay-modal">
 
-    <div class="modal-content animate">
+    <div class="pay-modal-content animate">
         <form action="${pageContext.request.contextPath}/controller?command=updateBalance" method="post">
             <input name="orderId" id="orderId" type="hidden" value=""/>
             <label class="paymentLabel"><b>${provePayment}</b></label>
-
             <div>
-            <span class="resultButtons">
-                <button class="yesButton" type="submit">${yes}
-                </button>
-            </span>
+                <div class="resultButtons">
+                    <button class="yesButton" id="yesBtn" type="submit">${yes}
+                    </button>
+                </div>
             </div>
         </form>
-        <span class="resultButtons">
-                <button class="noButton" type="submit"
-                        onclick="document.getElementById('payProve').style.display='none'">${no}
-                </button>
-            </span>
+        <div class="resultButtons">
+            <button class="noButton" id="noBtn" type="submit"
+                    onclick="document.getElementById('payProve').style.display='none'">${no}
+            </button>
+        </div>
     </div>
 
 </div>

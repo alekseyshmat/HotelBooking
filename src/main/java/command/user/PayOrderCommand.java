@@ -25,6 +25,7 @@ public class PayOrderCommand implements Command {
     private static final String ORDER_PAGE = "controller?command=showOrders";
     private static final String MESSAGE = "&message=";
     private static final String PAY_ORDER = "payOrder";
+    private static final String NO_PAY_ORDER = "noPayOrder";
     private static final String NO_MONEY = "noMoney";
     private static final String ORDER_ID = "orderId";
     private static final String ID = "id";
@@ -42,7 +43,7 @@ public class PayOrderCommand implements Command {
         if (stringOrderId != null) {
             orderId = Integer.valueOf(stringOrderId);
         } else {
-            return CommandResult.forward("nullpage"); //todo add
+            return CommandResult.redirect(ORDER_PAGE + MESSAGE + NO_PAY_ORDER);
         }
         OrderService orderService = new OrderService();
 
