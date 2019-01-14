@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.math.BigDecimal;
+import java.sql.Date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
@@ -23,7 +24,6 @@ public class RefileBalanceCommand implements Command {
 
     private static final String SUM = "sumUp";
     private static final String ID = "id";
-    private static final String DATE_PATTERN = "yyyy-MM-dd";
     private static final String BALANCE_COMMAND = "controller?command=showBalance";
     private static final String MESSAGE = "&message=";
     private static final String REFILE_BALANCE = "refileBalance";
@@ -31,8 +31,7 @@ public class RefileBalanceCommand implements Command {
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(DATE_PATTERN);
-        LocalDate currentDate = LocalDate.parse(LocalDate.now().format(formatter), formatter);
+        Date currentDate = new Date(System.currentTimeMillis());
 
         HttpSession session = request.getSession();
         Integer id = (Integer) session.getAttribute(ID);

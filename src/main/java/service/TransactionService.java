@@ -9,6 +9,7 @@ import repository.creator.RepositoryCreator;
 import specification.searchSpecification.transaction.FindByIdClient;
 
 import java.math.BigDecimal;
+import java.sql.Date;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class TransactionService {
         }
     }
 
-    public void addOperations(Integer id, Integer idClient, OperationType operationType, LocalDate date, BigDecimal sum) throws ServiceException {
+    public void addOperations(Integer id, Integer idClient, OperationType operationType, Date date, BigDecimal sum) throws ServiceException {
         try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
             TransactionRepository transactionRepository = repositoryCreator.getTransactionRepository();
             Transaction transaction = new Transaction(id, idClient, operationType, date, sum);

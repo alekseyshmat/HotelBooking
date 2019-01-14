@@ -3,6 +3,7 @@ package entity;
 import entity.types.OperationType;
 
 import java.math.BigDecimal;
+import java.sql.Date;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -11,10 +12,10 @@ public class Transaction implements Entity {
     private Integer id;
     private Integer idClient;
     private OperationType operationType;
-    private LocalDate date;
+    private Date date;
     private BigDecimal sum;
 
-    public Transaction(Integer id, Integer idClient, OperationType operationType, LocalDate date, BigDecimal sum) {
+    public Transaction(Integer id, Integer idClient, OperationType operationType, Date date, BigDecimal sum) {
         this.id = id;
         this.idClient = idClient;
         this.operationType = operationType;
@@ -47,11 +48,11 @@ public class Transaction implements Entity {
         this.operationType = operationType;
     }
 
-    public LocalDate getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 

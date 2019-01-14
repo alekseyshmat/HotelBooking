@@ -27,6 +27,7 @@
     <title>${makeOrder}</title>
     <link rel="shortcut icon" href="${pageContext.request.contextPath}/img/icon/favicon.png" type="image/png">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/makeOrderStyle.css">
+    <script src="${pageContext.request.contextPath}/js/makeOrder.js"></script>
 </head>
 
 <body>
@@ -40,7 +41,7 @@
                     <label for="checkInDate">${checkInDate}</label>
                 </div>
                 <div class="inputParameter">
-                    <input id="checkInDate" type="date" name="checkInDate">
+                    <input id="checkInDate" type="date" name="checkInDate" min="" onclick="">
                 </div>
             </div>
 
@@ -49,7 +50,7 @@
                     <label for="checkOutDate">${checkOutDate}</label>
                 </div>
                 <div class="inputParameter">
-                    <input id="checkOutDate" type="date" name="checkOutDate">
+                    <input id="checkOutDate" type="date" name="checkOutDate" >
                 </div>
             </div>
 

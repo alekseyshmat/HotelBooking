@@ -9,8 +9,7 @@ import util.Validation;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+import java.sql.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,7 +24,6 @@ public class AddRoomPriceCommand implements Command {
     private static final String COST = "cost";
     private static final String LIMIT = "limit";
     private static final String PAGE = "roomPage";
-    private static final String DATE_PATTERN = "yyyy-MM-dd";
     private static final String MESSAGE = "&message=";
     private static final String ADD_PRICE = "addPrice";
     private static final String INVALID_DATA = "invalidData";
@@ -57,10 +55,9 @@ public class AddRoomPriceCommand implements Command {
         }
 
         Integer roomId = Integer.parseInt(stringRoomId);
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(DATE_PATTERN);
 
-        LocalDate startDate = LocalDate.parse(stringStartDate, formatter);
-        LocalDate endDate = LocalDate.parse(stringEndDate, formatter);
+        Date startDate = Date.valueOf(stringStartDate);
+        Date endDate = Date.valueOf(stringEndDate);
 
         BigDecimal cost = new BigDecimal(stringCost);
 

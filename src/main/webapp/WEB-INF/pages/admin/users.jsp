@@ -78,7 +78,14 @@
                         </td>
                         <td>
                             <div class="data">
-                                    ${user.birthday}
+                                <c:choose>
+                                    <c:when test="${sessionScope.language eq 'EN'}">
+                                        <fmt:formatDate pattern="MM-dd-yyyy" value="${user.birthday}"/>
+                                    </c:when>
+                                    <c:when test="${sessionScope.language eq 'RU'}">
+                                        <fmt:formatDate pattern="dd.MM.yyyy" value="${user.birthday}"/>
+                                    </c:when>
+                                </c:choose>
                             </div>
                         </td>
                         <td>

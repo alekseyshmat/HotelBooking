@@ -64,12 +64,26 @@
                             </td>
                             <td>
                                 <div class="data">
-                                        ${roomPrice.startDate}
+                                    <c:choose>
+                                        <c:when test="${sessionScope.language eq 'EN'}">
+                                            <fmt:formatDate pattern="MM-dd-yyyy" value="${roomPrice.startDate}"/>
+                                        </c:when>
+                                        <c:when test="${sessionScope.language eq 'RU'}">
+                                            <fmt:formatDate pattern="dd.MM.yyyy" value="${roomPrice.startDate}"/>
+                                        </c:when>
+                                    </c:choose>
                                 </div>
                             </td>
                             <td>
                                 <div class="data">
-                                        ${roomPrice.endDate}
+                                    <c:choose>
+                                        <c:when test="${sessionScope.language eq 'EN'}">
+                                            <fmt:formatDate pattern="MM-dd-yyyy" value="${roomPrice.endDate}"/>
+                                        </c:when>
+                                        <c:when test="${sessionScope.language eq 'RU'}">
+                                            <fmt:formatDate pattern="dd.MM.yyyy" value="${roomPrice.endDate}"/>
+                                        </c:when>
+                                    </c:choose>
                                 </div>
                             </td>
                             <td>

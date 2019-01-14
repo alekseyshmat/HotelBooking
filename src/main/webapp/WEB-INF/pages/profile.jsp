@@ -68,7 +68,16 @@
                         <label for="birthday">${birthday}:</label>
                     </div>
                     <div class="value">
-                        <input type="text" id="birthday" name="birthday" value="${user.birthday}" readonly>
+                        <input type="text" id="birthday" name="birthday"
+                        <c:choose>
+                        <c:when test="${sessionScope.language eq 'EN'}">
+                               value="<fmt:formatDate pattern="MM-dd-yyyy" value="${user.birthday}"/>"
+                        </c:when>
+                        <c:when test="${sessionScope.language eq 'RU'}">
+                               value="<fmt:formatDate pattern="dd.MM.yyyy" value="${user.birthday}"/>"
+                        </c:when>
+                        </c:choose>
+                               readonly>
                     </div>
                 </div>
 

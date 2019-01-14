@@ -23,10 +23,9 @@ public class TransactionBuilder implements Builder<Transaction> {
         Integer idClient = resultSet.getInt(ID_CLIENT);
         OperationType operationType = OperationType.valueOf(resultSet.getString(OPERATION).toUpperCase());
         Date oldDate = resultSet.getDate(DATE);
-        LocalDate date = oldDate.toLocalDate();
         BigDecimal sum = resultSet.getBigDecimal(SUM);
 
-        return new Transaction(id, idClient, operationType, date, sum);
+        return new Transaction(id, idClient, operationType, oldDate, sum);
 
     }
 }

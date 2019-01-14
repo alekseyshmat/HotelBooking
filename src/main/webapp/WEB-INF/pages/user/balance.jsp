@@ -105,7 +105,14 @@
                         </td>
                         <td>
                             <div class="data">
-                                    ${transaction.date}
+                                <c:choose>
+                                    <c:when test="${sessionScope.language eq 'EN'}">
+                                        <fmt:formatDate pattern="MM-dd-yyyy" value="${transaction.date}"/>
+                                    </c:when>
+                                    <c:when test="${sessionScope.language eq 'RU'}">
+                                        <fmt:formatDate pattern="dd.MM.yyyy" value="${transaction.date}"/>
+                                    </c:when>
+                                </c:choose>
                             </div>
                         </td>
                         <td>

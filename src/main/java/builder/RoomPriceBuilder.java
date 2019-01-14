@@ -26,12 +26,9 @@ public class RoomPriceBuilder implements Builder<RoomPrice> {
         Integer idRoom = resultSet.getInt(ID_ROOM);
         String roomNumber = resultSet.getString(ROOM_NUMBER);
 
-        Date start = resultSet.getDate(START_DATE);
-        Date end = resultSet.getDate(END_DATE);
+        Date startDate = resultSet.getDate(START_DATE);
+        Date endDate = resultSet.getDate(END_DATE);
         BigDecimal cost = resultSet.getBigDecimal(COST);
-
-        LocalDate startDate = start.toLocalDate();
-        LocalDate endDate = end.toLocalDate();
 
         return new RoomPrice(id, idRoom, roomNumber, startDate, endDate, cost, room);
     }

@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.math.BigDecimal;
+import java.sql.Date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Optional;
@@ -27,13 +28,11 @@ public class PayOrderCommand implements Command {
     private static final String NO_MONEY = "noMoney";
     private static final String ORDER_ID = "orderId";
     private static final String ID = "id";
-    private static final String DATE_PATTERN = "yyyy-MM-dd";
     private static final Integer COMPARE_INDEX = 0;
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(DATE_PATTERN);
-        LocalDate currentDate = LocalDate.parse(LocalDate.now().format(formatter), formatter);
+        Date currentDate = new Date(System.currentTimeMillis());
 
         HttpSession session = request.getSession();
         Integer id = (Integer) session.getAttribute(ID);

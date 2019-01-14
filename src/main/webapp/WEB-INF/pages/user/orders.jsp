@@ -75,12 +75,26 @@
                     <tr>
                         <td>
                             <div class="data">
-                                    ${activeOrder.checkInDate}
+                                <c:choose>
+                                    <c:when test="${sessionScope.language eq 'EN'}">
+                                        <fmt:formatDate pattern="MM-dd-yyyy" value="${activeOrder.checkInDate}"/>
+                                    </c:when>
+                                    <c:when test="${sessionScope.language eq 'RU'}">
+                                        <fmt:formatDate pattern="dd.MM.yyyy" value="${activeOrder.checkInDate}"/>
+                                    </c:when>
+                                </c:choose>
                             </div>
                         </td>
                         <td>
                             <div class="data">
-                                    ${activeOrder.checkOutDate}
+                                <c:choose>
+                                    <c:when test="${sessionScope.language eq 'EN'}">
+                                        <fmt:formatDate pattern="MM-dd-yyyy" value="${activeOrder.checkOutDate}"/>
+                                    </c:when>
+                                    <c:when test="${sessionScope.language eq 'RU'}">
+                                        <fmt:formatDate pattern="dd.MM.yyyy" value="${activeOrder.checkOutDate}"/>
+                                    </c:when>
+                                </c:choose>
                             </div>
                         </td>
                         <td>
@@ -161,12 +175,26 @@
                     <tr>
                         <td>
                             <div class="data">
-                                    ${order.checkInDate}
+                                <c:choose>
+                                    <c:when test="${sessionScope.language eq 'EN'}">
+                                        <fmt:formatDate pattern="MM-dd-yyyy" value="${order.checkInDate}"/>
+                                    </c:when>
+                                    <c:when test="${sessionScope.language eq 'RU'}">
+                                        <fmt:formatDate pattern="dd.MM.yyyy" value="${order.checkInDate}"/>
+                                    </c:when>
+                                </c:choose>
                             </div>
                         </td>
                         <td>
                             <div class="data">
-                                    ${order.checkOutDate}
+                                <c:choose>
+                                    <c:when test="${sessionScope.language eq 'EN'}">
+                                        <fmt:formatDate pattern="MM-dd-yyyy" value="${order.checkOutDate}"/>
+                                    </c:when>
+                                    <c:when test="${sessionScope.language eq 'RU'}">
+                                        <fmt:formatDate pattern="dd.MM.yyyy" value="${order.checkOutDate}"/>
+                                    </c:when>
+                                </c:choose>
                             </div>
                         </td>
                         <td>
@@ -249,7 +277,14 @@
 
                         <td>
                             <div class="data">
-                                    ${order.invoiceDate}
+                                <c:choose>
+                                    <c:when test="${sessionScope.language eq 'EN'}">
+                                        <fmt:formatDate pattern="MM-dd-yyyy" value="${order.invoiceDate}"/>
+                                    </c:when>
+                                    <c:when test="${sessionScope.language eq 'RU'}">
+                                        <fmt:formatDate pattern="dd.MM.yyyy" value="${order.invoiceDate}"/>
+                                    </c:when>
+                                </c:choose>
                             </div>
                         </td>
                         <td>
@@ -258,11 +293,21 @@
                                     ${canceled}
                                 </c:when>
                                 <c:when test="${order.orderStatus== 'COMPLETED'}">
-                                    <button data-completeid="${order.id}"
+                                    <button
+                                            <c:choose>
+                                                <c:when test="${sessionScope.language eq 'EN'}">
+                                                    data-indate="<fmt:formatDate pattern="MM-dd-yyyy" value="${order.checkInDate}"/>"
+                                                    data-outdate="<fmt:formatDate pattern="MM-dd-yyyy" value="${order.checkOutDate}"/>"
+                                                    data-invoicedate="<fmt:formatDate pattern="MM-dd-yyyy" value="${order.invoiceDate}"/>"
+                                                </c:when>
+                                                <c:when test="${sessionScope.language eq 'RU'}">
+                                                    data-indate="<fmt:formatDate pattern="dd.MM.yyyy" value="${order.checkInDate}"/>"
+                                                    data-outdate="<fmt:formatDate pattern="dd.MM.yyyy" value="${order.checkOutDate}"/>"
+                                                    data-invoicedate="<fmt:formatDate pattern="dd.MM.yyyy" value="${order.invoiceDate}"/>"
+                                                </c:when>
+                                            </c:choose>
+                                            data-completeid="${order.id}"
                                             data-name="${order.user.lastName} ${order.user.firstName}"
-                                            data-indate="${order.checkInDate}"
-                                            data-outdate="${order.checkOutDate}"
-                                            data-invoicedate="${order.invoiceDate}"
                                             data-roomnumber="${order.room.roomNumber}"
                                             data-cost="${order.cost}"
                                             class="showDetailsButton"
