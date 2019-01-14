@@ -30,6 +30,8 @@
 <fmt:message bundle="${naming}" key="room.label.familyRoom" var="familyRoom"/>
 <fmt:message bundle="${naming}" key="room.label.standard" var="standard"/>
 <fmt:message bundle="${naming}" key="room.label.president" var="president"/>
+<fmt:message bundle="${naming}" key="order.title.allOrders" var="allOrders"/>
+
 
 <html>
 <head>
@@ -42,7 +44,7 @@
     <script src="${pageContext.request.contextPath}/js/tab.js"></script>
     <script src="${pageContext.request.contextPath}/js/adminOrders.js"></script>
 
-    <title>All orders</title>
+    <title>${allOrders}</title>
 </head>
 <body>
 <jsp:include page="/WEB-INF/fragments/header/mainHeader.jsp"/>

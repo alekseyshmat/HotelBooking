@@ -10,6 +10,7 @@ import util.Validation;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -18,6 +19,7 @@ import java.util.Map;
 public class RoomCommand implements Command {
 
     private static final String ROOMS_PAGE = "/WEB-INF/pages/admin/rooms.jsp";
+    private static final String ERROR_PAGE = "/WEB-INF/pages/error/Error404.jsp";
     private static final String ROOM_LIST = "roomList";
     private static final String PAGE_NUMBER = "pageNumber";
     private static final String PAGES = "pages";
@@ -39,7 +41,7 @@ public class RoomCommand implements Command {
         pageData.put(LIMIT, stringLimit);
         pageData.put(PAGE_NUMBER, stringPageNumber);
         if (!validation.isValidData(pageData)) {
-            return CommandResult.forward(ROOMS_PAGE); //todo add page tp forward
+            return CommandResult.forward(ERROR_PAGE);
         }
 
         Integer limit = Integer.valueOf(stringLimit);

@@ -37,12 +37,18 @@
     </filter-mapping>
 
     <error-page>
-        <error-code>401</error-code>
-        <location>/WEB-INF/pages/AccsessError.jsp</location>
+        <error-code>403</error-code>
+        <location>/WEB-INF/pages/error/Error403.jsp</location>
     </error-page>
-<!--    <error-page>
-        <exception-type>javax.servlet.ServletException</exception-type>
-        <location>/WEB-INF/pages/AccsessError.jsp</location>
-    </error-page>-->
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/WEB-INF/pages/error/Error404.jsp</location>
+    </error-page>
+
+    <error-page>
+        <error-code>500</error-code>
+        <location>/WEB-INF/pages/error/Error500.jsp</location>
+    </error-page>
 
 </web-app>

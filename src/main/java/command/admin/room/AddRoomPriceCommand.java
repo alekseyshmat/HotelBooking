@@ -16,6 +16,7 @@ import java.util.Map;
 public class AddRoomPriceCommand implements Command {
 
     private static final String ROOM_PRICES_PAGE = "controller?command=showRoomPrices&roomId=";
+    private static final String ERROR_PAGE = "/WEB-INF/pages/error/Error404.jsp";
     private static final String ROOM_LIMIT = "&roomLimit=";
     private static final String ROOM_PAGE = "&roomPage=";
     private static final String ROOM_ID = "roomId";
@@ -43,7 +44,7 @@ public class AddRoomPriceCommand implements Command {
         pageData.put(LIMIT, limit);
         pageData.put(PAGE, page);
         if (!validation.isValidData(pageData)) {
-            return CommandResult.redirect(ROOM_PRICES_PAGE + stringRoomId + ROOM_LIMIT + limit + ROOM_PAGE + page + MESSAGE); //todo add page tp forward
+            return CommandResult.forward(ERROR_PAGE);
         }
 
         Map<String, String> inputData = new HashMap<>();
@@ -51,7 +52,8 @@ public class AddRoomPriceCommand implements Command {
         inputData.put(COST, stringCost);
 
         if (!validation.isValidData(inputData)) {
-            return CommandResult.redirect(ROOM_PRICES_PAGE + stringRoomId + ROOM_LIMIT + limit + ROOM_PAGE + page + MESSAGE + INVALID_DATA);
+            return CommandResult.redirect(ROOM_PRICES_PAGE + stringRoomId + ROOM_LIMIT + limit
+                    + ROOM_PAGE + page + MESSAGE + INVALID_DATA);
         }
 
         Integer roomId = Integer.parseInt(stringRoomId);
@@ -64,6 +66,7 @@ public class AddRoomPriceCommand implements Command {
         RoomPriceService roomPriceService = new RoomPriceService();
         roomPriceService.addPrice(null, roomId, startDate, endDate, cost);
 
-        return CommandResult.redirect(ROOM_PRICES_PAGE + stringRoomId + ROOM_LIMIT + limit + ROOM_PAGE + page + MESSAGE + ADD_PRICE);
+        return CommandResult.redirect(ROOM_PRICES_PAGE + stringRoomId + ROOM_LIMIT + limit
+                + ROOM_PAGE + page + MESSAGE + ADD_PRICE);
     }
 }

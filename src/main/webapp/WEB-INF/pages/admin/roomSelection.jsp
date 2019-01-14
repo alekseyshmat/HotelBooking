@@ -15,6 +15,8 @@
 <fmt:message bundle="${naming}" key="room.label.familyRoom" var="familyRoom"/>
 <fmt:message bundle="${naming}" key="room.label.standard" var="standard"/>
 <fmt:message bundle="${naming}" key="room.label.president" var="president"/>
+<fmt:message bundle="${naming}" key="room.label.roomSelection" var="roomSelection"/>
+<fmt:message bundle="${naming}" key="button.label.choose" var="choose"/>
 
 <html>
 <head>
@@ -23,7 +25,7 @@
     <link rel="shortcut icon" href="${pageContext.request.contextPath}/img/icon/favicon.png" type="image/png">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/dataStyle.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/tableStyle.css">
-    <title>Title</title>
+    <title>${roomSelection}</title>
 </head>
 <body>
 <jsp:include page="../../fragments/header/mainHeader.jsp"/>
@@ -34,7 +36,7 @@
     </div>
     <form action="${pageContext.request.contextPath}/controller?command=processOrder" method="post">
         <div class="rightColumn">
-            <div class="card">
+            <div class="tableScroll">
                 <table>
                     <tr>
                         <th></th>
@@ -90,10 +92,10 @@
                     </c:forEach>
                 </table>
             </div>
-        </div>
-        <div class="addPanel">
-            <button type="submit">{choose}
-            </button>
+            <div class="addPanel">
+                <button class="addButton" type="submit">${choose}
+                </button>
+            </div>
         </div>
     </form>
 </div>

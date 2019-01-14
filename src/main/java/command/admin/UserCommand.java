@@ -18,6 +18,7 @@ import java.util.Map;
 public class UserCommand implements Command {
 
     private static final String USERS_PAGE = "/WEB-INF/pages/admin/users.jsp";
+    private static final String ERROR_PAGE = "/WEB-INF/pages/error/Error404.jsp";
     private static final String PAGE_NUMBER = "pageNumber";
     private static final String PAGES = "pages";
     private static final String LIMIT = "limit";
@@ -37,7 +38,7 @@ public class UserCommand implements Command {
         pageData.put(LIMIT, stringLimit);
         pageData.put(PAGE_NUMBER, stringPageNumber);
         if (!validation.isValidData(pageData)) {
-            return CommandResult.forward(USERS_PAGE); //todo add page tp forward
+            return CommandResult.forward(ERROR_PAGE);
         }
 
         Integer limit = Integer.valueOf(stringLimit);
