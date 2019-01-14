@@ -7,10 +7,13 @@ import entity.types.Role;
 import exception.ServiceException;
 import service.UserService;
 import util.PagesDelimeter;
+import util.Validation;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class UserCommand implements Command {
 
@@ -20,15 +23,25 @@ public class UserCommand implements Command {
     private static final String LIMIT = "limit";
     private static final String USER_LIST = "userList";
 
-
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
         PagesDelimeter<User> roomPagesDelimiter = new PagesDelimeter<>();
         UserService userService = new UserService();
         List<User> fullUserList = userService.findByRole(Role.USER);
 
-        Integer limit = Integer.valueOf(request.getParameter(LIMIT));
-        Integer pageNumber = Integer.valueOf(request.getParameter(PAGE_NUMBER));
+        String stringLimit = request.getParameter(LIMIT);
+        String stringPageNumber = request.getParameter(PAGE_NUMBER);
+
+        Validation validation = new Validation();
+        Map<String, String> pageData = new HashMap<>();
+        pageData.put(LIMIT, stringLimit);
+        pageData.put(PAGE_NUMBER, stringPageNumber);
+        if (!validation.isValidData(pageData)) {
+            return CommandResult.forward(USERS_PAGE); //todo add page tp forward
+        }
+
+        Integer limit = Integer.valueOf(stringLimit);
+        Integer pageNumber = Integer.valueOf(stringPageNumber);
 
         Integer offset = limit * (pageNumber - 1);
         List<User> userList = userService.findByRole(Role.USER, limit, offset);

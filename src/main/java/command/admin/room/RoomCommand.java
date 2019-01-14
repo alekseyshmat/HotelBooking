@@ -6,11 +6,14 @@ import entity.Room;
 import exception.ServiceException;
 import service.RoomService;
 import util.PagesDelimeter;
+import util.Validation;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class RoomCommand implements Command {
 
@@ -28,8 +31,19 @@ public class RoomCommand implements Command {
         RoomService roomService = new RoomService();
         List<Room> fullRoomList = roomService.findAll();
 
-        Integer limit = Integer.valueOf(request.getParameter(LIMIT));
-        Integer pageNumber = Integer.valueOf(request.getParameter(PAGE_NUMBER));
+        String stringLimit = request.getParameter(LIMIT);
+        String stringPageNumber = request.getParameter(PAGE_NUMBER);
+
+        Validation validation = new Validation();
+        Map<String, String> pageData = new HashMap<>();
+        pageData.put(LIMIT, stringLimit);
+        pageData.put(PAGE_NUMBER, stringPageNumber);
+        if (!validation.isValidData(pageData)) {
+            return CommandResult.forward(ROOMS_PAGE); //todo add page tp forward
+        }
+
+        Integer limit = Integer.valueOf(stringLimit);
+        Integer pageNumber = Integer.valueOf(stringPageNumber);
 
         Integer offset = limit * (pageNumber - 1);
         List<Room> roomList = roomService.findAll(limit, offset);

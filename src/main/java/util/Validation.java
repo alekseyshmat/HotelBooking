@@ -10,6 +10,7 @@ public class Validation {
     private static final String USERNAME = "login";
     private static final String PASSWORD = "userPass";
     private static final String SUM = "sumUp";
+    private static final String PAGE_NUMBER = "pageNumber";
     private static final String ADD_ROOM_NUMBER = "addRoomNumber";
     private static final String EDIT_ROOM_NUMBER = "editRoomNumber";
     private static final String ROOM_ID = "roomId";
@@ -61,6 +62,8 @@ public class Validation {
             case LIMIT:
                 return PAGE_PATTERN;
             case PAGE:
+                return PAGE_PATTERN;
+            case PAGE_NUMBER:
                 return PAGE_PATTERN;
             default:
                 throw new UnsupportedOperationException();

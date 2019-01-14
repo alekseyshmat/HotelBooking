@@ -13,6 +13,7 @@
 <fmt:message bundle="${naming}" key="user.label.login.placeholder" var="username"/>
 <fmt:message bundle="${naming}" key="mainHeader.label.profile" var="profile"/>
 <fmt:message bundle="${naming}" key="profile.label.editingProfile" var="editingProfile"/>
+<fmt:message bundle="${naming}" key="profile.label.profileError" var="profileError"/>
 
 <html>
 
@@ -47,7 +48,8 @@
                         <label for="lastName">${lastName}:</label>
                     </div>
                     <div class="value">
-                        <input type="text" id="lastName" name="lastName" value="${user.lastName}">
+                        <input type="text" id="lastName" name="lastName" value="${user.lastName}"
+                               pattern="^([a-zA-Z]){3,44}$" required>
                     </div>
                 </div>
 
@@ -56,7 +58,8 @@
                         <label for="firstName">${firstName}:</label>
                     </div>
                     <div class="value">
-                        <input type="text" id="firstName" name="firstName" value="${user.firstName}">
+                        <input type="text" id="firstName" name="firstName" value="${user.firstName}"
+                               pattern="^([a-zA-Z]){3,44}$" required>
                     </div>
                 </div>
 
@@ -96,7 +99,14 @@
             <div class="modal" id="profileNotify" style="display: block;">
                 <div class="modal-content animate">
                        <span class="resultButtons">
-                        <label>${editingProfile}</label>
+                              <c:choose>
+                                  <c:when test="${requestScope.message eq 'editingProfile'}">
+                                      <label>${editingProfile}</label>
+                                  </c:when>
+                                  <c:when test="${requestScope.message eq 'profileError'}">
+                                      <label>${profileError}</label>
+                                  </c:when>
+                              </c:choose>
                 <a class="noButton" type="submit"
                    href="${pageContext.servletContext.contextPath}/controller?command=showProfile">Ok
                 </a>
