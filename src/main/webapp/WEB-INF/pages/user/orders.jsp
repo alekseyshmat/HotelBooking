@@ -35,6 +35,7 @@
 <fmt:message bundle="${naming}" key="button.label.showDetails" var="showDetails"/>
 <fmt:message bundle="${naming}" key="order.label.payingOrder" var="payingOrder"/>
 <fmt:message bundle="${naming}" key="order.label.noMoney" var="noMoney"/>
+<fmt:message bundle="${naming}" key="order.title.myOrders" var="myOrders"/>
 
 <html>
 <head>
@@ -45,7 +46,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/tabStyle.css">
     <script src="${pageContext.request.contextPath}/js/tab.js"></script>
     <script src="${pageContext.request.contextPath}/js/userOrder.js"></script>
-    <title>My orders</title>
+    <title>${myOrders}</title>
 </head>
 <body>
 <jsp:include page="../../fragments/header/mainHeader.jsp"/>

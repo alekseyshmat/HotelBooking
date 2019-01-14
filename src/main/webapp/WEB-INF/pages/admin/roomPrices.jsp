@@ -15,6 +15,7 @@
 <fmt:message bundle="${naming}" key="table.label.returnPage" var="returnPage"/>
 <fmt:message bundle="${naming}" key="room.label.addingPrice" var="addingPrice"/>
 <fmt:message bundle="${naming}" key="room.label.invalidData" var="invalidData"/>
+<fmt:message bundle="${naming}" key="room.title.roomPrices" var="roomPrices"/>
 
 <html>
 <head>
@@ -24,7 +25,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/dataStyle.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/tableStyle.css">
     <script src="${pageContext.request.contextPath}/js/addPrice.js"></script>
-    <title>Room prices</title>
+    <title>${roomPrices}</title>
 </head>
 <body>
 <jsp:include page="../../fragments/header/mainHeader.jsp"/>
