@@ -28,6 +28,7 @@ public class PayOrderCommand implements Command {
     private static final String ORDER_ID = "orderId";
     private static final String ID = "id";
     private static final String DATE_PATTERN = "yyyy-MM-dd";
+    private static final Integer COMPARE_INDEX = 0;
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
@@ -57,7 +58,7 @@ public class PayOrderCommand implements Command {
                 User user = optionalUser.get();
 
                 BigDecimal userBalance = user.getBalance();
-                if (userBalance.compareTo(cost) < 0) {
+                if (userBalance.compareTo(cost) < COMPARE_INDEX) {
                     return CommandResult.redirect(ORDER_PAGE + MESSAGE + NO_MONEY);
                 }
 

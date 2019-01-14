@@ -14,6 +14,7 @@
 <fmt:message bundle="${naming}" key="table.label.priceForRoom" var="priceForRoom"/>
 <fmt:message bundle="${naming}" key="table.label.returnPage" var="returnPage"/>
 <fmt:message bundle="${naming}" key="room.label.addingPrice" var="addingPrice"/>
+<fmt:message bundle="${naming}" key="room.label.invalidData" var="invalidData"/>
 
 <html>
 <head>
@@ -90,7 +91,14 @@
                 <div class="modal" id="roomPriceNotify" style="display: block;">
                     <div class="modal-content animate">
                        <span class="resultButtons">
-                        <label>${addingPrice}</label>
+                           <c:choose>
+                               <c:when test="${requestScope.message eq 'addPrice'}">
+                                   <label>${addingPrice}</label>
+                               </c:when>
+                               <c:when test="${requestScope.message eq 'invalidData'}">
+                                   <label>${invalidData}</label>
+                               </c:when>
+                           </c:choose>
                 <a class="noButton" type="submit"
                    href="${pageContext.servletContext.contextPath}/controller?command=showRoomPrices&roomId=${requestScope.roomId}&roomLimit=${requestScope.roomLimit}&roomPage=${requestScope.roomPage}">Ok
                 </a>

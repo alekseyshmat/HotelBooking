@@ -32,13 +32,15 @@
     <div class="modal-content animate">
         <form action="${pageContext.servletContext.contextPath}/controller?command=saveRoom"
               method="post">
-            <input type="hidden" id="roomId" name="roomId" value="">
+            <input type="hidden" id="roomId" name="roomId"
+                   pattern="^([1-9]{1}[0-9]{0,10})$" value="">
 
             <label for="editRoomNumber"><b>${roomId}</b></label>
-            <input type="text" id="editRoomNumber" name="editRoomNumber" value="" required>
+            <input type="text" id="editRoomNumber" name="editRoomNumber" value=""
+                   pattern="^([A-Za-z1-9]{1}[A-Za-z0-9]{0,9})$" required>
 
             <label for="editTypeRoom"><b>${type}</b></label>
-            <select id="editTypeRoom" name="editTypeRoom" value="">
+            <select id="editTypeRoom" name="editTypeRoom" value="" required>
                 <option disabled>${type}</option>
                 <option value="APARTMENT">${apartment}</option>
                 <option value="BUSINESS">${business}</option>

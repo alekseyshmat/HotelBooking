@@ -5,6 +5,7 @@ import command.CommandResult;
 import entity.types.OrderStatus;
 import exception.ServiceException;
 import service.OrderService;
+import util.Validation;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,7 +21,14 @@ public class CompleteOrderCommand implements Command {
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
-        Integer id = Integer.valueOf(request.getParameter(ID));
+        Validation validation = new Validation();
+        String stringId = request.getParameter(ID);
+
+        if (!validation.isValidData(ID, stringId)){
+            return CommandResult.redirect(ADMIN_ORDERS);
+        }
+
+        Integer id = Integer.valueOf(stringId);
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(DATE_PATTERN);
         LocalDate date = LocalDate.parse(LocalDate.now().format(formatter), formatter);

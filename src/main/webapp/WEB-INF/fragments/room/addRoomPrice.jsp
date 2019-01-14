@@ -26,15 +26,18 @@
         <form action="${pageContext.servletContext.contextPath}/controller?command=addRoomPrice&limit=${requestScope.roomLimit}&roomPage=${requestScope.roomPage}"
               method="post">
             <label for="roomId"><b>${roomId}</b></label>
-            <input id="roomIdHidden" name="roomId" type="hidden"  value="">
-            <input id="roomId" name="roomId" type="text" disabled value="">
+            <input id="roomIdHidden" name="roomId" type="hidden" value=""
+                   pattern="^([1-9]{1}[0-9]{0,10})$">
+            <input id="roomId" name="roomId" type="text" disabled value=""
+                   pattern="^([1-9]{1}[0-9]{0,10})$">
             <label for="startDate"><b>${startDate}</b></label>
             <input id="startDate" type="date" name="startDate" required>
 
             <label for="endDate"><b>${endDate}</b></label>
             <input id="endDate" type="date" name="endDate" placeholder="dd" required>
             <label for="cost"><b>${cost}</b></label>
-            <input id="cost" type="text" name="cost" placeholder="${enterCost}" required>
+            <input id="cost" type="text" name="cost" placeholder="${enterCost}"
+                   pattern="^([1-9]{1}[0-9]{0,8}\.?[0-9]{0,2})$" required>
 
             <div>
                 <input class="prcButton" type="submit" value="${add}"/>

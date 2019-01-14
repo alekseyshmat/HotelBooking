@@ -10,6 +10,13 @@ public class Validation {
     private static final String USERNAME = "login";
     private static final String PASSWORD = "userPass";
     private static final String SUM = "sumUp";
+    private static final String ADD_ROOM_NUMBER = "addRoomNumber";
+    private static final String EDIT_ROOM_NUMBER = "editRoomNumber";
+    private static final String ROOM_ID = "roomId";
+    private static final String COST = "cost";
+    private static final String ACTIVE_ID = "activeId";
+    private static final String LIMIT = "limit";
+    private static final String PAGE = "roomPage";
 
 
     private static final String NAME_PATTERN = "^([a-zA-Z]){3,44}$";
@@ -17,6 +24,9 @@ public class Validation {
     private static final String USERNAME_PATTERN = "^[a-zA-Z][a-zA-Z0-9-_\\.]{1,20}$";
     private static final String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$";
     private static final String SUM_PATTERN = "^([1-9]{1}[0-9]{0,8}\\.?[0-9]{0,2})$";
+    private static final String ROOM_NUMBER_PATTERN = "^([A-Za-z1-9]{1}[A-Za-z0-9]{0,9})$";
+    private static final String ID_PATTERN = "^([1-9]{1}[0-9]{0,10})$";
+    private static final String PAGE_PATTERN = "^([1-9]{1}[0-9]*)$";
 
     private String invalidData;
 
@@ -38,6 +48,20 @@ public class Validation {
                 return PASSWORD_PATTERN;
             case SUM:
                 return SUM_PATTERN;
+            case COST:
+                return SUM_PATTERN;
+            case ADD_ROOM_NUMBER:
+                return ROOM_NUMBER_PATTERN;
+            case EDIT_ROOM_NUMBER:
+                return ROOM_NUMBER_PATTERN;
+            case ROOM_ID:
+                return ID_PATTERN;
+            case ACTIVE_ID:
+                return ID_PATTERN;
+            case LIMIT:
+                return PAGE_PATTERN;
+            case PAGE:
+                return PAGE_PATTERN;
             default:
                 throw new UnsupportedOperationException();
         }
@@ -59,6 +83,20 @@ public class Validation {
         }
         return true;
     }
+
+    public boolean isValidData(String key, String value) {
+        if (value != null) {
+            String pattern = definePattern(key);
+            if (!isValid(pattern, value)) {
+                invalidData = key;
+                return false;
+            }
+        } else {
+            return false;
+        }
+        return true;
+    }
+
 
     public String getInvalidData() {
         return invalidData;

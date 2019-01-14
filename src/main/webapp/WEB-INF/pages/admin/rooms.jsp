@@ -27,6 +27,7 @@
 <fmt:message bundle="${naming}" key="room.label.free" var="free"/>
 <fmt:message bundle="${naming}" key="room.label.addingRoom" var="addingRoom"/>
 <fmt:message bundle="${naming}" key="room.label.editingRoom" var="editingRoom"/>
+<fmt:message bundle="${naming}" key="room.label.invalidRoom" var="invalidRoom"/>
 
 <html>
 <head>
@@ -141,6 +142,7 @@
                     onclick="document.getElementById('addRoom').style.display='block'">${addRoom}
             </button>
         </div>
+
         <c:if test="${not empty requestScope.notifyMessage}">
             <div class="modal" id="roomNotify" style="display: block;">
                 <div class="modal-content animate">
@@ -151,6 +153,9 @@
                 </c:when>
                 <c:when test="${requestScope.notifyMessage eq 'edited'}">
                     <label>${editingRoom}</label>
+                </c:when>
+                <c:when test="${requestScope.notifyMessage eq 'invalidRoom'}">
+                    <label>${invalidRoom}</label>
                 </c:when>
             </c:choose>
                 <a class="noButton" type="submit"

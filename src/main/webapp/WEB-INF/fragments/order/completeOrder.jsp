@@ -30,7 +30,8 @@
 
     <div class="modal-content animate">
         <form action="${pageContext.request.contextPath}/controller?command=completeOrder" method="post">
-            <input type="hidden" id="activeId" name="activeId" value="">
+            <input type="hidden" id="activeId" name="activeId" value=""
+                   pattern="^([1-9]{1}[0-9]{0,10})$">
             <label for="activeName"><b>${name}</b></label>
             <input type="text" id="activeName" name="activeName" value=""
                    readonly>

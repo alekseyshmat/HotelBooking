@@ -39,10 +39,8 @@ public class RefileBalanceCommand implements Command {
 
         String stringSum = request.getParameter(SUM);
 
-        Map<String, String> inputData = new HashMap<>();
-        inputData.put(SUM, stringSum);
         Validation validation = new Validation();
-        if (!validation.isValidData(inputData)) {
+        if (!validation.isValidData(SUM, stringSum)) {
             return CommandResult.redirect(BALANCE_COMMAND + MESSAGE + INVALID_SUM);
         }
         BigDecimal sumUp = BigDecimal.valueOf(Long.parseLong(stringSum));
