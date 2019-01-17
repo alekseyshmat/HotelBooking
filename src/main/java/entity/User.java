@@ -157,7 +157,7 @@ public class User implements Serializable, Entity {
         }
 
         User user = (User) obj;
-        return id == user.id &&
+        return Objects.equals(id, user.id) &&
                 Objects.equals(firstName, user.firstName) &&
                 Objects.equals(lastName, user.lastName) &&
                 Objects.equals(birthday, user.birthday) &&
@@ -165,12 +165,25 @@ public class User implements Serializable, Entity {
                 Objects.equals(login, user.login) &&
                 Objects.equals(password, user.password) &&
                 Objects.equals(balance, user.balance) &&
-                Objects.equals(role, user.role);
+                Objects.equals(role, user.role) &&
+                Objects.equals(blockingStatus, user.blockingStatus);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(firstName, lastName, birthday, email, login, password, balance, role);
+        final int prime = 31;
+        int result = 17;
+        result = prime * result + id;
+        result = prime * result + firstName.hashCode();
+        result = prime * result + lastName.hashCode();
+        result = prime * result + birthday.hashCode();
+        result = prime * result + email.hashCode();
+        result = prime * result + login.hashCode();
+        result = prime * result + password.hashCode();
+        result = prime * result + balance.hashCode();
+        result = prime * result + role.hashCode();
+        result = prime * result + blockingStatus.hashCode();
+        return result;
     }
 
     @Override
@@ -184,6 +197,7 @@ public class User implements Serializable, Entity {
                 ", login='" + login +
                 ", password=" + password +
                 ", balance=" + balance +
-                ", role=" + role;
+                ", role=" + role +
+                ", blocking status=" + blockingStatus;
     }
 }

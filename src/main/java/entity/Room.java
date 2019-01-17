@@ -13,21 +13,10 @@ public class Room implements Entity {
     private BigDecimal cost;
     private boolean isDeleted;
 
-    //build without join
     public Room(Integer id, String roomNumber, RoomType roomType) {
         this.id = id;
         this.roomNumber = roomNumber;
         this.roomType = roomType;
-    }
-
-
-
-    //build with join
-    public Room(Integer id, String roomNumber, RoomType roomType, BigDecimal cost, boolean busy) {
-        this.id = id;
-        this.roomNumber = roomNumber;
-        this.roomType = roomType;
-        this.cost = cost;
     }
 
     public Integer getId() {
@@ -85,15 +74,22 @@ public class Room implements Entity {
         }
 
         Room room = (Room) obj;
-        return id == room.id &&
+        return Objects.equals(id, room.id) &&
                 Objects.equals(roomNumber, room.roomNumber) &&
                 Objects.equals(roomType, room.roomType) &&
-                Objects.equals(cost, room.cost);
+                Objects.equals(cost, room.cost) &&
+                Objects.equals(isDeleted, room.isDeleted);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, roomNumber, roomType, cost);
+        final int prime = 31;
+        int result = 17;
+        result = prime * result + id;
+        result = prime * result + roomNumber.hashCode();
+        result = prime * result + roomType.hashCode();
+        result = prime * result + cost.hashCode();
+        return result;
     }
 
     @Override
@@ -102,6 +98,7 @@ public class Room implements Entity {
                 ", id=" + id +
                 ", room number=" + roomNumber +
                 ", room type=" + roomType +
-                ", cost=" + cost;
+                ", cost=" + cost +
+                ", is deleted=" + isDeleted;
     }
 }

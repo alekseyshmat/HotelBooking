@@ -23,21 +23,6 @@ public class Order implements Entity {
     private User user;
     private Room room;
 
-
-    //builder user
-    public Order(Integer id, Integer idClient, Date checkInDate, Date checkOutDate, RoomType type,
-                 PaymentStatus paymentStatus, OrderStatus orderStatus,
-                 BigDecimal cost) {
-        this.id = id;
-        this.idClient = idClient;
-        this.checkInDate = checkInDate;
-        this.checkOutDate = checkOutDate;
-        this.type = type;
-        this.paymentStatus = paymentStatus;
-        this.orderStatus = orderStatus;
-        this.cost = cost;
-    }
-
     //process order
     public Order(Integer id, Integer idRoom, BigDecimal cost, OrderStatus orderStatus) {
         this.id = id;
@@ -51,21 +36,6 @@ public class Order implements Entity {
         this.id = id;
         this.invoiceDate = invoiceDate;
         this.orderStatus = orderStatus;
-    }
-
-    //show order admin
-    public Order(Integer id, Integer idClient, Date checkInDate, Date checkOutDate, Date invoiceDate,
-                 RoomType roomType, PaymentStatus paymentStatus,
-                 OrderStatus orderStatus, BigDecimal cost) {
-        this.id = id;
-        this.idClient = idClient;
-        this.checkInDate = checkInDate;
-        this.checkOutDate = checkOutDate;
-        this.type = roomType;
-        this.invoiceDate = invoiceDate;
-        this.paymentStatus = paymentStatus;
-        this.orderStatus = orderStatus;
-        this.cost = cost;
     }
 
     //pay order
@@ -83,6 +53,7 @@ public class Order implements Entity {
         this.type = roomType;
     }
 
+    //builder
     public Order(Integer id, Integer idClient, Date checkInDate, Date checkOutDate, Date invoiceDate,
                  RoomType roomType, PaymentStatus paymentStatus, OrderStatus orderStatus, BigDecimal cost, User user, Room room) {
         this.id = id;
@@ -96,22 +67,9 @@ public class Order implements Entity {
         this.cost = cost;
         this.user = user;
         this.room = room;
-
     }
 
-    public Order(Integer id, Integer idClient, Date checkInDate, Date checkOutDate, RoomType roomType,
-                 PaymentStatus paymentStatus, OrderStatus orderStatus, BigDecimal cost, Room room) {
-        this.id = id;
-        this.idClient = idClient;
-        this.checkInDate = checkInDate;
-        this.checkOutDate = checkOutDate;
-        this.type = roomType;
-        this.paymentStatus = paymentStatus;
-        this.orderStatus = orderStatus;
-        this.cost = cost;
-        this.room = room;
-    }
-
+    //cancel
     public Order(Integer id, OrderStatus orderStatus) {
         this.id = id;
         this.orderStatus = orderStatus;
@@ -189,7 +147,6 @@ public class Order implements Entity {
         this.invoiceDate = invoiceDate;
     }
 
-
     public BigDecimal getCost() {
         return cost;
     }
@@ -225,19 +182,38 @@ public class Order implements Entity {
         }
 
         Order order = (Order) obj;
-        return id == order.id &&
-                idClient == order.idClient &&
+        return Objects.equals(id, order.id) &&
+                Objects.equals(idClient, order.idClient) &&
+                Objects.equals(idRoom, order.idRoom) &&
                 Objects.equals(checkInDate, order.checkInDate) &&
                 Objects.equals(checkOutDate, order.checkOutDate) &&
                 Objects.equals(invoiceDate, order.invoiceDate) &&
+                Objects.equals(type, order.getType()) &&
                 Objects.equals(paymentStatus, order.paymentStatus) &&
-                Objects.equals(orderStatus, order.orderStatus);
+                Objects.equals(orderStatus, order.orderStatus) &&
+                Objects.equals(cost, order.getCost()) &&
+                Objects.equals(user, order.getUser()) &&
+                Objects.equals(room, order.getRoom());
     }
+
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, idClient, checkInDate, checkOutDate,
-                invoiceDate, paymentStatus, orderStatus);
+        final int prime = 31;
+        int result = 17;
+        result = prime * result + id;
+        result = prime * result + idClient;
+        result = prime * result + idRoom;
+        result = prime * result + checkInDate.hashCode();
+        result = prime * result + checkOutDate.hashCode();
+        result = prime * result + invoiceDate.hashCode();
+        result = prime * result + type.hashCode();
+        result = prime * result + paymentStatus.hashCode();
+        result = prime * result + orderStatus.hashCode();
+        result = prime * result + cost.hashCode();
+        result = prime * result + user.hashCode();
+        result = prime * result + room.hashCode();
+        return result;
     }
 
     @Override
@@ -245,10 +221,15 @@ public class Order implements Entity {
         return "Order : " +
                 ", id=" + id +
                 ", id client=" + idClient +
+                ", id room=" + idRoom +
                 ", check in date=" + checkInDate +
                 ", check out date=" + checkOutDate +
                 ", invoice date=" + invoiceDate +
+                ", type=" + type +
                 ", payment status=" + paymentStatus +
-                ", order status=" + orderStatus;
+                ", order status=" + orderStatus +
+                ", cost=" + cost +
+                ", user=" + user +
+                ", room=" + room;
     }
 }

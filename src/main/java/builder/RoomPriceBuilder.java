@@ -30,6 +30,6 @@ public class RoomPriceBuilder implements Builder<RoomPrice> {
         Date endDate = resultSet.getDate(END_DATE);
         BigDecimal cost = resultSet.getBigDecimal(COST);
 
-        return new RoomPrice(id, idRoom, roomNumber, startDate, endDate, cost, room);
+        return new RoomPrice(id, idRoom,  startDate, endDate, cost, room);
     }
 }

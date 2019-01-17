@@ -18,7 +18,7 @@ public class SignUpCommand implements Command {
     private static final String BIRTHDAY = "birthday";
     private static final String LOGIN = "login";
     private static final String PASSWORD = "userPass";
-    private static final String START_PAGE = "controller?command=startPage";
+    private static final String START_PAGE = "controller?command=startLogin";
     private static final String LOGIN_PAGE = "/WEB-INF/pages/login.jsp";
     private static final String SIGN_UP_ERROR = "signUpError";
 
@@ -39,7 +39,7 @@ public class SignUpCommand implements Command {
         signUpData.put(PASSWORD, password);
 
         Validation validation = new Validation();
-        if (validation.isValidData(signUpData)) {
+        if (!validation.isValidData(signUpData)) {
             String errorName = validation.getInvalidData();
             request.setAttribute(SIGN_UP_ERROR, errorName);
             return CommandResult.forward(LOGIN_PAGE);

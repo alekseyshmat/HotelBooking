@@ -3,18 +3,18 @@ package entity;
 import java.math.BigDecimal;
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class RoomPrice implements Entity {
 
     private Integer id;
     private Integer idRoom;
-    private String roomNumber;
     private Date startDate;
     private Date endDate;
     private BigDecimal cost;
     private Room room;
 
-
+    //addprice
     public RoomPrice(Integer id, Integer idRoom, Date startDate, Date endDate, BigDecimal cost) {
         this.id = id;
         this.idRoom = idRoom;
@@ -23,7 +23,8 @@ public class RoomPrice implements Entity {
         this.cost = cost;
     }
 
-    public RoomPrice(Integer id, Integer idRoom, String roomNumber, Date startDate, Date endDate,
+    //builder
+    public RoomPrice(Integer id, Integer idRoom, Date startDate, Date endDate,
                      BigDecimal cost, Room room) {
         this.id = id;
         this.idRoom = idRoom;
@@ -47,14 +48,6 @@ public class RoomPrice implements Entity {
 
     public void setIdRoom(Integer idRoom) {
         this.idRoom = idRoom;
-    }
-
-    public String getRoomNumber() {
-        return roomNumber;
-    }
-
-    public void setRoomNumber(String roomNumber) {
-        this.roomNumber = roomNumber;
     }
 
     public Date getStartDate() {
@@ -87,5 +80,48 @@ public class RoomPrice implements Entity {
 
     public void setRoom(Room room) {
         this.room = room;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+        RoomPrice roomPrice = (RoomPrice) obj;
+        return Objects.equals(id, roomPrice.id) &&
+                Objects.equals(idRoom, roomPrice.idRoom) &&
+                Objects.equals(startDate, roomPrice.startDate) &&
+                Objects.equals(endDate, roomPrice.endDate) &&
+                Objects.equals(cost, roomPrice.cost) &&
+                Objects.equals(room, roomPrice.room);
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 17;
+        result = prime * result + id;
+        result = prime * result + idRoom;
+        result = prime * result + startDate.hashCode();
+        result = prime * result + endDate.hashCode();
+        result = prime * result + cost.hashCode();
+        result = prime * result + room.hashCode();
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Room price: " +
+                ", id=" + id +
+                ", id room=" + idRoom +
+                ", start date=" + startDate +
+                ", end date=" + endDate +
+                ", cost=" + cost +
+                ", room=" + room;
     }
 }

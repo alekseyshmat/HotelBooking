@@ -1,6 +1,6 @@
 package repository.creator;
 
-import dataBase.ConnectionPool;
+import database.ConnectionPool;
 import repository.*;
 
 import java.sql.Connection;

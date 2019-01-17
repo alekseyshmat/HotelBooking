@@ -26,7 +26,6 @@ public class OrderBuilder implements Builder<Order> {
     private static final String PAYMENT_STATUS = "payment_status";
     private static final String ORDER_STATUS = "order_status";
     private static final String COST = "cost";
-    private static final String DATE_PATTERN = "yyyy-MM-dd";
 
     @Override
     public Order build(ResultSet resultSet) throws SQLException {

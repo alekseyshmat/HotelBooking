@@ -6,6 +6,7 @@ import java.math.BigDecimal;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 public class Transaction implements Entity {
 
@@ -62,5 +63,45 @@ public class Transaction implements Entity {
 
     public void setSum(BigDecimal sum) {
         this.sum = sum;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+        Transaction transaction = (Transaction) obj;
+        return Objects.equals(id, transaction.id) &&
+                Objects.equals(idClient, transaction.idClient) &&
+                Objects.equals(operationType, transaction.operationType) &&
+                Objects.equals(date, transaction.date) &&
+                Objects.equals(sum, transaction.sum);
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 17;
+        result = prime * result + id;
+        result = prime * result + idClient;
+        result = prime * result + operationType.hashCode();
+        result = prime * result + date.hashCode();
+        result = prime * result + sum.hashCode();
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Transaction  : " +
+                ", id=" + id +
+                ", id client=" + idClient +
+                ", operation type=" + operationType +
+                ", date=" + date +
+                ", sum=" + sum;
     }
 }
