@@ -42,7 +42,9 @@ public class RefileBalanceCommand implements Command {
         if (!validation.isValidData(SUM, stringSum)) {
             return CommandResult.redirect(BALANCE_COMMAND + MESSAGE + INVALID_SUM);
         }
-        BigDecimal sumUp = BigDecimal.valueOf(Long.parseLong(stringSum));
+
+
+        BigDecimal sumUp = new BigDecimal(stringSum);
 
         UserService userService = new UserService();
         Optional<User> optionalUser = userService.findById(id);

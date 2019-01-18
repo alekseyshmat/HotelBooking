@@ -44,7 +44,7 @@ public class ProcessOrderCommand implements Command {
             Order order = optionalOrder.get();
             startDate = order.getCheckInDate();
             endDate = order.getCheckOutDate();
-            days = dateCalculator.daysBetween(startDate, endDate);
+            days = dateCalculator.calculateDaysBetween(startDate, endDate);
         }
 
         BigDecimal overallCost = cost.multiply(new BigDecimal(days));

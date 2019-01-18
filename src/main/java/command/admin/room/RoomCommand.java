@@ -5,13 +5,11 @@ import command.CommandResult;
 import entity.Room;
 import exception.ServiceException;
 import service.RoomService;
-import util.PagesDelimeter;
+import util.PagesDelimiter;
 import util.Validation;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -29,7 +27,7 @@ public class RoomCommand implements Command {
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
-        PagesDelimeter<Room> roomPagesDelimiter = new PagesDelimeter<>();
+        PagesDelimiter<Room> roomPagesDelimiter = new PagesDelimiter<>();
         RoomService roomService = new RoomService();
         List<Room> fullRoomList = roomService.findAll();
 

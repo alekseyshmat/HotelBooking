@@ -6,7 +6,7 @@ import entity.User;
 import entity.types.Role;
 import exception.ServiceException;
 import service.UserService;
-import util.PagesDelimeter;
+import util.PagesDelimiter;
 import util.Validation;
 
 import javax.servlet.http.HttpServletRequest;
@@ -26,7 +26,7 @@ public class UserCommand implements Command {
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
-        PagesDelimeter<User> roomPagesDelimiter = new PagesDelimeter<>();
+        PagesDelimiter<User> roomPagesDelimiter = new PagesDelimiter<>();
         UserService userService = new UserService();
         List<User> fullUserList = userService.findByRole(Role.USER);
 
