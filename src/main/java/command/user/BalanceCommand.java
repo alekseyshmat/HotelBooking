@@ -33,10 +33,11 @@ public class BalanceCommand implements Command {
 
         UserService userService = new UserService();
         Optional<User> optionalUser = userService.findById(id);
-        User user = optionalUser.get();
-
-        request.setAttribute(TRANSACTION_LIST, transactionList);
-        request.setAttribute(USER, user);
+        if (optionalUser.isPresent()){
+            User user = optionalUser.get();
+            request.setAttribute(TRANSACTION_LIST, transactionList);
+            request.setAttribute(USER, user);
+        }
 
         String message = request.getParameter(MESSAGE);
         if (message != null) {

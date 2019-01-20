@@ -1,4 +1,4 @@
-package dataBase;
+package database;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,6 +13,8 @@ import java.util.concurrent.locks.ReentrantLock;
 public class ConnectionPool {
 
     private static final ReentrantLock lock = new ReentrantLock();
+    private static final ReentrantLock connectionLock = new ReentrantLock();
+    private static final ReentrantLock returnLock = new ReentrantLock();
     private static AtomicBoolean initialized = new AtomicBoolean(false);
     private static ConnectionPool instance;
     private Deque<Connection> connections;
@@ -73,23 +75,23 @@ public class ConnectionPool {
 
     public Connection getConnection() {
         try {
-            lock.lock();
+            connectionLock.lock();
             semaphore.acquire();
             return connections.pop();
         } catch (InterruptedException e) {
             throw new IllegalArgumentException();
         } finally {
-            lock.unlock();
+            connectionLock.unlock();
         }
     }
 
     public void returnConnection(Connection connection) {
         try {
-            lock.lock();
+            returnLock.lock();
             connections.push(connection);
             semaphore.release();
         } finally {
-            lock.unlock();
+            returnLock.unlock();
         }
     }
 }
