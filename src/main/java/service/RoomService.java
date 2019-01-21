@@ -1,17 +1,15 @@
 package service;
 
 import entity.Room;
-import entity.types.OrderStatus;
+import entity.types.RoomStatus;
 import entity.types.RoomType;
 import exception.RepositoryException;
 import exception.ServiceException;
-import repository.creator.RepositoryCreator;
 import repository.RoomRepository;
+import repository.creator.RepositoryCreator;
 import specification.searchSpecification.room.FindAll;
-import specification.searchSpecification.room.FindByCriteria;
 import specification.searchSpecification.room.FindWithOffset;
 
-import java.time.LocalDate;
 import java.util.List;
 
 public class RoomService {
@@ -38,6 +36,16 @@ public class RoomService {
         try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
             RoomRepository roomRepository = repositoryCreator.getRoomRepository();
             Room room = new Room(id, roomNumber, roomType);
+            roomRepository.save(room);
+        } catch (RepositoryException ex) {
+            throw new ServiceException(ex.getMessage(), ex);
+        }
+    }
+
+    public void deleteRoom(Integer id) throws ServiceException {
+        try (RepositoryCreator repositoryCreator = new RepositoryCreator()) {
+            RoomRepository roomRepository = repositoryCreator.getRoomRepository();
+            Room room = new Room(id, RoomStatus.DELETED);
             roomRepository.save(room);
         } catch (RepositoryException ex) {
             throw new ServiceException(ex.getMessage(), ex);

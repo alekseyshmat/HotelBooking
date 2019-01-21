@@ -46,7 +46,6 @@ public class FindByCriteria implements Specification {
 
     @Override
     public List<Object> getParametres() {
-//        return Arrays.asList(roomType, checkInDate, checkOutDate, roomStatus);
         return Arrays.asList(roomType, checkInDate, checkOutDate, checkInDate);
     }
 }

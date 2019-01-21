@@ -6,10 +6,8 @@ function edit(button) {
     document.getElementById('editTypeRoom').value = button.dataset.roomtype;
 }
 
-function changeStatus(button) {
+function deleteRoom(button) {
+    document.getElementById('deleteProve').style.display = 'block';
 
-    // button.className = button.className.replace(" active", "");
-    // alert(button.className);
-    button.currentTarget.className += " active";
-    // alert(button.currentTarget.className);
+    document.getElementById('deletedRoomId').value = button.id;
 }

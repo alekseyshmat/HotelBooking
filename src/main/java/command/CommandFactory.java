@@ -31,6 +31,7 @@ public class CommandFactory {
     private static final String UPDATE_BALANCE = "updateBalance";
     private static final String CHANGE_LANGUAGE = "changeLanguage";
     private static final String SAVE_ROOM = "saveRoom";
+    private static final String DELETE_ROOM = "deleteRoom";
     private static final String ADD_ROOM_PRICE = "addRoomPrice";
     private static final String LOG_OUT = "signOut";
     private static final String SIGN_UP = "signUp";
@@ -94,6 +95,8 @@ public class CommandFactory {
                 return new SignUpCommand();
             case START_LOGIN:
                 return new StartLoginCommand();
+            case DELETE_ROOM:
+                return new DeleteRoomCommand();
             default:
                 throw new UnsupportedOperationException();
         }

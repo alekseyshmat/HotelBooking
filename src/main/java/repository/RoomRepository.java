@@ -17,7 +17,7 @@ public class RoomRepository extends AbstractRepository<Room> {
     private static final String ID = "id";
     private static final String ROOM_NUMBER = "room_number";
     private static final String ROOM_TYPE = "type";
-    private static final String BUSY = "is_busy";
+    private static final String DELETED = "is_deleted";
 
     private static final String SELECT_QUERY = "SELECT * FROM `room` ";
 
@@ -31,7 +31,7 @@ public class RoomRepository extends AbstractRepository<Room> {
         Map<String, Object> values = new LinkedHashMap<>();
         values.put(ROOM_NUMBER, item.getRoomNumber());
         values.put(ROOM_TYPE, item.getRoomType());
-//        values.put(BUSY, item.isBusy());
+        values.put(DELETED, item.isDeleted());
         values.put(ID, item.getId());
 
         return values;

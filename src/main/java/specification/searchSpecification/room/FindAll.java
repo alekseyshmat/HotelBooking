@@ -9,7 +9,7 @@ public class FindAll implements Specification {
 
     @Override
     public String toSql() {
-        return "";
+        return "WHERE is_deleted = 'active'";
     }
 
     @Override

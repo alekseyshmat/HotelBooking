@@ -1,5 +1,6 @@
 package entity;
 
+import entity.types.RoomStatus;
 import entity.types.RoomType;
 
 import java.math.BigDecimal;
@@ -11,12 +12,17 @@ public class Room implements Entity {
     private String roomNumber;
     private RoomType roomType;
     private BigDecimal cost;
-    private boolean isDeleted;
+    private RoomStatus isDeleted;
 
     public Room(Integer id, String roomNumber, RoomType roomType) {
         this.id = id;
         this.roomNumber = roomNumber;
         this.roomType = roomType;
+    }
+
+    public Room(Integer id, RoomStatus isDeleted) {
+        this.id = id;
+        this.isDeleted = isDeleted;
     }
 
     public Integer getId() {
@@ -55,11 +61,11 @@ public class Room implements Entity {
         this.id = id;
     }
 
-    public boolean isDeleted() {
+    public RoomStatus isDeleted() {
         return isDeleted;
     }
 
-    public void setDeleted(boolean deleted) {
+    public void setDeleted(RoomStatus deleted) {
         isDeleted = deleted;
     }
 

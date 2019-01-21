@@ -17,7 +17,7 @@ public class FindWithOffset implements Specification {
 
     @Override
     public String toSql() {
-        return "LIMIT ? OFFSET ? ";
+        return "WHERE is_deleted ='active' LIMIT ? OFFSET ? ";
     }
 
     @Override

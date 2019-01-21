@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -28,6 +28,7 @@
 <fmt:message bundle="${naming}" key="room.label.addingRoom" var="addingRoom"/>
 <fmt:message bundle="${naming}" key="room.label.editingRoom" var="editingRoom"/>
 <fmt:message bundle="${naming}" key="room.label.invalidRoom" var="invalidRoom"/>
+<fmt:message bundle="${naming}" key="room.label.isDeleted" var="isDeleted"/>
 
 <html>
 <head>
@@ -48,17 +49,11 @@
     </div>
     <div class="rightColumn">
         <div class="itemLimit">
-            <a class=" "
-               href="${pageContext.servletContext.contextPath}/controller?command=showRooms&pageNumber=1&limit=15"
-               onclick=changeStatus(event)>15
+            <a href="${pageContext.servletContext.contextPath}/controller?command=showRooms&pageNumber=1&limit=15">15
             </a>
-            <a class=" "
-               href="${pageContext.servletContext.contextPath}/controller?command=showRooms&pageNumber=1&limit=10"
-               onclick=changeStatus(event)>10
+            <a href="${pageContext.servletContext.contextPath}/controller?command=showRooms&pageNumber=1&limit=10">10
             </a>
-            <a class=" "
-               href="${pageContext.servletContext.contextPath}/controller?command=showRooms&pageNumber=1&limit=5"
-               onclick=changeStatus(event)>5
+            <a href="${pageContext.servletContext.contextPath}/controller?command=showRooms&pageNumber=1&limit=5">5
             </a>
         </div>
         <div class="card">
@@ -119,11 +114,12 @@
                             <button id="${room.id}" name="btnRoom" value="${room.id}"
                                     data-roomnumber="${room.roomNumber}"
                                     data-roomtype="${room.roomType}"
-                                    class="editButton" onclick=edit(this)>
+                                    class="editButton" onclick="edit(this)">
                                 <img class="tableImg" src="img/icon/edit.png" alt="${edit}" title="${edit}">
                             </button>
 
-                            <button class="deleteButton">
+                            <button id="${room.id}" name="btnRoom" value="${room.id}"
+                                    class="deleteButton" onclick="deleteRoom(this)">
                                 <img class="tableImg" src="img/icon/delete.png" alt="${delete}" title="${delete}">
                             </button>
                         </td>
@@ -134,7 +130,7 @@
         <div class="pages">
             <jsp:useBean id="pages" scope="request" type="java.util.List"/>
             <c:forEach items="${pages}" var="pages">
-                <a href="${pageContext.servletContext.contextPath}/controller?command=showRooms&pageNumber=${pages}&limit=${limit}">${pages}</a>
+                <a href="${pageContext.servletContext.contextPath}/controller?command=showRooms&pageNumber=${pages}&limit=${requestScope.limit}">${pages}</a>
             </c:forEach>
         </div>
         <div class="addPanel">
@@ -157,6 +153,9 @@
                             <c:when test="${requestScope.notifyMessage eq 'invalidRoom'}">
                                 <label>${invalidRoom}</label>
                             </c:when>
+                            <c:when test="${requestScope.notifyMessage eq 'roomDelete'}">
+                                <label>${isDeleted}</label>
+                            </c:when>
                         </c:choose>
                     </div>
                     <div class="notify-resultButtons">
@@ -172,6 +171,7 @@
 
 <jsp:include page="/WEB-INF/fragments/room/addRoom.jsp"/>
 <jsp:include page="/WEB-INF/fragments/room/editRoom.jsp"/>
+<jsp:include page="/WEB-INF/fragments/room/deleteRoom.jsp"/>
 <jsp:include page="/WEB-INF/fragments/header/footer.jsp"/>
 </body>
 </html>
