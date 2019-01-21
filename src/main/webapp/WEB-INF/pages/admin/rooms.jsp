@@ -59,7 +59,6 @@
         <div class="card">
             <table width="100%">
                 <tr>
-                    <th width="75">${id}</th>
                     <th>${roomId}</th>
                     <th>${type}</th>
                     <th>${cost}</th>
@@ -68,11 +67,6 @@
                 <jsp:useBean id="roomList" scope="request" type="java.util.List"/>
                 <c:forEach items="${roomList}" var="room">
                     <tr>
-                        <td>
-                            <div class="data">
-                                #${room.id}
-                            </div>
-                        </td>
                         <td>
                                 ${room.roomNumber}
                         </td>

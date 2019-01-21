@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -51,7 +51,6 @@
             <div class="card">
                 <table>
                     <tr>
-                        <th>${id}</th>
                         <th>${startDate}</th>
                         <th>${endDate}</th>
                         <th>${cost}</th>
@@ -59,11 +58,6 @@
                     <jsp:useBean id="roomPriceList" scope="request" type="java.util.List"/>
                     <c:forEach items="${roomPriceList}" var="roomPrice">
                         <tr>
-                            <td>
-                                <div class="data">
-                                        ${roomPrice.id}
-                                </div>
-                            </td>
                             <td>
                                 <div class="data">
                                     <c:choose>
