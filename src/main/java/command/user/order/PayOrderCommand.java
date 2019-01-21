@@ -1,4 +1,4 @@
-package command.user;
+package command.user.order;
 
 import command.Command;
 import command.CommandResult;
@@ -20,6 +20,10 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
+/**
+ * Designed to pay order.
+ */
+
 public class PayOrderCommand implements Command {
 
     private static final String ORDER_PAGE = "controller?command=showOrders";
@@ -30,6 +34,16 @@ public class PayOrderCommand implements Command {
     private static final String ORDER_ID = "orderId";
     private static final String ID = "id";
     private static final Integer COMPARE_INDEX = 0;
+
+    /**
+     * Process the request, pay order and generates a result of processing in the form of
+     * {@link command.CommandResult} object.
+     *
+     * @param request  an {@link HttpServletRequest} object that contains client request
+     * @param response an {@link HttpServletResponse} object that contains the response the servlet sends to the client
+     * @return A response in the form of {@link command.CommandResult} object.
+     * @throws ServiceException when RepositoryException is caught.
+     */
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {

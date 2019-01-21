@@ -1,4 +1,4 @@
-package command.user;
+package command.user.order;
 
 import command.Command;
 import command.CommandResult;
@@ -14,6 +14,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
+/**
+ * Designed to map orders.
+ */
+
 public class OrderCommand implements Command {
 
     private static final String USER_ORDERS = "/WEB-INF/pages/user/orders.jsp";
@@ -22,6 +26,16 @@ public class OrderCommand implements Command {
     private static final String ACTIVE_ORDER_LIST = "activeOrderList";
     private static final String COMPLETED_ORDER_LIST = "completedOrderList";
     private static final String MESSAGE = "message";
+
+    /**
+     * Process the request, map orders and generates a result of processing in the form of
+     * {@link command.CommandResult} object.
+     *
+     * @param request  an {@link HttpServletRequest} object that contains client request
+     * @param response an {@link HttpServletResponse} object that contains the response the servlet sends to the client
+     * @return A response in the form of {@link command.CommandResult} object.
+     * @throws ServiceException when RepositoryException is caught.
+     */
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {

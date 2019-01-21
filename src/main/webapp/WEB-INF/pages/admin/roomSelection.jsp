@@ -48,7 +48,7 @@
                     <c:forEach items="${roomsWithCriteria}" var="foundRooms">
                         <tr>
                             <td>
-                                <input type="radio" id="idRoom" name="idRoom" value="${foundRooms.room.id}">
+                                <input type="radio" id="idRoom" name="idRoom" value="${foundRooms.room.id}" required>
                             </td>
                             <td>
                                 <div class="data">

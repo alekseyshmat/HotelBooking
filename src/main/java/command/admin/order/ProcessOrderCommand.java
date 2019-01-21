@@ -16,12 +16,26 @@ import java.math.BigDecimal;
 import java.sql.Date;
 import java.util.Optional;
 
+/**
+ * Designed to process orders.
+ */
+
 public class ProcessOrderCommand implements Command {
 
     private static final String ADMIN_ORDERS = "controller?command=showAllOrders";
     private static final String ID_ORDER = "idOrder";
     private static final String ID_ROOM = "idRoom";
     private static final String COST = "cost";
+
+    /**
+     * Process the request, process order and generates a result of processing in the form of
+     * {@link command.CommandResult} object.
+     *
+     * @param request  an {@link HttpServletRequest} object that contains client request
+     * @param response an {@link HttpServletResponse} object that contains the response the servlet sends to the client
+     * @return A response in the form of {@link command.CommandResult} object.
+     * @throws ServiceException when RepositoryException is caught.
+     */
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {

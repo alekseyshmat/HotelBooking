@@ -13,18 +13,32 @@ import java.sql.Date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Designed to complete order.
+ */
+
 public class CompleteOrderCommand implements Command {
 
     private static final String ADMIN_ORDERS = "controller?command=showAllOrders";
     private static final String DATE_PATTERN = "yyyy-MM-dd";
     private static final String ID = "activeId";
 
+    /**
+     * Process the request, complete order and generates a result of processing in the form of
+     * {@link command.CommandResult} object.
+     *
+     * @param request  an {@link HttpServletRequest} object that contains client request
+     * @param response an {@link HttpServletResponse} object that contains the response the servlet sends to the client
+     * @return A response in the form of {@link command.CommandResult} object.
+     * @throws ServiceException when RepositoryException is caught.
+     */
+
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
         Validation validation = new Validation();
         String stringId = request.getParameter(ID);
 
-        if (!validation.isValidData(ID, stringId)){
+        if (!validation.isValidData(ID, stringId)) {
             return CommandResult.redirect(ADMIN_ORDERS);
         }
 

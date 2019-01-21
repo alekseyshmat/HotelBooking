@@ -15,6 +15,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Designed to add new room or update information about room.
+ */
+
 public class SaveRoomCommand implements Command {
 
     private static final String MAIN_PAGE = "controller?command=showRooms&pageNumber=1&limit=5&message=";
@@ -28,6 +32,16 @@ public class SaveRoomCommand implements Command {
     private static final String EDITING_ROOM = "edited";
     private static final String ERROR_MESSAGE = "invalidRoom";
 
+    /**
+     * Process the request, add new room or update information about room and generates a result of processing
+     * in the form of
+     * {@link command.CommandResult} object.
+     *
+     * @param request  an {@link HttpServletRequest} object that contains client request
+     * @param response an {@link HttpServletResponse} object that contains the response the servlet sends to the client
+     * @return A response in the form of {@link command.CommandResult} object.
+     * @throws ServiceException when RepositoryException is caught.
+     */
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
         String stringId = request.getParameter(ID);

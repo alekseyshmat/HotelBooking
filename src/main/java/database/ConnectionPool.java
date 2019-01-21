@@ -10,6 +10,10 @@ import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * Designed to create, work and store database connections in the singleton style.
+ */
+
 public class ConnectionPool {
 
     private static final ReentrantLock lock = new ReentrantLock();
@@ -43,10 +47,18 @@ public class ConnectionPool {
         return instance;
     }
 
+    /**
+     * Designed for database data initialization.
+     */
+
     private void initConnections() {
         connections = new ArrayDeque<>();
         semaphore = new Semaphore(connectionSize);
     }
+
+    /**
+     * Creates connections and put them into storage
+     */
 
     private void createConnections() {
         for (int i = 0; i < connectionSize; i++) {
@@ -57,6 +69,10 @@ public class ConnectionPool {
             throw new IllegalArgumentException("Connections are not created!");
         }
     }
+
+    /**
+     * Designed for reading connection size from properties.
+     */
 
     private void readConnectionSizeFromProperties() {
         try {
@@ -73,6 +89,12 @@ public class ConnectionPool {
         }
     }
 
+    /**
+     * Designed for thread-safe retrieve database connection from storage.
+     *
+     * @return a {@link Connection} object that provide connection to database
+     */
+
     public Connection getConnection() {
         try {
             connectionLock.lock();
@@ -84,6 +106,12 @@ public class ConnectionPool {
             connectionLock.unlock();
         }
     }
+
+    /**
+     * Returns connection into the storage.
+     *
+     * @param connection - connection that should bu returned.
+     */
 
     public void returnConnection(Connection connection) {
         try {

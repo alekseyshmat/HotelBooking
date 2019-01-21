@@ -11,6 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.Optional;
 
+/**
+ * Designed to login users.
+ */
+
 public class LoginCommand implements Command {
 
     private static final String MAIN_PAGE = "controller?command=mainPage";
@@ -24,6 +28,16 @@ public class LoginCommand implements Command {
     private static final String ERROR_MESSAGE = "errorMessage";
     private static final String WRONG_PARAMETER = "Wrong login or password";
     private static final String BLOCKING_ACCOUNT = "Your account is blocked";
+
+    /**
+     * Process the request, login and generates a result of processing in the form of
+     * {@link command.CommandResult} object.
+     *
+     * @param request  an {@link HttpServletRequest} object that contains client request
+     * @param response an {@link HttpServletResponse} object that contains the response the servlet sends to the client
+     * @return A response in the form of {@link command.CommandResult} object.
+     * @throws ServiceException when RepositoryException is caught.
+     */
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {

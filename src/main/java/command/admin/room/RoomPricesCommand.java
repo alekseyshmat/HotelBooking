@@ -12,6 +12,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
+/**
+ * Designed to map prices for room.
+ */
+
 public class RoomPricesCommand implements Command {
 
     private static final String ROOM_PRICES_PAGE = "/WEB-INF/pages/admin/roomPrices.jsp";
@@ -24,8 +28,17 @@ public class RoomPricesCommand implements Command {
     private static final String MESSAGE = "message";
     private static final Integer ROOM_INDEX = 0;
 
-    @Override
+    /**
+     * Process the request, map prices for room and generates a result of processing in the form of
+     * {@link command.CommandResult} object.
+     *
+     * @param request  an {@link HttpServletRequest} object that contains client request
+     * @param response an {@link HttpServletResponse} object that contains the response the servlet sends to the client
+     * @return A response in the form of {@link command.CommandResult} object.
+     * @throws ServiceException when RepositoryException is caught.
+     */
 
+    @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
         Integer roomPageLimit = Integer.valueOf(request.getParameter(ROOM_LIMIT));
         request.setAttribute(ROOM_LIMIT, roomPageLimit);

@@ -1,4 +1,4 @@
-package command.user;
+package command.user.balance;
 
 import command.Command;
 import command.CommandResult;
@@ -20,6 +20,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
+/**
+ * Designed to refile balance.
+ */
+
 public class RefileBalanceCommand implements Command {
 
     private static final String SUM = "sumUp";
@@ -28,6 +32,16 @@ public class RefileBalanceCommand implements Command {
     private static final String MESSAGE = "&message=";
     private static final String REFILE_BALANCE = "refileBalance";
     private static final String INVALID_SUM = "invalidSum";
+
+    /**
+     * Process the request, refile balance and generates a result of processing in the form of
+     * {@link command.CommandResult} object.
+     *
+     * @param request  an {@link HttpServletRequest} object that contains client request
+     * @param response an {@link HttpServletResponse} object that contains the response the servlet sends to the client
+     * @return A response in the form of {@link command.CommandResult} object.
+     * @throws ServiceException when RepositoryException is caught.
+     */
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {

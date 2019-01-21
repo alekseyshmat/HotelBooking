@@ -6,6 +6,14 @@ body {
     box-sizing: border-box;
 }
 
+input:invalid:not(:placeholder-shown) {
+    border-color: red;
+}
+
+input:valid:not(:placeholder-shown) {
+    border-color: green;
+}
+
 .makeOrder {
     width: 470px;
     height: 255px;
@@ -29,7 +37,7 @@ body {
     margin-top: 10px;
 }
 
-input[type = date], select {
+input[type = date], input[type = text], select {
     width: 90%;
     padding: 5px;
     border: 1px solid #ccc;

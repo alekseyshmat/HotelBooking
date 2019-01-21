@@ -9,6 +9,12 @@ import java.util.Properties;
 
 public class ConnectionCreator {
 
+    /**
+     * Designed for thread-safe retrieve database connection from storage.
+     *
+     * @return a {@link Connection} object that provide connection to database
+     */
+
     public Connection createConnection() {
         try {
             Class<? extends ConnectionCreator> aClass = this.getClass();

@@ -1,11 +1,10 @@
-package command.user;
+package command.user.balance;
 
 import command.Command;
 import command.CommandResult;
 import entity.Transaction;
 import entity.User;
 import exception.ServiceException;
-import repository.TransactionRepository;
 import service.TransactionService;
 import service.UserService;
 
@@ -15,6 +14,10 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Designed to map balance and history operations with balance.
+ */
+
 public class BalanceCommand implements Command {
 
     private static final String BALANCE_PAGE = "/WEB-INF/pages/user/balance.jsp";
@@ -22,6 +25,16 @@ public class BalanceCommand implements Command {
     private static final String USER = "user";
     private static final String TRANSACTION_LIST = "transactionList";
     private static final String MESSAGE = "message";
+
+    /**
+     * Process the request, map balance and history operations with balance and generates a result of processing in the form of
+     * {@link command.CommandResult} object.
+     *
+     * @param request  an {@link HttpServletRequest} object that contains client request
+     * @param response an {@link HttpServletResponse} object that contains the response the servlet sends to the client
+     * @return A response in the form of {@link command.CommandResult} object.
+     * @throws ServiceException when RepositoryException is caught.
+     */
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
@@ -33,7 +46,7 @@ public class BalanceCommand implements Command {
 
         UserService userService = new UserService();
         Optional<User> optionalUser = userService.findById(id);
-        if (optionalUser.isPresent()){
+        if (optionalUser.isPresent()) {
             User user = optionalUser.get();
             request.setAttribute(TRANSACTION_LIST, transactionList);
             request.setAttribute(USER, user);

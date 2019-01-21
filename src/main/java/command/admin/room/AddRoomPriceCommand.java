@@ -13,6 +13,10 @@ import java.sql.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Designed to add price for room.
+ */
+
 public class AddRoomPriceCommand implements Command {
 
     private static final String ROOM_PRICES_PAGE = "controller?command=showRoomPrices&roomId=";
@@ -28,6 +32,16 @@ public class AddRoomPriceCommand implements Command {
     private static final String MESSAGE = "&message=";
     private static final String ADD_PRICE = "addPrice";
     private static final String INVALID_DATA = "invalidData";
+
+    /**
+     * Process the request, add price for room and generates a result of processing in the form of
+     * {@link command.CommandResult} object.
+     *
+     * @param request  an {@link HttpServletRequest} object that contains client request
+     * @param response an {@link HttpServletResponse} object that contains the response the servlet sends to the client
+     * @return A response in the form of {@link command.CommandResult} object.
+     * @throws ServiceException when RepositoryException is caught.
+     */
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {

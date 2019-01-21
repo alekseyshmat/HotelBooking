@@ -13,15 +13,31 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * This class provides a skeletal implementation of the {@link Repository} interface,
+ * to minimize the effort required to implement this interface.
+ */
+
 public abstract class AbstractRepository<T extends Entity> implements Repository<T> {
 
     private Connection connection;
 
-    public AbstractRepository(Connection connection) {
+    AbstractRepository(Connection connection) {
         this.connection = connection;
     }
 
-    public List<T> executeQuery(String sql, Builder<T> builder, List<Object> params) throws RepositoryException {
+    /**
+     * Performs a parameterized read query to a database with parameters, waiting for a set of objects,
+     * and builds them with the help of a concrete builder implementation.
+     *
+     * @param sql     a {@link String} object that contains database query.
+     * @param builder a implementation of {@link Builder} with a concrete class whose objects are to be built.
+     * @param params  a {@link List} List of objects that contains parameters that should be substituted in query.
+     * @return a {@link List} implementation with objects.
+     * @throws RepositoryException Signals that an database access object exception of some sort has occurred.
+     */
+
+    List<T> executeQuery(String sql, Builder<T> builder, List<Object> params) throws RepositoryException {
         List<T> objects = new ArrayList<>();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -38,14 +54,31 @@ public abstract class AbstractRepository<T extends Entity> implements Repository
         return objects;
     }
 
+    /**
+     * Performs a parameterized read query to a database with parameters, waiting for an object,
+     * and builds them with the help of a concrete builder implementation.
+     *
+     * @param query   a {@link String} object that contains database query.
+     * @param builder a implementation of {@link Builder} with a concrete class whose object is to be built.
+     * @param params  a {@link List} List of objects that contains parameters that should be substituted in query.
+     * @return a {@link Optional} implementation with object.
+     * @throws RepositoryException Signals that an database access object exception of some sort has occurred.
+     */
 
-    public Optional<T> executeQueryForSingleResult(String query, Builder<T> builder, List<Object> params) throws RepositoryException {
+    Optional<T> executeQueryForSingleResult(String query, Builder<T> builder, List<Object> params) throws RepositoryException {
         List<T> items = executeQuery(query, builder, params);
 
         return items.size() == 1 ?
                 Optional.of(items.get(0)) :
                 Optional.empty();
     }
+
+    /**
+     * Performs update query to a database with parameters or insert new item to a database .
+     *
+     * @param item a {@link T} object that updates or inserts in database.
+     * @throws RepositoryException Signals that an database access object exception of some sort has occurred.
+     */
 
     public void save(T item) throws RepositoryException {
         try {

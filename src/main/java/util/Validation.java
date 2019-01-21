@@ -18,7 +18,7 @@ public class Validation {
     private static final String ACTIVE_ID = "activeId";
     private static final String LIMIT = "limit";
     private static final String PAGE = "roomPage";
-
+    private static final String BIRTHDAY = "birthday";
 
     private static final String NAME_PATTERN = "^([a-zA-Z]){3,44}$";
     private static final String EMAIL_PATTERN = "^(\\w+[\\.-]?\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,6})$";
@@ -28,6 +28,7 @@ public class Validation {
     private static final String ROOM_NUMBER_PATTERN = "^([A-Za-z1-9]{1}[A-Za-z0-9]{0,9})$";
     private static final String ID_PATTERN = "^([1-9]{1}[0-9]{0,10})$";
     private static final String PAGE_PATTERN = "^([1-9]{1}[0-9]*)$";
+    private static final String DATE_PATTERN = "^([1|2]{1}[0-9]{3}-[0-9]{1,2}-[0-9]{1,2})$";
 
     private String invalidData;
 
@@ -65,6 +66,8 @@ public class Validation {
                 return PAGE_PATTERN;
             case PAGE_NUMBER:
                 return PAGE_PATTERN;
+            case BIRTHDAY:
+                return DATE_PATTERN;
             default:
                 throw new UnsupportedOperationException();
         }

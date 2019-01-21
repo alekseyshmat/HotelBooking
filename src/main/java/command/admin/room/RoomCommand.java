@@ -14,6 +14,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Designed to map rooms.
+ */
+
 public class RoomCommand implements Command {
 
     private static final String ROOMS_PAGE = "/WEB-INF/pages/admin/rooms.jsp";
@@ -24,6 +28,16 @@ public class RoomCommand implements Command {
     private static final String LIMIT = "limit";
     private static final String MESSAGE = "message";
     private static final String NOTIFY_MESSAGE = "notifyMessage";
+
+    /**
+     * Process the request, map rooms and generates a result of processing in the form of
+     * {@link command.CommandResult} object.
+     *
+     * @param request  an {@link HttpServletRequest} object that contains client request
+     * @param response an {@link HttpServletResponse} object that contains the response the servlet sends to the client
+     * @return A response in the form of {@link command.CommandResult} object.
+     * @throws ServiceException when RepositoryException is caught.
+     */
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {

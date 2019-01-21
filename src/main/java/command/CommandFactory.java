@@ -7,6 +7,12 @@ import command.admin.order.CompleteOrderCommand;
 import command.admin.order.ProcessOrderCommand;
 import command.admin.room.*;
 import command.user.*;
+import command.user.balance.BalanceCommand;
+import command.user.balance.RefileBalanceCommand;
+import command.user.order.CancelOrderCommand;
+import command.user.order.MakeOrderCommand;
+import command.user.order.OrderCommand;
+import command.user.order.PayOrderCommand;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

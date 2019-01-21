@@ -1,10 +1,13 @@
 package command;
 
+/**
+ * Designed to display the result of the processing command.
+ */
+
 public class CommandResult {
 
     private final String page;
     private final boolean redirect;
-
 
     public CommandResult(String page, boolean redirect) {
         this.page = page;

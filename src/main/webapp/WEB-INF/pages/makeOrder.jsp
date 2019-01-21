@@ -43,7 +43,9 @@
                     <label for="checkInDate">${checkInDate}</label>
                 </div>
                 <div class="inputParameter">
-                    <input id="checkInDate" type="date" name="checkInDate" required>
+                    <input id="checkInDate" type="text" name="checkInDate" placeholder="${checkInDate}"
+                           onfocus="(this.type='date')" onblur="(this.type='text')"
+                           pattern="^([1|2]{1}[0-9]{3}-[0-9]{1,2}-[0-9]{1,2})$" required>
                 </div>
             </div>
 
@@ -52,7 +54,9 @@
                     <label for="checkOutDate">${checkOutDate}</label>
                 </div>
                 <div class="inputParameter">
-                    <input id="checkOutDate" type="date" name="checkOutDate" required >
+                    <input id="checkOutDate" type="text" name="checkOutDate" placeholder="${checkOutDate}"
+                           onfocus="(this.type='date')" onblur="(this.type='text')"
+                           pattern="^([1|2]{1}[0-9]{3}-[0-9]{1,2}-[0-9]{1,2})$" required >
                 </div>
             </div>
 
